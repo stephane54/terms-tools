@@ -11,6 +11,8 @@ import time
 import plac
 import logging
 import sys
+import stanza
+import spacy_stanza
 from pathlib import Path
 from nlptools.run import full_run
 from nlptools.tools import  dive_term
@@ -20,7 +22,7 @@ from nlptools.tools import  dive_term
         "positional",
         None,
         str,
-        ["termMatcher", "NPchunker", "POStagger", "NPchunkerDP"]
+        ["termMatcher", "NPchunker", "POStaggerStanza","POStagger", "NPchunkerDP"]
     ),
     corpus=("Path to corpus file", "option", "file", str),
     language=("language", "option", "lang", str, ["fr", "en"]),
@@ -36,7 +38,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
     # test parameter combinaison legality
     if (format != "terms" and output == "dico_pos" ):
             sys.exit(u'ERROR : terms_tools.py : illegal parameters combinaison')       
-    if (format == "terms" and pipe != "POStagger"  ):
+    if (format == "terms" and pipe not in  ["POStagger", "POStaggerStanza"]  ):
         sys.exit(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
 
     # creation d1 instance de pipe

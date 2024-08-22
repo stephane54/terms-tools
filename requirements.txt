@@ -7,5 +7,7 @@ regex
 nltk
 jinja2
 lemminflect
+stanza==1.7.0
+spacy_stanza
 plac==0.9.6
 spacy_lefff@git+http://vxgit.intra.inist.fr:60000/git/RichText/spacy_lefff.git#0.4.1#egg=spacy_lefff

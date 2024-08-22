@@ -11,6 +11,8 @@ import lemminflect
 import json
 import os
 import re
+import stanza
+import spacy_stanza
 from configparser import ConfigParser
 from lefff import getLefff
 from nlptools.tools import to_list
@@ -29,6 +31,7 @@ class exec_spacy_pipe_en(object):
             "termMatcher",
             "NPchunker",
             "POStagger",
+            "POStaggerStanza",
             "NPchunkerDP",
         ]
 
@@ -173,6 +176,17 @@ class exec_spacy_pipe_en(object):
                 last=True,
             )
       
+        # POSTAGGING STANZA
+        if pipe == "POStaggerStanza":
+        
+            self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
+            
+            self.nlp.add_pipe(
+                "POStagger",
+                name="POStagger",
+                config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show,"format":self.format},
+                last=True,
+            )
 
         # CHUNKING SPACY
         if pipe == "NPchunker" or pipe == "NPchunkerDP":
@@ -217,10 +231,11 @@ class exec_spacy_pipe_fr (object):
 
     show = "doc"
 
-    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None):
+    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
         
         pipe_list_fr = [
                 "POStagger",
+                "POStaggerStanza",
                 ]
 
         if pipe not in pipe_list_fr:
@@ -232,6 +247,8 @@ class exec_spacy_pipe_fr (object):
             self.show = show
 
         from nlptools.models import modele_init_fr
+        
+        self.format = format
 
         # configuration du componsant
         configINI = ConfigParser()
@@ -266,25 +283,43 @@ class exec_spacy_pipe_fr (object):
             print("Error lors de la phase d'initialisation [lecture fichier .ini]")
             exit(err)
 
-        # init dun pipe avec chargement du modele sans parser et ner
-        self.nlp = spacy.load(self.modele, disable=[ "ner"])
-        
-        # ajout du tagger au pipe courant
-        self.nlp.add_pipe(
-            "lefff_french_tagger",
-            last=True
-        )
-        self.nlp.add_pipe(
-            "lefff_french_lemmatizer",
-            after="lefff_french_tagger"
-        )
+        if pipe == "POStaggerStanza":
+            
+                self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
+                
+                self.nlp.add_pipe(
+                    "POStagger",
+                    name="POStagger",
+                    config={"whitelist_tag_lemme": self.whitelist_tag_lemme, "show": self.show,"format":self.format},
+                    last=True,
+                )
 
+        if pipe == "POStagger":
+            
+            # init dun pipe avec chargement du modele sans parser et ner
+            self.nlp = spacy.load(self.modele, disable=[ "ner"])
+            
+            # ajout du tagger au pipe courant
+            self.nlp.add_pipe(
+                "lefff_french_tagger",
+                last=True,
+            )
+            self.nlp.add_pipe(
+                "lefff_french_lemmatizer",
+                after="lefff_french_tagger"
+            )
+            
 
-    def __call__(self, doc):
+    def __call__(self, text):
         # PATCH text=" ".join(text.strip().split())
         # execution du pipe
- 
-        return getLefff (self.nlp(doc), self.show, self.whitelist_tag_lemme)
+    
+        if self.pipe == "POStagger":
+            return getLefff (self.nlp(text), self.show, self.whitelist_tag_lemme, self.format)
+        
+        if self.pipe == "POStaggerStanza":
+            return self.nlp(text)
+        
 
 
         

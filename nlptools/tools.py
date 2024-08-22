@@ -16,7 +16,6 @@ import csv
 import regex
 import re
 from spacy.tokens import Doc
-from  lemminflect import getAllInflections
 import numpy  as np
 from spacy.attrs import LOWER, POS, ENT_TYPE, IS_ALPHA, DEP, LEMMA, IS_PUNCT, IS_DIGIT, IS_SPACE, IS_STOP
 
@@ -212,16 +211,7 @@ def getDicoInflect(doc):
     norm_form = []
     norm_form = doc.text_with_ws.replace(" ","_")
     
-    #TRACE
-    '''
-    print(f"----> TERM  : {doc.text}")
-    [print(f"  { token.text}/{ token.pos_}/{ token.tag_} : {getAllInflections(token.text, upos=token.pos_)}") for token in doc]
-    print(f"-> DEP PARSING")
-    for token in doc:
     
-        print(f"   {token.text} { token.tag_} {token.dep_} HEAD:[{token.head.text} {token.head.pos_}] CHILD : {[child for child in token.children]}")
-  
-    '''    
     for token in doc :
         #if  token.dep_== 'ROOT' and token.pos_=='VERB':
         # calcul de flexion
@@ -250,17 +240,17 @@ def getDicoInflect(doc):
                       
                       
 def dive_term (word, lang):
+    
     return(LEFT[lang]+space+word+space+RIGHT[lang])
 
 
 def clean_terms(doc):
-    print("=====================")
-    span = doc[LEFT["lenght"]:-abs((RIGHT["lenght"]))]
-    print("********************")
-    return(span.as_doc())
+    
+    return(doc[LEFT["lenght"]:-abs((RIGHT["lenght"]))].as_doc())
     
 
-def add_himself (word):    
+def add_himself (word):   
+     
     return(''.join(word)+tab+''.join(word).replace(' ','_'))
 
 
@@ -275,8 +265,8 @@ def getDocPosDico(doc):
         #   list_stem.append(token._.stem)
         if token.pos_:
             list_text.append(token.text)
+            list_pos.append(token.tag_)
             #list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
-            list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
             list_lemma.append(token.lemma_)            
 
     return (space.join(list_text)+tab+space.join(list_pos)+tab+space.join(list_lemma))

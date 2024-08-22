@@ -48,13 +48,13 @@ Current mapping used spaCy to Lefff is :
 # VPP	   past participle
 # VPR	   present participle
 # VS	   subjunctive verb form
-from nlptools.tools import space, cr, tab
+from nlptools.tools import space, cr, tab, clean_terms
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
 from json import dumps
 from spacy.tokens import  Doc
 
-@Language.factory('lefff_french_lemmatizer' )
+@Language.factory('lefff_french_lemmatizer')
 def create_french_lemmatizer(nlp, name):
     return LefffLemmatizer(after_melt=True, default=True)
 
@@ -62,11 +62,16 @@ def create_french_lemmatizer(nlp, name):
 def create_french_tagger(nlp, name):
     return POSTagger()
 
-def getLefff (doc, show, tagList):
+def getLefff (doc, show, tagList, format):
 
     list_token = []
     list_lemme = []
     tag= ['lemma', 'pos']
+    
+    if format == "terms":    
+            
+        doc = clean_terms(doc)
+    
 
     # TRACE print(tagList, type(tagList), len(tagList))
     if not(tagList):
@@ -107,13 +112,13 @@ def getLefff (doc, show, tagList):
             #   list_stem.append(token._.stem)
             if token.pos_:
                 list_lemma.append(token.lemma_)      
-                list_text.append(token.text) 
+                list_text.append(token.text_with_ws) 
                 list_pos.append(token.pos_) 
             
-                return (space.join(list_text)+                
-                        tab+space.join(list_lemma)+
-                        tab+space.join(list_pos)+
-                        tab+(dumps(list_token, ensure_ascii=False)))
+        return ("".join(list_text)+                
+                tab+space.join(list_pos)+
+                tab+space.join(list_lemma)
+               )
     
         
     if show == "json":
