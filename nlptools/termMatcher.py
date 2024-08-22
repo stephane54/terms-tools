@@ -9,7 +9,7 @@ from nlptools.tools import (
     tireth,
     tab,
     tiretb,
-    blanc,
+    space,
     cr,
     cleanWList,
     getEnts,
@@ -108,7 +108,7 @@ class TermMatcher(object):
         if self.show == "doc":
             sep = tiretb
         else:
-            sep = blanc
+            sep = space
 
         if self.show == "json":
             for label, text, lemma, idt, start, end in self.scan_termMatch(
@@ -121,8 +121,8 @@ class TermMatcher(object):
                 
                     en={ }
                     en["idx"]=str(start)+ tireth+ str(end)
-                    en["text"]=oneMcMark(text, blanc)
-                    en["lemma"]=oneMcMark(lemma, blanc)
+                    en["text"]=oneMcMark(text, space)
+                    en["lemma"]=oneMcMark(lemma, space)
                     en["idt"]=idt
                     list_terms.append(en)
 
@@ -148,7 +148,7 @@ class TermMatcher(object):
                     + oneMcMark(lemma, sep)
                     + tab
                     + oneMcMark(label, sep)
-                    + blanc
+                    + space
                     + idt
                 )
             # liste dedoublonnée

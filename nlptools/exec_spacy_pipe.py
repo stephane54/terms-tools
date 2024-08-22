@@ -23,7 +23,7 @@ class exec_spacy_pipe_en(object):
 
     show = "doc"
 
-    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None):
+    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
    
         pipe_list_en = [
             "termMatcher",
@@ -40,6 +40,8 @@ class exec_spacy_pipe_en(object):
             self.show = show
 
         from nlptools.models import modele_init_en
+        
+        self.format = format
 
         # initialisation des parsers selon un fichier de configuration config.ini
         configINI = ConfigParser()
@@ -136,7 +138,7 @@ class exec_spacy_pipe_en(object):
             self.nlp.add_pipe(
                 "POStagger",
                 name="POStagger",
-                config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show},
+                config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show, "format":self.format},
                 last=True,
             )
             
@@ -154,6 +156,7 @@ class exec_spacy_pipe_en(object):
                     config={
                         "whitelist_tag_lemme": termMatcher_POS_whitelist,
                         "show": "pipe",
+                        "format":self.format
                     },
                     last=True,
                 )

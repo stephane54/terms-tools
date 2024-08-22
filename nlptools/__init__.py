@@ -12,6 +12,7 @@ from .tools import *
 from .termMatcher import TermMatcher
 from .POStagger import POStagger
 from .NPchunker import NPchunker
+from .NPchunkerDP import NPchunkerDP
 from .lefff import getLefff
 
 __all__ = [

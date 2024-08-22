@@ -5,7 +5,7 @@
 """
 # exemple : python3 nlptools  test/data/med10.csv.bz2 -p "lemme" -log test
 #
-from nlptools.tools import readCsvBz2, readTxtBz2, tab, blanc, readCsv, tab
+from nlptools.tools import readCsvBz2, readTxtBz2, tab, space, readCsv, tab
 import os
 import time
 import plac
@@ -13,7 +13,7 @@ import logging
 import sys
 from pathlib import Path
 from nlptools.run import full_run
-from nlptools.tools import  add_himself, addthe, delthe
+from nlptools.tools import  dive_term
 @plac.annotations(
     pipe=(
         "Name oh the NLPpipe ",
@@ -26,21 +26,27 @@ from nlptools.tools import  add_himself, addthe, delthe
     language=("language", "option", "lang", str, ["fr", "en"]),
     ini_file=("initialisation file [default config.ini]", "option", "ini_file", str),
     param=("initialisation param in json", "option", "param", str),  
-    format=("Format of the input corpus ", "option", "f", str, ["txt", "csv", "tsv"]),
-    output=("Format result ", "option", "o", str, ["list", "doc", "json", "dico_pos","dico_inflect"]),
+    format=("Format of the input corpus ", "option", "f", str, ["text", "terms"]),
+    output=("Format result; 'dico_pos' illegal 'with text' ", "option", "o", str, ["list", "doc", "json", "dico_pos"]),
     log=("log file", "option", "log", str),
 )
 
 def main (pipe, corpus, language, format, ini_file, param, output, log):
+     
+    # test parameter combinaison legality
+    if (format != "terms" and output == "dico_pos" ):
+            sys.exit(u'ERROR : terms_tools.py : illegal parameters combinaison')       
+    if (format == "terms" and pipe != "POStagger"  ):
+        sys.exit(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
 
     # creation d1 instance de pipe
-    pipe = full_run(pipe, language, ini_file, param, output)
+    pipe = full_run(pipe, language, ini_file, param, output, format)
     field = 2  # nombre de champs tsv des fichiers du corpus , format : label TAB text
 
     logging.basicConfig(filename=log, level=logging.DEBUG)
     t1 = time.time()
 
-    # test la presence corpus
+    # test la presence d un corpus
     if corpus:
         # entrée type fichier
         my_file = Path(corpus)
@@ -49,14 +55,12 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
             exit(0)
         else:
             # TODO : ameliorer le controle du format
-            if format in ["csv", "tsv"]:
+            if format == "terms":    
                 # csv, tsv
                 for [label, text] in readCsvBz2(corpus, field):
-                    if "dico_inflect" == output:   # mode generation dico flash format flechi
-                        print(label,tab,add_himself(text, language))
-                    text_nlp = pipe.pipe_analyse(addthe(text))
-                    # kw=list(set( ([w for w in span.split(blanc) if w.startswith(pref)])))
-                    print(label, tab, text_nlp, blanc)
+                    text_nlp = pipe.pipe_analyse(dive_term(text, language))
+                    # kw=list(set( ([w for w in span.split(space) if w.startswith(pref)])))
+                    print(label, tab, text_nlp, space)
                         
             else:
                 # text
@@ -66,15 +70,12 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
                     print(text_nlp)
     else:
         # entrée type stdin
-        if format in ["csv", "tsv"]:
+        if format == "terms": 
             # csv, tsv
             for row in readCsv(sys.stdin.readline, field):
-                if "dico_inflect" == output:
-                    print(row[0],tab,add_himself(row[1]))
-                text_nlp = pipe.pipe_analyse(addthe(row[1], language))
+                text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
                 print(row[0],tab,(text_nlp))
-                
-                    
+                         
         else:
             # text
             for line in sys.stdin:
@@ -101,4 +102,6 @@ if __name__ == "__main__":
         s = pstats.Stats("Profile.prof")
         s.strip_dirs().sort_stats("time").print_stats()
     else:
+        
         plac.call(main)
+        

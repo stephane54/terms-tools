@@ -23,9 +23,10 @@ from spacy.attrs import LOWER, POS, ENT_TYPE, IS_ALPHA, DEP, LEMMA, IS_PUNCT, IS
 import sys
 tab = "\t"
 cr = "\n"
-blanc = " "
+space = " "
 slash = "/"
-DET={"fr":"le ","en":"the "}
+LEFT={"fr":"le","en":"the","lenght":1}
+RIGHT={"fr":"est correct.","en":"is correct.","lenght":3}
 tiretb = "_"
 tireth = "-"
 matches = []
@@ -120,7 +121,7 @@ def norm_sent(line):
         r"[a-zA-Z,;\-\.\(\'\)\[\]\{\}]*\d+[a-zA-Z,;\-\(\'\)\[\]\.\{\}]*", "", line
     )
 
-    # suppression sup et sub, x blanc
+    # suppression sup et sub, x space
     # line = re.sub(r'[\n\r\t]|\bsu[p|b]\b|\b\w{1,2}\b|\b\d+\b|[.;,-]',"", line, flags=re.I)
 
     ##########   traitements des phrase
@@ -142,7 +143,7 @@ def norm_sent(line):
 # Nettoyage basique d une liste de mot
 def cleanWList(w_list):
 
-    # enleve blanc debut et fin
+    # enleve space debut et fin
     w_list = [w.strip() for w in w_list]
 
     # met en min
@@ -174,7 +175,7 @@ def readJsonBz2(bz2_loc, tag, n=10000):
 def mcTag(liste_mc, separateur=" "):
 
     liste = clean_w_list(liste_mc.split(";"))
-    return separateur.join([blanc.join(re.split(r"\s+", w)) for w in liste])
+    return separateur.join([space.join(re.split(r"\s+", w)) for w in liste])
 
 
 def mcMark(liste_mc, separateur=" "):
@@ -220,22 +221,21 @@ def getDicoInflect(doc):
     
         print(f"   {token.text} { token.tag_} {token.dep_} HEAD:[{token.head.text} {token.head.pos_}] CHILD : {[child for child in token.children]}")
   
-    '''
-    
+    '''    
     for token in doc :
         #if  token.dep_== 'ROOT' and token.pos_=='VERB':
         # calcul de flexion
         if  token.dep_== 'ROOT' and token.pos_== 'NOUN':
-            if token.text_with_ws[-1] == blanc:
+            if token.text_with_ws[-1] == space:
                 if token.tag_ != 'NNS':
-                    l_term.append( doc[token.i]._.inflect('NNS')+blanc ) 
+                    l_term.append( doc[token.i]._.inflect('NNS')+space ) 
                 else:
-                    l_term.append( doc[token.i]._.inflect('NN')+blanc ) 
-            elif token.text_with_ws[0] == blanc: 
+                    l_term.append( doc[token.i]._.inflect('NN')+space ) 
+            elif token.text_with_ws[0] == space: 
                 if token.tag_ != 'NNS':
-                    l_term.append( blanc+doc[token.i]._.inflect('NNS') ) 
+                    l_term.append( space+doc[token.i]._.inflect('NNS') ) 
                 else:
-                    l_term.append( blanc+doc[token.i]._.inflect('NN') ) 
+                    l_term.append( space+doc[token.i]._.inflect('NN') ) 
             else:
                 if token.tag_ != 'NNS':
                     l_term.append( doc[token.i]._.inflect('NNS') ) 
@@ -243,24 +243,26 @@ def getDicoInflect(doc):
                     l_term.append( doc[token.i]._.inflect('NN') ) 
         else:
             
-            if  token.text_with_ws != DET:
+            if  token.text_with_ws != LEFT:
                 l_term.append(token.text_with_ws)     
     
-    return(''.join(l_term)+tab+delthe(norm_form[1:], doc.lang_))
+    return(''.join(l_term)+tab+(norm_form[1:], doc.lang_))
                       
                       
-def addthe (word, lang):
-    return(DET[lang]+word)
+def dive_term (word, lang):
+    return(LEFT[lang]+space+word+space+RIGHT[lang])
 
-def delthe(word, lang):
+
+def clean_terms(doc):
+    print("=====================")
+    span = doc[LEFT["lenght"]:-abs((RIGHT["lenght"]))]
+    print("********************")
+    return(span.as_doc())
     
-    if DET[lang] == "en":
-        return(word[3:])
-    else:
-        return(word[2:])
 
 def add_himself (word):    
     return(''.join(word)+tab+''.join(word).replace(' ','_'))
+
 
 def getDocPosDico(doc):
     
@@ -273,10 +275,11 @@ def getDocPosDico(doc):
         #   list_stem.append(token._.stem)
         if token.pos_:
             list_text.append(token.text)
+            #list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
             list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
             list_lemma.append(token.lemma_)            
 
-    return (blanc.join(list_text)+tab+blanc.join(list_pos)+tab+blanc.join(list_lemma))
+    return (space.join(list_text)+tab+space.join(list_pos)+tab+space.join(list_lemma))
    
        
     
@@ -297,7 +300,7 @@ def getDocPos(doc):
             list_.append("stop:[" + str(token.is_stop) + "]")
             list_.append("\n")
 
-    return blanc.join(list_)
+    return space.join(list_)
 
 
 def getText(doc):
@@ -336,7 +339,7 @@ def getDoc(doc):
         # list_w.append("orth:"+token.orth)    #int ID of the verbatim text content.
         list_w.append(cr)
 
-    return blanc.join(list_w)
+    return space.join(list_w)
 
 
 # renvoi des ents replacé dans le corpus
@@ -350,8 +353,8 @@ def getEnts(doc, tag):
             if len(ent) > 0:  # car term contingus
                 text.append(tiretb.join(ent))
                 text.append(
-                    blanc
-                )  # attention parfois ajoute un blanc en de trop ex : on (MX_control ): M
+                    space
+                )  # attention parfois ajoute un space en de trop ex : on (MX_control ): M
                 ent = []
             ent.append(tag)
             ent.append(token.text)
@@ -363,7 +366,7 @@ def getEnts(doc, tag):
             else:
                 if len(ent) > 0:
                     text.append(tiretb.join(ent))  # scan term contingue
-                    text.append(blanc)
+                    text.append(space)
                     ent = []
                 text.append(token.text_with_ws)
 
@@ -381,7 +384,7 @@ def to_list( s ):
     return(s2)
 
 
-# supprime les informations des elements concernnat une liste de tag
+# supprime les informations des elements appartenant à une liste de tag
 # kind = defini si filtre de facon   positive = white
 #                                    negative = black
 def doc_remove_pos (doc, list_pos, list_attr, kind):
@@ -404,8 +407,8 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
 
     arr = np.arange(len(doc))
     new_index_to_old = arr[mask_to_del]
-    doc_offset_2_token = {tok.idx : tok.i  for tok in doc}  # pour les  extension perso
-    doc2_token_2_offset = {tok.i : tok.idx  for tok in doc2}  # pour les  extension perso
+    doc_offset_2_token = {tok.idx : tok.i  for tok in doc}  # pour les extensions perso
+    doc2_token_2_offset = {tok.i : tok.idx  for tok in doc2}  # pour les extensions perso
     new_user_data = {}
 
     for ((prefix, ext_name, offset, x), val) in doc.user_data.items():

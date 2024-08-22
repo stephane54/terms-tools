@@ -8,7 +8,7 @@
 from spacy.matcher import Matcher
 from spacy.matcher import PhraseMatcher
 from operator import itemgetter
-from nlptools.tools import tiretb, blanc, cleanWList, cr, tireth, tab
+from nlptools.tools import tiretb, space, cleanWList, cr, tireth, tab
 import json
 from spacy.language import Language
 from spacy.tokens import  Doc
@@ -122,7 +122,7 @@ class NPchunker(object):
         if self.show == "doc":
             sep = tiretb
         else:
-            sep = blanc
+            sep = space
 
         for taille, match_id, start, end in list(
             sorted(self.get_matches(), key=itemgetter(2), reverse=False)
@@ -164,7 +164,7 @@ class NPchunker(object):
 
         if self.show == "doc":
 
-            return blanc.join(cleanWList( [elt[1] for elt in list_chunk] ))
+            return space.join(cleanWList( [elt[1] for elt in list_chunk] ))
 
         else:
 

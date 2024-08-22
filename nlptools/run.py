@@ -11,7 +11,7 @@ from nlptools.exec_spacy_pipe import exec_spacy_pipe_fr
 
 class full_run (object):
 
-    def __init__(self, pipe, language, ini_file, param, output ):
+    def __init__(self, pipe, language, ini_file, param, output, format ):
 
         self.location = os.path.realpath(
             os.path.join(os.getcwd(), os.path.dirname("doc"))
@@ -20,11 +20,11 @@ class full_run (object):
         if (language == "en"):
             
             self.parsers = [
-                exec_spacy_pipe_en(pipe, ini_file, param, output),
+                exec_spacy_pipe_en(pipe, ini_file, param, output, format),
             ]
         else:
             self.parsers = [
-                exec_spacy_pipe_fr(pipe, ini_file, param, output),
+                exec_spacy_pipe_fr(pipe, ini_file, param, output, format),
             ]
 
     def pipe_analyse(self, text):

@@ -4,35 +4,41 @@
 @author: stephane schneider
 """
 import logging
-from nlptools.tools import cleanTokenLenght, blanc, readCsvBz2, getDocPos, doc_remove_pos, getDocPosDico, getDicoInflect
+from nlptools.tools import cleanTokenLenght, space, readCsvBz2, getDocPos, doc_remove_pos, getDocPosDico, getDicoInflect, clean_terms
 from nlptools.tools import list_attr_spacy
 from spacy.language import Language
 from spacy.tokens import Doc
 from json import dumps
 
 @Language.factory(
-    "POStagger", default_config={"whitelist_tag_lemme": "", "show": "doc"}
+    "POStagger", default_config={"whitelist_tag_lemme": "", "show": "doc", "format":""}
 )
 def create_POStagger_component(
-    nlp: Language, name: str, whitelist_tag_lemme: list, show: str
+    nlp: Language, name: str, whitelist_tag_lemme: list, show: str, format:str
 ):
-    return POStagger(nlp, whitelist_tag_lemme, show)
+    return POStagger(nlp, whitelist_tag_lemme, show, format)
 
 
 class POStagger(object):
 
-    def __init__(self, nlp, list_cat, show):
+    def __init__(self, nlp, list_cat, show, format):
 
         self.nlp = nlp
         self.list_cat = list_cat
         self.show = show
-
+        self.format = format
+        
     def __call__(self, doc):
 
         if len(self.list_cat) != 0:
-
+            
             doc = doc_remove_pos (doc, self.list_cat, list_attr_spacy, kind="black" )
             
+            
+        if self.format == "terms":    
+            
+            doc = clean_terms(doc)
+        
 
         if self.show == "doc":
 
@@ -44,7 +50,7 @@ class POStagger(object):
                 list_lemme.append(token.lemma_)
 
             # outpu text avec flow de lemmes
-            return blanc.join(list_lemme)
+            return space.join(list_lemme)
 
         if self.show == "list":
             
@@ -55,12 +61,13 @@ class POStagger(object):
             
             # output list
             return getDocPosDico(doc)
-        
+       
+        """ MUTATE
         if self.show == "dico_inflect":
             
             # output list
             return getDicoInflect(doc)
-
+       """
         if self.show == "json":
             
             # output json

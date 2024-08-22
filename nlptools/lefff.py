@@ -48,7 +48,7 @@ Current mapping used spaCy to Lefff is :
 # VPP	   past participle
 # VPR	   present participle
 # VS	   subjunctive verb form
-from nlptools.tools import blanc, cr, tab
+from nlptools.tools import space, cr, tab
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
 from json import dumps
@@ -95,7 +95,7 @@ def getLefff (doc, show, tagList):
                 list_.append(tab)
                 list_.append(cr)
 
-        return blanc.join(list_)
+        return space.join(list_)
         
     if show == "dico_pos":        
         list_lemma = []
@@ -110,9 +110,9 @@ def getLefff (doc, show, tagList):
                 list_text.append(token.text) 
                 list_pos.append(token.pos_) 
             
-                return (blanc.join(list_text)+                
-                        tab+blanc.join(list_lemma)+
-                        tab+blanc.join(list_pos)+
+                return (space.join(list_text)+                
+                        tab+space.join(list_lemma)+
+                        tab+space.join(list_pos)+
                         tab+(dumps(list_token, ensure_ascii=False)))
     
         
@@ -128,7 +128,7 @@ def getLefff (doc, show, tagList):
 
     if show == "doc":
 
-        return blanc.join(list_lemme)
+        return space.join(list_lemme)
 
     #return(list())
 
