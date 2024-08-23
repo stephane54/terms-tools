@@ -28,11 +28,12 @@ class exec_spacy_pipe_en(object):
     def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
    
         pipe_list_en = [
-            "termMatcher",
             "NPchunker",
             "POStagger",
             "POStaggerStanza",
             "NPchunkerDP",
+            "termMatcher",
+            "termMatcherStanza",
         ]
 
         if pipe not in pipe_list_en:
@@ -75,36 +76,37 @@ class exec_spacy_pipe_en(object):
             configINI.update(configPARAM) 
 
         # Association et verification des fichiers de ressources
-        if configINI.get("termMatcher", "termMatcher_vocabulary") == "MX_jsonl_porter":
-            from nlptools.resources import MX_jsonl_porter as termMatcher_vocabulary
+        if configINI.get("termMatcher", "termMatcher_vocabulary_en") == "MX_jsonl_porter":
+            from nlptools.resources import MX_jsonl_porter as termMatcher_vocabulary_en
         else:
             if (
-                configINI.get("termMatcher", "termMatcher_vocabulary")
+                configINI.get("termMatcher", "termMatcher_vocabulary_en")
                 == "MX_jsonl_snowball"
             ):
                 from nlptools.resources import (
-                    MX_jsonl_snowball as termMatcher_vocabulary,
+                    MX_jsonl_snowball as termMatcher_vocabulary_en,
                 )
             elif (
-                    configINI.get("termMatcher", "termMatcher_vocabulary")
+                    configINI.get("termMatcher", "termMatcher_vocabulary_en")
                     == "MX_jsonl_lemme"
                 ):
                     from nlptools.resources import (
-                        MX_jsonl_lemme as termMatcher_vocabulary,
+                        MX_jsonl_lemme as termMatcher_vocabulary_en,
                     )
             elif (
-                configINI.get("termMatcher", "termMatcher_vocabulary")
-                    == "MX_jsonl_lemme_test"
+                configINI.get("termMatcher", "termMatcher_vocabulary_en")
+                    == "MX_jsonl_lemme_test_en"
                 ):
                     from nlptools.resources import (
-                        MX_jsonl_lemme_test as termMatcher_vocabulary
+                        MX_jsonl_lemme_test_en as termMatcher_vocabulary_en
                 )
             else:
                 raise ValueError("terminology is ommited !")
         
         # for NPchunker
-        if configINI.get("NPchunker", "NPchunker_rules") == "NPchunker_rules_gen":
-            from nlptools.resources import NPchunker_rules_gen as NPchunker_rules
+
+        if configINI.get("NPchunker", "NPchunker_rules_en") == "NPchunker_rules_gen_en":
+            from nlptools.resources import NPchunker_rules_gen_en as NPchunker_rules_en
         else:
             raise ValueError("NPchunker : rules file is ommited !")
 
@@ -171,7 +173,7 @@ class exec_spacy_pipe_en(object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": termMatcher_tag,
-                    "termMatcher_vocabulary": termMatcher_vocabulary,
+                    "termMatcher_vocabulary": termMatcher_vocabulary_en,
                 },
                 last=True,
             )
@@ -187,6 +189,33 @@ class exec_spacy_pipe_en(object):
                 config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show,"format":self.format},
                 last=True,
             )
+             
+        # TERMMATCHER STANZA
+        if pipe == "termMatcherStanza":
+            if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
+            
+                self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
+                
+                self.nlp.add_pipe(
+                    "POStagger",
+                    name="POStagger",
+                    config={"whitelist_tag_lemme":termMatcher_POS_whitelist,
+                            "show": "pipe",},
+                    last=True,
+                )
+            
+                self.nlp.add_pipe(
+                "termMatcher",
+                name="termMatcher",
+                config={
+                    "show": self.show,
+                    "termMatcher_tag": termMatcher_tag,
+                    "termMatcher_vocabulary": termMatcher_vocabulary_en,
+                },
+                last=True,
+                )
+            else:
+                raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ stanza")
 
         # CHUNKING SPACY
         if pipe == "NPchunker" or pipe == "NPchunkerDP":

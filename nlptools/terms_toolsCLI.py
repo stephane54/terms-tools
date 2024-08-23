@@ -22,7 +22,7 @@ from nlptools.tools import  dive_term
         "positional",
         None,
         str,
-        ["termMatcher", "NPchunker", "POStaggerStanza","POStagger", "NPchunkerDP"]
+        ["NPchunker", "POStaggerStanza","POStagger", "NPchunkerDP", "termMatcher","termMatcherStanza",]
     ),
     corpus=("Path to corpus file", "option", "file", str),
     language=("language", "option", "lang", str, ["fr", "en"]),
