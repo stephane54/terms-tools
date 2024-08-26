@@ -38,7 +38,8 @@ class exec_spacy_pipe_en(object):
         ]        
 
         if pipe not in pipe_list_en:
-            sys.exit(f"ERROR : invalid pipe ({pipe}) name or language (en) setting ")
+            print(f"ERROR : invalid pipe ({pipe}) name or language (en) setting ")
+            sys.exit(f"exit")
         if show is None:
             self.show = exec_spacy_pipe_en.show
         else:
