@@ -19,7 +19,7 @@ export PYTHONPATH=""
 
 # reconstruction de la distribution
 echo "build distrib......................................................"
-rm -rf dist nlptools.egg-info build
+rm -rf dist terms_tools.egg-info build
 
 # Construit la distribition binaire (fromat wheel)
 python3 setup.py bdist_wheel

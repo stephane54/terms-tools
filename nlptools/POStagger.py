@@ -4,7 +4,7 @@
 @author: stephane schneider
 """
 import logging
-from nlptools.tools import cleanTokenLenght, space, readCsvBz2, getDocPos, doc_remove_pos, getDocPosDico, getDicoInflect, clean_terms
+from nlptools.tools import cleanTokenLenght, space, readCsvBz2, getDocPos, doc_remove_pos, getDicoPos, getDicoAnnot, clean_terms
 from nlptools.tools import list_attr_spacy
 from spacy.language import Language
 from spacy.tokens import Doc
@@ -60,7 +60,12 @@ class POStagger(object):
         if self.show == "dico_pos":
             
             # output list
-            return getDocPosDico(doc)
+            return getDicoPos(doc)
+        
+        if self.show == "dico_annot":
+            
+            # output list
+            return getDicoAnnot(doc)
        
         """ MUTATE
         if self.show == "dico_inflect":

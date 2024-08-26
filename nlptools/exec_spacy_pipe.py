@@ -11,6 +11,7 @@ import lemminflect
 import json
 import os
 import re
+import sys
 import stanza
 import spacy_stanza
 from configparser import ConfigParser
@@ -29,15 +30,15 @@ class exec_spacy_pipe_en(object):
    
         pipe_list_en = [
             "NPchunker",
-            "POStagger",
-            "POStaggerStanza",
             "NPchunkerDP",
-            "termMatcher",
             "termMatcherStanza",
-        ]
+            "POStaggerStanza",
+            "termMatcherSpacy",
+            "POStaggerSpacy"
+        ]        
 
         if pipe not in pipe_list_en:
-            raise ValueError("invalid pipe name or language setting")
+            sys.exit(u"ERROR : invalid pipe name or language setting")
         if show is None:
             self.show = exec_spacy_pipe_en.show
         else:
@@ -136,7 +137,7 @@ class exec_spacy_pipe_en(object):
 
         # TRACE print("1 {} {}".format( whitelist_tag_lemme , type(whitelist_tag_lemme)))
         # POSTAGGING LEMMINFLECT
-        if pipe == "POStagger":
+        if pipe == "POStaggerSpacy":
             # init dun pipe avec chargement du modele sans parser et ner
             self.nlp = spacy.load(self.modele, disable=["ner"])
             # ajout du tagger au pipe courant
@@ -148,7 +149,7 @@ class exec_spacy_pipe_en(object):
             )
             
         # TERMMATCHING SPACY
-        if pipe == "termMatcher":
+        if pipe == "termMatcherSpacy":
             # init dun pipe avec chargement du "modele"
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
                 # cas ou on POStag le texte avant (depend des formes de la ressource a appliquer)
@@ -230,7 +231,7 @@ class exec_spacy_pipe_en(object):
                     name="NPchunker",
                     config={
                         "lang": "en",
-                        "NPchunker_rules": NPchunker_rules,
+                        "NPchunker_rules": NPchunker_rules_en,
                         "show": self.show,
                         "label": "",
                     },
@@ -262,13 +263,16 @@ class exec_spacy_pipe_fr (object):
 
     def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
         
+        
+        #  nlp fr component list 
         pipe_list_fr = [
-                "POStagger",
+                "termMatcherStanza",
                 "POStaggerStanza",
+                "POStaggerSpacy"
                 ]
 
         if pipe not in pipe_list_fr:
-            raise ValueError("invalid pipe name or language setting")
+            sys.exit(u"ERROR : invalid pipe name or language setting")
 
         if show is None:
             self.show = exec_spacy_pipe_fr.show
@@ -308,10 +312,14 @@ class exec_spacy_pipe_fr (object):
         try:
             self.whitelist_tag_lemme =  to_list(configINI.get("POStagger", "POS_whitelist"))
             #blacklist_tag_lemme = in_list(configINI.get("POStagger", "POS_blacklist")) ! pas effectif
+            termMatcher_POS_whitelist = to_list(configINI.get("termMatcher", "termMatcher_POS_whitelist"))
+            termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
+            
         except Exception as err:
             print("Error lors de la phase d'initialisation [lecture fichier .ini]")
             exit(err)
 
+        # POStag
         if pipe == "POStaggerStanza":
             
                 self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
@@ -323,7 +331,7 @@ class exec_spacy_pipe_fr (object):
                     last=True,
                 )
 
-        if pipe == "POStagger":
+        if pipe == "POStaggerSpacy":
             
             # init dun pipe avec chargement du modele sans parser et ner
             self.nlp = spacy.load(self.modele, disable=[ "ner"])
@@ -337,16 +345,55 @@ class exec_spacy_pipe_fr (object):
                 "lefff_french_lemmatizer",
                 after="lefff_french_tagger"
             )
+              
+        
+        # TERMMATCHER STANZA
+        if pipe == "termMatcherStanza":
+            
+            # Association et verification des fichiers de ressources
+            if  (configINI.get("termMatcher", "termMatcher_vocabulary_fr")
+                        == "MX_jsonl_lemme_test_fr"):
+                        from nlptools.resources import (
+                            MX_jsonl_lemme_test_fr as termMatcher_vocabulary_fr
+                    )
+            else:
+                raise ValueError("terminology is ommited !")              
+            
+            if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
+            
+                self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
+                
+                self.nlp.add_pipe(
+                    "POStagger",
+                    name="POStagger",
+                    config={"whitelist_tag_lemme":termMatcher_POS_whitelist,
+                            "show": "pipe",},
+                    last=True,
+                )
+            
+                self.nlp.add_pipe(
+                "termMatcher",
+                name="termMatcher",
+                config={
+                    "show": self.show,
+                    "termMatcher_tag": termMatcher_tag,
+                    "termMatcher_vocabulary": termMatcher_vocabulary_fr,
+                },
+                last=True,
+                )
+            else:
+                raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ stanza")
+
             
 
     def __call__(self, text):
         # PATCH text=" ".join(text.strip().split())
         # execution du pipe
     
-        if self.pipe == "POStagger":
+        if self.pipe == "POStaggerSpacy":
             return getLefff (self.nlp(text), self.show, self.whitelist_tag_lemme, self.format)
         
-        if self.pipe == "POStaggerStanza":
+        if self.pipe in ["POStaggerStanza","termMatcherStanza"]:
             return self.nlp(text)
         
 

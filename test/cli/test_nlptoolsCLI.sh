@@ -7,17 +7,17 @@ set +x
 #     ./test/cli/test_nlptoolsCLI.sh
 # resultat dans "result.txt"
 #
-NLP_TOOLS=$HOME/app/NLP_tools
+NLP_TOOLS=$HOME/app/terms_tools/terms_tool
 CLI=$NLP_TOOLS/test/cli
 DATA=$NLP_TOOLS/test/data
 INI_EN=$NLP_TOOLS/test/conf_test_en.ini
 INI_FR=$NLP_TOOLS/test/conf_test_fr.ini
 
-engine_en="stemmer POStagger ner NPchunker NPchunkerDP termMatcher" #termMatcher
-engine_fr="stemmer lefff_tagger"
+engine_en="POStagger NPchunker NPchunkerDP termMatcher"
+engine_fr="POStagger termMatcher"
 
 file_result=result_test_nlptoolsCLI.txt
-out_format="json doc list"
+out_format="json doc list dico_pos dico_annot"
 cat /dev/null >| $CLI/$file_result
 
 test_()
@@ -39,11 +39,11 @@ do
   for out in $out_format
   do
       echo "--------------------------------------- Input TXT -  show= $out" >> $CLI/$file_result
-      cmd="cat $DATA/not-en.txt | python3 $NLP_TOOLS/nlptools/nlptoolsCLI.py $elt -ini_file $INI_EN -lang en -f txt -o $out -log  analyze.log"
+      cmd="cat $DATA/not-en.txt | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang en -f text -o $out -log  analyze.log"
       test_
       echo "--------------------------------------- Input TSV - show= $out" >> $CLI/$file_result
-      # input tsv - output list
-      cmd="cat $DATA/not-en.tsv | python3 $NLP_TOOLS/nlptools/nlptoolsCLI.py $elt -ini_file $INI_EN -lang en -f txt -o $out -log  analyze.log"
+      # list of term
+      cmd="cat $DATA/not-en.tsv | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang en -f terms -o $out -log  analyze.log"
       test_
   done
 
@@ -57,8 +57,12 @@ do
 
   for out in $out_format
   do
-     echo "--------------------------------------- Input TXT - show= $out" >> $CLI/$file_result
-    cmd="cat $DATA/not-fr.txt | python3  $NLP_TOOLS/nlptools/nlptoolsCLI.py $elt  -ini_file $INI_FR -lang fr -f txt -o $out -log  analyze.log"
+    # text
+    echo "--------------------------------------- Input TXT - show= $out" >> $CLI/$file_result
+    cmd="cat $DATA/not-fr.txt | python3  $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_FR -lang fr -f text -o $out -log  analyze.log"
+    test_
+    # list of term
+    cmd="cat $DATA/not-fr.tsv | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang fr -f terms -o $out -log  analyze.log"
     test_
   done
 

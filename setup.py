@@ -9,7 +9,7 @@ with open("tag.txt") as f:
     version = f.read()
 
 setup(
-    name="nlptools",
+    name="terms_tools",
     version=version,
     zip_safe=False,
     author="stephane schneider",
@@ -18,13 +18,13 @@ setup(
     author_email="stephane.schneider@inist.fr",
     maintainer="stephane",
     maintainer_email="stephane.schneider@inist.fr",
-    keywords="nlp spacy scientific package Python",
+    keywords="nlp scientific package Python for computationnal terminology",
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
     packages=find_packages(),
     # packages = [ "nlptools", "nlptools.resources","nlptools.models"],
     # entry_points={"console_scripts": ["nlptools = nlptools.nlptoolsCLI:main"]},
     entry_points={
-        "console_scripts": ["nlptools = nlptools.nlptoolsCLI:console_scripts_main"]
+        "console_scripts": ["terms_tools = terms_tools.terms_toolsCLI:console_scripts_main"]
     },
     install_requires = reqs,
     dependency_links = [

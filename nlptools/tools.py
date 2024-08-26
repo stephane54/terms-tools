@@ -254,7 +254,7 @@ def add_himself (word):
     return(''.join(word)+tab+''.join(word).replace(' ','_'))
 
 
-def getDocPosDico(doc):
+def getDicoPos(doc):
     
     list_text = []
     list_pos = []
@@ -271,8 +271,25 @@ def getDocPosDico(doc):
 
     return (space.join(list_text)+tab+space.join(list_pos)+tab+space.join(list_lemma))
    
-       
+
+#{"label":"Analytical chemistry","pattern":[ {"lemma":"analytical","pos":"ADJ"}, {"lemma":"chemistry","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/137906>"}    
+def getDicoAnnot(doc):
     
+    tab = []
+    ld = {}
+    for token in doc:
+        # if token._.stem:
+        #   list_stem.append(token._.stem)
+        dic = {}
+        if token.pos_:
+            dic["pos"]=token.pos_
+            dic["lemma"]=token.lemma_
+        tab.append(dic)
+    ld["label"]=str(doc)
+    ld["pattern"]=tab
+    return(ld)
+           
+
 def getDocPos(doc):
 
     list_ = []

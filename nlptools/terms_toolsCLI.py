@@ -11,6 +11,7 @@ import time
 import plac
 import logging
 import sys
+import json
 import stanza
 import spacy_stanza
 from pathlib import Path
@@ -22,24 +23,33 @@ from nlptools.tools import  dive_term
         "positional",
         None,
         str,
-        ["NPchunker", "POStaggerStanza","POStagger", "NPchunkerDP", "termMatcher","termMatcherStanza",]
+        ["NPchunker","POStagger", "NPchunkerDP", "termMatcher"]
     ),
     corpus=("Path to corpus file", "option", "file", str),
     language=("language", "option", "lang", str, ["fr", "en"]),
     ini_file=("initialisation file [default config.ini]", "option", "ini_file", str),
     param=("initialisation param in json", "option", "param", str),  
     format=("Format of the input corpus ", "option", "f", str, ["text", "terms"]),
-    output=("Format result; 'dico_pos' illegal 'with text' ", "option", "o", str, ["list", "doc", "json", "dico_pos"]),
+    output=("Format result; 'dico_pos' illegal 'with text' ", "option", "o", str, ["list", "doc", "json", "dico_pos", "dico_annot"]),
     log=("log file", "option", "log", str),
 )
 
 def main (pipe, corpus, language, format, ini_file, param, output, log):
      
     # test parameter combinaison legality
-    if (format != "terms" and output == "dico_pos" ):
+    if (format != "terms" and output in ["dico_pos","dico_annot"] ):
             sys.exit(u'ERROR : terms_tools.py : illegal parameters combinaison')       
-    if (format == "terms" and pipe not in  ["POStagger", "POStaggerStanza"]  ):
+            
+    if (format == "terms" and pipe !=  "POStagger"  ):
         sys.exit(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
+
+    
+    # Forcer Utilisation de Stanza ou Spacy
+    if pipe == "POStagger":  
+        pipe =  "POStaggerStanza" #"POStaggerSpacy"
+    if pipe == "termMatcher":  
+        pipe =  "termMatcherStanza" #"termMatcherSpacy"
+    
 
     # creation d1 instance de pipe
     pipe = full_run(pipe, language, ini_file, param, output, format)
@@ -62,8 +72,11 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
                 for [label, text] in readCsvBz2(corpus, field):
                     text_nlp = pipe.pipe_analyse(dive_term(text, language))
                     # kw=list(set( ([w for w in span.split(space) if w.startswith(pref)])))
-                    print(label, tab, text_nlp, space)
-                        
+                    if output == "dico_annot":
+                        text_nlp["id"]=label
+                        print(label,tab,json.dumps(text_nlp, ensure_ascii=False))
+                    else :
+                        print(label, tab, text_nlp, space)       
             else:
                 # text
                 for text in readTxtBz2(corpus, field):
@@ -76,7 +89,11 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
             # csv, tsv
             for row in readCsv(sys.stdin.readline, field):
                 text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
-                print(row[0],tab,(text_nlp))
+                if output == "dico_annot":
+                    text_nlp["id"]=row[0]
+                    print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
+                else:
+                    print(row[0],tab,(text_nlp))
                          
         else:
             # text

@@ -17,7 +17,7 @@ from pathlib import Path
 def main():
 
     _local_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    pipe = "termMatcher"  # choix du pipe a executer , parmi {stemmer,termMatcher,ner,NPchunker,POStagger,gazetteer}
+    pipe = "POStagger"  # choix du pipe a executer , parmi {stemmer,termMatcher,ner,NPchunker,POStagger,gazetteer}
     ini_file = os.path.join(_local_path, "conf_test_en.ini")
     #print(ini_file)
     log = "test.log"  # fichier de log
@@ -25,8 +25,8 @@ def main():
     field = 1  # indique le nombre de champs tsv/csv/txt des fichiers du corpus
     language = "en" #langue
     param=""
-
-    run = full_run(pipe, language, ini_file, param, "doc")   # doc = corpus traité sur la sortie standard
+    #(pipe, language, ini_file, param, output, format ):
+    run = full_run(pipe, language, ini_file, param, "doc","text")   # doc = corpus traité sur la sortie standard
     logging.basicConfig(filename=log, level=logging.DEBUG)
     t1 = time.time()
 
