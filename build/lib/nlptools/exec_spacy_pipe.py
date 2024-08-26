@@ -15,7 +15,7 @@ import sys
 import stanza
 import spacy_stanza
 from configparser import ConfigParser
-from lefff import getLefff
+from nlptools.lefff import getLefff
 from nlptools.tools import to_list
 import warnings
 

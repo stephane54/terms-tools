@@ -1,3 +1,3 @@
 [console_scripts]
-terms_tools = terms_tools.terms_toolsCLI:console_scripts_main
+terms_tools = nlptools.terms_toolsCLI:console_scripts_main
 

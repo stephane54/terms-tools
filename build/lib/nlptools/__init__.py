@@ -20,7 +20,7 @@ __all__ = [
             "NPchunker",
             "POStagger",
             "NPchunkerDP",
-            "getLefff",
+            "lefff",
 ]
 
 logger = logging.getLogger(__name__)

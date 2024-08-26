@@ -24,7 +24,7 @@ setup(
     # packages = [ "nlptools", "nlptools.resources","nlptools.models"],
     # entry_points={"console_scripts": ["nlptools = nlptools.nlptoolsCLI:main"]},
     entry_points={
-        "console_scripts": ["terms_tools = terms_tools.terms_toolsCLI:console_scripts_main"]
+        "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main"]
     },
     install_requires = reqs,
     dependency_links = [
