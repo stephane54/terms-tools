@@ -33,7 +33,7 @@ setup(
     description="Bibliotheque de composants python NLP",
     long_description=open(os.path.join(os.path.dirname(__file__), "README.md")).read(),
     license="GPL V3",
-    url="http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git",
+    url="http://vxgit.intra.inist.fr:60000/git/RichText/terms_tools.git",
     platforms="ALL",
     python_requires=">=3.6",
 )
