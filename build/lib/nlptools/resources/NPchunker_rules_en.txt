@@ -1,0 +1,17 @@
+# 1 mot
+#[{"POS": {"IN": ["NOUN", "PROPN"]}}]
+#[{"TAG": {"IN": ["JJ", "VBG", "VBN"]}}]
+# 2 mots
+[{"TAG": {"IN": ["JJ", "VBG", "VBN"]}},{"POS": {"IN": ["NOUN", "PROPN"]}}]
+[{"POS": {"IN": ["NOUN", "PROPN"]}},{"POS": {"IN": ["NOUN", "PROPN"]}}]
+# 3 mots
+[{"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["PREP", "ADP"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+[{"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+[{"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}},{"POS": {"IN": ["NOUN", "PROPN"]}}]
+[{"TAG": {"IN": ["JJ" , "VBG", "VBN"]}},{"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+# 4 mots
+#[{"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["PREP", "ADP"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+#[{"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["PREP", "ADP"]}}, {"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+#[{"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["PREP", "ADP"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+#[{"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["PREP", "ADP"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}, {"POS": {"IN": ["CONJ"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]
+#[{"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["CONJ"]}}, {"TAG": {"IN": ["JJ" , "VBG", "VBN"]}}, {"POS": {"IN": ["NOUN", "PROPN"]}}]

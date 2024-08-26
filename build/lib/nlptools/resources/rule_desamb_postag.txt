@@ -1,0 +1,142 @@
+Correction erreur postag dico:
+=================================
+
+
+Ring:VERB[root VerbForm=Ger]
+
+EXEMPLE :
+mentalising	   VERB[root VerbForm=Ger]	mentalise 
+
+RULE
+VERB [root VerbForm=Ger]
+	=> NOUN , keep token.txt
+
+------------------------------------------------
+Ring:VERB[root VerbForm=Ger] + [NOUN] + *
+
+EXEMPLE : 
+faking amnesia	VERB[root VerbForm=Ger] NOUN[obj Number=Sing]	fake amnesia
+{"id": 180, "start": 1068, "end": 1074, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "fake", "dep": "advcl", "head": 178}, 
+{"id": 181, "start": 1075, "end": 1082, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "amnesia", "dep": "obj", "head": 180}
+
+running span task	VERB[root VerbForm=Ger] NOUN[compound Number=Sing] NOUN[obj Number=Sing]	run span task
+IN TEXT :
+{"id": 78, "start": 417, "end": 424, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "running", "dep": "compound", "head": 79},
+{"id": 79, "start": 425, "end": 429, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "span", "dep": "compound", "head": 80},
+{"id": 80, "start": 430, "end": 434, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "task", "dep": "conj", "head": 71}
+
+taking note	VERB[root VerbForm=Ger] NOUN[obj Number=Sing]	take note
+{"id": 44, "start": 226, "end": 232, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "take", "dep": "advcl", "head": 39}, 
+{"id": 45, "start": 233, "end": 237, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "note", "dep": "obj", "head": 44},
+
+crashing memories paradigm	VERB[root VerbForm=Ger] NOUN[compound Number=Plur] NOUN[obj Number=Sing]
+{"id": 34, "start": 207, "end": 215, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "crashing", "dep": "amod", "head": 35}, 
+{"id": 35, "start": 216, "end": 224, "tag": "NNS", "pos": "NOUN", "morph": "Number=Plur", "lemma": "memory", "dep": "compound", "head": 36}, 
+{"id": 36, "start": 225, "end": 233, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "paradigm", "dep": "nmod", "head": 28}, 
+
+changing distractor effect	VERB[root VerbForm=Ger] NOUN[compound Number=Sing] NOUN[obj Number=Sing]	change distractor effect
+{"id": 228, "start": 1231, "end": 1239, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "change", "dep": "amod", "head": 230},
+{"id": 229, "start": 1240, "end": 1250, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "distractor", "dep": "compound", "head": 230},
+{"id": 230, "start": 1251, "end": 1257, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "effect", "dep": "nsubj", "head": 233},
+
+working memory training	VERB[root VerbForm=Ger] NOUN[compound Number=Sing] NOUN[obj Number=Sing]	work memory training
+{"id": 34, "start": 203, "end": 210, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "work", "dep": "csubj", "head": 38},
+{"id": 35, "start": 211, "end": 217, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "memory", "dep": "compound", "head": 36},
+{"id": 36, "start": 218, "end": 226, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "training", "dep": "obj","head": 34},
+
+remembering to recall	VERB[root VerbForm=Ger] PART[mark ] VERB[xcomp VerbForm=Inf]	remember to recall
+
+RULE:
+VERB [root VerbForm=Ger] + [NOUN] *
+	=> NOUN , keep token.txt
+
+-------------------------------------------
+Ring: VERB[amod VerbForm=Ger] 
+
+* EXEMPLE :
+changing - state effect	VERB[amod VerbForm=Ger] PUNCT[punct ] NOUN[compound Number=Sing] NOUN[root Number=Sing]	change - state effect
+note - taking effect	NOUN[compound Number=Sing] PUNCT[punct ] VERB[amod VerbForm=Ger] NOUN[root Number=Sing]	note - take effect
+
+interleaving learning	VERB[amod VerbForm=Ger] NOUN[root Number=Sing]	interleave learning
+POSTAGGIN IN TEXTS :
+{"id": 6, "start": 44, "end": 56, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "interleave", "dep": "advcl", "head": 16},
+{"id": 7, "start": 57, "end": 65, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "learning", "dep": "obj", "head": 6},
+
+verbal overshadowing effect	ADJ[amod Degree=Pos] VERB[amod VerbForm=Ger] NOUN[root Number=Sing]	verbal overshadow effect
+{"id": 139, "start": 764, "end": 770, "tag": "JJ", "pos": "ADJ", "morph": "Degree=Pos", "lemma": "verbal", "dep": "amod", "head": 141}, {"id": 140, "start": 771, "end": 784, "tag": "VBG", "pos": "VERB", "morph": "VerbForm=Ger", "lemma": "overshadow", "dep": "amod", "head": 141}, 
+{"id": 141, "start": 785, "end": 791, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "effect", "dep": "obj", "head": 137}, 
+{"id": 142, "start": 791, "end": 792, "tag": ".", "pos": "PUNCT", "morph": "", "lemma": ".", "dep": "punct", "head": 135}]
+
+vanishing cues method	VERB[amod VerbForm=Ger] NOUN[compound Number=Plur] NOUN[root Number=Sing]	vanish cue method
+POSTAGGIN IN TEXTS :
+{"id": 80, "start": 520, "end": 523, "tag": "CC", "pos": "CCONJ", "morph": "", "lemma": "and", "dep": "cc", "head": 83}, {"id": 81, "start": 524, "end": 533, "tag": "NN", "pos": "NOUN", "morph": "Number=Sing", "lemma": "vanishing", "dep": "compound", "head": 82}, {"id": 82, "start": 534, "end": 538, "tag": "NNS", "pos": "NOUN", "morph": "Number=Plur", "lemma": "cue", "dep": "compound", "head": 83}, {"id": 83, "start": 539, "end": 546, "tag": "NNS", "pos": "NOUN", "morph": "Number=Plur", "lemma": "method", "dep": "conj", "head": 79}
+
+list - method directed - forgetting paradigm	NOUN[compound Number=Sing] PUNCT[punct ] NOUN[root Number=Sing] VERB[amod Tense=Past|VerbForm=Part] PUNCT[punct ] VERB[amod VerbForm=Ger] NOUN[conj Number=Sing]	list - method direct - forget paradigm
+
+
+
+alternating serial reaction time	VERB[root VerbForm=Ger] ADJ[amod Degree=Pos] NOUN[compound Number=Sing] NOUN[obj Number=Sing]	alternate serial reaction time
+
+* RULE:
+VERB[amod VerbForm=Ger]   
+	=> NOUN, keep token.txt
+----------------------------------------------
+VERB[acl VerbForm=Ger]
+VERB[advcl VerbForm=Ger]
+
+EXEMPLE : 
+feeling of knowing judgments	NOUN[root Number=Sing] SCONJ[mark ] VERB[acl VerbForm=Ger] NOUN[obj Number=Plur]	feeling of know judgment
+recollection without remembering	NOUN[root Number=Sing] SCONJ[mark ] VERB[acl VerbForm=Ger]	recollection without remember
+predictions of knowing	NOUN[root Number=Plur] ADP[mark ] VERB[acl VerbForm=Ger]	prediction of know
+
+RULE:
+VERB[amod VerbForm=Ger]   
+	=> NOUN, ou ADJ => keep token.txt
+
+------------------------------------------------
+
+Ring:VERB[compound VerbForm=Ger] 
+
+EXEMPLE:
+saving - enhanced memory	VERB[compound VerbForm=Ger] PUNCT[punct ] VERB[amod 
+thinking - induced forgetting	VERB[compound VerbForm=Ger] PUNCT[punct ] VERB[amod Tense=Past|VerbForm=Part] NOUN[root Number=Sing]	think - induce forget
+
+RULE:
+VERB[compound VerbForm=Ger]   
+	=> NOUN, keep token.txt
+
+
+------------------------------------
+
+PAS TOUCHER
+
+has for diagnostic tool	
+VERB [root][Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin] ADP [case][] ADJ [amod][Degree=Pos] NOUN [obl][Number=Sing]	have for diagnostic tool
+NE RIEN CHANGER VERB [root][Mood=Ind] => VERB 
+
+--------------------------------------
+Red
+
+EXEMPLE :
+event-based prospective memory	
+NOUN [compound][Number=Sing] PUNCT [punct][] VERB [amod][Tense=Past|VerbForm=Part] ADJ [amod][Degree=Pos] NOUN [root][Number=Sing]	event - base prospective memory
+induced false beliefs	
+VERB [root][Tense=Past|VerbForm=Part] ADJ [amod][Degree=Pos] NOUN [obj][Number=Plur]	induce false belief
+
+RULE : 
+VERB [root][Tense=Past|VerbForm=Part] 
+	=> ADJ
+	
+-----------------------------------------------------
+VERB[amod Tense=Past|VerbForm=Fin]
+
+EXEMPLE :
+prospective thought	ADJ[amod Degree=Pos] VERB[root Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin]	prospective think
+lost in the mall paradigm	VERB[root Tense=Past|VerbForm=Fin] ADP[case ] DET[det Definite=Def|PronType=Art] NOUN[compound Number=Sing] NOUN[obl Number=Sing]	lose in the mall paradigm
+
+		
+		
+		
+		
+		
+		

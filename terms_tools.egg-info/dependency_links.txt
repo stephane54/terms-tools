@@ -1,0 +1,1 @@
+git+http://vxgit.intra.inist.fr:60000/git/RichText/spacy_lefff.git@0.4.1#egg=spacy_lefff

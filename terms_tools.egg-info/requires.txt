@@ -1,0 +1,13 @@
+click==7.1.2
+jinja2
+lemminflect
+nltk
+numpy==1.19.3
+plac==0.9.6
+regex
+spacy==3.0.4
+spacy_lefff@ git+http://vxgit.intra.inist.fr:60000/git/RichText/spacy_lefff.git#0.4.1#egg=spacy_lefff
+spacy_stanza
+stanza==1.7.0
+thinc==8.0.17
+typer==0.3.2
