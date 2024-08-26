@@ -263,8 +263,7 @@ class exec_spacy_pipe_fr (object):
     show = "doc"
 
     def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
-        
-        
+               
         #  nlp fr component list 
         pipe_list_fr = [
                 "termMatcherStanza",
@@ -273,8 +272,9 @@ class exec_spacy_pipe_fr (object):
                 ]
 
         if pipe not in pipe_list_fr:
-                 sys.exit(f"ERROR : invalid pipe ({pipe}) name or language (fr) setting ")
-
+            print(f"ERROR : invalid pipe ({pipe}) name or language (fr) setting ")
+            sys.exit(f"exit")
+            
         if show is None:
             self.show = exec_spacy_pipe_fr.show
         else:
