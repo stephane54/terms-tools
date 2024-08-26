@@ -11,7 +11,7 @@ from nlptools.exec_spacy_pipe import exec_spacy_pipe_fr
 
 class full_run (object):
 
-    def __init__(self, pipe, language, ini_file, param, output, format ):
+    def __init__(self, pipe, language, ini_file, param, output, format):
 
         self.location = os.path.realpath(
             os.path.join(os.getcwd(), os.path.dirname("doc"))
