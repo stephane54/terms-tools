@@ -37,14 +37,14 @@ if [[ -n $1 ]]; then
     if [[ $1 == "--tagged" ]]; then
       echo "tag version with : $tag"
       git tag -d $tag  && git push --delete origin $tag
-      git tag $tag &&  git push https://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
+      git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
     else
       echo "ERROR : $1 mauvaise option"
       exit 1
     fi
 
 else
-  git push https://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git --all
+  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git --all
 fi
 
 if [[ -n $2 ]]; then
