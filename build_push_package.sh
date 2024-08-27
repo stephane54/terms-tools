@@ -50,11 +50,11 @@ pip3 uninstall -y terms_tools
 pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
 
 # info se mettre en contexte execution avec le paquet installé
-pip3 show terms-tools
-python3 -m terms-tools
+pip3 show -v terms-tools
 unset PYTHONPATH
 
 echo "---- EXECUTION TEST (lib mode) ........................................................."
-cat test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr
+cmd="test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
+eval $cmd
 
 
