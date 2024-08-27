@@ -27,7 +27,7 @@ python3 setup.py bdist_wheel
 #python3 setup.py install --user
 
 # push git
-echo "   Push distrib......................................................"
+echo "   PUSH distrib......................................................"
 git add .
 git commit -m "maj package"
 tag=$(cat tag.txt)
@@ -45,7 +45,7 @@ else
 fi
 
 # deploie en local via git
-#echo "   Deploy......................................................"
+echo "   DEPLOY ......................................................"
 pip3 uninstall -y terms_tools
 pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
 
