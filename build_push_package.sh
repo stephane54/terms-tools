@@ -47,7 +47,7 @@ fi
 # deploie en local via git
 #echo "   Deploy......................................................"
 pip3 uninstall -y terms_tools
-pip3 install --no-cache-dir  git+http://vxgit.intra.inist.fr:60000/git/terms_tools/terms_tools.git#egg=terms_tools
+pip3 install --no-cache-dir  git+http://vxgit.intra.inist.fr:60000/git/terms_tools.git#${tag}#egg=terms_tools
 
 # info se mettre en contexte execution avec le paquet installé
 pip3 show terms_tools
