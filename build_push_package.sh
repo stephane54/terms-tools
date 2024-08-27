@@ -38,7 +38,7 @@ git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/
 
 
     # deploie en local via git
-if [ -z "$1" ]; then
+if [ -n "$1" ]; then
 
     if [ "$1" = "--deploy" ]; then
             echo "---- DEPLOY ........................................................."
