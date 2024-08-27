@@ -42,23 +42,23 @@ exit 1
     # deploie en local via git
 if [ -z "$1" ]; then
 
-  if [ "$1" = "--deploy" ]; then
-          echo "---- DEPLOY ........................................................."
-          pip3 uninstall -y terms_tools
-          pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
+    if [ "$1" = "deploy" ]; then
+            echo "---- DEPLOY ........................................................."
+            pip3 uninstall -y terms_tools
+            pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
 
-          # info se mettre en contexte execution avec le paquet installé
-          echo "---- CONTROL DEPLOY ........................................................."
-          pip3 show -v terms-tools
-          unset PYTHONPATH
+            # info se mettre en contexte execution avec le paquet installé
+            echo "---- CONTROL DEPLOY ........................................................."
+            pip3 show -v terms-tools
+            unset PYTHONPATH
 
-          echo "---- EXECUTION TEST (lib mode) ........................................................."
-          cmd="cat test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
-          eval $cmd
-  else
-            echo "ERROR : $1 mauvaise option"
-            exit 1
-  fi
+            echo "---- EXECUTION TEST (lib mode) ........................................................."
+            cmd="cat test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
+            eval $cmd
+    else
+              echo "ERROR : $1 mauvaise option"
+              exit 1
+    fi
 
 fi
 
