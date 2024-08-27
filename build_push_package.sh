@@ -40,7 +40,7 @@ echo "ERROR : $1 mauvaise option"
 exit 1
 
     # deploie en local via git
-if [ -z "$1" = "--tagged" ]; then
+if [ -z "$1" ]; then
 
   if [ "$1" = "--deploy" ]; then
           echo "---- DEPLOY ........................................................."
@@ -59,7 +59,7 @@ if [ -z "$1" = "--tagged" ]; then
             echo "ERROR : $1 mauvaise option"
             exit 1
   fi
-  
+
 fi
 
 
