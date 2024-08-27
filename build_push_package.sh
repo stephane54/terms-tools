@@ -41,13 +41,13 @@ if [[ -n $1 ]]; then
     exit 1
   fi
 else
-  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git --all
+  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git --all
 fi
 
 # deploie en local via git
 #echo "   Deploy......................................................"
-#pip3 uninstall -y terms_tools
-#pip3 install --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/terms_tools/NLP_tools.git#egg=terms_tools
+pip3 uninstall -y terms_tools
+pip3 install --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/terms_tools/NLP_tools.git#egg=terms_tools
 
 # info se mettre en contexte execution avec le paquet installé
 pip3 show terms_tools
