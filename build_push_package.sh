@@ -10,6 +10,7 @@ set +x
 # options :
 #
 #  --tagged  = tag la version (git et setup avec le numero de version dans le fichier tag.txt
+#  -- deploy version in module mode
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
@@ -32,17 +33,23 @@ git add .
 git commit -m "maj package"
 tag=$(cat tag.txt)
 if [[ -n $1 ]]; then
-  if [[ $1 = "--tagged" ]]; then
-    echo "tag version with : $tag"
-    git tag -d $tag  && git push --delete origin $tag
-    git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
-  else
-    echo "ERROR : $1 mauvaise option"
-    exit 1
-  fi
 
-  if [[ -n $2 ]]; then
+    if [[ $1 = "--tagged" ]]; then
+      echo "tag version with : $tag"
+      git tag -d $tag  && git push --delete origin $tag
+      git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
+
+    else
+      echo "ERROR : $1 mauvaise option"
+      exit 1
+    fi
+else
+  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git --all
+fi
+
+if [[ -n $2 ]]; then
     # deploie en local via git
+    
     if [[ $1 = "--deploy" ]]; then
         echo "---- DEPLOY ........................................................."
         pip3 uninstall -y terms_tools
@@ -56,11 +63,15 @@ if [[ -n $1 ]]; then
         echo "---- EXECUTION TEST (lib mode) ........................................................."
         cmd="cat test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
         eval $cmd
+    else
+          echo "ERROR : $1 mauvaise option"
+          exit 1
     fi
-
-else
-  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git --all
 fi
+
+
+
+
 
 
 
