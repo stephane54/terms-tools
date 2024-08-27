@@ -3,7 +3,7 @@
 # usage . deploy_package.sh
 set +x
 #
-#  usage : ./build_deploy_package.sh [ --tagged ]
+#  usage : ./build_deploy_package.sh  --tagged 
 #
 #  construit la distribution nlptools et la pousse sur git
 #
@@ -51,7 +51,7 @@ pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/t
 
 # info se mettre en contexte execution avec le paquet installé
 pip3 show terms_tools
-python3 -m terms_tools
-export PYTHONPATH=""
+python3 -m terms-tools
+unset PYTHONPATH
 
 
