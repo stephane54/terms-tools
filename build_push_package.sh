@@ -36,13 +36,11 @@ echo "tag version with : $tag"
 git tag -d $tag  && git push --delete origin $tag
 git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
 
-echo "ERROR : $1 mauvaise option"
-exit 1
 
     # deploie en local via git
 if [ -z "$1" ]; then
 
-    if [ "$1" = "deploy" ]; then
+    if [ "$1" = "--deploy" ]; then
             echo "---- DEPLOY ........................................................."
             pip3 uninstall -y terms_tools
             pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
