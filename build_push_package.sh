@@ -35,7 +35,7 @@ if [[ -n $1 ]]; then
   if [[ $1 = "--tagged" ]]; then
     echo "tag version with : $tag"
     git tag -d $tag  && git push --delete origin $tag
-    git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git  $tag
+    git tag $tag &&  git push http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
   else
     echo "ERROR : $1 mauvaise option"
     exit 1
@@ -46,12 +46,12 @@ fi
 
 # deploie en local via git
 #echo "   Deploy......................................................"
-#pip3 uninstall -y nlptools
-#pip3 install --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git#egg=nlptools
+#pip3 uninstall -y terms_tools
+#pip3 install --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/terms_tools/NLP_tools.git#egg=terms_tools
 
-# info
-#pip3 show nlptools
-#python3 -m nlptools
-#export PYTHONPATH=""
+# info se mettre en contexte execution avec le paquet installé
+pip3 show terms_tools
+python3 -m terms_tools
+export PYTHONPATH=""
 
 

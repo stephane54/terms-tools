@@ -22,6 +22,7 @@ import warnings
 # desactive les logs
 warnings.filterwarnings("ignore")
 
+
 class exec_spacy_pipe_en(object):
 
     show = "doc"

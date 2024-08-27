@@ -6,14 +6,11 @@
 # exemple : python3 nlptools  test/data/med10.csv.bz2 -p "lemme" -log test
 #
 from nlptools.tools import readCsvBz2, readTxtBz2, tab, space, readCsv, tab
-import os
 import time
 import plac
 import logging
 import sys
 import json
-import stanza
-import spacy_stanza
 from pathlib import Path
 from nlptools.run import full_run
 from nlptools.tools import  dive_term
@@ -38,11 +35,10 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
      
     # test parameter combinaison legality
     if (format != "terms" and output in ["dico_pos","dico_annot"] ):
-            sys.exit(u'ERROR : terms_tools.py : illegal parameters combinaison')       
+        raise ValueError(u'ERROR : terms_tools.py : illegal parameters combinaison')       
             
     if (format == "terms" and pipe !=  "POStagger"  ):
-        sys.exit(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
-
+        raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # Forcer Utilisation de Stanza ou Spacy
     if pipe == "POStagger":  
@@ -50,7 +46,6 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
     if pipe == "termMatcher":  
         pipe =  "termMatcherStanza" #"termMatcherSpacy"
     
-
     # creation d1 instance de pipe
     pipe = full_run(pipe, language, ini_file, param, output, format)
     field = 2  # nombre de champs tsv des fichiers du corpus , format : label TAB text
@@ -60,47 +55,34 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
 
     # test la presence d un corpus
     if corpus:
-        # entrée type fichier
+        # entrée type fichier zippé
         my_file = Path(corpus)
         if not (my_file.is_file()):
             logging.error("corpus file not found !")
             exit(0)
         else:
-            # TODO : ameliorer le controle du format
-            if format == "terms":    
-                # csv, tsv
-                for [label, text] in readCsvBz2(corpus, field):
-                    text_nlp = pipe.pipe_analyse(dive_term(text, language))
-                    # kw=list(set( ([w for w in span.split(space) if w.startswith(pref)])))
-                    if output == "dico_annot":
-                        text_nlp["id"]=label
-                        print(label,tab,json.dumps(text_nlp, ensure_ascii=False))
-                    else :
-                        print(label, tab, text_nlp, space)       
-            else:
-                # text
-                for text in readTxtBz2(corpus, field):
-                    # exec du pipe sur une ligne du corpus txt
-                    text_nlp = pipe.pipe_analyse(text)
-                    print(text_nlp)
+            # TODO : ameliorer le controle du format   
+            # csv, tsv
+            for [label, text] in readCsvBz2(corpus, field):
+                text_nlp = pipe.pipe_analyse(dive_term(text, language))
+                # kw=list(set( ([w for w in span.split(space) if w.startswith(pref)])))
+                if output == "dico_annot":
+                    text_nlp["id"]=label
+                    print(label,tab,json.dumps(text_nlp, ensure_ascii=False))
+                else :
+                    print(label, tab, text_nlp, space)       
+        
     else:
         # entrée type stdin
-        if format == "terms": 
-            # csv, tsv
-            for row in readCsv(sys.stdin.readline, field):
-                text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
-                if output == "dico_annot":
-                    text_nlp["id"]=row[0]
-                    print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
-                else:
-                    print(row[0],tab,(text_nlp))
+        # csv, tsv
+        for row in readCsv(sys.stdin.readline, field):
+            text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
+            if output == "dico_annot":
+                text_nlp["id"]=row[0]
+                print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
+            else:
+                print(row[0],tab,(text_nlp))
                          
-        else:
-            # text
-            for line in sys.stdin:
-                text_nlp = pipe.pipe_analyse(line)
-                print(text_nlp)
-
     t2 = time.time()
     logging.info("TRACE::Executing times %.3f " % (t2 - t1))
 
