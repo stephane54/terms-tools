@@ -39,7 +39,7 @@ do
   for out in $out_format
   do
       echo "--------------------------------------- Input TXT -  show= $out" >> $CLI/$file_result
-      cmd="cat $DATA/not-en.txt | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang en -f text -o $out -log  analyze.log"
+      cmd="cat $DATA/not-en.tsv | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang en -f text -o $out -log  analyze.log"
       test_
       echo "--------------------------------------- Input TSV - show= $out" >> $CLI/$file_result
       # list of term
@@ -59,7 +59,7 @@ do
   do
     # text
     echo "--------------------------------------- Input TXT - show= $out" >> $CLI/$file_result
-    cmd="cat $DATA/not-fr.txt | python3  $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_FR -lang fr -f text -o $out -log  analyze.log"
+    cmd="cat $DATA/not-fr.tsv | python3  $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_FR -lang fr -f text -o $out -log  analyze.log"
     test_
     # list of term
     cmd="cat $DATA/not-fr.tsv | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang fr -f terms -o $out -log  analyze.log"

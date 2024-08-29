@@ -32,7 +32,7 @@ def main():
 
     # boucle de traitement sur le champ "text" de chaque document
     # label et keywords sont extraits, puis replacés
-    for text in readTxtBz2(corpus, field):
+    for text in readCsv(corpus, field):
         text_nlp = run.pipe_analyse(text)
         print(text_nlp)
 
