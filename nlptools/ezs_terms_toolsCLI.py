@@ -71,7 +71,7 @@ def main (pipe, language, format, ini_file, param, output, log):
 
         # print("in".format(compteur))
         # NB : sortie avec \" car dump json protege", evité si ' replace("""", "\'")
-        data["text"] = pipe.pipe_analyse(dive_term(data["text"], language))
+        data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))
         #print("ou".format(compteur))
         sys.stdout.write(json.dumps(data))
         sys.stdout.write('\n')    
