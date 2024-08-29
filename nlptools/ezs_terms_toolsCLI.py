@@ -4,8 +4,9 @@
 @author: stephane schneider
 """
 #
-# exemple : 
-# cat ../../../terms_tools/test/data/not-en.txt| python3 analyze.py POStagger -f text -o doc -log analyze.log -lang en 
+#     VERSION A DEPLOYER DANS LE DU WEBSERVICE
+#
+# A executer dans un serveur esz
 #
 from nlptools.tools import readCsvBz2, readTxtBz2, tab, space, readCsv, tab
 import time
@@ -70,7 +71,7 @@ def main (pipe, language, format, ini_file, param, output, log):
 
         # print("in".format(compteur))
         # NB : sortie avec \" car dump json protege", evité si ' replace("""", "\'")
-        data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))
+        data["text"] = pipe.pipe_analyse(dive_term(data["text"], language))
         #print("ou".format(compteur))
         sys.stdout.write(json.dumps(data))
         sys.stdout.write('\n')    
