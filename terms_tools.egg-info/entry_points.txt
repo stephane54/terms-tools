@@ -1,4 +1,3 @@
 [console_scripts]
-ezs_terms_tools = nlptools.ezs_terms_toolsCLI:console_scripts_main
 terms_tools = nlptools.terms_toolsCLI:console_scripts_main
 

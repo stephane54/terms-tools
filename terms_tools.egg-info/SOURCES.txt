@@ -6,7 +6,6 @@ nlptools/NPchunkerDP.py
 nlptools/POStagger.py
 nlptools/__init__.py
 nlptools/exec_spacy_pipe.py
-nlptools/ezs_terms_toolsCLI.py
 nlptools/lefff.py
 nlptools/run.py
 nlptools/termMatcher.py
