@@ -29,9 +29,10 @@ from nlptools.tools import  dive_term
     format=("Format of the input corpus ", "option", "f", str, ["text", "terms"]),
     output=("Format result; 'dico_pos' illegal 'with text' ", "option", "o", str, ["list", "doc", "json", "dico_pos", "dico_annot"]),
     log=("log file", "option", "log", str),
+    ezs=("ezs way, output jsonld {id=,value=}", "flag", "--esz"),
 )
 
-def main (pipe, corpus, language, format, ini_file, param, output, log):
+def main (pipe, corpus, language, format, ini_file, param, output, log, esz):
      
     # test parameter combinaison legality
     if (format != "terms" and output in ["dico_pos","dico_annot"] ):
@@ -73,15 +74,35 @@ def main (pipe, corpus, language, format, ini_file, param, output, log):
                     print(label, tab, text_nlp, space)       
         
     else:
-        # entrée type stdin
-        # csv, tsv
-        for row in readCsv(sys.stdin.readline, field):
-            text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
-            if output == "dico_annot":
-                text_nlp["id"]=row[0]
-                print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
-            else:
-                print(row[0],tab,(text_nlp))
+        
+        # ezs format : jsonld, {id,value}
+        if esz:
+            compteur = 0
+            for json_line in sys.stdin:
+                compteur += 1
+                try:
+                    data = json.loads(json_line )
+                except json.decoder.JSONDecodeError:
+                    logging.error("Input format problem line :{} : String could not be converted to JSON".format(compteur))
+                    exit(1)
+
+                # print("in".format(compteur))
+                # NB : sortie avec \" car dump json protege", evité si ' replace("""", "\'")
+                data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))  # "value" car flux ezs jsonld au format id=,value=
+                #print("ou".format(compteur))
+                sys.stdout.write(json.dumps(data))
+                sys.stdout.write('\n')  
+        
+        else:
+            # entrée type stdin
+            # csv, tsv
+            for row in readCsv(sys.stdin.readline, field):
+                text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
+                if output == "dico_annot":
+                    text_nlp["id"]=row[0]
+                    print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
+                else:
+                    print(row[0],tab,(text_nlp))
                          
     t2 = time.time()
     logging.info("TRACE::Executing times %.3f " % (t2 - t1))
