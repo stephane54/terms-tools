@@ -58,8 +58,7 @@ if [ -n "$1" ]; then
             cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/public/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/test_labelFR.tsv"
             echo $cmd
             eval $cmd
-
-
+            exit 0
     else
               echo "ERROR : $1 mauvaise option"
               exit 1

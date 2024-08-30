@@ -54,8 +54,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
     logging.basicConfig(filename=log, level=logging.DEBUG)
     t1 = time.time()
 
-    # test la presence d un corpus
-    if corpus:
+    if corpus:  # test la presence d'un fichier corpus
         # entrée type fichier zippé
         my_file = Path(corpus)
         if not (my_file.is_file()):
@@ -74,7 +73,6 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                     print(label, tab, text_nlp, space)       
         
     else:
-        
         # ezs format : jsonld, {id,value}
         if ezs:
             compteur = 0
