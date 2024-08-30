@@ -32,7 +32,7 @@ from nlptools.tools import  dive_term
     ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs"),
 )
 
-def main (pipe, corpus, language, format, ini_file, param, output, log, esz):
+def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
      
     # test parameter combinaison legality
     if (format != "terms" and output in ["dico_pos","dico_annot"] ):
@@ -76,7 +76,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, esz):
     else:
         
         # ezs format : jsonld, {id,value}
-        if esz:
+        if ezs:
             compteur = 0
             for json_line in sys.stdin:
                 compteur += 1
