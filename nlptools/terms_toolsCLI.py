@@ -29,7 +29,7 @@ from nlptools.tools import  dive_term
     format=("Format of the input corpus ", "option", "f", str, ["text", "terms"]),
     output=("Format result; 'dico_pos' illegal 'with text' ", "option", "o", str, ["list", "doc", "json", "dico_pos", "dico_annot"]),
     log=("log file", "option", "log", str),
-    ezs=("ezs way, output jsonld {id=,value=}", "flag", "esz"),
+    ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs"),
 )
 
 def main (pipe, corpus, language, format, ini_file, param, output, log, esz):
