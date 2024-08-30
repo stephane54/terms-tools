@@ -55,7 +55,7 @@ if [ -n "$1" ]; then
             echo $cmd
             eval $cmd
             echo "---- EXECUTION TEST (lib mode) ........................................................."
-            cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/public/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/test_labelFR.tsv"
+            cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/test_labelFR.tsv"
             echo $cmd
             eval $cmd
             exit 0
