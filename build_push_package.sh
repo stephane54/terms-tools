@@ -21,6 +21,7 @@ export PYTHONPATH=""
 # reconstruction de la distribution
 echo "build distrib......................................................"
 rm -rf dist terms_tools.egg-info build
+TT_HOME=/home/schneist/app/terms_tools
 
 # Construit la distribition binaire (fromat wheel)
 python3 setup.py bdist_wheel
@@ -50,9 +51,15 @@ if [ -n "$1" ]; then
             unset PYTHONPATH
 
             echo "---- EXECUTION TEST (lib mode) ........................................................."
-            cmd="cat test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
+            cmd="cat  $TT_HOME/terms_tools/test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
             echo "cmd"
             eval $cmd
+            echo "---- EXECUTION TEST (lib mode) ........................................................."
+            cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/public/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/labelFR.tsv"
+            echo "cmd"
+            eval $cmd
+
+
     else
               echo "ERROR : $1 mauvaise option"
               exit 1
