@@ -8,6 +8,6 @@ regex
 spacy==3.0.4
 spacy_lefff@ git+http://vxgit.intra.inist.fr:60000/git/RichText/spacy_lefff.git#0.4.1#egg=spacy_lefff
 spacy_stanza==1.0.4
-stanza==1.7.0
+stanza==1.6.1
 thinc==8.0.17
 typer==0.3.2
