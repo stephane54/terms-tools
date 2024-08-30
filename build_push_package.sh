@@ -52,11 +52,11 @@ if [ -n "$1" ]; then
 
             echo "---- EXECUTION TEST (lib mode) ........................................................."
             cmd="cat  $TT_HOME/terms_tools/test/data/not-fr.tsv| terms_tools POStagger -f text -o doc -log analyze.log -lang fr"
-            echo "cmd"
+            echo $cmd
             eval $cmd
             echo "---- EXECUTION TEST (lib mode) ........................................................."
-            cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/public/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/labelFR.tsv"
-            echo "cmd"
+            cmd="ezs -p input=terms -p output=dico_pos  $TT_HOME/web-service/terms_tools/public/v1/fr/postag.ini   < $TT_HOME/terms_tools/test/data/test_labelFR.tsv"
+            echo $cmd
             eval $cmd
 
 
