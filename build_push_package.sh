@@ -3,17 +3,16 @@
 # usage . deploy_package.sh
 set +x
 #
-#  usage : ./build_deploy_package.sh  --tagged 
+#  usage : ./build_deploy_package.sh  --deploy 
 #
 #  construit la distribution nlptools et la pousse sur git
 #
-# options :
-#
-#  --tagged  = tag la version (git et setup avec le numero de version dans le fichier tag.txt
-#  -- deploy version in module mode
+#  options :
+#			  --deploy :  install le package  en local
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
+export GIT="http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git"
 
 # cf : https://docs.python.org/fr/3/install/index.html
 # setup.py install construit et installe tous les modules en un seul coup.
@@ -23,9 +22,9 @@ echo "build distrib......................................................"
 rm -rf dist terms_tools.egg-info build
 TT_HOME=/home/schneist/app/terms_tools
 
-# Construit la distribition binaire (fromat wheel)
+# Construit la distribution binaire (format wheel)
 python3 setup.py bdist_wheel
-# En plus , installe en local everything from build directory (en local )
+# En plus , install in local everything from build directory (en local)
 #python3 setup.py install --user
 
 # push git
@@ -35,7 +34,7 @@ git commit -m "maj package"
 tag=$(cat tag.txt)
 echo "tag version with : $tag"
 git tag -d $tag  && git push --delete origin $tag
-git tag $tag &&  git push -u http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git  $tag
+git tag $tag &&  git push -u ${GIT}  $tag
 
 # deploie en local via git
 if [ -n "$1" ]; then
@@ -43,7 +42,7 @@ if [ -n "$1" ]; then
     if [ "$1" = "--deploy" ]; then
             echo "---- DEPLOY ........................................................."
             pip3 uninstall -y terms_tools
-            pip3 install --no-cache-dir git+http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git@${tag}#egg=terms_tools
+            pip3 install --no-cache-dir git+${GIT}@${tag}#egg=terms_tools
 
             # info se mettre en contexte execution avec le paquet installé
             echo "---- CONTROL DEPLOY ........................................................."

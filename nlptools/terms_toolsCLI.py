@@ -81,7 +81,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                 try:
                     data = json.loads(json_line )
                 except json.decoder.JSONDecodeError:
-                    logging.error("Input format problem line :{} : String could not be converted to JSON".format(compteur))
+                    logging.error("Input format problem line :{s1}{s2} : String could not be converted to JSON".format(s1 = compteur,s2 = json_line) )
                     exit(1)
 
                 # print("in".format(compteur))
@@ -92,8 +92,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                 sys.stdout.write('\n')  
         
         else:
-            # entrée type stdin
-            # csv, tsv
+            # entrée type stdin  csv, tsv
             for row in readCsv(sys.stdin.readline, field):
                 text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
                 if output == "dico_annot":

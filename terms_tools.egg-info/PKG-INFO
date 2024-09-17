@@ -8,41 +8,59 @@ Author-email: stephane.schneider@inist.fr
 Maintainer: stephane
 Maintainer-email: stephane.schneider@inist.fr
 License: GPL V3
-Description: NLP_tools
+Description: # terms_tools
         ===============
         
-        Bibliothèque d'outils pour le traitement NLP (construite au dessus de https://spacy.io/) 
+        Bibliothèque d'outils pour l'etiquettage POS et la reconnaissance de termes (construite au dessus de stanza) 
         
-        Liste des traitements NLP disponibles  :
+        Liste des traitements   :
         
-        * Stemming  (stemmer), en francais et en anglais
-        * Etiquettage en partie du discours  (POStagger), en francais et en anglais
-        * Reconnaissance de termes contrôlés (termMatcher)
-        * Reconnaissance d'entités nommées  (ner)
-        * Chunking nominal  (NPchunker)
-        * Chunking nominal issu d'une analyse en dépendance (NPchunkerDP)  
+        1/ POStag et lemmatisation d'une liste de termes en fr en En , en francais et en anglais
         
-        Deux types d'OUTPUT sont disponibles pour chaque traitement.  
-        Le résultat est présenté soit :
+        IN?PUT : 
+        id      text
+        http://data.loterre.fr/ark:/67375/P66#xl_en_9278939f    qualities
+        http://data.loterre.fr/ark:/67375/P66#xl_en_696ab94f    material entities
+        http://data.loterre.fr/ark:/67375/P66#xl_en_d9fccd58    process
+        http://data.loterre.fr/ark:/67375/P66#xl_en_0fa9a1f2    empirical effect
+        http://data.loterre.fr/ark:/67375/P66#xl_en_ba359dd0    empirical generalization
+        http://data.loterre.fr/ark:/67375/P66#xl_en_06b45a8a    general empirical observation
+        http://data.loterre.fr/ark:/67375/P66#xl_en_d9a365b6    empirical generalisations
         
-        * intégré au texte d'origine (option -o doc)  
-        * sous la forme d'une liste (option -o list)
-        * sous la forme d'une liste (option -o json)
+        Trois types d'OUTPUT sont disponibles  
+        
+        * sous la forme d'un dictionaire jsonld avec l ensemble des informations (option -o json)
+        * exemple: 
+        http://data.loterre.fr/ark:/67375/P66#xl_en_53acd26b     [{"id": 0, "start": 0, "end": 7, "tag": "JJ", "pos": "ADJ", "morph": "Degree=Pos", "lemma": "general"}, {"id": 1, "start": 8, "end": 17, "tag": "JJ", "pos": "ADJ", "morph": "Degree=Pos", "lemma": "empirical"}, {"id": 2, "start":
+        18, "end": 30, "tag": "NNS", "pos": "NOUN", "morph": "Number=Plur", "lemma": "observation"}]
+        
+        * sous une forme tabulée simplifié de la forme : URI   POSTAG LEMMA      (option -o dico_pos)
+        exemple: 
+        http://data.loterre.fr/ark:/67375/P66#xl_en_542d3e8b     cognitive qualities    JJ NNS  cognitive quality
+        http://data.loterre.fr/ark:/67375/P66#xl_en_9ac2b72c     cognitive quality      JJ NN   cognitive quality
+        http://data.loterre.fr/ark:/67375/P66#xl_en_ef4050c0     objects        NNS     object
+        
+        * sous la forme d'un dictionnaire pour termMatcher
+        exemple: 
+        http://data.loterre.fr/ark:/67375/P66#xl_en_d2b95b32     {"label": "empirical generalisation ", "pattern": [{"pos": "ADJ", "lemma": "empirical"}, {"pos"
+        : "NOUN", "lemma": "generalisation"}], "id": "http://data.loterre.fr/ark:/67375/P66#xl_en_d2b95b32"}
+        
           
+         2/ Reconnaissance de termes
+        
         
         ## Installation  
         
         ### Mode developpement  
         ```  
-        git clone http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git
+        git clone http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git
         ```
         ou pour une cloner une version specifique, exemple v1.0 :
         ```  
-        git clone --branch v1.0 http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git
+        git clone --branch v1.0 http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git
         ``` 
         Pour pointer sur la version de dev dans le PYTHONPATH :   =
-          
-        Dans le repertoire où se trouve nlptools :
+          Dans le repertoire où se trouve nlptools :
         ```
         export PYTHONPATH=$PYTHONPATH:$PWD
         ```
@@ -53,51 +71,21 @@ Description: NLP_tools
         ```
         
         ##### Tests
-        Tests unitaires de chaque composants avec nose (mode lib) : 
-        ```
-        nosetests test/nose/* 
-        ```
         
-        Test en ligne de commande (CLI) : 
-        ```
-        ./test/cli/test_nlptoolsCLI.sh
-        ```
-        
-        ### Production, en paquet python (directement depuis git) :
-        ```      
-        pip3 install --upgrade --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git#egg=nlptools
-        
-        ``` 
-        ou pour une cloner une version specifique, exemple v1.0 
-        
-        ```
-        pip3 install --upgrade --no-cache-dir --user git+http://vxgit.intra.inist.fr:60000/git/RichText/NLP_tools.git@v1.0#egg=nlptools
-        ```
         
         ##### Tester l'installation
-        Vérifier quelle est la version active sur votre système :
         
-        ```
-           pip3 show nlptools
-        ```
-        
-        Test d'execution :
-        
-        ``` 
-        python3 test/lib/full_txt_exec.py
-        python3 test/lib/full_tsv_exec.py
-        ```
         
         ## Usage
         ### En ligne de commande
         #### Mode production
         ```  
-        usage: nlptools [-h] [-file CORPUS] [-lang {fr,en}] [-f {txt,csv,tsv}] [-ini_file INI_FILE] [-param PARAM]
-                              [-o {list,doc,json}] [-log LOG]
-                              {stemmer,termMatcher,ner,NPchunker,POStagger,gazetteer,NPchunkerDP,lefff_tagger}
+        usage: terms_tools [-h] [-file CORPUS] [-lang {fr,en}] [-f {text,terms}] [-ini_file INI_FILE] [-param PARAM] [-o {list,doc,json,dico_pos,dico_annot}]
+                           [-log LOG] [-ezs]
+                           {NPchunker,POStagger,NPchunkerDP,termMatcher}
         
         positional arguments:
-          {stemmer,termMatcher,ner,NPchunker,POStagger,gazetteer,NPchunkerDP,lefff_tagger}
+          {NPchunker,POStagger,NPchunkerDP,termMatcher}
                                 Name oh the NLPpipe
         
         optional arguments:
@@ -106,149 +94,57 @@ Description: NLP_tools
                                 Path to corpus file
           -lang {fr,en}, --language {fr,en}
                                 language
-          -f {txt,csv,tsv}, --format {txt,csv,tsv}
+          -f {text,terms}, --format {text,terms}
                                 Format of the input corpus
           -ini_file INI_FILE, --ini-file INI_FILE
                                 initialisation file [default config.ini]
           -param PARAM, --param PARAM
                                 initialisation param in json
-          -o {list,doc,json}, --output {list,doc,json}
-                                Format result
+          -o {list,doc,json,dico_pos,dico_annot}, --output {list,doc,json,dico_pos,dico_annot}
+                                Format result; 'dico_pos' illegal 'with text'
           -log LOG, --log LOG   log file
         ```  
         Exemple :  
         Entrée de type fichier zippé .bz2 (option -file)  
         ```
-        nlptools -file test/data/notz.txt.bz2 stemmer -lang en -f txt -o doc -log test.log
-        ```    
-        Entrée de type .text (ou csv)    
-        ```  
-        echo "Correcting inner filter effects, a non multilinear tensor decomposition method.Among measurement used in analytical chemistry, fluorescence spectroscopy is widely spread and its applications are numerous" | nlptools stemmer -lang en -f txt -o doc   
-        ```  
-        #### Mode developpement
         
-        Exemple :
-        ```  
-        echo "Correcting inner filter effects, a non multilinear tensor decomposition method.Among measurement used in
-         analytical chemistry, fluorescence spectroscopy is widely spread and its applications are numerous" |  nlptools POStagger -ini_file /home/schneist/app/NLP_tools/test/conf_test_epython3 nlptoolsn.ini -param '{"POStagger": {"POS_whitelist":["ADJ","NOUN","PROPN"]},"stemmer":{"stemmer_algo":"snowball"}}' -lang en -f txt -o json -log  analyze.log   
-        ```  
-        ``` 
-        nlptools  -file test/data/notz.tsv.bz2  POStagger -ini_file /home/schneist/app/NLP_tools/test
-        /conf_test_en.ini -param '{"POStagger": {"POS_whitelist":["ADJ","NOUN","PROPN"]},"stemmer":{"stemmer_algo":"snowball"}}' -lang en -f txt -o json -log  analyze.log
-        ```  
-        ### Commme une distribution Python : nlptools
+        POSTAG : 
+         ---------
+         EN :
         
-        **Code exemple :**  
-        Le programme suivant réalise un traitement de reconnaisance de termes (pipe="termMatcher") sur un corpus au format txt
-         (corpus="not.txt.bz2").
-        Le programme produit sur le sortie standard. Les parametres dont le nom de la
-        terminologie à utiliser se trouvent dans un fichier de configuration (ini_file="conf.ini").  
-        conf_test.ini :  http://vxgit.intra.inist.fr:60000/RichText/NLP_tools/blob/master/test/conf_test.ini    
-        Un fichier de données text :  http://vxgit.intra.inist.fr:60000/RichText/NLP_tools/blob/master/test/data/notz.txt
-        .bz2  
+        cat test/data/labelEN.tsv| python3 nlptools/terms_toolsCLI.py POStagger -ini test/conf_test_en.ini -f terms -o dico_pos  -log analyze.log -lang en -ezs | more
+        cat test/data/labelEN.tsv| python3 nlptools/terms_toolsCLI.py POStagger -ini test/conf_test_en.ini -f terms -o dico_annot  -log analyze.log -lang en | more
+        cat test/data/labelEN.tsv| python3 nlptools/terms_toolsCLI.py POStagger -ini test/conf_test_en.ini -f terms -o json  -log analyze.log -lang en  
+        
+        Mais aussi
+        cat test/data/labelEN.tsv| python3 nlptools/terms_toolsCLI.py POStagger -ini test/conf_test_en.ini -f terms -o doc  -log analyze.log -lang en  
+        cat test/data/labelEN.tsv| python3 nlptools/terms_toolsCLI.py POStagger -ini test/conf_test_en.ini -f terms -o list  -log analyze.log -lang en
         
         
-        ```  
-        # paquet nlptools
-        from nlptools import *
-        from nlptools.tools import *
-        from nlptools.resources import *
-            
-        import os
-        import time
-        import logging
-            
-        def main():
-            pipe = "termMatcher"  # choix du pipe a executer , parmi {stemmer,termMatcher,ner,NPchunker,POStagger,gazetteer}
-            ini_file = "conf_test_en.ini"  # fichier de parametres
-            log = "test.log"  # fichier de log
-            corpus = "data/not.txt.bz2"  # corpus a traiter
-            field = 1  # indique le nombre de champs tsv/csv/txt des fichiers du corpus
-            language = "en" #langue
-        
-            run = full_run(pipe, ini_file, "doc", language)   # doc = corpus traité sur la sortie standard
-        
-            logging.basicConfig(filename=log, level=logging.DEBUG)
-            t1 = time.time()
-        
-            # boucle de traitement sur le champ "text" de chaque document
-            # label et keywords sont extraits, puis replacés
-            for text in readTxtBz2(corpus, field):
-                text_nlp = run.pipe_analyse(text)
-                print(text_nlp)
-        
-            # calcul du temps execution
-            t2 = time.time()
-            logging.info("TRACE::Executing times %.3f " % (t2 - t1))
-        
-        class full_run:
-        
-            def __init__(self,  pipe, ini_file, output):
-        
-                self.location = os.path.realpath(
-                    os.path.join(os.getcwd(), os.path.dirname("doc"))
-                )
-                self.parsers = [
-                    exec_spacy_pipe_en(pipe, ini_file, output),
-                ]
-        
-            def pipe_analyse(self, text):
-        
-                # execution du pipe
-                for parser in self.parsers:
-                    text = parser(text)
-                return text
-        
-            if __name__ == "__main__":
-            
-                if __name__ == "__main__":
-                    main()
-        ```  
-        
-        ### Fichier de parametres  
-        Les liens  vers les ressources et les parametres que définissent le comportement de chaque outil sont renseignés dans
-         un fichier  de configuration (*.ini)   
-         exemple : http://vxgit.intra.inist.fr:60000/RichText/NLP_tools/blob/master/test/conf_test_en.ini
+        #### En mode CLI paquet python 
+         cat test/data/labelFR.tsv| terms_tools POStagger -ini test/conf_test_fr.ini -f terms -o dico_pos  -log analyze.log -lang fr
+         cat test/data/labelFR.tsv| terms_tools POStagger -ini test/conf_test_fr.ini -f terms -o dico_annot  -log analyze.log -lang fr
+         cat test/data/labelFR.tsv| terms_tools POStagger -ini test/conf_test_fr.ini -f terms -o json  -log analyze.log -lang fr
          
-         (A complèter)
+         cat test/data/labelEN.tsv| terms_tools POStagger -ini test/conf_test_en.ini -f terms -o dico_annot  -log analyze.log -lang en 
+         cat test/data/labelEN.tsv| terms_tools POStagger -ini test/conf_test_en.ini -f terms -o dico_pos  -log analyze.log -lang en
+         cat test/data/labelEN.tsv| terms_tools POStagger -ini test/conf_test_en.ini -f terms -o json  -log analyze.log -lang en
+         
+         
+         TERMATCHER  
+         ------------
+        => Annote un texte avec un dico produit avec l 'option dico_annot
         
-        ### Dépendance (dans cette ordre) 
+         EN :
+        cat test/data/not-en.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_en.ini -f text -o doc -log analyze.log -lang en
+        cat test/data/not-en.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_en.ini -f text -o list -log analyze.log -lang en
+        cat test/data/not-en.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_en.ini -f text -o json -log analyze.log -lang en
         
-        plac==0.9.6  
-        thinc==8.0.2  
-        spacy-lefff  
-        numpy==1.19.4    
-        spacy==3.0.4 (Le modèle Spacy utilisé est embarqué)  
-        nltk  
-        jinja2   
-        
-        ## (re)construction de la distribution
-        Pour reconstruire la distribution en developpement (dans le cas d'une nouvelle version) : 
-        Modifier le contenu du fichier tag.txt qui contient le numero de version
-        Exécuter :
-        ```
-         ./build_push_package.sh
-        ```
-        Ensuite, pousser la version sur le dépot git (add, commit, push).
-        
-        Le script suivant prend en charge toute procedure. 
-        ```
-         ./build_push_package.sh [--tagged]
-        ``` 
-        l'option --tagged tague la version avec la valeur de tag.txt  
-        
-        ### TODO (17/10/2021)
-        
-        * TODO : revoir nosetest 
-        * TODO : intégrer/tester, fonction NLpre et faire menage pretraitement de nettoyage  
-        * BUG : gazetteer ne sort que des formes de 2 unites
-        * AM : ajouter traitement StopList ; parse("stoplist"); alimenter "stop list spacy" => token.is_stop = True  q!
-        * AM : test : prise en compte de fichiers de data pour les tests pour nose
-        * AM : ajouter la notion de  ex: writer(termatcher, doc, file)
-        * AM : faire test sur doc pdf  
-        * AM : rapidité : mis en parallele des traitements
-        
-        
+         FR :
+        cat test/data/not-fr.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_fr.ini -f text -o json -log analyze.log -lang fr
+        cat test/data/not-fr.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_fr.ini -f text -o doc -log analyze.log -lang fr
+        cat test/data/not-fr.tsv| python3 nlptools/terms_toolsCLI.py termMatcher -ini test/conf_test_fr.ini -f text -o list -log analyze.log -lang fr 
+         
 Keywords: nlp scientific package Python for computationnal terminology
 Platform: ALL
 Classifier: Topic :: natural langage processsing
