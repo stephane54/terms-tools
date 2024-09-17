@@ -73,7 +73,8 @@ deploy ()
 }
 
 
-build  && deploy
+build 
+deploy
 
 exit 0
 
