@@ -1,5 +1,8 @@
-typer==0.3.2
-click==7.1.2
+spacy_lefff==0.5.1
+#typer==0.3.2
+#click==7.1.2
+typer
+click
 spacy==3.0.4
 numpy==1.19.3
 thinc==8.0.17
@@ -10,4 +13,3 @@ lemminflect
 stanza==1.6.1
 spacy_stanza==1.0.4
 plac==0.9.6
-spacy_lefff==0.5.1

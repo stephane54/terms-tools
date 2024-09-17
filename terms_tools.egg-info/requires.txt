@@ -1,4 +1,4 @@
-click==7.1.2
+click
 jinja2
 lemminflect
 nltk
@@ -10,4 +10,4 @@ spacy_lefff==0.5.1
 spacy_stanza==1.0.4
 stanza==1.6.1
 thinc==8.0.17
-typer==0.3.2
+typer

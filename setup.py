@@ -21,8 +21,6 @@ setup(
     keywords="nlp scientific package Python for computationnal terminology",
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
     packages=find_packages(),
-    # packages = [ "nlptools", "nlptools.resources","nlptools.models"],
-    # entry_points={"console_scripts": ["nlptools = nlptools.nlptoolsCLI:main"]},
     entry_points={
         "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main" ]
     },
@@ -33,7 +31,7 @@ setup(
     description="Bibliotheque de composants python NLP",
     long_description=open(os.path.join(os.path.dirname(__file__), "README.md")).read(),
     license="GPL V3",
-    url="http://vxgit.intra.inist.fr:60000/git/RichText/terms_tools.git",
+    url="https://github.com/stephane54/terms-tools.git",
     platforms="ALL",
     python_requires=">=3.6",
 )

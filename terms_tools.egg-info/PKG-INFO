@@ -2,7 +2,7 @@ Metadata-Version: 1.2
 Name: terms-tools
 Version: 1.0.0
 Summary: Bibliotheque de composants python NLP
-Home-page: http://vxgit.intra.inist.fr:60000/git/RichText/terms_tools.git
+Home-page: https://github.com/stephane54/terms-tools.git
 Author: stephane schneider
 Author-email: stephane.schneider@inist.fr
 Maintainer: stephane
