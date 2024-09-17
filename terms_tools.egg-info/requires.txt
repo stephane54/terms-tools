@@ -1,0 +1,13 @@
+click==7.1.2
+jinja2
+lemminflect
+nltk
+numpy==1.19.3
+plac==0.9.6
+regex
+spacy==3.0.4
+spacy_lefff==0.5.1
+spacy_stanza==1.0.4
+stanza==1.6.1
+thinc==8.0.17
+typer==0.3.2

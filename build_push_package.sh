@@ -12,7 +12,6 @@ set +x
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
-#export GIT="http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git"
 export GIT_SSH="git@github.com:stephane54/terms-tools.git"
 export GIT_HTTP="https://github.com/stephane54/terms-tools.git"
 

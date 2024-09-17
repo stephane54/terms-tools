@@ -9,7 +9,7 @@ with open("tag.txt") as f:
     version = f.read()
 
 setup(
-    name="termsr-tools",
+    name="terms-tools",
     version=version,
     zip_safe=False,
     author="stephane schneider",
