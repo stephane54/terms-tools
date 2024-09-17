@@ -12,7 +12,7 @@ set +x
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
-export GIT="http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git"
+export GIT="git@github.com:stephane54/terms-tools.git"
 
 # cf : https://docs.python.org/fr/3/install/index.html
 # setup.py install construit et installe tous les modules en un seul coup.
