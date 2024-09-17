@@ -12,7 +12,10 @@ set +x
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
-export GIT="git@github.com:stephane54/terms-tools.git"
+#export GIT="http://schneist:merlin@vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git"
+export GIT_SSH="git@github.com:stephane54/terms-tools.git"
+export GIT_HTTP="https://github.com/stephane54/terms-tools.git"
+
 
 # cf : https://docs.python.org/fr/3/install/index.html
 # setup.py install construit et installe tous les modules en un seul coup.
@@ -34,7 +37,7 @@ git commit -m "maj package"
 tag=$(cat tag.txt)
 echo "tag version with : $tag"
 git tag -d $tag  && git push --delete origin $tag
-git tag $tag &&  git push -u ${GIT}  $tag
+git tag $tag &&  git push -u ${GIT_SSH}  $tag
 
 # deploie en local via git
 if [ -n "$1" ]; then
@@ -42,7 +45,7 @@ if [ -n "$1" ]; then
     if [ "$1" = "--deploy" ]; then
             echo "---- DEPLOY ........................................................."
             pip3 uninstall -y terms_tools
-            pip3 install --no-cache-dir git+${GIT}@${tag}#egg=terms_tools
+            pip3 install --no-cache-dir git+${GIT_HTTP}@${tag}#egg=terms_tools
 
             # info se mettre en contexte execution avec le paquet installé
             echo "---- CONTROL DEPLOY ........................................................."
