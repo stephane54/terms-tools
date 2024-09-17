@@ -42,10 +42,15 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # Forcer Utilisation de Stanza ou Spacy
+    
+    
+    NLP_TOOLS="Spacy" #Stanza
+    
+    
     if pipe == "POStagger":  
-        pipe =  "POStaggerStanza" #"POStaggerSpacy"
+        pipe =  "POStagger"+NLP_TOOLS 
     if pipe == "termMatcher":  
-        pipe =  "termMatcherStanza" #"termMatcherSpacy"
+        pipe =  "termMatcher"+NLP_TOOLS
     
     # creation d1 instance de pipe
     pipe = full_run(pipe, language, ini_file, param, output, format)
