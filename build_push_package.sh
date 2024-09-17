@@ -12,8 +12,8 @@ set +x
 #
 export TEST="$HOME/test"
 export PYTHONPATH=""
-export GIT_SSH="git@github.com:stephane54/terms-tools.git"
-export GIT_HTTP="https://github.com/stephane54/terms-tools.git"
+export GIT_SSH=git@github.com:stephane54/terms-tools.git
+export GIT_HTTP=https://github.com/stephane54/terms-tools.git
 
 
 # cf : https://docs.python.org/fr/3/install/index.html
@@ -37,7 +37,7 @@ TT_HOME=/home/schneist/app/terms_tools
     echo "tag version with : $tag"
     git tag -d $tag  && git push --delete origin $tag
     git tag $tag
-    git push  ${GIT_SSH} $tag
+    git push -u ${GIT_SSH} $tag
 }
 
 deploy () 
