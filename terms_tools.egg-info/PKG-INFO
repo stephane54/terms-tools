@@ -17,7 +17,7 @@ Description: # terms_tools
         
         1/ POStag et lemmatisation d'une liste de termes en fr en En , en francais et en anglais
         
-        IN?PUT : 
+        INPPUT :   
         id      text
         http://data.loterre.fr/ark:/67375/P66#xl_en_9278939f    qualities
         http://data.loterre.fr/ark:/67375/P66#xl_en_696ab94f    material entities
@@ -30,34 +30,34 @@ Description: # terms_tools
         Trois types d'OUTPUT sont disponibles  
         
         * sous la forme d'un dictionaire jsonld avec l ensemble des informations (option -o json)
-        * exemple: 
+        * exemple:  
         http://data.loterre.fr/ark:/67375/P66#xl_en_53acd26b     [{"id": 0, "start": 0, "end": 7, "tag": "JJ", "pos": "ADJ", "morph": "Degree=Pos", "lemma": "general"}, {"id": 1, "start": 8, "end": 17, "tag": "JJ", "pos": "ADJ", "morph": "Degree=Pos", "lemma": "empirical"}, {"id": 2, "start":
         18, "end": 30, "tag": "NNS", "pos": "NOUN", "morph": "Number=Plur", "lemma": "observation"}]
         
         * sous une forme tabulée simplifié de la forme : URI   POSTAG LEMMA      (option -o dico_pos)
-        exemple: 
+        exemple:  
         http://data.loterre.fr/ark:/67375/P66#xl_en_542d3e8b     cognitive qualities    JJ NNS  cognitive quality
         http://data.loterre.fr/ark:/67375/P66#xl_en_9ac2b72c     cognitive quality      JJ NN   cognitive quality
         http://data.loterre.fr/ark:/67375/P66#xl_en_ef4050c0     objects        NNS     object
         
         * sous la forme d'un dictionnaire pour termMatcher
-        exemple: 
+        exemple:  
         http://data.loterre.fr/ark:/67375/P66#xl_en_d2b95b32     {"label": "empirical generalisation ", "pattern": [{"pos": "ADJ", "lemma": "empirical"}, {"pos"
         : "NOUN", "lemma": "generalisation"}], "id": "http://data.loterre.fr/ark:/67375/P66#xl_en_d2b95b32"}
         
           
          2/ Reconnaissance de termes
-        
+        A venir
         
         ## Installation  
         
         ### Mode developpement  
         ```  
-        git clone http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git
+        git clone https://github.com/stephane54/terms-tools.git
         ```
         ou pour une cloner une version specifique, exemple v1.0 :
         ```  
-        git clone --branch v1.0 http://vxgit.intra.inist.fr:60000/git/schneist/terms_tools.git
+        git clone --branch v1.0 https://github.com/stephane54/terms-tools.git
         ``` 
         Pour pointer sur la version de dev dans le PYTHONPATH :   =
           Dans le repertoire où se trouve nlptools :
@@ -69,11 +69,6 @@ Description: # terms_tools
         ```
         pip3 install -r requirements.txt
         ```
-        
-        ##### Tests
-        
-        
-        ##### Tester l'installation
         
         
         ## Usage
