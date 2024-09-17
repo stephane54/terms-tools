@@ -37,7 +37,8 @@ TT_HOME=/home/schneist/app/terms_tools
     tag=$(cat tag.txt)
     echo "tag version with : $tag"
     git tag -d $tag  && git push --delete origin $tag
-    git tag $tag &&  git push -u ${GIT_SSH}  $tag
+    git tag $tag 
+    git push -u ${GIT_SSH} $tag
 }
 
 deploy () 
