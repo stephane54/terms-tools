@@ -38,7 +38,7 @@ TT_HOME=/home/schneist/app/terms_tools
     git tag -d $tag  && git push --delete origin $tag
     git tag $tag
     git branch -a
-    git push -u remotes/origin/main  1.0.0
+    git push -u main  1.0.0
 }
 
 deploy () 
