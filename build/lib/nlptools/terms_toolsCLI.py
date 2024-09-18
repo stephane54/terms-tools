@@ -42,7 +42,8 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # Forcer l'utilisation de Stanza ou Spacy
-    NLP_TOOLS="Stanza" # Spacy
+    
+    NLP_TOOLS="Stanza" # Spacy !! NE PAS POSITIONNER "Spacy" CAR LEFFF DESACTIVE CAR PB DEPENDANCE install
     if pipe == "POStagger":  
         pipe =  "POStagger"+NLP_TOOLS 
     if pipe == "termMatcher":  

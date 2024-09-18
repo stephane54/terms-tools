@@ -15,7 +15,7 @@ import sys
 import stanza
 import spacy_stanza
 from configparser import ConfigParser
-from nlptools.lefff import getLefff
+#from nlptools.lefff import getLefff
 from nlptools.tools import to_list
 import warnings
 
@@ -392,8 +392,8 @@ class exec_spacy_pipe_fr (object):
         # PATCH text=" ".join(text.strip().split())
         # execution du pipe
     
-        if self.pipe == "POStaggerSpacy":
-            return getLefff (self.nlp(text), self.show, self.whitelist_tag_lemme, self.format)
+        #if self.pipe == "POStaggerSpacy":
+            #return getLefff (self.nlp(text), self.show, self.whitelist_tag_lemme, self.format)
         
         if self.pipe in ["POStaggerStanza","termMatcherStanza"]:
             return self.nlp(text)
