@@ -22,7 +22,7 @@ export GIT_HTTP=https://github.com/stephane54/terms-tools.git
 build () {
 # reconstruction de la distribution
 echo "build distrib......................................................"
-rm -rf dist terms_tools.egg-info build
+rm -rf dist terms-tools.egg-info build
 TT_HOME=/home/schneist/app/terms_tools
     # Construit la distribution binaire (format wheel)
     python3 setup.py bdist_wheel
@@ -47,8 +47,8 @@ deploy ()
 
         if [ "$1" = "--deploy" ]; then
                 echo "---- DEPLOY ........................................................."
-                pip3 uninstall -y terms_tools
-                pip3 install --no-cache-dir git+${GIT_HTTP}@${tag}#egg=terms_tools
+                pip3 uninstall -y terms-tools
+                pip3 install --no-cache-dir git+${GIT_HTTP}@${tag}#egg=term-tools
 
                 # info se mettre en contexte execution avec le paquet installé
                 echo "---- CONTROL DEPLOY ........................................................."
