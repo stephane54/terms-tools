@@ -285,7 +285,7 @@ def getDicoAnnot(doc):
             dic["pos"]=token.pos_
             dic["lemma"]=token.lemma_
         tab.append(dic)
-    ld["label"]=str(doc)
+    ld["label"]=str(doc).strip()
     ld["pattern"]=tab
     return(ld)
            

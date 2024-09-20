@@ -69,7 +69,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                 text_nlp = pipe.pipe_analyse(dive_term(value, language))
                 if output == "dico_annot":
                     text_nlp["id"]=label
-                    print(label,tab,json.dumps(text_nlp, ensure_ascii=False))
+                    print(json.dumps(text_nlp, ensure_ascii=False))
                 else :
                     print(label, tab, text_nlp, space)       
         
@@ -96,9 +96,10 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
             # entrée type stdin csv, tsv
             for row in readCsv(sys.stdin.readline, field):
                 text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
-                if output == "dico_annot":
+        
+                if output in ["dico_annot"]:
                     text_nlp["id"]=row[0]
-                    print(row[0],tab,json.dumps(text_nlp, ensure_ascii=False))
+                    print(json.dumps(text_nlp, ensure_ascii=False))
                 else:
                     print(row[0],tab,(text_nlp))
                          
