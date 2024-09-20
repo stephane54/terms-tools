@@ -65,9 +65,8 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
         else:
             # TODO : ameliorer le controle du format   
             # csv, tsv
-            for [label, text] in readCsvBz2(corpus, field):
-                text_nlp = pipe.pipe_analyse(dive_term(text, language))
-                # kw=list(set( ([w for w in span.split(space) if w.startswith(pref)])))
+            for [label, value] in readCsvBz2(corpus, field):
+                text_nlp = pipe.pipe_analyse(dive_term(value, language))
                 if output == "dico_annot":
                     text_nlp["id"]=label
                     print(label,tab,json.dumps(text_nlp, ensure_ascii=False))
@@ -94,7 +93,7 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                 sys.stdout.write('\n')  
         
         else:
-            # entrée type stdin  csv, tsv
+            # entrée type stdin csv, tsv
             for row in readCsv(sys.stdin.readline, field):
                 text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
                 if output == "dico_annot":
