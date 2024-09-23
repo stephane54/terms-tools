@@ -1,7 +1,7 @@
 #!/bin/bash
 # author: stephane
 # usage . deploy_package.sh
-set +x
+set -x
 #
 #  usage : ./build_deploy_package.sh  --deploy 
 #
