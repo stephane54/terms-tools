@@ -38,7 +38,9 @@ TT_HOME=/home/schneist/app/terms_tools
     git tag -d $tag  && git push --delete origin $tag
     git tag $tag
     git branch -a
-    git push -u $GIT_SSH $tag
+    #git push -u $GIT_SSH $tag
+    git push -u git@github.com:stephane54/terms-tools.git 1.0.0
+
 }
 
 deploy () 
