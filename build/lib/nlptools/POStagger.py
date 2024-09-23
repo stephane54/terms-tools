@@ -46,10 +46,9 @@ class POStagger(object):
 
             # filtre sur une liste de POS (self.list_cat)
             for token in doc:
-                #list_lemme.append(token.lemma_+"/"+token.pos_)
                 list_lemme.append(token.lemma_)
 
-            # outpu text avec flow de lemmes
+            # output text avec flow de lemmes
             return space.join(list_lemme)
 
         if self.show == "list":

@@ -42,7 +42,6 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # Forcer l'utilisation de Stanza ou Spacy
-    
     NLP_TOOLS="Stanza" # Spacy !! NE PAS POSITIONNER "Spacy" CAR LEFFF DESACTIVE CAR PB DEPENDANCE install
     if pipe == "POStagger":  
         pipe =  "POStagger"+NLP_TOOLS 
@@ -85,7 +84,6 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
                     logging.error("Input format problem line :{s1}{s2} : String could not be converted to JSON".format(s1 = compteur,s2 = json_line) )
                     exit(1)
 
-                # print("in".format(compteur))
                 # NB : sortie avec \" car dump json protege", evité si ' replace("""", "\'")
                 data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))  # "value" car flux ezs jsonld au format id=,value=
                 #print("ou".format(compteur))

@@ -100,10 +100,6 @@ class TermMatcher(object):
     # renvoi la liste ds termes trouves
     def getTermMatch(self, doc):
 
-        #if self.show == "json":
-            # ok 
-            #return (json.dumps(Doc.to_json(doc)['ents']))    
-
         list_terms = []
         if self.show == "doc":
             sep = tiretb

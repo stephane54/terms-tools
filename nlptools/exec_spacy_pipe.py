@@ -129,7 +129,6 @@ class exec_spacy_pipe_en(object):
             termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
             termMatcher_POS_whitelist = to_list(configINI.get("termMatcher", "termMatcher_POS_whitelist"))
             whitelist_tag_lemme =  to_list(configINI.get("POStagger", "POS_whitelist"))
-            #blacklist_tag_lemme = in_list(configINI.get("POStagger", "POS_blacklist")) ! pas effectif
             blacklist_NPDP_tag_lemme = configINI.get("NPchunkerDP", "blacklist_NPDP")
 
         except Exception as err:
@@ -137,7 +136,6 @@ class exec_spacy_pipe_en(object):
             print("Error lors de la phase d'initialisation [lecture fichier .ini]")
             exit(err)
 
-        # TRACE print("1 {} {}".format( whitelist_tag_lemme , type(whitelist_tag_lemme)))
         # POSTAGGING LEMMINFLECT
         if pipe == "POStaggerSpacy":
             # init dun pipe avec chargement du modele sans parser et ner
