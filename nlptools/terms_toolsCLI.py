@@ -10,17 +10,24 @@ import time
 import plac
 import logging
 import sys
+import os
 import json
 from pathlib import Path
 from nlptools.run import full_run
 from nlptools.tools import  dive_term
 @plac.annotations(
     pipe=(
-        "Name oh the NLPpipe ",
+        "Name of the NLPpipe ",
         "positional",
         None,
         str,
         ["NPchunker","POStagger", "NPchunkerDP", "termMatcher"]
+    ),
+    matcher_dico=(
+        "termMatcher dico path in jsonld format ",
+        "option",
+        "d",
+        str,
     ),
     corpus=("Path to corpus file", "option", "file", str),
     language=("language", "option", "lang", str, ["fr", "en"]),
@@ -32,7 +39,7 @@ from nlptools.tools import  dive_term
     ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs"),
 )
 
-def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
+def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output, log, ezs):
      
     # test parameter combinaison legality
     if (format != "terms" and output in ["dico_pos","dico_annot"] ):
@@ -41,20 +48,29 @@ def main (pipe, corpus, language, format, ini_file, param, output, log, ezs):
     if (format == "terms" and pipe !=  "POStagger"  ):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
+    if (matcher_dico  and pipe !=  "termMatcher"  ):
+        raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
+    
     # Forcer l'utilisation de Stanza ou Spacy
     NLP_TOOLS="Stanza" # Spacy !! NE PAS POSITIONNER "Spacy" CAR LEFFF DESACTIVE CAR PB DEPENDANCE install
+    
     if pipe == "POStagger":  
         pipe =  "POStagger"+NLP_TOOLS 
     if pipe == "termMatcher":  
         pipe =  "termMatcher"+NLP_TOOLS
+        
+    # check dictionnary exist 
+    if matcher_dico: 
+        if not (os.path.isfile(matcher_dico)):
+            raise ValueError(matcher_dico)
     
     # creation d1 instance de pipe
-    pipe = full_run(pipe, language, ini_file, param, output, format)
+    pipe = full_run(pipe, matcher_dico, language, ini_file, param, output, format)
     field = 2  # nombre de champs tsv des fichiers du corpus , format : label TAB text
 
     logging.basicConfig(filename=log, level=logging.DEBUG)
     t1 = time.time()
-
+    
     if corpus:  # test la presence d'un fichier corpus
         # entrée type fichier zippé
         my_file = Path(corpus)

@@ -13,11 +13,11 @@ DATA=$NLP_TOOLS/test/data
 INI_EN=$NLP_TOOLS/test/conf_test_en.ini
 INI_FR=$NLP_TOOLS/test/conf_test_fr.ini
 
-engine_en="POStagger NPchunker NPchunkerDP termMatcher"
+engine_en="POStagger NPchunker termMatcher"
 engine_fr="POStagger termMatcher"
 
 file_result=result_test_nlptoolsCLI.txt
-out_format="json doc list dico_pos dico_annot"
+out_format_text="json doc list dico_pos dico_annot full_morph"
 cat /dev/null >| $CLI/$file_result
 
 test_()
@@ -46,7 +46,6 @@ do
       cmd="cat $DATA/not-en.tsv | python3 $NLP_TOOLS/nlptools/terms_toolsCLI.py $elt -ini_file $INI_EN -lang en -f terms -o $out -log  analyze.log"
       test_
   done
-
 done
 
 for elt in $engine_fr

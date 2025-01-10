@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 13 12:46:45 2020
+Created on Mon Apr 13 12:46:45 2023
 @author: stephane schneider
 
 """
@@ -11,7 +11,7 @@ from nlptools.exec_spacy_pipe import exec_spacy_pipe_fr
 
 class full_run (object):
 
-    def __init__(self, pipe, language, ini_file, param, output, format):
+    def __init__(self, pipe, matcher_dico, language, ini_file, param, output, format):
 
         self.location = os.path.realpath(
             os.path.join(os.getcwd(), os.path.dirname("doc"))
@@ -20,11 +20,11 @@ class full_run (object):
         if (language == "en"):
             
             self.parsers = [
-                exec_spacy_pipe_en(pipe, ini_file, param, output, format),
+                exec_spacy_pipe_en(pipe, matcher_dico, ini_file, param, output, format),
             ]
         else:
             self.parsers = [
-                exec_spacy_pipe_fr(pipe, ini_file, param, output, format),
+                exec_spacy_pipe_fr(pipe, matcher_dico, ini_file, param, output, format),
             ]
 
     def pipe_analyse(self, text):
@@ -33,4 +33,4 @@ class full_run (object):
         for parser in self.parsers:
             text = parser(text)
         return text
-        # return x_blanc.sub(" ",patch.sub(" ", text))
+    

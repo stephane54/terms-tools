@@ -7,7 +7,7 @@ Created on Mon Apr 13 12:46:45 2020
 """ 
 import logging
 import spacy
-import lemminflect
+#import lemminflect
 import json
 import os
 import re
@@ -22,12 +22,11 @@ import warnings
 # desactive les logs
 warnings.filterwarnings("ignore")
 
-
 class exec_spacy_pipe_en(object):
 
     show = "doc"
 
-    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
+    def __init__(self, pipe=None, matcher_dico=None, ini_file=None, ini_param=None,  show=None, format=None):
    
         pipe_list_en = [
             "NPchunker",
@@ -79,6 +78,7 @@ class exec_spacy_pipe_en(object):
             configINI.update(configPARAM) 
 
         # Association et verification des fichiers de ressources
+        '''
         if configINI.get("termMatcher", "termMatcher_vocabulary_en") == "MX_jsonl_porter":
             from nlptools.resources import MX_jsonl_porter as termMatcher_vocabulary_en
         else:
@@ -105,7 +105,7 @@ class exec_spacy_pipe_en(object):
                 )
             else:
                 raise ValueError("terminology is ommited !")
-        
+        '''
         # for NPchunker
 
         if configINI.get("NPchunker", "NPchunker_rules_en") == "NPchunker_rules_gen_en":
@@ -125,7 +125,7 @@ class exec_spacy_pipe_en(object):
         self.pipe = pipe     
         
         try:
-            termMatcher_lemma = configINI.get("termMatcher", "termMatcher_lemma")
+            #termMatcher_lemma = configINI.get("termMatcher", "termMatcher_lemma")
             termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
             termMatcher_POS_whitelist = to_list(configINI.get("termMatcher", "termMatcher_POS_whitelist"))
             whitelist_tag_lemme =  to_list(configINI.get("POStagger", "POS_whitelist"))
@@ -174,7 +174,7 @@ class exec_spacy_pipe_en(object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": termMatcher_tag,
-                    "termMatcher_vocabulary": termMatcher_vocabulary_en,
+                    "termMatcher_vocabulary": matcher_dico,
                 },
                 last=True,
             )
@@ -211,7 +211,7 @@ class exec_spacy_pipe_en(object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": termMatcher_tag,
-                    "termMatcher_vocabulary": termMatcher_vocabulary_en,
+                    "termMatcher_vocabulary": matcher_dico,
                 },
                 last=True,
                 )
@@ -261,7 +261,7 @@ class exec_spacy_pipe_fr (object):
 
     show = "doc"
 
-    def __init__(self, pipe=None, ini_file=None, ini_param=None,  show=None, format=None):
+    def __init__(self, pipe=None, matcher_dico=None, ini_file=None, ini_param=None,  show=None, format=None):
                
         #  nlp fr component list 
         pipe_list_fr = [
@@ -377,7 +377,7 @@ class exec_spacy_pipe_fr (object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": termMatcher_tag,
-                    "termMatcher_vocabulary": termMatcher_vocabulary_fr,
+                    "termMatcher_vocabulary": matcher_dico,
                 },
                 last=True,
                 )
@@ -396,10 +396,3 @@ class exec_spacy_pipe_fr (object):
         if self.pipe in ["POStaggerStanza","termMatcherStanza"]:
             return self.nlp(text)
         
-
-
-        
-
-        
-
-
