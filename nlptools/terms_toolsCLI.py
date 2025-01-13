@@ -51,13 +51,6 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
     if (matcher_dico  and pipe !=  "termMatcher"  ):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
-    # Forcer l'utilisation de Stanza ou Spacy
-    NLP_TOOLS="Stanza" # Spacy !! NE PAS POSITIONNER "Spacy" CAR LEFFF DESACTIVE CAR PB DEPENDANCE install
-    
-    if pipe == "POStagger":  
-        pipe =  "POStagger"+NLP_TOOLS 
-    if pipe == "termMatcher":  
-        pipe =  "termMatcher"+NLP_TOOLS
         
     # check dictionnary exist 
     if matcher_dico: 
