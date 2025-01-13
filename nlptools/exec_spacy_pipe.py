@@ -123,8 +123,8 @@ class exec_spacy_pipe_en(object):
                 self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
                 
                 self.nlp.add_pipe(
-                    "POStagger",
-                    name="POStagger",
+                    "ViewPOStagger",
+                    name="ViewPOStagger",
                     config={"whitelist_tag_lemme":termMatcher_POS_whitelist,
                             "show": "pipe",},
                     last=True,
