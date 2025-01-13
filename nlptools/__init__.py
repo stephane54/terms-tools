@@ -10,7 +10,7 @@ from configparser import ConfigParser
 from .models import modele_init_en
 from .tools import *
 from .termMatcher import TermMatcher
-from .POStagger import POStagger
+from .POStagger import ViewPOStagger
 from .NPchunker import NPchunker
 from .NPchunkerDP import NPchunkerDP
 #from .lefff import getLefff

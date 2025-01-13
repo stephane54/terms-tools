@@ -1,19 +1,22 @@
 #!/bin/bash
 set +x
 #
-# text  nlptoolsCLI.py en mode CLI
+# teste du terms_tools en mode CLI
 # mode developpement
 # usage :
 #     ./test/cli/test_nlptoolsCLI.sh
 # resultat dans "result.txt"
 #
-NLP_TOOLS=$HOME/app/terms_tools/terms_tool
+# le 13/01/2015 !! plus à jour. A modifier !!
+#
+#
+NLP_TOOLS=$HOME/app/terms_tools/terms_tools
 CLI=$NLP_TOOLS/test/cli
 DATA=$NLP_TOOLS/test/data
 INI_EN=$NLP_TOOLS/test/conf_test_en.ini
 INI_FR=$NLP_TOOLS/test/conf_test_fr.ini
 
-engine_en="POStagger NPchunker termMatcher"
+engine_en="POStagger termMatcher"
 engine_fr="POStagger termMatcher"
 
 file_result=result_test_nlptoolsCLI.txt

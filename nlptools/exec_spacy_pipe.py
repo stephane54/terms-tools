@@ -182,11 +182,11 @@ class exec_spacy_pipe_en(object):
         # POSTAGGING STANZA
         if pipe == "POStaggerStanza":
         
-            self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
+            self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos, lemma', verbose = False,  logging_level = 'FATAL')
             
             self.nlp.add_pipe(
-                "POStagger",
-                name="POStagger",
+                "ViewPOStagger",
+                name="ViewPOStagger",
                 config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show,"format":self.format},
                 last=True,
             )

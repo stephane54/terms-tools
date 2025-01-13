@@ -11,15 +11,15 @@ from spacy.tokens import Doc
 from json import dumps
 
 @Language.factory(
-    "POStagger", default_config={"whitelist_tag_lemme": "", "show": "doc", "format":""}
+    "ViewPOStagger", default_config={"whitelist_tag_lemme": "", "show": "doc", "format":""}
 )
 def create_POStagger_component(
     nlp: Language, name: str, whitelist_tag_lemme: list, show: str, format:str
 ):
-    return POStagger(nlp, whitelist_tag_lemme, show, format)
+    return ViewPOStagger(nlp, whitelist_tag_lemme, show, format)
 
 
-class POStagger(object):
+class ViewPOStagger(object):
 
     def __init__(self, nlp, list_cat, show, format):
 
