@@ -1,0 +1,3 @@
+{"label":"Analytical chemistry","pattern":[ {"lemma":"analytical","pos":"ADJ"}, {"lemma":"chemistry","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/137906>"}
+{"label":"Galaxies","pattern":[ {"lemma":"galaxy","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/158391>"}
+{"label":"Selection effect","pattern":[ {"lemma":"selection","pos":"NOUN"}, {"lemma":"effect","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/150532>"}

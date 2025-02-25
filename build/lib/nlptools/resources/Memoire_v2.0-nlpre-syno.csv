@@ -1,0 +1,4579 @@
+term,replacement
+material entity,material_entity
+material entities,material_entity
+disposition,disposition
+dispositions,disposition
+capability,capability
+capabilities,capability
+function,function
+functions,function
+potentiality,potentiality
+potentialities,potentiality
+process,process
+processes,process
+information entity,information_entity
+information entities,information_entity
+information content entity,information_content_entity
+information content entities,information_content_entity
+quality,quality
+qualities,quality
+phenomenon,phenomenon
+phenomena,phenomenon
+empirical effect,empirical_effect
+empirical effects,empirical_effect
+empirical generalization,empirical_generalization
+empirical generalizations,empirical_generalization
+general empirical observation,general_empirical_observation
+general empirical observations,general_empirical_observation
+brain lobe,brain_lobe
+brain lobes,brain_lobe
+lobe of the brain,lobe_of_the_brain
+lobes of the brain,lobe_of_the_brain
+brain,brain
+brains,brain
+limbic lobe,limbic_lobe
+limbic lobes,limbic_lobe
+limbic system,limbic_system
+limbic systems,limbic_system
+frontal lobe,frontal_lobe
+frontal lobes,frontal_lobe
+frontal cortex,frontal_cortex
+frontal cortexes,frontal_cortex
+frontal region,frontal_region
+frontal regions,frontal_region
+parietal lobe,parietal_lobe
+parietal lobes,parietal_lobe
+parietal cortex,parietal_cortex
+parietal cortexes,parietal_cortex
+temporal lobe,temporal_lobe
+temporal lobes,temporal_lobe
+temporal cortex,temporal_cortex
+temporal cortexes,temporal_cortex
+temporal region,temporal_region
+temporal regions,temporal_region
+interference,interference
+interferences,interference
+memory process,memory_process
+memory processes,memory_process
+associative blocking,associative_blocking
+associative blockings,associative_blocking
+proactive interference,proactive_interference
+proactive interferences,proactive_interference
+proactive inhibition,proactive_inhibition
+proactive inhibitions,proactive_inhibition
+retroactive interference,retroactive_interference
+retroactive interferences,retroactive_interference
+retroactive inhibition,retroactive_inhibition
+retroactive inhibitions,retroactive_inhibition
+interference resolution,interference_resolution
+interference resolutions,interference_resolution
+interference control,interference_control
+interference controls,interference_control
+inhibition,inhibition
+inhibitions,inhibition
+suppression,suppression
+suppressions,suppression
+perceptual interference effect,perceptual_interference_effect
+perceptual interference effects,perceptual_interference_effect
+forgetting,forgetting
+forgetting,forgetting
+forgetfulness,forgetfulness
+forgetfulness,forgetfulness
+oblivescence,oblivescence
+oblivescences,oblivescence
+oblivion,oblivion
+oblivion,oblivion
+obliviscence,obliviscence
+obliviscences,obliviscence
+output interference,output_interference
+output interferences,output_interference
+semantic blocking effect,semantic_blocking_effect
+semantic blocking effects,semantic_blocking_effect
+category interference effect,category_interference_effect
+category interference effects,category_interference_effect
+dual task paradigm,dual_task_paradigm
+dual task paradigms,dual_task_paradigm
+concurrent task,concurrent_task
+concurrent tasks,concurrent_task
+organ,organ
+organs,organ
+brain network,brain_network
+brain networks,brain_network
+brain fasciculus,brain_fasciculus
+brain fasciculi,brain_fasciculus
+thalamus,thalamus
+thalami,thalamus
+cerebellum,cerebellum
+cerebella,cerebellum
+event-related potentials,event-related_potentials
+event-related potentials,event-related_potentials
+ERP,ERP
+ERP,ERP
+subsequent memory effect,subsequent_memory_effect
+subsequent memory effects,subsequent_memory_effect
+Dm effect,Dm_effect
+Dm effects,Dm_effect
+difference due to memory,difference_due_to_memory
+differences due to memory,difference_due_to_memory
+sensory reactivation hypothesis,sensory_reactivation_hypothesis
+sensory reactivation hypotheses,sensory_reactivation_hypothesis
+paradoxal sleep,paradoxal_sleep
+paradoxal sleep,paradoxal_sleep
+REM sleep,REM_sleep
+REM sleep,REM_sleep
+rapid eye movement sleep,rapid_eye_movement_sleep
+rapid eye movement sleep,rapid_eye_movement_sleep
+long-term depression,long-term_depression
+long-term depressions,long-term_depression
+old/new effect,old/new_effect
+old/new effects,old/new_effect
+repetition enhancement,repetition_enhancement
+repetition enhancements,repetition_enhancement
+long-term potentiation,long-term_potentiation
+long-term potentiations,long-term_potentiation
+LTP,LTP
+LTPS,LTP
+long-term synaptic potentiation,long-term_synaptic_potentiation
+long-term synaptic potentiations,long-term_synaptic_potentiation
+FN400 wave,FN400_wave
+FN400 waves,FN400_wave
+frontal N400,frontal_N400
+frontal N400S,frontal_N400
+repetition suppression,repetition_suppression
+repetition suppressions,repetition_suppression
+neurophysiological method,neurophysiological_method
+neurophysiological methods,neurophysiological_method
+study method,study_method
+study methods,study_method
+transcranial direct current stimulation,transcranial_direct_current_stimulation
+transcranial direct current stimulations,transcranial_direct_current_stimulation
+tDCS,tDCS
+tDCS,tDCS
+functional magnetic resonance imaging,functional_magnetic_resonance_imaging
+functional magnetic resonance imagings,functional_magnetic_resonance_imaging
+fMRI,fMRI
+fmris,fMRI
+functional MRI,functional_MRI
+functional MRIS,functional_MRI
+functional near-infrared spectroscopy,functional_near-infrared_spectroscopy
+functional near-infrared spectroscopies,functional_near-infrared_spectroscopy
+fNIRS,fNIRS
+fNIRS,fNIRS
+functional near-infrared imaging,functional_near-infrared_imaging
+functional near-infrared imagings,functional_near-infrared_imaging
+electroencephalography,electroencephalography
+electroencephalography,electroencephalography
+EEG,EEG
+EEGS,EEG
+diffusion tensor imaging,diffusion_tensor_imaging
+diffusion tensor imagings,diffusion_tensor_imaging
+DTI,DTI
+DTI,DTI
+DTI MRI,DTI_MRI
+DTI MRI,DTI_MRI
+diffusion tensor MRI,diffusion_tensor_MRI
+diffusion tensor MRIS,diffusion_tensor_MRI
+diffusion tensor image analysis,diffusion_tensor_image_analysis
+diffusion tensor image analyses,diffusion_tensor_image_analysis
+diffusion tensor magnetic resonance imaging,diffusion_tensor_magnetic_resonance_imaging
+diffusion tensor magnetic resonance imagings,diffusion_tensor_magnetic_resonance_imaging
+diffusion weighted imaging,diffusion_weighted_imaging
+diffusion weighted imaging,diffusion_weighted_imaging
+tractography,tractography
+tractographies,tractography
+magnetoencephalography,magnetoencephalography
+magnetoencephalographies,magnetoencephalography
+MEG,MEG
+MEG,MEG
+magnetoencephalogram,magnetoencephalogram
+magnetoencephalograms,magnetoencephalogram
+transcranial magnetic stimulation,transcranial_magnetic_stimulation
+transcranial magnetic stimulations,transcranial_magnetic_stimulation
+TMS,TMS
+TMS,TMS
+optogenetics,optogenetics
+optogenetics,optogenetics
+optogenetic stimulation,optogenetic_stimulation
+optogenetic stimulations,optogenetic_stimulation
+phenomenological characteristic of memory,phenomenological_characteristic_of_memory
+phenomenological characteristics of memory,phenomenological_characteristic_of_memory
+memory phenomenology,memory_phenomenology
+memory phenomenologies,memory_phenomenology
+phenomenal characteristic,phenomenal_characteristic
+phenomenal characteristics,phenomenal_characteristic
+cognitive quality,cognitive_quality
+cognitive qualities,cognitive_quality
+narrative coherence,narrative_coherence
+narrative coherence,narrative_coherence
+autobiographical memory coherence,autobiographical_memory_coherence
+autobiographical memory coherence,autobiographical_memory_coherence
+coherent autobiographical memory,coherent_autobiographical_memory
+coherent autobiographical memories,coherent_autobiographical_memory
+mental time travel,mental_time_travel
+mental time travel,mental_time_travel
+field point of view,field_point_of_view
+field points of view,field_point_of_view
+field memory,field_memory
+field memories,field_memory
+field perspective,field_perspective
+field perspectives,field_perspective
+first-person perspective,first-person_perspective
+first-person perspectives,first-person_perspective
+memory distinctiveness,memory_distinctiveness
+memory distinctiveness,memory_distinctiveness
+noetic consciousness,noetic_consciousness
+noetic consciousnesses,noetic_consciousness
+autonoetic consciousness,autonoetic_consciousness
+autonoetic consciousnesses,autonoetic_consciousness
+autonoesis,autonoesis
+autonoesis,autonoesis
+autonoetic awareness,autonoetic_awareness
+autonoetic awarenesses,autonoetic_awareness
+observer point of view,observer_point_of_view
+observer points of view,observer_point_of_view
+observer memory,observer_memory
+observer memories,observer_memory
+observer perspective,observer_perspective
+observer perspectives,observer_perspective
+third-person perspective,third-person_perspective
+third-person perspectives,third-person_perspective
+chronesthesia,chronesthesia
+chronesthesias,chronesthesia
+phantom recollection,phantom_recollection
+phantom recollections,phantom_recollection
+illusory recollection,illusory_recollection
+illusory recollections,illusory_recollection
+anoetic consciousness,anoetic_consciousness
+anoetic consciousnesses,anoetic_consciousness
+memory vividness,memory_vividness
+memory vividness,memory_vividness
+vividness,vividness
+vividness,vividness
+metamemory judgment,metamemory_judgment
+metamemory judgments,metamemory_judgment
+metamemorial judgment,metamemorial_judgment
+metamemorial judgments,metamemorial_judgment
+metamemory,metamemory
+metamemories,metamemory
+amodal representation,amodal_representation
+amodal representations,amodal_representation
+abstract representation,abstract_representation
+abstract representations,abstract_representation
+amodal symbol,amodal_symbol
+amodal symbols,amodal_symbol
+format,format
+formats,format
+concept,concept
+concepts,concept
+hub and spoke model,hub_and_spoke_model
+hubs and spoke model,hub_and_spoke_model
+proposition,proposition
+propositions,proposition
+treatment,treatment
+treatments,treatment
+therapeutic intervention,therapeutic_intervention
+therapeutic interventions,therapeutic_intervention
+therapy,therapy
+therapies,therapy
+planned process,planned_process
+planned processes,planned_process
+cognitive behavioral therapy,cognitive_behavioral_therapy
+cognitive behavioral therapies,cognitive_behavioral_therapy
+CBT,CBT
+CBT,CBT
+cognitive behavior therapy,cognitive_behavior_therapy
+cognitive behavior therapies,cognitive_behavior_therapy
+cognitive behavioral psychotherapy,cognitive_behavioral_psychotherapy
+cognitive behavioral psychotherapies,cognitive_behavioral_psychotherapy
+cognitive rehabilitation,cognitive_rehabilitation
+cognitive rehabilitations,cognitive_rehabilitation
+cognitive remediation,cognitive_remediation
+cognitive remediations,cognitive_remediation
+allocation of study time,allocation_of_study_time
+allocations of study time,allocation_of_study_time
+metamemory process,metamemory_process
+metamemory processes,metamemory_process
+procedural metamemory,procedural_metamemory
+procedural metamemories,procedural_metamemory
+metamemory experience,metamemory_experience
+metamemory experiences,metamemory_experience
+law,law
+laws,law
+theoretical entity,theoretical_entity
+theoretical entities,theoretical_entity
+ratio rule,ratio_rule
+ratio rules,ratio_rule
+ratio law,ratio_law
+ratio laws,ratio_law
+law of effect,law_of_effect
+laws of effect,law_of_effect
+Tulving-Wiseman law,Tulving-Wiseman_law
+Tulving-Wiseman laws,Tulving-Wiseman_law
+Jost's laws,Jost's_laws
+Jost's laws,Jost's_laws
+Jost's memory laws,Jost's_memory_laws
+Jost's memory laws,Jost's_memory_laws
+Jost’s first law,Jost’s_first_law
+Jost’s first laws,Jost’s_first_law
+Jost’s first memory law,Jost’s_first_memory_law
+Jost’s first memory laws,Jost’s_first_memory_law
+Jost’s second law,Jost’s_second_law
+Jost’s second laws,Jost’s_second_law
+Jost’s second memory law,Jost’s_second_memory_law
+Jost’s second memory laws,Jost’s_second_memory_law
+Yerkes-Dodson's law,Yerkes-Dodson's_law
+Yerkes-Dodson's laws,Yerkes-Dodson's_law
+Ribot's law,Ribot's_law
+Ribot's laws,Ribot's_law
+law of exercise,law_of_exercise
+laws of exercise,law_of_exercise
+principle,principle
+principles,principle
+testable hypothesis,testable_hypothesis
+testable hypotheses,testable_hypothesis
+hypothesis,hypothesis
+hypotheses,hypothesis
+theory,theory
+theories,theory
+theoretical framework,theoretical_framework
+theoretical frameworks,theoretical_framework
+model,model
+models,model
+anatomical entity,anatomical_entity
+anatomical entities,anatomical_entity
+prediction of knowing,prediction_of_knowing
+predictions of knowing,prediction_of_knowing
+POK,POK
+POK,POK
+prospective confidence,prospective_confidence
+prospective confidences,prospective_confidence
+biological material entity,biological_material_entity
+biological material entities,biological_material_entity
+biological entity,biological_entity
+biological entities,biological_entity
+cell,cell
+cells,cell
+A-B_ A-Br learning task,A-B__A-Br_learning_task
+A-B_ A-Br learning tasks,A-B__A-Br_learning_task
+paired-associates learning task,paired-associates_learning_task
+paired-associates learning tasks,paired-associates_learning_task
+paired-associates learning method,paired-associates_learning_method
+paired-associates learning methods,paired-associates_learning_method
+paired-associates learning paradigm,paired-associates_learning_paradigm
+paired-associates learning paradigms,paired-associates_learning_paradigm
+paired-associates learning procedure,paired-associates_learning_procedure
+paired-associates learning procedures,paired-associates_learning_procedure
+cued recall task,cued_recall_task
+cued recall tasks,cued_recall_task
+R/K paradigm,R/K_paradigm
+R/K paradigms,R/K_paradigm
+Remember/Know paradigm,Remember/Know_paradigm
+Remember/Know paradigm,Remember/Know_paradigm
+subjective study method of memory,subjective_study_method_of_memory
+subjective study methods of memory,subjective_study_method_of_memory
+Don't remember/Don't know paradigm,Don't_remember/Don't_know_paradigm
+Don't remember/Don't know paradigm,Don't_remember/Don't_know_paradigm
+DR/DK paradigm,DR/DK_paradigm
+DR/DK paradigms,DR/DK_paradigm
+recognition task,recognition_task
+recognition tasks,recognition_task
+recognition memory,recognition_memory
+recognition memories,recognition_memory
+recognition paradigm,recognition_paradigm
+recognition paradigms,recognition_paradigm
+recognition test,recognition_test
+recognition tests,recognition_test
+objective study method of memory,objective_study_method_of_memory
+objective study methods of memory,objective_study_method_of_memory
+double-function pairs,double-function_pairs
+double-function pairs,double-function_pairs
+AB_ BC pair,AB__BC_pair
+ABS_ BC pair,AB__BC_pair
+AB_ BC paradigm,AB__BC_paradigm
+ABS_ BC paradigm,AB__BC_paradigm
+sound-scene paired-associates paradigm,sound-scene_paired-associates_paradigm
+sound-scene paired-associates paradigms,sound-scene_paired-associates_paradigm
+A-B_ A-C learning task,A-B__A-C_learning_task
+A-B_ A-C learning tasks,A-B__A-C_learning_task
+A-B_ A-C paradigm,A-B__A-C_paradigm
+A-B_ A-C paradigms,A-B__A-C_paradigm
+A-B_ A-D learning,A-B__A-D_learning
+A-B_ A-D learnings,A-B__A-D_learning
+A-B_ A-D paradigm,A-B__A-D_paradigm
+A-B_ A-D paradigms,A-B__A-D_paradigm
+continuous paired-associate learning task,continuous_paired-associate_learning_task
+continuous paired-associate learning tasks,continuous_paired-associate_learning_task
+A-B_ C-B learning task,A-B__C-B_learning_task
+A-B_ C-B learning tasks,A-B__C-B_learning_task
+A-B_ C-B paradigm,A-B__C-B_paradigm
+A-B_ C-B paradigms,A-B__C-B_paradigm
+associative memory Stroop task,associative_memory_Stroop_task
+associative memory Stroop tasks,associative_memory_Stroop_task
+associative memory Stroop paradigm,associative_memory_Stroop_paradigm
+associative memory Stroop paradigms,associative_memory_Stroop_paradigm
+visual association test,visual_association_test
+visual association tests,visual_association_test
+study method of memory,study_method_of_memory
+study methods of memory,study_method_of_memory
+self-report questionnaire,self-report_questionnaire
+self-report questionnaires,self-report_questionnaire
+conceptual self,conceptual_self
+conceptual selves,conceptual_self
+autobiographical memory,autobiographical_memory
+autobiographical memories,autobiographical_memory
+mental imagery,mental_imagery
+mental imageries,mental_imagery
+imagination,imagination
+imaginations,imagination
+mental image,mental_image
+mental images,mental_image
+cognitive process,cognitive_process
+cognitive processes,cognitive_process
+cognitive processing,cognitive_processing
+cognitive processing,cognitive_processing
+information processing,information_processing
+information processing,information_processing
+visual imagery,visual_imagery
+visual imageries,visual_imagery
+visual image,visual_image
+visual images,visual_image
+semantic prospection,semantic_prospection
+semantic prospections,semantic_prospection
+episodic future thought,episodic_future_thought
+episodic future thought,episodic_future_thought
+episodic foresight,episodic_foresight
+episodic foresights,episodic_foresight
+episodic future thinking,episodic_future_thinking
+episodic future thinkings,episodic_future_thinking
+episodic prospection,episodic_prospection
+episodic prospections,episodic_prospection
+episodic simulation,episodic_simulation
+episodic simulations,episodic_simulation
+auditory imagery,auditory_imagery
+auditory imageries,auditory_imagery
+auditory image,auditory_image
+auditory images,auditory_image
+episodic counterfactual thought,episodic_counterfactual_thought
+episodic counterfactual thoughts,episodic_counterfactual_thought
+episodic counterfactual thinking,episodic_counterfactual_thinking
+episodic counterfactual thinkings,episodic_counterfactual_thinking
+simulation theory,simulation_theory
+simulation theories,simulation_theory
+simulationism,simulationism
+simulationisms,simulationism
+simulationist approach,simulationist_approach
+simulationist approaches,simulationist_approach
+bizarreness effect,bizarreness_effect
+bizarreness effects,bizarreness_effect
+Memory Characteristics Questionnaire,Memory_Characteristics_Questionnaire
+Memory Characteristics Questionnaire,Memory_Characteristics_Questionnaire
+MCQ,MCQ
+MCQ,MCQ
+internal strategy,internal_strategy
+internal strategies,internal_strategy
+internal aid,internal_aid
+internal aids,internal_aid
+cognitive disorder,cognitive_disorder
+cognitive disorders,cognitive_disorder
+cognitive dysfunction,cognitive_dysfunction
+cognitive dysfunctions,cognitive_dysfunction
+cognitive dysfunctioning,cognitive_dysfunctioning
+cognitive dysfunctionings,cognitive_dysfunctioning
+cognitive impairment,cognitive_impairment
+cognitive impairments,cognitive_impairment
+cognition,cognition
+cognitions,cognition
+cognitive ability,cognitive_ability
+cognitive abilities,cognitive_ability
+cognitive capability,cognitive_capability
+cognitive capabilities,cognitive_capability
+cognitive disposition,cognitive_disposition
+cognitive dispositions,cognitive_disposition
+affordance,affordance
+affordances,affordance
+episodic memory,episodic_memory
+episodic memories,episodic_memory
+WWW memory,WWW_memory
+WWW memories,WWW_memory
+contextualized memory,contextualized_memory
+contextualized memories,contextualized_memory
+episodic-like memory,episodic-like_memory
+episodic-like memories,episodic-like_memory
+event memory,event_memory
+event memories,event_memory
+recollective memory,recollective_memory
+recollective memories,recollective_memory
+declarative memory,declarative_memory
+declarative memories,declarative_memory
+contextual memory,contextual_memory
+contextual memories,contextual_memory
+context memory,context_memory
+context memories,context_memory
+source memory,source_memory
+source memories,source_memory
+eidetic memory,eidetic_memory
+eidetic memories,eidetic_memory
+photographic memory,photographic_memory
+photographic memories,photographic_memory
+total memory,total_memory
+total memories,total_memory
+total recall,total_recall
+total recalls,total_recall
+vicarious memory,vicarious_memory
+vicarious memories,vicarious_memory
+action memory,action_memory
+action memories,action_memory
+temporal memory,temporal_memory
+temporal memories,temporal_memory
+time memory,time_memory
+time memories,time_memory
+retrospective memory,retrospective_memory
+retrospective memories,retrospective_memory
+destination memory,destination_memory
+destination memories,destination_memory
+episodic trace,episodic_trace
+episodic traces,episodic_trace
+prospective memory,prospective_memory
+prospective memories,prospective_memory
+delayed intention,delayed_intention
+delayed intentions,delayed_intention
+memory for intention,memory_for_intention
+memories for intention,memory_for_intention
+memory for planned intention,memory_for_planned_intention
+memories for planned intention,memory_for_planned_intention
+prospective remembering,prospective_remembering
+prospective rememberings,prospective_remembering
+realization of delayed intentions,realization_of_delayed_intentions
+realizations of delayed intentions,realization_of_delayed_intentions
+remembering to recall,remembering_to_recall
+remembering to recall,remembering_to_recall
+remembering to remember,remembering_to_remember
+remembering to remember,remembering_to_remember
+memory blindness effect,memory_blindness_effect
+memory blindness effects,memory_blindness_effect
+aphantasia,aphantasia
+aphantasias,aphantasia
+blind imagination,blind_imagination
+blind imaginations,blind_imagination
+congenital aphantasia,congenital_aphantasia
+congenital aphantasias,congenital_aphantasia
+defective revisualisation,defective_revisualisation
+defective revisualisations,defective_revisualisation
+visual irreminiscence,visual_irreminiscence
+visual irreminiscences,visual_irreminiscence
+method of loci,method_of_loci
+methods of loci,method_of_loci
+MoL,MoL
+Mols,MoL
+loci method,loci_method
+loci methods,loci_method
+loci mnemonics,loci_mnemonics
+loci mnemonics,loci_mnemonics
+memory palace,memory_palace
+memory palaces,memory_palace
+mental walk technique,mental_walk_technique
+mental walk techniques,mental_walk_technique
+palace of memory,palace_of_memory
+palaces of memory,palace_of_memory
+alpha rhythm,alpha_rhythm
+alpha rhythms,alpha_rhythm
+alpha frequency,alpha_frequency
+alpha frequencies,alpha_frequency
+alpha oscillation,alpha_oscillation
+alpha oscillations,alpha_oscillation
+alpha power,alpha_power
+alpha powers,alpha_power
+alpha wave,alpha_wave
+alpha waves,alpha_wave
+age of acquisition,age_of_acquisition
+ages of acquisition,age_of_acquisition
+autobiographically significant concept,autobiographically_significant_concept
+autobiographically significant concepts,autobiographically_significant_concept
+multiple trace theory,multiple_trace_theory
+multiple trace theories,multiple_trace_theory
+MTT,MTT
+MTTS,MTT
+testimony,testimony
+testimonies,testimony
+eyewitness identification,eyewitness_identification
+eyewitness identifications,eyewitness_identification
+eyewitness memory,eyewitness_memory
+eyewitness memories,eyewitness_memory
+eyewitness testimony,eyewitness_testimony
+eyewitness testimonies,eyewitness_testimony
+suspect identification,suspect_identification
+suspect identifications,suspect_identification
+witness memory,witness_memory
+witness memories,witness_memory
+witness testimony,witness_testimony
+witness testimonies,witness_testimony
+sharp wave ripple,sharp_wave_ripple
+sharp wave ripples,sharp_wave_ripple
+SPW-R,SPW-R
+SPW-RS,SPW-R
+SWR,SWR
+SWR,SWR
+saving-enhanced memory effect,saving-enhanced_memory_effect
+saving-enhanced memory effects,saving-enhanced_memory_effect
+concept cell,concept_cell
+concept cells,concept_cell
+Jennifer Aniston neuron,Jennifer_Aniston_neuron
+Jennifer Aniston neurons,Jennifer_Aniston_neuron
+grandmother cell,grandmother_cell
+grandmother cells,grandmother_cell
+event boundary advantage,event_boundary_advantage
+event boundary advantages,event_boundary_advantage
+ventrolateral prefrontal cortex,ventrolateral_prefrontal_cortex
+ventrolateral prefrontal cortexes,ventrolateral_prefrontal_cortex
+VLPFC,VLPFC
+VLPFC,VLPFC
+self-enhancement bias,self-enhancement_bias
+self-enhancement biases,self-enhancement_bias
+self-enhancement effect,self-enhancement_effect
+self-enhancement effects,self-enhancement_effect
+self-enhancement memory bias,self-enhancement_memory_bias
+self-enhancement memory biases,self-enhancement_memory_bias
+photo-taking impairment effect,photo-taking_impairment_effect
+photo-taking impairment effects,photo-taking_impairment_effect
+cue utilization hypothesis,cue_utilization_hypothesis
+cue utilization hypotheses,cue_utilization_hypothesis
+cue utilization theory,cue_utilization_theory
+cue utilization theories,cue_utilization_theory
+part-list cuing effect,part-list_cuing_effect
+part-list cuing effects,part-list_cuing_effect
+part-set cuing effect,part-set_cuing_effect
+part-set cuing effects,part-set_cuing_effect
+part-set cuing impairment,part-set_cuing_impairment
+part-set cuing impairments,part-set_cuing_impairment
+imagination facilitation effect,imagination_facilitation_effect
+imagination facilitation effects,imagination_facilitation_effect
+K.C. case,K.C._case
+K.C. cases,K.C._case
+K.C. patient,K.C._patient
+K.C. patients,K.C._patient
+N.N. case,N.N._case
+N.N. cases,N.N._case
+N.N. patient,N.N._patient
+N.N. patients,N.N._patient
+jamais vu,jamais_vu
+jamais vus,jamais_vu
+jamais vu experience,jamais_vu_experience
+jamais vu experiences,jamais_vu_experience
+jamais vu sensation,jamais_vu_sensation
+jamais vu sensations,jamais_vu_sensation
+replay,replay
+replays,replay
+neuronal replay,neuronal_replay
+neuronal replays,neuronal_replay
+beta rhythm,beta_rhythm
+beta rhythms,beta_rhythm
+beta oscillation,beta_oscillation
+beta oscillations,beta_oscillation
+beta power,beta_power
+beta powers,beta_power
+beta wave,beta_wave
+beta waves,beta_wave
+repetition decrement effect,repetition_decrement_effect
+repetition decrement effects,repetition_decrement_effect
+conjunctive coding,conjunctive_coding
+conjunctive coding,conjunctive_coding
+attention-to-memory hypothesis,attention-to-memory_hypothesis
+attention-to-memory hypotheses,attention-to-memory_hypothesis
+AtoM,AtoM
+AtoM,AtoM
+attention-to-memory model,attention-to-memory_model
+attention-to-memory models,attention-to-memory_model
+dual attentional processes hypothesis,dual_attentional_processes_hypothesis
+dual attentional processes hypotheses,dual_attentional_processes_hypothesis
+semantic feature effect,semantic_feature_effect
+semantic feature effects,semantic_feature_effect
+theta rhythm,theta_rhythm
+theta rhythms,theta_rhythm
+theta frequency,theta_frequency
+theta frequencies,theta_frequency
+theta oscillation,theta_oscillation
+theta oscillations,theta_oscillation
+theta power,theta_power
+theta powers,theta_power
+theta wave,theta_wave
+theta waves,theta_wave
+emotion-enhanced memory effect,emotion-enhanced_memory_effect
+emotion-enhanced memory effects,emotion-enhanced_memory_effect
+emotion enhancement effect,emotion_enhancement_effect
+emotion enhancement effects,emotion_enhancement_effect
+emotional enhancement,emotional_enhancement
+emotional enhancements,emotional_enhancement
+emotional enhancement of memory,emotional_enhancement_of_memory
+emotional enhancements of memory,emotional_enhancement_of_memory
+emotional memory enhancement effect,emotional_memory_enhancement_effect
+emotional memory enhancement effects,emotional_memory_enhancement_effect
+memory enhancement effect of emotion,memory_enhancement_effect_of_emotion
+memory enhancement effects of emotion,memory_enhancement_effect_of_emotion
+anterior cingulate cortex,anterior_cingulate_cortex
+anterior cingulate cortexes,anterior_cingulate_cortex
+ACC,ACC
+ACC,ACC
+Gray matter of anterior cingulate gyrus,Gray_matter_of_anterior_cingulate_gyrus
+Gray matters of anterior cingulate gyrus,Gray_matter_of_anterior_cingulate_gyrus
+trace transformation theory,trace_transformation_theory
+trace transformation theories,trace_transformation_theory
+TTT,TTT
+TTT,TTT
+ecphoric information,ecphoric_information
+ecphoric informations,ecphoric_information
+dorsolateral prefrontal cortex,dorsolateral_prefrontal_cortex
+dorsolateral prefrontal cortexes,dorsolateral_prefrontal_cortex
+DL-PFC,DL-PFC
+DL-PFC,DL-PFC
+DLPFC,DLPFC
+DLPFC,DLPFC
+dorsal lateral prefrontal cortex,dorsal_lateral_prefrontal_cortex
+dorsal lateral prefrontal cortexes,dorsal_lateral_prefrontal_cortex
+motor consolidation effect,motor_consolidation_effect
+motor consolidation effects,motor_consolidation_effect
+event segmentation,event_segmentation
+event segmentation,event_segmentation
+standard theory of consolidation,standard_theory_of_consolidation
+standard theories of consolidation,standard_theory_of_consolidation
+standard model of consolidation,standard_model_of_consolidation
+standard models of consolidation,standard_model_of_consolidation
+mental context reinstatement,mental_context_reinstatement
+mental context reinstatements,mental_context_reinstatement
+episodic context reinstatement,episodic_context_reinstatement
+episodic context reinstatements,episodic_context_reinstatement
+mental reinstatement of context,mental_reinstatement_of_context
+mental reinstatements of context,mental_reinstatement_of_context
+dorsal parietal cortex,dorsal_parietal_cortex
+dorsal parietal cortex,dorsal_parietal_cortex
+DPC,DPC
+DPC,DPC
+dorsal posterior parietal cortex,dorsal_posterior_parietal_cortex
+dorsal posterior parietal cortex,dorsal_posterior_parietal_cortex
+denial-induced forgetting,denial-induced_forgetting
+denial-induced forgettings,denial-induced_forgetting
+prototype effect,prototype_effect
+prototype effects,prototype_effect
+prototype-enhancement effect,prototype-enhancement_effect
+prototype-enhancement effects,prototype-enhancement_effect
+pattern completion,pattern_completion
+pattern completions,pattern_completion
+deblurring,deblurring
+deblurring,deblurring
+relative judgment of recency,relative_judgment_of_recency
+relative judgments of recency,relative_judgment_of_recency
+judgement of relative order,judgement_of_relative_order
+judgements of relative order,judgement_of_relative_order
+mnemonic discrimination,mnemonic_discrimination
+mnemonic discriminations,mnemonic_discrimination
+tunnel memory,tunnel_memory
+tunnel memories,tunnel_memory
+context-dependent recognition,context-dependent_recognition
+context-dependent recognitions,context-dependent_recognition
+list-length effect,list-length_effect
+list-length effects,list-length_effect
+misinformation paradigm,misinformation_paradigm
+misinformation paradigms,misinformation_paradigm
+group-reference effect,group-reference_effect
+group-reference effects,group-reference_effect
+group-referencing,group-referencing
+group-referencing,group-referencing
+schema-based false memory,schema-based_false_memory
+schema-based false memories,schema-based_false_memory
+false schematic memory,false_schematic_memory
+false schematic memories,false_schematic_memory
+schema-driven false memory,schema-driven_false_memory
+schema-driven false memories,schema-driven_false_memory
+retrieval effort,retrieval_effort
+retrieval efforts,retrieval_effort
+structural theories of memory,structural_theories_of_memory
+structural theories of memory,structural_theories_of_memory
+multiple memory systems theories,multiple_memory_systems_theories
+multiple memory systems theories,multiple_memory_systems_theories
+retrieval success,retrieval_success
+retrieval successes,retrieval_success
+semantization,semantization
+semantizations,semantization
+semanticization,semanticization
+semanticizations,semanticization
+negation-induced forgetting,negation-induced_forgetting
+negation-induced forgettings,negation-induced_forgetting
+adaptive memory,adaptive_memory
+adaptive memories,adaptive_memory
+attentional boost effect,attentional_boost_effect
+attentional boost effects,attentional_boost_effect
+ABE,ABE
+ABE,ABE
+complementary learning systems,complementary_learning_systems
+complementary learning systems,complementary_learning_systems
+simultaneous learning effect,simultaneous_learning_effect
+simultaneous learning effects,simultaneous_learning_effect
+simultaneous acquisition effect,simultaneous_acquisition_effect
+simultaneous acquisition effects,simultaneous_acquisition_effect
+simultaneous acquisition retention phenomenon,simultaneous_acquisition_retention_phenomenon
+simultaneous acquisition retention phenomena,simultaneous_acquisition_retention_phenomenon
+autobiographical fluency task,autobiographical_fluency_task
+autobiographical fluency tasks,autobiographical_fluency_task
+animacy effect,animacy_effect
+animacy effects,animacy_effect
+ventral parietal cortex,ventral_parietal_cortex
+ventral parietal cortexes,ventral_parietal_cortex
+VPC,VPC
+VPC,VPC
+inferior parietal lobule,inferior_parietal_lobule
+inferior parietal lobules,inferior_parietal_lobule
+ventral inferior parietal lobule,ventral_inferior_parietal_lobule
+ventral inferior parietal lobules,ventral_inferior_parietal_lobule
+ventral posterior parietal cortex,ventral_posterior_parietal_cortex
+ventral posterior parietal cortexes,ventral_posterior_parietal_cortex
+self-directed learning,self-directed_learning
+self-directed learnings,self-directed_learning
+self-regulated learning,self-regulated_learning
+self-regulated learnings,self-regulated_learning
+production effect,production_effect
+production effects,production_effect
+serial order intrusion,serial_order_intrusion
+serial order intrusions,serial_order_intrusion
+protrusion effect,protrusion_effect
+protrusion effects,protrusion_effect
+constructive episodic simulation hypothesis,constructive_episodic_simulation_hypothesis
+constructive episodic simulation hypotheses,constructive_episodic_simulation_hypothesis
+retroactive enhancement effect,retroactive_enhancement_effect
+retroactive enhancement effects,retroactive_enhancement_effect
+temporal compression,temporal_compression
+temporal compressions,temporal_compression
+associative deficit hypothesis,associative_deficit_hypothesis
+associative deficit hypotheses,associative_deficit_hypothesis
+enactment effect,enactment_effect
+enactment effects,enactment_effect
+pattern separation,pattern_separation
+pattern separations,pattern_separation
+memory separation,memory_separation
+memory separations,memory_separation
+retrieval orientation,retrieval_orientation
+retrieval orientations,retrieval_orientation
+associative memory,associative_memory
+associative memories,associative_memory
+association-memory,association-memory
+association-memories,association-memory
+testing effect,testing_effect
+testing effects,testing_effect
+retrieval practice effect,retrieval_practice_effect
+retrieval practice effects,retrieval_practice_effect
+retrieval-mediated learning,retrieval-mediated_learning
+retrieval-mediated learnings,retrieval-mediated_learning
+test-enhanced learning,test-enhanced_learning
+test-enhanced learnings,test-enhanced_learning
+fading affect bias,fading_affect_bias
+fading affect biases,fading_affect_bias
+location updating effect,location_updating_effect
+locations updating effect,location_updating_effect
+doorway effect,doorway_effect
+doorway effects,doorway_effect
+reconstructive memory,reconstructive_memory
+reconstructive memories,reconstructive_memory
+memory reconstruction,memory_reconstruction
+memory reconstructions,memory_reconstruction
+Papez circuit,Papez_circuit
+Papez circuits,Papez_circuit
+Papez-Jakob circuit,Papez-Jakob_circuit
+Papez-Jakob circuits,Papez-Jakob_circuit
+medial limbic circuit,medial_limbic_circuit
+medial limbic circuits,medial_limbic_circuit
+déjà vu,déjà_vu
+déjà vus,déjà_vu
+déjà vu experience,déjà_vu_experience
+déjà vu experiences,déjà_vu_experience
+déjà vu sensation,déjà_vu_sensation
+déjà vu sensations,déjà_vu_sensation
+retrieval mode,retrieval_mode
+retrieval modes,retrieval_mode
+survival processing effect,survival_processing_effect
+survival processing effects,survival_processing_effect
+survival-processing advantage,survival-processing_advantage
+survival-processing advantages,survival-processing_advantage
+joint memory effect,joint_memory_effect
+joint memory effects,joint_memory_effect
+fuzzy trace theory,fuzzy_trace_theory
+fuzzy trace theories,fuzzy_trace_theory
+FTT,FTT
+FTT,FTT
+survival processing,survival_processing
+survival processing,survival_processing
+severely deficient autobiographical memory,severely_deficient_autobiographical_memory
+severely deficient autobiographical memories,severely_deficient_autobiographical_memory
+SDAM,SDAM
+SDAM,SDAM
+retrograde facilitation,retrograde_facilitation
+retrograde facilitation,retrograde_facilitation
+retrograde enhancement,retrograde_enhancement
+retrograde enhancements,retrograde_enhancement
+self-reference effect,self-reference_effect
+self-reference effects,self-reference_effect
+self-bias,self-bias
+self-biases,self-bias
+parahippocampal cortex,parahippocampal_cortex
+parahippocampal cortexes,parahippocampal_cortex
+self-reference recollection effect,self-reference_recollection_effect
+self-reference recollection effects,self-reference_recollection_effect
+SRRE,SRRE
+SRRES,SRRE
+concreteness effect,concreteness_effect
+concreteness effects,concreteness_effect
+imageability effect,imageability_effect
+imageability effects,imageability_effect
+orthographic distinctiveness effect ​,orthographic_distinctiveness_effect_​
+orthographic distinctiveness effects ​,orthographic_distinctiveness_effect_​
+binding,binding
+binding,binding
+humour effect,humour_effect
+humour effects,humour_effect
+taboo word effect,taboo_word_effect
+taboo word effects,taboo_word_effect
+picture complexity effect,picture_complexity_effect
+picture complexity effects,picture_complexity_effect
+test-potentiated new learning,test-potentiated_new_learning
+test-potentiated new learnings,test-potentiated_new_learning
+forward effect of testing,forward_effect_of_testing
+forward effects of testing,forward_effect_of_testing
+forward testing effect ​,forward_testing_effect_​
+forward testing effect ​,forward_testing_effect_​
+interim test effect ​,interim_test_effect_​
+interim test effects ​,interim_test_effect_​
+test-enhanced new learning ​,test-enhanced_new_learning_​
+test-enhanced new learning ​,test-enhanced_new_learning_​
+anterograde amnesia,anterograde_amnesia
+anterograde amnesia,anterograde_amnesia
+anterograde memory loss,anterograde_memory_loss
+anterograde memory losses,anterograde_memory_loss
+negative repetition effect,negative_repetition_effect
+negative repetition effects,negative_repetition_effect
+primary distinctiveness effect,primary_distinctiveness_effect
+primary distinctiveness effects,primary_distinctiveness_effect
+intralist distinctiveness effect,intralist_distinctiveness_effect
+intralist distinctiveness effects,intralist_distinctiveness_effect
+imagination inflation effect,imagination_inflation_effect
+imagination inflation effects,imagination_inflation_effect
+drawing effect,drawing_effect
+drawing effect,drawing_effect
+semantic proximity effect,semantic_proximity_effect
+semantic proximity effects,semantic_proximity_effect
+contiguity effect,contiguity_effect
+contiguity effects,contiguity_effect
+generation effect,generation_effect
+generation effects,generation_effect
+distinctiveness effect,distinctiveness_effect
+distinctiveness effects,distinctiveness_effect
+weapon focus effect,weapon_focus_effect
+weapon focus effects,weapon_focus_effect
+judgment of recency,judgment_of_recency
+judgments of recency,judgment_of_recency
+recollection without remembering,recollection_without_remembering
+recollections without remembering,recollection_without_remembering
+spatial memory,spatial_memory
+spatial memories,spatial_memory
+location memory,location_memory
+location memories,location_memory
+place memory,place_memory
+place memories,place_memory
+cognitive-context dependent memory,cognitive-context_dependent_memory
+cognitive-context dependent memories,cognitive-context_dependent_memory
+Zeigarnik effect,Zeigarnik_effect
+Zeigarnik effects,Zeigarnik_effect
+source monitoring,source_monitoring
+source monitoring,source_monitoring
+LPC wave,LPC_wave
+LPC waves,LPC_wave
+late positive component,late_positive_component
+late positive components,late_positive_component
+picture superiority effect,picture_superiority_effect
+picture superiority effects,picture_superiority_effect
+inference-based false memory,inference-based_false_memory
+inference-based false memories,inference-based_false_memory
+inferential false memory,inferential_false_memory
+inferential false memories,inferential_false_memory
+everyday amnesia,everyday_amnesia
+everyday amnesia,everyday_amnesia
+asymmetry effect,asymmetry_effect
+asymmetry effects,asymmetry_effect
+numerical judgment of recency,numerical_judgment_of_recency
+numerical judgments of recency,numerical_judgment_of_recency
+self-choice effect,self-choice_effect
+self-choice effects,self-choice_effect
+recognition failure,recognition_failure
+recognition failures,recognition_failure
+time cell,time_cell
+time cells,time_cell
+mood-dependent memory,mood-dependent_memory
+mood-dependent memories,mood-dependent_memory
+positivity bias,positivity_bias
+positivity biases,positivity_bias
+positivity effect,positivity_effect
+positivity effects,positivity_effect
+positivity memory bias,positivity_memory_bias
+positivity memory biases,positivity_memory_bias
+KIBRA gene,KIBRA_gene
+KIBRA genes,KIBRA_gene
+mnemonic time-travel effect,mnemonic_time-travel_effect
+mnemonic time-travel effects,mnemonic_time-travel_effect
+encoding specificity principle,encoding_specificity_principle
+encoding specificity principle,encoding_specificity_principle
+familiarity,familiarity
+familiarities,familiarity
+distributed practice effect,distributed_practice_effect
+distributed practice effects,distributed_practice_effect
+secondary distinctiveness effect,secondary_distinctiveness_effect
+secondary distinctiveness effects,secondary_distinctiveness_effect
+extralist distinctiveness effect,extralist_distinctiveness_effect
+extralist distinctiveness effects,extralist_distinctiveness_effect
+negativity bias,negativity_bias
+negativity biases,negativity_bias
+negative memory bias,negative_memory_bias
+negative memory biases,negative_memory_bias
+negativity effect,negativity_effect
+negativity effects,negativity_effect
+posterior parietal cortex,posterior_parietal_cortex
+posterior parietal cortexes,posterior_parietal_cortex
+collaborative inhibition,collaborative_inhibition
+collaborative inhibitions,collaborative_inhibition
+list-strength effect,list-strength_effect
+list-strength effects,list-strength_effect
+alcohol myopia hypothesis,alcohol_myopia_hypothesis
+alcohol myopia hypotheses,alcohol_myopia_hypothesis
+alcohol myopia theory,alcohol_myopia_theory
+alcohol myopia theories,alcohol_myopia_theory
+levels of processing theory,levels_of_processing_theory
+levels of processing theory,levels_of_processing_theory
+personal semantics,personal_semantics
+personal semantics,personal_semantics
+autobiographical fact,autobiographical_fact
+autobiographical facts,autobiographical_fact
+personal semantic memory,personal_semantic_memory
+personal semantic memories,personal_semantic_memory
+semantic self-knowledge,semantic_self-knowledge
+semantic self-knowledges,semantic_self-knowledge
+Baker/baker paradox,Baker/baker_paradox
+Baker/baker paradoxes,Baker/baker_paradox
+Baker/baker effect,Baker/baker_effect
+Baker/baker effects,Baker/baker_effect
+entorhinal cortex,entorhinal_cortex
+entorhinal cortexes,entorhinal_cortex
+area 28 of Brodmann,area_28_of_Brodmann
+areas 28 of Brodmann,area_28_of_Brodmann
+entorhinal area,entorhinal_area
+entorhinal areas,entorhinal_area
+secondary olfactory cortex,secondary_olfactory_cortex
+secondary olfactory cortexes,secondary_olfactory_cortex
+secondary olfactory cortical area,secondary_olfactory_cortical_area
+secondary olfactory cortical areas,secondary_olfactory_cortical_area
+attentional narrowing hypothesis,attentional_narrowing_hypothesis
+attentional narrowing hypotheses,attentional_narrowing_hypothesis
+retrieval-enhanced suggestibility,retrieval-enhanced_suggestibility
+retrieval-enhanced suggestibilities,retrieval-enhanced_suggestibility
+reversed testing effet,reversed_testing_effet
+reversed testing effets,reversed_testing_effet
+recollection,recollection
+recollections,recollection
+recollections,recollections
+recollections,recollections
+recollective experience,recollective_experience
+recollective experiences,recollective_experience
+recollective experiences,recollective_experiences
+recollective experiences,recollective_experiences
+mirror effect,mirror_effect
+mirror effects,mirror_effect
+word-frequency effect,word-frequency_effect
+word-frequency effects,word-frequency_effect
+word-frequency paradox,word-frequency_paradox
+word-frequency paradoxes,word-frequency_paradox
+uncinate fasciculus,uncinate_fasciculus
+uncinate fasciculi,uncinate_fasciculus
+cerebral uncinate fasciculus,cerebral_uncinate_fasciculus
+cerebral uncinate fasciculi,cerebral_uncinate_fasciculus
+episodicity,episodicity
+episodicities,episodicity
+ecphory,ecphory
+ecphory,ecphory
+ecphoric process,ecphoric_process
+ecphoric processes,ecphoric_process
+synergistic ecphory,synergistic_ecphory
+synergistic ecphories,synergistic_ecphory
+pupil old/new effect,pupil_old/new_effect
+pupil old/new effects,pupil_old/new_effect
+language dependent memory,language_dependent_memory
+language dependent memories,language_dependent_memory
+reverse interference effect,reverse_interference_effect
+reverse interference effects,reverse_interference_effect
+encoding variability principle,encoding_variability_principle
+encoding variability principle,encoding_variability_principle
+Comprehensive Assessment of Prospective Memory,Comprehensive_Assessment_of_Prospective_Memory
+Comprehensive Assessment of Prospective Memory,Comprehensive_Assessment_of_Prospective_Memory
+CAPM,CAPM
+CAPM,CAPM
+Brief Assessment of Prospective Memory,Brief_Assessment_of_Prospective_Memory
+Brief Assessment of Prospective Memory,Brief_Assessment_of_Prospective_Memory
+BAPM,BAPM
+BAPM,BAPM
+Virtual Reality Everyday Assessment Lab,Virtual_Reality_Everyday_Assessment_Lab
+Virtual Reality Everyday Assessment Lab,Virtual_Reality_Everyday_Assessment_Lab
+VR-EAL,VR-EAL
+VR-EAL,VR-EAL
+neuropsychological test,neuropsychological_test
+neuropsychological tests,neuropsychological_test
+neuropsychological assessment,neuropsychological_assessment
+neuropsychological assessments,neuropsychological_assessment
+neuropsychological battery,neuropsychological_battery
+neuropsychological batteries,neuropsychological_battery
+neuropsychological testing,neuropsychological_testing
+neuropsychological testings,neuropsychological_testing
+nonfocal prospective memory task,nonfocal_prospective_memory_task
+nonfocal prospective memory tasks,nonfocal_prospective_memory_task
+ecological assessment,ecological_assessment
+ecological assessments,ecological_assessment
+ecological task,ecological_task
+ecological tasks,ecological_task
+ecological test,ecological_test
+ecological tests,ecological_test
+everyday memory task,everyday_memory_task
+everyday memory tasks,everyday_memory_task
+focal prospective memory task,focal_prospective_memory_task
+focal prospective memory tasks,focal_prospective_memory_task
+accelerated long-term memory,accelerated_long-term_memory
+accelerated long-term memory,accelerated_long-term_memory
+ALF,ALF
+ALF,ALF
+accelerated forgetting,accelerated_forgetting
+accelerated forgetting,accelerated_forgetting
+amnesia,amnesia
+amnesia,amnesia
+amnestic disorder,amnestic_disorder
+amnestic disorders,amnestic_disorder
+medial temporal lobe,medial_temporal_lobe
+medial temporal lobes,medial_temporal_lobe
+transient epileptic amnesia,transient_epileptic_amnesia
+transient epileptic amnesia,transient_epileptic_amnesia
+Alzheimer's disease,Alzheimer's_disease
+Alzheimer's diseases,Alzheimer's_disease
+Alzheimer's dementia,Alzheimer's_dementia
+Alzheimer's dementias,Alzheimer's_dementia
+dementia of the Alzheimer type,dementia_of_the_Alzheimer_type
+dementias of the Alzheimer type,dementia_of_the_Alzheimer_type
+consolidation,consolidation
+consolidations,consolidation
+hippocampus,hippocampus
+hippocampuses,hippocampus
+memory disorder,memory_disorder
+memory disorders,memory_disorder
+memory deficit,memory_deficit
+memory deficits,memory_deficit
+memory deterioration,memory_deterioration
+memory deteriorations,memory_deterioration
+memory failure,memory_failure
+memory failures,memory_failure
+memory impairment,memory_impairment
+memory impairments,memory_impairment
+prosopamnesia,prosopamnesia
+prosopamnesias,prosopamnesia
+H.M. case,H.M._case
+H.M. cases,H.M._case
+H.M. patient,H.M._patient
+H.M. patients,H.M._patient
+pure progressive amnesia,pure_progressive_amnesia
+pure progressive amnesia,pure_progressive_amnesia
+retrograde amnesia,retrograde_amnesia
+retrograde amnesia,retrograde_amnesia
+developmental prosopagnosia,developmental_prosopagnosia
+developmental prosopagnosias,developmental_prosopagnosia
+congenital prosopagnosia,congenital_prosopagnosia
+congenital prosopagnosias,congenital_prosopagnosia
+hereditary prosopagnosia,hereditary_prosopagnosia
+hereditary prosopagnosias,hereditary_prosopagnosia
+prosopagnosia,prosopagnosia
+prosopagnosias,prosopagnosia
+face blindness,face_blindness
+face blindnesses,face_blindness
+memory phenomenon,memory_phenomenon
+memory phenomena,memory_phenomenon
+memory effect,memory_effect
+memory effects,memory_effect
+mnesic phenomenon,mnesic_phenomenon
+mnesic phenomena,mnesic_phenomenon
+working memory,working_memory
+working memories,working_memory
+M-space,M-space
+M-spaces,M-space
+self-limiting process,self-limiting_process
+self-limiting processes,self-limiting_process
+amnesic shadow,amnesic_shadow
+amnesic shadows,amnesic_shadow
+incidental forgetting,incidental_forgetting
+incidental forgettings,incidental_forgetting
+motivated forgetting,motivated_forgetting
+motivated forgettings,motivated_forgetting
+intentional forgetting,intentional_forgetting
+intentional forgettings,intentional_forgetting
+voluntary forgetting,voluntary_forgetting
+voluntary forgettings,voluntary_forgetting
+infantile amnesia,infantile_amnesia
+infantile amnesia,infantile_amnesia
+childhood amnesia,childhood_amnesia
+childhood amnesia,childhood_amnesia
+infantile forgetting,infantile_forgetting
+infantile forgettings,infantile_forgetting
+crime-related amnesia,crime-related_amnesia
+crime-related amnesia,crime-related_amnesia
+simulated amnesia,simulated_amnesia
+simulated amnesia,simulated_amnesia
+feigned amnesia,feigned_amnesia
+feigned amnesia,feigned_amnesia
+malingered amnesia,malingered_amnesia
+malingered amnesia,malingered_amnesia
+simulation of amnesia,simulation_of_amnesia
+simulations of amnesia,simulation_of_amnesia
+responsible remembering,responsible_remembering
+responsible rememberings,responsible_remembering
+contextual fluctuation,contextual_fluctuation
+contextual fluctuations,contextual_fluctuation
+contextuel change,contextuel_change
+contextuel changes,contextuel_change
+temporal distinctiveness hypothesis,temporal_distinctiveness_hypothesis
+temporal distinctiveness hypotheses,temporal_distinctiveness_hypothesis
+forgetting curve,forgetting_curve
+forgetting curve,forgetting_curve
+retention curve,retention_curve
+retention curves,retention_curve
+retention function,retention_function
+retention functions,retention_function
+mnemic neglect,mnemic_neglect
+mnemic neglect,mnemic_neglect
+medial prefrontal cortex,medial_prefrontal_cortex
+medial prefrontal cortexes,medial_prefrontal_cortex
+mPFC,mPFC
+mPFC,mPFC
+ventromedial prefrontal cortex,ventromedial_prefrontal_cortex
+ventromedial prefrontal cortexes,ventromedial_prefrontal_cortex
+vmPFC,vmPFC
+vmPFC,vmPFC
+trace decay hypothesis,trace_decay_hypothesis
+trace decay hypotheses,trace_decay_hypothesis
+Memory trace decay,Memory_trace_decay
+Memory trace decay,Memory_trace_decay
+decay hypothesis,decay_hypothesis
+decay hypotheses,decay_hypothesis
+decay theory,decay_theory
+decay theories,decay_theory
+memory decay,memory_decay
+memory decay,memory_decay
+spontaneous forgetting,spontaneous_forgetting
+spontaneous forgettings,spontaneous_forgetting
+temporal decay,temporal_decay
+temporal decay,temporal_decay
+time-based decay,time-based_decay
+time-based decay,time-based_decay
+trace decay,trace_decay
+trace decay,trace_decay
+estimator variable,estimator_variable
+estimator variables,estimator_variable
+response competition,response_competition
+response competitions,response_competition
+retrieval competition,retrieval_competition
+retrieval competitions,retrieval_competition
+trace competition,trace_competition
+trace competitions,trace_competition
+reproductive inhibition,reproductive_inhibition
+reproductive inhibitions,reproductive_inhibition
+omission error,omission_error
+omission errors,omission_error
+error of omission,error_of_omission
+errors of omission,error_of_omission
+cue-overload principle,cue-overload_principle
+cue-overload principles,cue-overload_principle
+accessibility/availability,accessibility/availability
+accessibility/availabilities,accessibility/availability
+retrieval,retrieval
+retrievals,retrieval
+memory retrieval,memory_retrieval
+memory retrievals,memory_retrieval
+memory search,memory_search
+memory searches,memory_search
+remembering,remembering
+remembering,remembering
+retrieval process,retrieval_process
+retrieval processes,retrieval_process
+search process,search_process
+search processes,search_process
+trace retrieval,trace_retrieval
+trace retrievals,trace_retrieval
+trace utilization,trace_utilization
+trace utilizations,trace_utilization
+storage,storage
+storages,storage
+trace storage,trace_storage
+trace storages,trace_storage
+tip-of-the-tongue,tip-of-the-tongue
+tips-of-the-tongue,tip-of-the-tongue
+TOT,TOT
+TOTS,TOT
+indirect realism,indirect_realism
+indirect realism,indirect_realism
+selective retrieval,selective_retrieval
+selective retrievals,selective_retrieval
+partial retrieval,partial_retrieval
+partial retrievals,partial_retrieval
+judgment of frequency,judgment_of_frequency
+judgments of frequency,judgment_of_frequency
+activation,activation
+activations,activation
+explicit memory,explicit_memory
+explicit memories,explicit_memory
+memory foraging,memory_foraging
+memories foraging,memory_foraging
+redintegration,redintegration
+redintegrations,redintegration
+involuntary memory,involuntary_memory
+involuntary memories,involuntary_memory
+direct retrieval,direct_retrieval
+direct retrievals,direct_retrieval
+spontaneous memory,spontaneous_memory
+spontaneous memories,spontaneous_memory
+spontaneous retrieval,spontaneous_retrieval
+spontaneous retrievals,spontaneous_retrieval
+unintentional memory,unintentional_memory
+unintentional memories,unintentional_memory
+implicit memory,implicit_memory
+implicit memories,implicit_memory
+HERNET model,HERNET_model
+HERNET models,HERNET_model
+Hippocampal Encoding/Retrieval and Network model,Hippocampal_Encoding/Retrieval_and_Network_model
+Hippocampal Encoding/Retrieval and Network models,Hippocampal_Encoding/Retrieval_and_Network_model
+General Abstract Processing System Model,General_Abstract_Processing_System_Model
+General Abstract Processing System Model,General_Abstract_Processing_System_Model
+GAPS,GAPS
+GAPSES,GAPS
+GAPS model,GAPS_model
+GAPS models,GAPS_model
+HIPER model,HIPER_model
+HIPER models,HIPER_model
+Hippocampal Encoding/Retrieval model,Hippocampal_Encoding/Retrieval_model
+Hippocampal Encoding/Retrieval models,Hippocampal_Encoding/Retrieval_model
+cue depreciation effect,cue_depreciation_effect
+cue depreciation effects,cue_depreciation_effect
+retrieval practice,retrieval_practice
+retrieval practices,retrieval_practice
+recitation,recitation
+recitations,recitation
+retrieval-induced facilitation,retrieval-induced_facilitation
+retrieval-induced facilitation,retrieval-induced_facilitation
+SAT function,SAT_function
+SAT functions,SAT_function
+speed-accuracy trade-off function,speed-accuracy_trade-off_function
+speed-accuracy trade-off functions,speed-accuracy_trade-off_function
+HERA model,HERA_model
+HERA models,HERA_model
+transfer-appropriate processing principle,transfer-appropriate_processing_principle
+transfer-appropriate processing principles,transfer-appropriate_processing_principle
+transfer-appropriate processing,transfer-appropriate_processing
+transfer-appropriate processing,transfer-appropriate_processing
+retrieval effort hypothesis,retrieval_effort_hypothesis
+retrieval effort hypotheses,retrieval_effort_hypothesis
+strategy,strategy
+strategies,strategy
+memory aid,memory_aid
+memory aids,memory_aid
+memory device,memory_device
+memory devices,memory_device
+mnemonic device,mnemonic_device
+mnemonic devices,mnemonic_device
+reminiscence,reminiscence
+reminiscences,reminiscence
+functionalist theories of memory,functionalist_theories_of_memory
+functionalist theories of memory,functionalist_theories_of_memory
+procedural theories of memory,procedural_theories_of_memory
+procedural theories of memory,procedural_theories_of_memory
+free and and cued selective reminding test,free_and_and_cued_selective_reminding_test
+free and and cued selective reminding tests,free_and_and_cued_selective_reminding_test
+FCSRT,FCSRT
+FCSRT,FCSRT
+Grober and Buschke test,Grober_and_Buschke_test
+Grober and Buschke tests,Grober_and_Buschke_test
+maintenance rehearsal,maintenance_rehearsal
+maintenance rehearsals,maintenance_rehearsal
+type I processing,type_I_processing
+type I processing,type_I_processing
+level-of-processing effect,level-of-processing_effect
+level-of-processing effects,level-of-processing_effect
+orienting task,orienting_task
+orienting tasks,orienting_task
+elaborative rehearsal,elaborative_rehearsal
+elaborative rehearsals,elaborative_rehearsal
+type II processing,type_II_processing
+type II processing,type_II_processing
+working memory period paradigm,working_memory_period_paradigm
+working memory period paradigms,working_memory_period_paradigm
+memory capacity,memory_capacity
+memory capacities,memory_capacity
+memorial capacity,memorial_capacity
+memorial capacities,memorial_capacity
+storage capacity,storage_capacity
+storage capacities,storage_capacity
+memory,memory
+memories,memory
+memory disposition,memory_disposition
+memory dispositions,memory_disposition
+memory function,memory_function
+memory functions,memory_function
+memory system,memory_system
+memory systems,memory_system
+mnemonic function,mnemonic_function
+mnemonic functions,mnemonic_function
+mnesic function,mnesic_function
+mnesic functions,mnesic_function
+orthographic working memory,orthographic_working_memory
+orthographic working memories,orthographic_working_memory
+graphemic buffer,graphemic_buffer
+graphemic buffers,graphemic_buffer
+transsaccadic memory,transsaccadic_memory
+transsaccadic memories,transsaccadic_memory
+executive loop,executive_loop
+executive loops,executive_loop
+articulatory loop,articulatory_loop
+articulatory loops,articulatory_loop
+articulatory rehearsal process,articulatory_rehearsal_process
+articulatory rehearsal processes,articulatory_rehearsal_process
+topographical working memory,topographical_working_memory
+topographical working memories,topographical_working_memory
+visuo-spatial sketchpad,visuo-spatial_sketchpad
+visuo-spatial sketchpads,visuo-spatial_sketchpad
+VSSP,VSSP
+VSSP,VSSP
+visuo-spatial scratchpad,visuo-spatial_scratchpad
+visuo-spatial scratchpads,visuo-spatial_scratchpad
+episodic buffer,episodic_buffer
+episodic buffers,episodic_buffer
+declarative working memory,declarative_working_memory
+declarative working memories,declarative_working_memory
+inner scribe,inner_scribe
+inner scribes,inner_scribe
+central executive,central_executive
+central executives,central_executive
+executive attention,executive_attention
+executive attentions,executive_attention
+activity-silent working memory,activity-silent_working_memory
+activity-silent working memories,activity-silent_working_memory
+social working memory,social_working_memory
+social working memories,social_working_memory
+phonological loop,phonological_loop
+phonological loops,phonological_loop
+affective working memory,affective_working_memory
+affective working memories,affective_working_memory
+procedural working memory,procedural_working_memory
+procedural working memories,procedural_working_memory
+long-term working memory,long-term_working_memory
+long-term working memories,long-term_working_memory
+gestural loop,gestural_loop
+gestural loops,gestural_loop
+goal maintenance,goal_maintenance
+goal maintenance,goal_maintenance
+implicit working memory,implicit_working_memory
+implicit working memories,implicit_working_memory
+phonological store,phonological_store
+phonological stores,phonological_store
+visual cache,visual_cache
+visual caches,visual_cache
+gating process,gating_process
+gating processes,gating_process
+gating,gating
+gating,gating
+gating mechanism,gating_mechanism
+gating mechanism,gating_mechanism
+working memory gating,working_memory_gating
+working memory gating,working_memory_gating
+contralateral delay activity,contralateral_delay_activity
+contralateral delay activities,contralateral_delay_activity
+CDA,CDA
+CDA,CDA
+CNSW,CNSW
+CNSW,CNSW
+CSA,CSA
+CSA,CSA
+SPCN,SPCN
+SPCN,SPCN
+contralateral negative slow wave,contralateral_negative_slow_wave
+contralateral negative slow waves,contralateral_negative_slow_wave
+contralateral search activity,contralateral_search_activity
+contralateral search activities,contralateral_search_activity
+sustained posterior contralateral negativity,sustained_posterior_contralateral_negativity
+sustained posterior contralateral negativities,sustained_posterior_contralateral_negativity
+temporal tagging,temporal_tagging
+temporal taggings,temporal_tagging
+hierarchical chunking,hierarchical_chunking
+hierarchical chunking,hierarchical_chunking
+memory-driven attentional capture,memory-driven_attentional_capture
+memory-driven attentional captures,memory-driven_attentional_capture
+memory-driven capture,memory-driven_capture
+memory-driven captures,memory-driven_capture
+simple chunking,simple_chunking
+simple chunking,simple_chunking
+working memory training,working_memory_training
+working memory trainings,working_memory_training
+working memory training program,working_memory_training_program
+working memory training programs,working_memory_training_program
+chunking,chunking
+chunking,chunking
+working memory consolidation,working_memory_consolidation
+working memory consolidations,working_memory_consolidation
+Compensation Related Utilization of Neural Circuits Hypothesis,Compensation_Related_Utilization_of_Neural_Circuits_Hypothesis
+Compensation Related Utilization of Neural Circuits Hypothesis,Compensation_Related_Utilization_of_Neural_Circuits_Hypothesis
+CRUNCH,CRUNCH
+CRUNCH,CRUNCH
+N2 posterior contralateral component,N2_posterior_contralateral_component
+N2 posterior contralateral components,N2_posterior_contralateral_component
+N2pc,N2pc
+N2pc,N2pc
+change detection paradigm,change_detection_paradigm
+change detection paradigms,change_detection_paradigm
+change detection task,change_detection_task
+change detection tasks,change_detection_task
+visual arrays task,visual_arrays_task
+visual arrays tasks,visual_arrays_task
+visual-array comparison,visual-array_comparison
+visual-array comparisons,visual-array_comparison
+cognitive load,cognitive_load
+cognitive loads,cognitive_load
+cognitive effort,cognitive_effort
+cognitive efforts,cognitive_effort
+mental load,mental_load
+mental loads,mental_load
+processing capacity,processing_capacity
+processing capacities,processing_capacity
+workload,workload
+workloads,workload
+Go/No-Go task,Go/No-Go_task
+Go/No-Go task,Go/No-Go_task
+short-term consolidation,short-term_consolidation
+short-term consolidations,short-term_consolidation
+chunk,chunk
+chunk,chunk
+short-term memory,short-term_memory
+short-term memories,short-term_memory
+STM,STM
+STM,STM
+active memory,active_memory
+active memories,active_memory
+echo box,echo_box
+echo boxes,echo_box
+immediate memory,immediate_memory
+immediate memories,immediate_memory
+primary memory,primary_memory
+primary memories,primary_memory
+short-term retention,short-term_retention
+short-term retention,short-term_retention
+short-term storage,short-term_storage
+short-term storages,short-term_storage
+short-term store,short-term_store
+short-term stores,short-term_store
+Hebb effect,Hebb_effect
+Hebb effects,Hebb_effect
+Hebb repetition effect,Hebb_repetition_effect
+Hebb repetition effects,Hebb_repetition_effect
+semantic short-term memory,semantic_short-term_memory
+semantic short-term memories,semantic_short-term_memory
+semantic working memory,semantic_working_memory
+semantic working memories,semantic_working_memory
+inhibitory control,inhibitory_control
+inhibitory controls,inhibitory_control
+response inhibition,response_inhibition
+response inhibitions,response_inhibition
+focus of attention,focus_of_attention
+focuses of attention,focus_of_attention
+attentional focus,attentional_focus
+attentional focuses,attentional_focus
+attentional focusing,attentional_focusing
+attentional focusing,attentional_focusing
+selective interference paradigm,selective_interference_paradigm
+selective interference paradigms,selective_interference_paradigm
+working memory updating,working_memory_updating
+working memory updating,working_memory_updating
+updating,updating
+updating,updating
+updating process,updating_process
+updating process,updating_process
+fluid intelligence,fluid_intelligence
+fluid intelligence,fluid_intelligence
+Gf,Gf
+Gfs,Gf
+fluid reasoning,fluid_reasoning
+fluid reasonings,fluid_reasoning
+verbal memory,verbal_memory
+verbal memories,verbal_memory
+verbal storage,verbal_storage
+verbal storages,verbal_storage
+executive functions,executive_functions
+executive functions,executive_functions
+metamemory phenomenon,metamemory_phenomenon
+metamemory phenomena,metamemory_phenomenon
+metamnesic phenomenon,metamnesic_phenomenon
+metamnesic phenomena,metamnesic_phenomenon
+feeling of knowing judgment,feeling_of_knowing_judgment
+feelings of knowing judgment,feeling_of_knowing_judgment
+FOK,FOK
+FOKS,FOK
+semantic satiation,semantic_satiation
+semantic satiations,semantic_satiation
+acetylcholine,acetylcholine
+acetylcholines,acetylcholine
+ACh,ACh
+Aches,ACh
+neurotransmitter,neurotransmitter
+neurotransmitters,neurotransmitter
+glutamate,glutamate
+glutamate,glutamate
+glutamic acid,glutamic_acid
+glutamic acids,glutamic_acid
+acid bath theory,acid_bath_theory
+acid bath theories,acid_bath_theory
+acid bath model,acid_bath_model
+acid bath models,acid_bath_model
+acid bath principle,acid_bath_principle
+acid bath principles,acid_bath_principle
+buffer memory,buffer_memory
+buffer memories,buffer_memory
+predictive brain,predictive_brain
+predictive brains,predictive_brain
+bayesian brain,bayesian_brain
+bayesian brains,bayesian_brain
+bayesian brain theory,bayesian_brain_theory
+bayesian brain theories,bayesian_brain_theory
+predictive coding,predictive_coding
+predictive coding,predictive_coding
+predictive mind,predictive_mind
+predictive minds,predictive_mind
+predictive processing framework,predictive_processing_framework
+predictive processing frameworks,predictive_processing_framework
+prospective brain,prospective_brain
+prospective brains,prospective_brain
+prospective thought,prospective_thought
+prospective thoughts,prospective_thought
+association-monitoring theory,association-monitoring_theory
+association-monitoring theories,association-monitoring_theory
+AMF,AMF
+AMF,AMF
+activation/monitoring framework,activation/monitoring_framework
+activation/monitoring frameworks,activation/monitoring_framework
+hippocampal memory indexing theory,hippocampal_memory_indexing_theory
+hippocampal memory indexing theories,hippocampal_memory_indexing_theory
+multi-process theory of prospective memory,multi-process_theory_of_prospective_memory
+multi-process theories of prospective memory,multi-process_theory_of_prospective_memory
+preparatory attentional and memory processes theory,preparatory_attentional_and_memory_processes_theory
+preparatory attentional and memory processes theories,preparatory_attentional_and_memory_processes_theory
+dynamic field theory,dynamic_field_theory
+dynamic field theories,dynamic_field_theory
+scaffolding theory of cognition and aging,scaffolding_theory_of_cognition_and_aging
+scaffolding theory of cognition and aging,scaffolding_theory_of_cognition_and_aging
+STAC,STAC
+STAC,STAC
+scaffolding theory of cognitive aging,scaffolding_theory_of_cognitive_aging
+scaffolding theory of cognitive aging,scaffolding_theory_of_cognitive_aging
+reflexive-associative theory of prospective memory,reflexive-associative_theory_of_prospective_memory
+reflexive-associative theories of prospective memory,reflexive-associative_theory_of_prospective_memory
+implicit associative response,implicit_associative_response
+implicit associative responses,implicit_associative_response
+associative-activation theory,associative-activation_theory
+associative-activation theories,associative-activation_theory
+Act-In theory,Act-In_theory
+Act-In theory,Act-In_theory
+positional coding theory,positional_coding_theory
+positional coding theories,positional_coding_theory
+exemplar theories,exemplar_theories
+exemplar theories,exemplar_theories
+direct realism,direct_realism
+direct realism,direct_realism
+generate-recognize theory,generate-recognize_theory
+generate-recognize theories,generate-recognize_theory
+dual-process theory,dual-process_theory
+dual-process theories,dual-process_theory
+dual coding theory,dual_coding_theory
+dual coding theories,dual_coding_theory
+dual-code hypothesis,dual-code_hypothesis
+dual-code hypotheses,dual-code_hypothesis
+causal theory of memory,causal_theory_of_memory
+causal theories of memory,causal_theory_of_memory
+causalism,causalism
+causalisms,causalism
+serial search theory,serial_search_theory
+serial search theories,serial_search_theory
+associative chaining theory,associative_chaining_theory
+associative chaining theories,associative_chaining_theory
+associative chaining,associative_chaining
+associative chaining,associative_chaining
+embodied cognition,embodied_cognition
+embodied cognition,embodied_cognition
+embodiment,embodiment
+embodiment,embodiment
+transition theory,transition_theory
+transition theories,transition_theory
+TODAM,TODAM
+TODAMS,TODAM
+Theory of Distributed Associative Memory,Theory_of_Distributed_Associative_Memory
+Theories of Distributed Associative Memory,Theory_of_Distributed_Associative_Memory
+global matching model,global_matching_model
+global matching models,global_matching_model
+encoding,encoding
+encoding,encoding
+acquisition of memory,acquisition_of_memory
+acquisitions of memory,acquisition_of_memory
+coding,coding
+coding,coding
+memory acquisition,memory_acquisition
+memory acquisitions,memory_acquisition
+memory formation,memory_formation
+memory formations,memory_formation
+trace formation,trace_formation
+trace formations,trace_formation
+associative strength,associative_strength
+associative strengths,associative_strength
+fragile visual short-term memory,fragile_visual_short-term_memory
+fragile visual short-term memories,fragile_visual_short-term_memory
+conceptual short-term memory,conceptual_short-term_memory
+conceptual short-term memories,conceptual_short-term_memory
+short-term semantic memory,short-term_semantic_memory
+short-term semantic memories,short-term_semantic_memory
+very short-term conceptual memory,very_short-term_conceptual_memory
+very short-term conceptual memories,very_short-term_conceptual_memory
+K.F. case,K.F._case
+K.F. cases,K.F._case
+K.F. patient,K.F._patient
+K.F. patients,K.F._patient
+P.V. case,P.V._case
+P.V. cases,P.V._case
+P.V. patient,P.V._patient
+P.V. patients,P.V._patient
+degree centrality,degree_centrality
+degree centralities,degree_centrality
+serial position curve,serial_position_curve
+serial position curves,serial_position_curve
+modality effect,modality_effect
+modality effects,modality_effect
+language familiarity effect,language_familiarity_effect
+language familiarity effects,language_familiarity_effect
+primacy effect,primacy_effect
+primacy effects,primacy_effect
+law of primacy,law_of_primacy
+laws of primacy,law_of_primacy
+principle of primacy,principle_of_primacy
+principles of primacy,principle_of_primacy
+irrelevant sound effect,irrelevant_sound_effect
+irrelevant sound effects,irrelevant_sound_effect
+Ranschburg effect,Ranschburg_effect
+Ranschburg effects,Ranschburg_effect
+repetition inhibition,repetition_inhibition
+repetition inhibitions,repetition_inhibition
+choice blindness effect,choice_blindness_effect
+choice blindness effects,choice_blindness_effect
+prefix effect,prefix_effect
+prefix effects,prefix_effect
+sentence superiority effect,sentence_superiority_effect
+sentence superiority effects,sentence_superiority_effect
+sentence avantage effect,sentence_avantage_effect
+sentence avantage effects,sentence_avantage_effect
+phonotactic frequency,phonotactic_frequency
+phonotactic frequencies,phonotactic_frequency
+retro-cue effect,retro-cue_effect
+retro-cue effects,retro-cue_effect
+retro-cue advantage,retro-cue_advantage
+retro-cue advantages,retro-cue_advantage
+retro-cue benefit,retro-cue_benefit
+retro-cue benefits,retro-cue_benefit
+recency effect,recency_effect
+recency effects,recency_effect
+law of recency,law_of_recency
+laws of recency,law_of_recency
+principle of recency,principle_of_recency
+principles of recency,principle_of_recency
+lexicality effect,lexicality_effect
+lexicality effects,lexicality_effect
+lexicality advantage,lexicality_advantage
+lexicality advantages,lexicality_advantage
+irrelevant speech effect,irrelevant_speech_effect
+irrelevant speech effects,irrelevant_speech_effect
+unattended speech effect,unattended_speech_effect
+unattended speech effects,unattended_speech_effect
+bilateral field advantage,bilateral_field_advantage
+bilateral field advantages,bilateral_field_advantage
+phonological neighbourhood effect,phonological_neighbourhood_effect
+phonological neighbourhood effects,phonological_neighbourhood_effect
+word length effect,word_length_effect
+word length effects,word_length_effect
+articulatory suppression effect,articulatory_suppression_effect
+articulatory suppression effects,articulatory_suppression_effect
+concurrent articulation effect,concurrent_articulation_effect
+concurrent articulation effects,concurrent_articulation_effect
+rehearsal,rehearsal
+rehearsals,rehearsal
+subvocal rehearsal,subvocal_rehearsal
+subvocal rehearsals,subvocal_rehearsal
+temporal isolation effect,temporal_isolation_effect
+temporal isolation effects,temporal_isolation_effect
+sandwich effect,sandwich_effect
+sandwich effects,sandwich_effect
+phonological similarity effect,phonological_similarity_effect
+phonological similarity effects,phonological_similarity_effect
+acoustic confusion effect,acoustic_confusion_effect
+acoustic confusion effects,acoustic_confusion_effect
+phonemic similarity effect,phonemic_similarity_effect
+phonemic similarity effects,phonemic_similarity_effect
+auditory deviant effect ​,auditory_deviant_effect_​
+auditory deviant effects ​,auditory_deviant_effect_​
+acquired prosopagnosia,acquired_prosopagnosia
+acquired prosopagnosia,acquired_prosopagnosia
+agnosia,agnosia
+agnosias,agnosia
+Adaptive Control of Thought-Rational,Adaptive_Control_of_Thought-Rational
+Adaptive Control of Thought-Rational,Adaptive_Control_of_Thought-Rational
+ACT-R,ACT-R
+ACT-RS,ACT-R
+computational model,computational_model
+computational models,computational_model
+computational modeling,computational_modeling
+computational modelings,computational_modeling
+computational modelling,computational_modelling
+computational modelling,computational_modelling
+quantitative model,quantitative_model
+quantitative models,quantitative_model
+simulation model,simulation_model
+simulation models,simulation_model
+Clark Kent effect,Clark_Kent_effect
+Clark Kent effects,Clark_Kent_effect
+face memory,face_memory
+face memories,face_memory
+facial memory,facial_memory
+facial memories,facial_memory
+multinomial model of prospective memory,multinomial_model_of_prospective_memory
+multinomial models of prospective memory,multinomial_model_of_prospective_memory
+distributional model,distributional_model
+distributional models,distributional_model
+corpus-based model,corpus-based_model
+corpus-based models,corpus-based_model
+distributional semantic model,distributional_semantic_model
+distributional semantic models,distributional_semantic_model
+semantic-space model,semantic-space_model
+semantic-space models,semantic-space_model
+vector-space model,vector-space_model
+vector-space models,vector-space_model
+word co-occurrence model,word_co-occurrence_model
+word co-occurrence models,word_co-occurrence_model
+retrieval accuracy from fragmented traces model,retrieval_accuracy_from_fragmented_traces_model
+retrieval accuracies from fragmented traces models,retrieval_accuracy_from_fragmented_traces_model
+RAFT model,RAFT_model
+RAFT models,RAFT_model
+Recognition through Semantic Synchronization model,Recognition_through_Semantic_Synchronization_model
+Recognitions through Semantic Synchronization model,Recognition_through_Semantic_Synchronization_model
+interference model,interference_model
+interference models,interference_model
+multiple trace model,multiple_trace_model
+multiple trace models,multiple_trace_model
+connectionist model,connectionist_model
+connectionist models,connectionist_model
+ANN model,ANN_model
+ANN models,ANN_model
+artifical neural network model,artifical_neural_network_model
+artifical neural network models,artifical_neural_network_model
+connectionism,connectionism
+connectionisms,connectionism
+connectionist network,connectionist_network
+connectionist networks,connectionist_network
+formal neural network model,formal_neural_network_model
+formal neural network models,formal_neural_network_model
+neoconnectionism,neoconnectionism
+neoconnectionisms,neoconnectionism
+neural network model,neural_network_model
+neural network models,neural_network_model
+parallel distributed processing,parallel_distributed_processing
+parallel distributed processing,parallel_distributed_processing
+diffusion model,diffusion_model
+diffusion models,diffusion_model
+diffusion modeling,diffusion_modeling
+diffusion modelings,diffusion_modeling
+SEM model,SEM_model
+SEM models,SEM_model
+Start-End Model,Start-End_Model
+Start-End Model,Start-End_Model
+semantic network,semantic_network
+semantic networks,semantic_network
+bind cue decide model of episodic memory,bind_cue_decide_model_of_episodic_memory
+bind cue decide model of episodic memory,bind_cue_decide_model_of_episodic_memory
+BCDMEM model,BCDMEM_model
+BCDMEM models,BCDMEM_model
+SIMPLE model,SIMPLE_model
+SIMPLE models,SIMPLE_model
+Scale Independent Memory_ Perception and Learning model,Scale_Independent_Memory__Perception_and_Learning_model
+Scale Independent Memory_ Perception and Learning model,Scale_Independent_Memory__Perception_and_Learning_model
+Scale Invariant Memory and Perceptual Learning model,Scale_Invariant_Memory_and_Perceptual_Learning_model
+Scale Invariant Memory and Perceptual Learning models,Scale_Invariant_Memory_and_Perceptual_Learning_model
+bayesian model,bayesian_model
+bayesian models,bayesian_model
+semantic space,semantic_space
+semantic spaces,semantic_space
+feature comparison model,feature_comparison_model
+feature comparison models,feature_comparison_model
+signal detection theory,signal_detection_theory
+signal detection theories,signal_detection_theory
+SDT,SDT
+SDT,SDT
+signal detection model,signal_detection_model
+signal detection models,signal_detection_model
+time-based resource sharing model,time-based_resource_sharing_model
+time-based resource sharing models,time-based_resource_sharing_model
+TBRS model,TBRS_model
+TBRS models,TBRS_model
+multidimensional face space model,multidimensional_face_space_model
+multidimensional face space models,multidimensional_face_space_model
+algorithm,algorithm
+algorithms,algorithm
+Rivermead Behavioural Memory Test for Children,Rivermead_Behavioural_Memory_Test_for_Children
+Rivermead Behavioural Memory Test for Children,Rivermead_Behavioural_Memory_Test_for_Children
+RBMT-C,RBMT-C
+RBMT-CS,RBMT-C
+Rivermead Behavioural Memory Test,Rivermead_Behavioural_Memory_Test
+Rivermead Behavioural Memory Test,Rivermead_Behavioural_Memory_Test
+RBMT,RBMT
+RBMT,RBMT
+visual memory,visual_memory
+visual memories,visual_memory
+iconic memory,iconic_memory
+iconic memories,iconic_memory
+precategorical visual store,precategorical_visual_store
+precategorical visual stores,precategorical_visual_store
+visual persistence,visual_persistence
+visual persistence,visual_persistence
+visual sensory memory,visual_sensory_memory
+visual sensory memories,visual_sensory_memory
+own-race bias,own-race_bias
+own-race biases,own-race_bias
+cross-race effect,cross-race_effect
+cross-race effects,cross-race_effect
+cross-race identification bias,cross-race_identification_bias
+cross-race identification biases,cross-race_identification_bias
+other race effect,other_race_effect
+other race effects,other_race_effect
+own-ethnicity bias,own-ethnicity_bias
+own-ethnicity biases,own-ethnicity_bias
+own-sex bias,own-sex_bias
+own-sex biases,own-sex_bias
+own-gender bias,own-gender_bias
+own-gender biases,own-gender_bias
+attribute amnesia,attribute_amnesia
+attribute amnesia,attribute_amnesia
+own-age bias,own-age_bias
+own-age biases,own-age_bias
+boundary extension illusion,boundary_extension_illusion
+boundary extension illusions,boundary_extension_illusion
+own-species bias,own-species_bias
+own-species biases,own-species_bias
+other-species effect,other-species_effect
+other-species effects,other-species_effect
+target effect,target_effect
+target effects,target_effect
+verbal overshadowing effect,verbal_overshadowing_effect
+verbal overshadowing effects,verbal_overshadowing_effect
+VOE,VOE
+VOE,VOE
+own-group bias,own-group_bias
+own-group biases,own-group_bias
+recall task,recall_task
+recall task,recall_task
+recall measure,recall_measure
+recall measures,recall_measure
+recall method,recall_method
+recall methods,recall_method
+recall paradigm,recall_paradigm
+recall paradigms,recall_paradigm
+recall test,recall_test
+recall tests,recall_test
+observation inflation effect,observation_inflation_effect
+observation inflation effects,observation_inflation_effect
+information removal,information_removal
+information removals,information_removal
+selective directed forgetting effect,selective_directed_forgetting_effect
+selective directed forgetting effects,selective_directed_forgetting_effect
+directed forgetting,directed_forgetting
+directed forgetting,directed_forgetting
+spreading activation,spreading_activation
+spreading activation,spreading_activation
+attention,attention
+attentions,attention
+episodic flanker task,episodic_flanker_task
+episodic flanker tasks,episodic_flanker_task
+episodic flanker paradigm,episodic_flanker_paradigm
+episodic flanker paradigms,episodic_flanker_paradigm
+reproduction processing effect,reproduction_processing_effect
+reproduction processing effects,reproduction_processing_effect
+zombie effect,zombie_effect
+zombie effects,zombie_effect
+DRM memory illusion,DRM_memory_illusion
+DRM memory illusions,DRM_memory_illusion
+DRM effect,DRM_effect
+DRM effects,DRM_effect
+DRM error,DRM_error
+DRM errors,DRM_error
+DRM false memory effect,DRM_false_memory_effect
+DRM false memory effects,DRM_false_memory_effect
+DRM false memory illusion,DRM_false_memory_illusion
+DRM false memory illusions,DRM_false_memory_illusion
+DRM illusion,DRM_illusion
+DRM illusions,DRM_illusion
+Deese-Roediger-McDermott illusion,Deese-Roediger-McDermott_illusion
+Deese-Roediger-McDermott illusions,Deese-Roediger-McDermott_illusion
+Deese-Roediger-McDermott memory illusion,Deese-Roediger-McDermott_memory_illusion
+Deese-Roediger-McDermott memory illusions,Deese-Roediger-McDermott_memory_illusion
+associative priming effect,associative_priming_effect
+associative priming effects,associative_priming_effect
+associative priming,associative_priming
+associative primings,associative_priming
+priming effect,priming_effect
+priming effects,priming_effect
+priming,priming
+priming,priming
+recovered memory,recovered_memory
+recovered memories,recovered_memory
+memory sensitivity,memory_sensitivity
+memory sensitivities,memory_sensitivity
+discriminability,discriminability
+discriminabilities,discriminability
+memory discriminability,memory_discriminability
+memory discriminabilities,memory_discriminability
+sensitivity,sensitivity
+sensitivities,sensitivity
+repisodic memory,repisodic_memory
+repisodic memories,repisodic_memory
+suggestibility,suggestibility
+suggestibilities,suggestibility
+engram,engram
+engrams,engram
+memory engram,memory_engram
+memory engrams,memory_engram
+memory trace,memory_trace
+memory traces,memory_trace
+mneme,mneme
+mnemes,mneme
+mnemonic trace,mnemonic_trace
+mnemonic traces,mnemonic_trace
+mnesic trace,mnesic_trace
+mnesic traces,mnesic_trace
+neurogram,neurogram
+neurograms,neurogram
+sensory memory,sensory_memory
+sensory memories,sensory_memory
+preattentive immediate memory,preattentive_immediate_memory
+preattentive immediate memories,preattentive_immediate_memory
+sensory register,sensory_register
+sensory registers,sensory_register
+phyletic memory,phyletic_memory
+phyletic memories,phyletic_memory
+auditory memory,auditory_memory
+auditory memories,auditory_memory
+long-term memory,long-term_memory
+long-term memories,long-term_memory
+LTM,LTM
+LTM,LTM
+delayed memory,delayed_memory
+delayed memories,delayed_memory
+long-term retention,long-term_retention
+long-term retention,long-term_retention
+long-term storage,long-term_storage
+long-term storages,long-term_storage
+long-term store,long-term_store
+long-term stores,long-term_store
+permanent memory,permanent_memory
+permanent memories,permanent_memory
+remote memory,remote_memory
+remote memories,remote_memory
+secondary memory,secondary_memory
+secondary memories,secondary_memory
+false memory,false_memory
+false memories,false_memory
+false remembering,false_remembering
+false rememberings,false_remembering
+memory distortion,memory_distortion
+memory distortions,memory_distortion
+memory error,memory_error
+memory errors,memory_error
+memory illusion,memory_illusion
+memory illusions,memory_illusion
+misremembering,misremembering
+misremembering,misremembering
+collective memory,collective_memory
+collective memories,collective_memory
+social memory,social_memory
+social memories,social_memory
+conjunctive memory,conjunctive_memory
+conjunctive memories,conjunctive_memory
+conjunctive binding,conjunctive_binding
+conjunctive bindings,conjunctive_binding
+eye movement,eye_movement
+eye movements,eye_movement
+memory organization,memory_organization
+memory organizations,memory_organization
+memory structuration,memory_structuration
+memory structurations,memory_structuration
+memory structure,memory_structure
+memory structures,memory_structure
+atypical protein kinase C,atypical_protein_kinase_C
+atypical protein kinase CS,atypical_protein_kinase_C
+aPKC,aPKC
+apkcs,aPKC
+hypermnesia,hypermnesia
+hypermnesias,hypermnesia
+mnemicity,mnemicity
+mnemicities,mnemicity
+protein kinase C,protein_kinase_C
+protein kinase CS,protein_kinase_C
+PKC,PKC
+PKCS,PKC
+mental simulation,mental_simulation
+mental simulations,mental_simulation
+motor simulation,motor_simulation
+motor simulations,motor_simulation
+sensori-motor simulation,sensori-motor_simulation
+sensori-motor simulations,sensori-motor_simulation
+retrieval stopping,retrieval_stopping
+retrieval stoppings,retrieval_stopping
+fast mapping process,fast_mapping_process
+fast mapping processes,fast_mapping_process
+Now Print! mechanism,Now_Print!_mechanism
+Now Print! mechanisms,Now_Print!_mechanism
+configural processing,configural_processing
+configural processing,configural_processing
+configurational processing,configurational_processing
+configurational processing,configurational_processing
+transfer,transfer
+transfers,transfer
+decoding,decoding
+decoding,decoding
+unitization,unitization
+unitizations,unitization
+semantic memory,semantic_memory
+semantic memories,semantic_memory
+conceptual knowledge,conceptual_knowledge
+conceptual knowledges,conceptual_knowledge
+conceptual memory,conceptual_memory
+conceptual memories,conceptual_memory
+conceptual system,conceptual_system
+conceptual systems,conceptual_system
+decontextualized memory,decontextualized_memory
+decontextualized memories,decontextualized_memory
+general knowledge,general_knowledge
+general knowledges,general_knowledge
+generic memory,generic_memory
+generic memories,generic_memory
+propositional memory,propositional_memory
+propositional memories,propositional_memory
+semantic cognition,semantic_cognition
+semantic cognitions,semantic_cognition
+semantic knowledge,semantic_knowledge
+semantic knowledges,semantic_knowledge
+semantic representation,semantic_representation
+semantic representations,semantic_representation
+attention phenomenon,attention_phenomenon
+attention phenomena,attention_phenomenon
+attentional phenomenon,attentional_phenomenon
+attentional phenomena,attentional_phenomenon
+learning phenomenon,learning_phenomenon
+learning phenomena,learning_phenomenon
+DMS48,DMS48
+DMS48S,DMS48
+prior knowledge,prior_knowledge
+prior knowledges,prior_knowledge
+schema,schema
+schema,schema
+schematic representation,schematic_representation
+schematic representations,schematic_representation
+encyclopedic memory,encyclopedic_memory
+encyclopedic memories,encyclopedic_memory
+school knowledge,school_knowledge
+school knowledges,school_knowledge
+mental lexicon,mental_lexicon
+mental lexicons,mental_lexicon
+semantic feature,semantic_feature
+semantic features,semantic_feature
+attribute,attribute
+attribute,attribute
+semantic property,semantic_property
+semantic properties,semantic_property
+seme,seme
+semes,seme
+GloVe,GloVe
+Gloves,GloVe
+Global Vector for Word Representation,Global_Vector_for_Word_Representation
+Global Vector for Word Representation,Global_Vector_for_Word_Representation
+word2vec,word2vec
+word2vecs,word2vec
+L.S. case,L.S._case
+L.S. cases,L.S._case
+L.S. patient,L.S._patient
+L.S. patients,L.S._patient
+fan effect,fan_effect
+fan effects,fan_effect
+FActs Number,FActs_Number
+FActs Numbers,FActs_Number
+true-false effect,true-false_effect
+true-false effects,true-false_effect
+fast-true effect,fast-true_effect
+fast-true effects,fast-true_effect
+categorization,categorization
+categorizations,categorization
+classification,classification
+classifications,classification
+distributional hypothesis,distributional_hypothesis
+distributional hypotheses,distributional_hypothesis
+distributional semantics,distributional_semantics
+distributional semantics,distributional_semantics
+latent semantic analysis,latent_semantic_analysis
+latent semantic analyses,latent_semantic_analysis
+LSA,LSA
+LSA,LSA
+latent semantic indexing,latent_semantic_indexing
+latent semantic indexing,latent_semantic_indexing
+perceptual representation system,perceptual_representation_system
+perceptual representation systems,perceptual_representation_system
+semantic verbal fluency test,semantic_verbal_fluency_test
+semantic verbal fluency tests,semantic_verbal_fluency_test
+categorical verbal fluency task,categorical_verbal_fluency_task
+categorical verbal fluency tasks,categorical_verbal_fluency_task
+categorical verbal fluency test,categorical_verbal_fluency_test
+categorical verbal fluency tests,categorical_verbal_fluency_test
+category fluency task,category_fluency_task
+category fluency tasks,category_fluency_task
+category fluency test,category_fluency_test
+category fluency tests,category_fluency_test
+paradigme de fluence sémantique,paradigme_de_fluence_sémantique
+paradigme de fluence sémantique,paradigme_de_fluence_sémantique
+semantic fluency paradigm,semantic_fluency_paradigm
+semantic fluency paradigms,semantic_fluency_paradigm
+semantic fluency task,semantic_fluency_task
+semantic fluency tasks,semantic_fluency_task
+conceptual fluency,conceptual_fluency
+conceptual fluencies,conceptual_fluency
+semantic fluency,semantic_fluency
+semantic fluencies,semantic_fluency
+semantic priming effect,semantic_priming_effect
+semantic priming effects,semantic_priming_effect
+conceptual priming,conceptual_priming
+conceptual primings,conceptual_priming
+semantic priming,semantic_priming
+semantic primings,semantic_priming
+category repetition paradigm ​,category_repetition_paradigm_​
+category repetition paradigm ​,category_repetition_paradigm_​
+category repetition procedure,category_repetition_procedure
+category repetition procedures,category_repetition_procedure
+typicality,typicality
+typicalities,typicality
+schematic narrative template,schematic_narrative_template
+schematic narrative templates,schematic_narrative_template
+reminiscence bump,reminiscence_bump
+reminiscence bumps,reminiscence_bump
+autobiographical memory bump,autobiographical_memory_bump
+autobiographical memory bumps,autobiographical_memory_bump
+reminiscence bump effect,reminiscence_bump_effect
+reminiscence bump effects,reminiscence_bump_effect
+basic level,basic_level
+basic levels,basic_level
+permastore effect,permastore_effect
+permastore effect,permastore_effect
+category size effect,category_size_effect
+category size effects,category_size_effect
+systems consolidation,systems_consolidation
+systems consolidations,systems_consolidation
+systems memory consolidation,systems_memory_consolidation
+systems memory consolidations,systems_memory_consolidation
+active systems consolidation hypothesis,active_systems_consolidation_hypothesis
+active systems consolidation hypotheses,active_systems_consolidation_hypothesis
+slow wave sleep,slow_wave_sleep
+slow wave sleep,slow_wave_sleep
+deep sleep,deep_sleep
+deep sleep,deep_sleep
+delta Sleep,delta_Sleep
+delta Sleep,delta_Sleep
+engram cell,engram_cell
+engram cells,engram_cell
+cellular engram,cellular_engram
+cellular engrams,cellular_engram
+engram neuron,engram_neuron
+engram neurons,engram_neuron
+memory engram cell,memory_engram_cell
+memory engram cells,memory_engram_cell
+schema assimilation model,schema_assimilation_model
+schema assimilation models,schema_assimilation_model
+place cell,place_cell
+place cells,place_cell
+bi-hippocampal amnestic syndrome,bi-hippocampal_amnestic_syndrome
+bi-hippocampal amnestic syndromes,bi-hippocampal_amnestic_syndrome
+brain-derived neurotrophic factor,brain-derived_neurotrophic_factor
+brain-derived neurotrophic factors,brain-derived_neurotrophic_factor
+BDNF,BDNF
+BDNF,BDNF
+abrineurin,abrineurin
+abrineurin,abrineurin
+mnemonic similarity task,mnemonic_similarity_task
+mnemonic similarity tasks,mnemonic_similarity_task
+Behavioral Pattern Separation Task,Behavioral_Pattern_Separation_Task
+Behavioral Pattern Separation Task,Behavioral_Pattern_Separation_Task
+BIC model,BIC_model
+BIC models,BIC_model
+Binding items and contexts model,Binding_items_and_contexts_model
+Binding items and contexts models,Binding_items_and_contexts_model
+core recollection network,core_recollection_network
+core recollection networks,core_recollection_network
+general recollection network,general_recollection_network
+general recollection networks,general_recollection_network
+dentate gyrus,dentate_gyrus
+dentate gyruses,dentate_gyrus
+amnestic syndrome,amnestic_syndrome
+amnestic syndromes,amnestic_syndrome
+suppression-induced forgetting,suppression-induced_forgetting
+suppression-induced forgettings,suppression-induced_forgetting
+memory suppression,memory_suppression
+memory suppressions,memory_suppression
+suppression effect,suppression_effect
+suppression effects,suppression_effect
+default mode network,default_mode_network
+default mode networks,default_mode_network
+DMN,DMN
+DMN,DMN
+default network,default_network
+default networks,default_network
+affective priming task,affective_priming_task
+affective priming tasks,affective_priming_task
+emotional valence,emotional_valence
+emotional valence,emotional_valence
+associative learning,associative_learning
+associative learnings,associative_learning
+learning process,learning_process
+learning processes,learning_process
+classical conditioning,classical_conditioning
+classical conditioning,classical_conditioning
+Pavlovian conditioning,Pavlovian_conditioning
+Pavlovian conditioning,Pavlovian_conditioning
+respondent conditioning,respondent_conditioning
+respondent conditioning,respondent_conditioning
+type 1 conditioning,type_1_conditioning
+types 1 conditioning,type_1_conditioning
+operant conditioning,operant_conditioning
+operant conditioning,operant_conditioning
+Skinnerian conditioning,Skinnerian_conditioning
+Skinnerian conditioning,Skinnerian_conditioning
+instrumental conditioning,instrumental_conditioning
+instrumental conditioning,instrumental_conditioning
+instrumental learning,instrumental_learning
+instrumental learnings,instrumental_learning
+type 2 conditioning,type_2_conditioning
+types 2 conditioning,type_2_conditioning
+missing item task,missing_item_task
+missing item tasks,missing_item_task
+antisaccade task,antisaccade_task
+antisaccade tasks,antisaccade_task
+Virtual Week task,Virtual_Week_task
+Virtual Week tasks,Virtual_Week_task
+spin the pots task,spin_the_pots_task
+spin the pots task,spin_the_pots_task
+CyberCruiser,CyberCruiser
+CyberCruiser,CyberCruiser
+semantic distance task,semantic_distance_task
+semantic distance tasks,semantic_distance_task
+acquired equivalence paradigm,acquired_equivalence_paradigm
+acquired equivalence paradigm,acquired_equivalence_paradigm
+schedule of reinforcement,schedule_of_reinforcement
+schedules of reinforcement,schedule_of_reinforcement
+reinforcement schedule,reinforcement_schedule
+reinforcement schedules,reinforcement_schedule
+color-word contingency learning task,color-word_contingency_learning_task
+color-word contingency learning tasks,color-word_contingency_learning_task
+trauma film paradigm,trauma_film_paradigm
+trauma film paradigm,trauma_film_paradigm
+trauma clip,trauma_clip
+trauma clips,trauma_clip
+property generation task,property_generation_task
+property generation tasks,property_generation_task
+feature listing task,feature_listing_task
+features listing task,feature_listing_task
+feature production task,feature_production_task
+feature production tasks,feature_production_task
+property elicitation task,property_elicitation_task
+property elicitation tasks,property_elicitation_task
+property listing task,property_listing_task
+property listing tasks,property_listing_task
+rapid serial visual presentation,rapid_serial_visual_presentation
+rapid serial visual presentations,rapid_serial_visual_presentation
+RSVP,RSVP
+RSVPS,RSVP
+Autobiographical Implicit Association Test,Autobiographical_Implicit_Association_Test
+Autobiographical Implicit Association Test,Autobiographical_Implicit_Association_Test
+aIAT,aIAT
+aiats,aIAT
+autobiographical IAT,autobiographical_IAT
+autobiographical IAT,autobiographical_IAT
+verbal fluency test,verbal_fluency_test
+verbal fluency tests,verbal_fluency_test
+verbal fluency task,verbal_fluency_task
+verbal fluency tasks,verbal_fluency_task
+property verification task,property_verification_task
+property verification tasks,property_verification_task
+feature verification task,feature_verification_task
+feature verification tasks,feature_verification_task
+Prospective Remembering Video Procedure,Prospective_Remembering_Video_Procedure
+Prospective Remembering Video Procedure,Prospective_Remembering_Video_Procedure
+PMVP,PMVP
+PMVP,PMVP
+category probe task,category_probe_task
+category probe tasks,category_probe_task
+Einstein and McDaniel’s paradigm,Einstein_and_McDaniel’s_paradigm
+Einstein and McDaniel’s paradigms,Einstein_and_McDaniel’s_paradigm
+emotional false memory paradigm,emotional_false_memory_paradigm
+emotional false memory paradigms,emotional_false_memory_paradigm
+process dissociation procedure,process_dissociation_procedure
+process dissociation procedures,process_dissociation_procedure
+process dissociation,process_dissociation
+process dissociations,process_dissociation
+process-dissociation approach,process-dissociation_approach
+process-dissociation approaches,process-dissociation_approach
+random generation task,random_generation_task
+random generation tasks,random_generation_task
+deferred imitation task,deferred_imitation_task
+deferred imitation tasks,deferred_imitation_task
+deferred imitation,deferred_imitation
+deferred imitations,deferred_imitation
+verbal association task,verbal_association_task
+verbal association tasks,verbal_association_task
+free association task,free_association_task
+free association tasks,free_association_task
+list-method directed forgetting paradigm,list-method_directed_forgetting_paradigm
+list-method directed forgetting paradigms,list-method_directed_forgetting_paradigm
+list-method directed forgetting procedure,list-method_directed_forgetting_procedure
+list-method directed forgetting procedures,list-method_directed_forgetting_procedure
+forward conditioning,forward_conditioning
+forward conditioning,forward_conditioning
+stochastic independence,stochastic_independence
+stochastic independences,stochastic_independence
+spin list,spin_list
+spin lists,spin_list
+fusion method,fusion_method
+fusion methods,fusion_method
+missing scan task,missing_scan_task
+missing scan tasks,missing_scan_task
+direct test of memory,direct_test_of_memory
+direct tests of memory,direct_test_of_memory
+continuous reproduction task,continuous_reproduction_task
+continuous reproduction tasks,continuous_reproduction_task
+continuous report task,continuous_report_task
+continuous report tasks,continuous_report_task
+delayed estimation task,delayed_estimation_task
+delayed estimation tasks,delayed_estimation_task
+indirect test of memory,indirect_test_of_memory
+indirect tests of memory,indirect_test_of_memory
+think/no-think paradigm,think/no-think_paradigm
+think/no-think paradigms,think/no-think_paradigm
+TNT,TNT
+TNTS,TNT
+TNT paradigm,TNT_paradigm
+TNT paradigms,TNT_paradigm
+TNT procedure,TNT_procedure
+TNT procedures,TNT_procedure
+important memories method,important_memories_method
+important memories method,important_memories_method
+Test of Episodic Memory for the Autobiographical Past,Test_of_Episodic_Memory_for_the_Autobiographical_Past
+Tests of Episodic Memory for the Autobiographical Past,Test_of_Episodic_Memory_for_the_Autobiographical_Past
+TEMPau,TEMPau
+Tempaus,TEMPau
+violation of expectation paradigm,violation_of_expectation_paradigm
+violations of expectation paradigm,violation_of_expectation_paradigm
+violation of expectancy paradigm,violation_of_expectancy_paradigm
+violations of expectancy paradigm,violation_of_expectancy_paradigm
+visual paired-comparison paradigm,visual_paired-comparison_paradigm
+visual paired-comparison paradigms,visual_paired-comparison_paradigm
+semantic categorization task,semantic_categorization_task
+semantic categorization tasks,semantic_categorization_task
+semantic categorization,semantic_categorization
+semantic categorizations,semantic_categorization
+repeated reproduction,repeated_reproduction
+repeated reproductions,repeated_reproduction
+sentence verification task,sentence_verification_task
+sentence verification tasks,sentence_verification_task
+category verification task,category_verification_task
+category verification tasks,category_verification_task
+saving method,saving_method
+saving methods,saving_method
+diary method,diary_method
+diary methods,diary_method
+diary recording method,diary_recording_method
+diary recording methods,diary_recording_method
+naming task,naming_task
+naming tasks,naming_task
+naming,naming
+naming,naming
+functional independence,functional_independence
+functional independences,functional_independence
+functional dissociation,functional_dissociation
+functional dissociations,functional_dissociation
+Self-Ordered Pointing Test,Self-Ordered_Pointing_Test
+Self-Ordered Pointing Test,Self-Ordered_Pointing_Test
+simultaneous conditioning,simultaneous_conditioning
+simultaneous conditioning,simultaneous_conditioning
+interview,interview
+interviews,interview
+second-order conditioning,second-order_conditioning
+second-order conditioning,second-order_conditioning
+higher-order conditioning,higher-order_conditioning
+higher-order conditioning,higher-order_conditioning
+letter number sequencing test,letter_number_sequencing_test
+letter numbers sequencing test,letter_number_sequencing_test
+item-method directed forgetting paradigm,item-method_directed_forgetting_paradigm
+item-method directed forgetting paradigm,item-method_directed_forgetting_paradigm
+item-method directed forgetting procedure,item-method_directed_forgetting_procedure
+item-method directed forgetting procedures,item-method_directed_forgetting_procedure
+mirror learning,mirror_learning
+mirror learning,mirror_learning
+distractor task,distractor_task
+distractor tasks,distractor_task
+targeted memory reactivation,targeted_memory_reactivation
+targeted memory reactivation,targeted_memory_reactivation
+TMR,TMR
+TMRS,TMR
+semantic differential,semantic_differential
+semantic differentials,semantic_differential
+involuntary memory diary method ​,involuntary_memory_diary_method_​
+involuntary memory diary methods ​,involuntary_memory_diary_method_​
+DRM paradigm,DRM_paradigm
+DRM paradigms,DRM_paradigm
+DRM experiment,DRM_experiment
+DRM experiments,DRM_experiment
+DRM false memory paradigm,DRM_false_memory_paradigm
+DRM false memory paradigms,DRM_false_memory_paradigm
+DRM procedure,DRM_procedure
+DRM procedures,DRM_procedure
+DRM study,DRM_study
+DRM studies,DRM_study
+DRM task,DRM_task
+DRM tasks,DRM_task
+DRM test,DRM_test
+DRM tests,DRM_test
+Deese paradigm,Deese_paradigm
+Deese paradigms,Deese_paradigm
+Deese-Roediger-McDermott paradigm,Deese-Roediger-McDermott_paradigm
+Deese-Roediger-McDermott paradigms,Deese-Roediger-McDermott_paradigm
+nonword repetition task,nonword_repetition_task
+nonword repetition tasks,nonword_repetition_task
+partial report task,partial_report_task
+partial report tasks,partial_report_task
+Sperling's paradigm,Sperling's_paradigm
+Sperling's paradigms,Sperling's_paradigm
+backward conditioning ​,backward_conditioning_​
+backward conditioning ​,backward_conditioning_​
+backward pairing,backward_pairing
+backward pairing,backward_pairing
+rumor mongering ​paradigm,rumor_mongering_​paradigm
+rumor mongering ​paradigm,rumor_mongering_​paradigm
+span task,span_task
+span task,span_task
+memory span task,memory_span_task
+memory span tasks,memory_span_task
+artificial grammar learning task,artificial_grammar_learning_task
+artificial grammar learning tasks,artificial_grammar_learning_task
+artificial grammar,artificial_grammar
+artificial grammars,artificial_grammar
+episodic specificity induction,episodic_specificity_induction
+episodic specificity inductions,episodic_specificity_induction
+Stroop test,Stroop_test
+Stroop tests,Stroop_test
+Stroop color–word interference test,Stroop_color–word_interference_test
+Stroop color–word interference tests,Stroop_color–word_interference_test
+Stroop paradigm,Stroop_paradigm
+Stroop paradigms,Stroop_paradigm
+Stroop task,Stroop_task
+Stroop task,Stroop_task
+color-word Stroop paradigm,color-word_Stroop_paradigm
+color-word Stroop paradigms,color-word_Stroop_paradigm
+color-word Stroop task,color-word_Stroop_task
+color-word Stroop tasks,color-word_Stroop_task
+serial order reconstruction task,serial_order_reconstruction_task
+serial order reconstruction tasks,serial_order_reconstruction_task
+serial reconstruction task,serial_reconstruction_task
+serial reconstruction tasks,serial_reconstruction_task
+Brown-Peterson task,Brown-Peterson_task
+Brown-Peterson tasks,Brown-Peterson_task
+n-back task,n-back_task
+n-back tasks,n-back_task
+n-back lag task,n-back_lag_task
+n-back lag tasks,n-back_lag_task
+lexical decision task,lexical_decision_task
+lexical decision tasks,lexical_decision_task
+lexical decision,lexical_decision
+lexical decisions,lexical_decision
+backward priming task,backward_priming_task
+backward priming tasks,backward_priming_task
+neuron,neuron
+neurons,neuron
+nerve cell,nerve_cell
+nerve cells,nerve_cell
+emotion process,emotion_process
+emotion processes,emotion_process
+emotion processing,emotion_processing
+emotion processing,emotion_processing
+emotional process,emotional_process
+emotional processes,emotional_process
+emotional processing,emotional_processing
+emotional processing,emotional_processing
+emotional state,emotional_state
+emotional states,emotional_state
+memory narrowing effect,memory_narrowing_effect
+memory narrowing effects,memory_narrowing_effect
+memory narrowing,memory_narrowing
+memory narrowings,memory_narrowing
+remembered utility,remembered_utility
+remembered utilities,remembered_utility
+automatic priming effect,automatic_priming_effect
+automatic priming effects,automatic_priming_effect
+automatic priming,automatic_priming
+automatic primings,automatic_priming
+negative priming effect,negative_priming_effect
+negative priming effects,negative_priming_effect
+negative priming,negative_priming
+negative primings,negative_priming
+morphological priming effect,morphological_priming_effect
+morphological priming effects,morphological_priming_effect
+morphological priming,morphological_priming
+morphological primings,morphological_priming
+syntactic priming effect,syntactic_priming_effect
+syntactic priming effects,syntactic_priming_effect
+structural persistence,structural_persistence
+structural persistence,structural_persistence
+structural priming,structural_priming
+structural primings,structural_priming
+syntactic persistence,syntactic_persistence
+syntactic persistence,syntactic_persistence
+syntactic priming,syntactic_priming
+syntactic primings,syntactic_priming
+strategic priming effect,strategic_priming_effect
+strategic priming effects,strategic_priming_effect
+strategic priming,strategic_priming
+strategic primings,strategic_priming
+phonological priming effect,phonological_priming_effect
+phonological priming effects,phonological_priming_effect
+phonological priming,phonological_priming
+phonological primings,phonological_priming
+unconscious priming effect,unconscious_priming_effect
+unconscious priming effects,unconscious_priming_effect
+subliminal priming,subliminal_priming
+subliminal primings,subliminal_priming
+unconscious priming,unconscious_priming
+unconscious primings,unconscious_priming
+perceptual priming effect,perceptual_priming_effect
+perceptual priming effects,perceptual_priming_effect
+perceptual priming,perceptual_priming
+perceptual primings,perceptual_priming
+repetition priming effect,repetition_priming_effect
+repetition priming effects,repetition_priming_effect
+direct priming,direct_priming
+direct primings,direct_priming
+identity priming,identity_priming
+identity primings,identity_priming
+repetition priming,repetition_priming
+repetition primings,repetition_priming
+episodic priming effect,episodic_priming_effect
+episodic priming effects,episodic_priming_effect
+episodic priming,episodic_priming
+episodic primings,episodic_priming
+prime,prime
+prime,prime
+non-declarative memory,non-declarative_memory
+non-declarative memories,non-declarative_memory
+age-associated memory impairment,age-associated_memory_impairment
+age-associated memory impairments,age-associated_memory_impairment
+neurophysiological process,neurophysiological_process
+neurophysiological processes,neurophysiological_process
+transposition in the past,transposition_in_the_past
+transpositions in the past,transposition_in_the_past
+proper name anomia,proper_name_anomia
+proper name anomias,proper_name_anomia
+proper noun anomia,proper_noun_anomia
+proper noun anomias,proper_noun_anomia
+hypermnesia (pathology),hypermnesia_(pathology)
+hypermnesia (pathology),hypermnesia_(pathology)
+category-specific semantic deficit,category-specific_semantic_deficit
+category-specific semantic deficits,category-specific_semantic_deficit
+category-specific deficit,category-specific_deficit
+category-specific deficits,category-specific_deficit
+category-specific semantic impairment,category-specific_semantic_impairment
+category-specific semantic impairments,category-specific_semantic_impairment
+semantic dementia,semantic_dementia
+semantic dementias,semantic_dementia
+environmental reduplicative paramnesia,environmental_reduplicative_paramnesia
+environmental reduplicative paramnesias,environmental_reduplicative_paramnesia
+confabulation,confabulation
+confabulations,confabulation
+principle of mass action,principle_of_mass_action
+principles of mass action,principle_of_mass_action
+Test of Memory Malingering,Test_of_Memory_Malingering
+Tests of Memory Malingering,Test_of_Memory_Malingering
+TOMM,TOMM
+TOMM,TOMM
+cognitive reserve,cognitive_reserve
+cognitive reserves,cognitive_reserve
+cognitive slowing hypothesis,cognitive_slowing_hypothesis
+cognitive slowing hypotheses,cognitive_slowing_hypothesis
+environmental support hypothesis,environmental_support_hypothesis
+environmental support hypotheses,environmental_support_hypothesis
+remembered success effect,remembered_success_effect
+remembered success effects,remembered_success_effect
+font size illusion,font_size_illusion
+font size illusions,font_size_illusion
+font size effect,font_size_effect
+font size effects,font_size_effect
+post-identification feedback effect,post-identification_feedback_effect
+post-identification feedback effects,post-identification_feedback_effect
+metamemory expectancy illusion,metamemory_expectancy_illusion
+metamemory expectancy illusions,metamemory_expectancy_illusion
+metacognitive bias,metacognitive_bias
+metacognitive biases,metacognitive_bias
+under confidence-with-practice effect,under_confidence-with-practice_effect
+under confidence-with-practice effect,under_confidence-with-practice_effect
+UWP,UWP
+UWP,UWP
+foresight bias,foresight_bias
+foresight biases,foresight_bias
+hypercorrection effect,hypercorrection_effect
+hypercorrection effects,hypercorrection_effect
+hypercorrection phenomenon,hypercorrection_phenomenon
+hypercorrection phenomena,hypercorrection_phenomenon
+stability bias,stability_bias
+stability biases,stability_bias
+hard-easy effect,hard-easy_effect
+hard-easy effects,hard-easy_effect
+delayed judgment of learning effect,delayed_judgment_of_learning_effect
+delayed judgments of learning effect,delayed_judgment_of_learning_effect
+delayed JOL effect,delayed_JOL_effect
+delayed JOL effects,delayed_JOL_effect
+word embedding,word_embedding
+words embedding,word_embedding
+probabilistic topic model,probabilistic_topic_model
+probabilistic topic models,probabilistic_topic_model
+topic model,topic_model
+topic models,topic_model
+topic modeling,topic_modeling
+topic modelings,topic_modeling
+BEAGLE model,BEAGLE_model
+BEAGLE models,BEAGLE_model
+Bound Encoding of the Aggregate Language Environment model,Bound_Encoding_of_the_Aggregate_Language_Environment_model
+Bound Encoding of the Aggregate Language Environment model,Bound_Encoding_of_the_Aggregate_Language_Environment_model
+HAL model,HAL_model
+HAL models,HAL_model
+Hyperspace Analog to Language model,Hyperspace_Analog_to_Language_model
+Hyperspace Analog to Language models,Hyperspace_Analog_to_Language_model
+elevated-attention hypothesis,elevated-attention_hypothesis
+elevated-attention hypotheses,elevated-attention_hypothesis
+Hunter-McCrary hypothesis,Hunter-McCrary_hypothesis
+Hunter-McCrary hypotheses,Hunter-McCrary_hypothesis
+Hunter-McCrary law,Hunter-McCrary_law
+Hunter-McCrary laws,Hunter-McCrary_law
+explanatory role hypothesis,explanatory_role_hypothesis
+explanatory role hypotheses,explanatory_role_hypothesis
+Skaggs-Robinson hypothesis,Skaggs-Robinson_hypothesis
+Skaggs-Robinson hypotheses,Skaggs-Robinson_hypothesis
+similarity paradox,similarity_paradox
+similarity paradoxes,similarity_paradox
+impoverished relational-encoding,impoverished_relational-encoding
+impoverished relational-encoding,impoverished_relational-encoding
+total-time hypothesis,total-time_hypothesis
+total-time hypotheses,total-time_hypothesis
+total-time law,total-time_law
+total-time laws,total-time_law
+neurogenic hypthothesis,neurogenic_hypthothesis
+neurogenic hypthotheses,neurogenic_hypthothesis
+contextual availability hypothesis,contextual_availability_hypothesis
+contextual availability hypotheses,contextual_availability_hypothesis
+processing fluency,processing_fluency
+processing fluencies,processing_fluency
+cognitive fluency,cognitive_fluency
+cognitive fluencies,cognitive_fluency
+perceptual fluency,perceptual_fluency
+perceptual fluencies,perceptual_fluency
+retrieval fluency,retrieval_fluency
+retrieval fluencies,retrieval_fluency
+illusory truth effect,illusory_truth_effect
+illusory truth effects,illusory_truth_effect
+illusory truth,illusory_truth
+illusory truths,illusory_truth
+reiteration effect,reiteration_effect
+reiteration effects,reiteration_effect
+repetition truth effect,repetition_truth_effect
+repetition truth effects,repetition_truth_effect
+truth effect,truth_effect
+truth effects,truth_effect
+truth-by-repetition-effect,truth-by-repetition-effect
+truths-by-repetition-effect,truth-by-repetition-effect
+validity effect,validity_effect
+validity effects,validity_effect
+metacognitive resolution,metacognitive_resolution
+metacognitive resolutions,metacognitive_resolution
+metacognitive sensitivity,metacognitive_sensitivity
+metacognitive sensitivities,metacognitive_sensitivity
+metamemory resolution,metamemory_resolution
+metamemory resolutions,metamemory_resolution
+metamemory sensitivity,metamemory_sensitivity
+metamemory sensitivities,metamemory_sensitivity
+relative metacognitive accuracy,relative_metacognitive_accuracy
+relative metacognitive accuracies,relative_metacognitive_accuracy
+relative metamemory accuracy,relative_metamemory_accuracy
+relative metamemory accuracies,relative_metamemory_accuracy
+relative metamnemonic accuracy,relative_metamnemonic_accuracy
+relative metamnemonic accuracies,relative_metamnemonic_accuracy
+resolution,resolution
+resolutions,resolution
+calibration curve,calibration_curve
+calibration curves,calibration_curve
+recall-to-reject process,recall-to-reject_process
+recall-to-reject processes,recall-to-reject_process
+disqualifying recall-to-reject,disqualifying_recall-to-reject
+disqualifying recall-to-reject,disqualifying_recall-to-reject
+recollection rejection,recollection_rejection
+recollection rejections,recollection_rejection
+late frontal effect,late_frontal_effect
+late frontal effects,late_frontal_effect
+LFE,LFE
+LFE,LFE
+late frontal positivity effect,late_frontal_positivity_effect
+late frontal positivity effects,late_frontal_positivity_effect
+identify-to-reject process,identify-to-reject_process
+identify-to-reject process,identify-to-reject_process
+identify-to-reject strategy,identify-to-reject_strategy
+identify-to-reject strategy,identify-to-reject_strategy
+memory-editing process,memory-editing_process
+memory-editing processes,memory-editing_process
+memory-editing mechanism,memory-editing_mechanism
+memory-editing mechanisms,memory-editing_mechanism
+memory-editing operation,memory-editing_operation
+memory-editing operations,memory-editing_operation
+judgment of the rate of learning,judgment_of_the_rate_of_learning
+judgments of the rate of learning,judgment_of_the_rate_of_learning
+judgment of learning,judgment_of_learning
+judgments of learning,judgment_of_learning
+JOL,JOL
+JOL,JOL
+ease of learning,ease_of_learning
+ease of learning,ease_of_learning
+judgment of retention,judgment_of_retention
+judgments of retention,judgment_of_retention
+JOR,JOR
+JOR,JOR
+confidence judgment,confidence_judgment
+confidence judgments,confidence_judgment
+confidence,confidence
+confidences,confidence
+prediction of learning,prediction_of_learning
+predictions of learning,prediction_of_learning
+forget-it-all-along effect,forget-it-all-along_effect
+forget-it-all-along effect,forget-it-all-along_effect
+FIA effect,FIA_effect
+FIA effects,FIA_effect
+forget-it-all-along bias,forget-it-all-along_bias
+forget-it-all-along bias,forget-it-all-along_bias
+distinctiveness heuristic,distinctiveness_heuristic
+distinctiveness heuristics,distinctiveness_heuristic
+test expectancy effect,test_expectancy_effect
+test expectancy effects,test_expectancy_effect
+alpha span task,alpha_span_task
+alpha span tasks,alpha_span_task
+complex span task,complex_span_task
+complex span tasks,complex_span_task
+complex WM span task,complex_WM_span_task
+complex WM span tasks,complex_WM_span_task
+complex span,complex_span
+complex spans,complex_span
+complex working memory span task,complex_working_memory_span_task
+complex working memory span tasks,complex_working_memory_span_task
+processing-and-storage task,processing-and-storage_task
+processing-and-storage tasks,processing-and-storage_task
+memory span,memory_span
+memory spans,memory_span
+span,span
+spans,span
+categorization working memory span task,categorization_working_memory_span_task
+categorization working memory span tasks,categorization_working_memory_span_task
+CWMS,CWMS
+CWMS,CWMS
+rotation letter task,rotation_letter_task
+rotation letter tasks,rotation_letter_task
+backward digit span task,backward_digit_span_task
+backward digit span tasks,backward_digit_span_task
+reading span task,reading_span_task
+reading span task,reading_span_task
+computation span task,computation_span_task
+computation span tasks,computation_span_task
+composite complex span,composite_complex_span
+composite complex spans,composite_complex_span
+listening span task,listening_span_task
+listening span task,listening_span_task
+counting span task,counting_span_task
+counting span task,counting_span_task
+operation span task,operation_span_task
+operation span tasks,operation_span_task
+OSPAN task,OSPAN_task
+OSPAN tasks,OSPAN_task
+symmetry span task,symmetry_span_task
+symmetry span tasks,symmetry_span_task
+symmetry span test,symmetry_span_test
+symmetry span tests,symmetry_span_test
+reading-digit span task,reading-digit_span_task
+reading-digit span tasks,reading-digit_span_task
+anti-reminiscence bump ​,anti-reminiscence_bump_​
+anti-reminiscence bumps ​,anti-reminiscence_bump_​
+nonbelieved memory,nonbelieved_memory
+nonbelieved memories,nonbelieved_memory
+spatial span task,spatial_span_task
+spatial span tasks,spatial_span_task
+spatial span test,spatial_span_test
+spatial span tests,spatial_span_test
+conceptual span task,conceptual_span_task
+conceptual span tasks,conceptual_span_task
+running span task,running_span_task
+running span tasks,running_span_task
+recognition span task,recognition_span_task
+recognition span tasks,recognition_span_task
+simple span task,simple_span_task
+simple span tasks,simple_span_task
+simple span,simple_span
+simple spans,simple_span
+simple span test,simple_span_test
+simple span test,simple_span_test
+Wechsler Memory Scale,Wechsler_Memory_Scale
+Wechsler Memory Scale,Wechsler_Memory_Scale
+WMS,WMS
+WMS,WMS
+WMS-III,WMS-III
+WMS-III,WMS-III
+WMS-IV,WMS-IV
+WMS-IV,WMS-IV
+WMS-R,WMS-R
+WMS-RS,WMS-R
+functional amnesia,functional_amnesia
+functional amnesia,functional_amnesia
+dissociative amnesia,dissociative_amnesia
+dissociative amnesia,dissociative_amnesia
+psychogenic amnesia,psychogenic_amnesia
+psychogenic amnesia,psychogenic_amnesia
+psychogenic fugue,psychogenic_fugue
+psychogenic fugues,psychogenic_fugue
+amnestic mild cognitive impairment,amnestic_mild_cognitive_impairment
+amnestic mild cognitive impairments,amnestic_mild_cognitive_impairment
+aMCI,aMCI
+amcis,aMCI
+source amnesia,source_amnesia
+source amnesia,source_amnesia
+developmental dysmnesia,developmental_dysmnesia
+developmental dysmnesias,developmental_dysmnesia
+topographical memory loss,topographical_memory_loss
+topographical memory losses,topographical_memory_loss
+pure topographical disorientation,pure_topographical_disorientation
+pure topographical disorientation,pure_topographical_disorientation
+topographical amnesia,topographical_amnesia
+topographical amnesia,topographical_amnesia
+mild cognitive impairment,mild_cognitive_impairment
+mild cognitive impairments,mild_cognitive_impairment
+MCI,MCI
+MCI,MCI
+amygdala,amygdala
+amygdalas,amygdala
+amygdaloid body,amygdaloid_body
+amygdaloid bodies,amygdaloid_body
+amygdaloid complex,amygdaloid_complex
+amygdaloid complex,amygdaloid_complex
+amygdaloid nuclear complex,amygdaloid_nuclear_complex
+amygdaloid nuclear complexes,amygdaloid_nuclear_complex
+amygdaloid nuclear groups,amygdaloid_nuclear_groups
+amygdaloid nuclear groups,amygdaloid_nuclear_groups
+amygdaloid nucleus,amygdaloid_nucleus
+amygdaloid nuclei,amygdaloid_nucleus
+archistriatum,archistriatum
+archistriatums,archistriatum
+emotion,emotion
+emotions,emotion
+emotional consolidation,emotional_consolidation
+emotional consolidations,emotional_consolidation
+developmental amnesia,developmental_amnesia
+developmental amnesia,developmental_amnesia
+Korsakoff syndrome,Korsakoff_syndrome
+Korsakoff syndromes,Korsakoff_syndrome
+Wernicke-Korsakoff syndrome,Wernicke-Korsakoff_syndrome
+Wernicke-Korsakoff syndromes,Wernicke-Korsakoff_syndrome
+transient global amnesia,transient_global_amnesia
+transient global amnesia,transient_global_amnesia
+TGA,TGA
+TGAS,TGA
+Primacy model,Primacy_model
+Primacy models,Primacy_model
+choice reaction time task,choice_reaction_time_task
+choice reaction time tasks,choice_reaction_time_task
+complex reaction time,complex_reaction_time
+complex reaction times,complex_reaction_time
+compound reaction time,compound_reaction_time
+compound reaction times,compound_reaction_time
+reaction time,reaction_time
+reaction times,reaction_time
+response latency,response_latency
+response latencies,response_latency
+response time,response_time
+response times,response_time
+grid cell,grid_cell
+grid cells,grid_cell
+cognitive map,cognitive_map
+cognitive maps,cognitive_map
+cognitive economy,cognitive_economy
+cognitive economies,cognitive_economy
+memory strength,memory_strength
+memory strengths,memory_strength
+emotional arousal,emotional_arousal
+emotional arousals,emotional_arousal
+one-list-back paradigm,one-list-back_paradigm
+one-list-back paradigms,one-list-back_paradigm
+list-before-last paradigm,list-before-last_paradigm
+list-before-last paradigms,list-before-last_paradigm
+law of disuse,law_of_disuse
+laws of disuse,law_of_disuse
+modal representation,modal_representation
+modal representations,modal_representation
+modal symbol,modal_symbol
+modal symbols,modal_symbol
+modality-specific representation,modality-specific_representation
+modality-specific representations,modality-specific_representation
+perirhinal cortex,perirhinal_cortex
+perirhinal cortexes,perirhinal_cortex
+Brodmann area 35,Brodmann_area_35
+Brodmann areas 35,Brodmann_area_35
+perirhinal area 35,perirhinal_area_35
+perirhinal areas 35,perirhinal_area_35
+intrusive memory,intrusive_memory
+intrusive memories,intrusive_memory
+memory instrusion,memory_instrusion
+memory instrusions,memory_instrusion
+Centality of Event Scale,Centality_of_Event_Scale
+Centalities of Event Scale,Centality_of_Event_Scale
+CES,CES
+CES,CES
+stress,stress
+stresses,stress
+hotspot,hotspot
+hotspots,hotspot
+mood-congruent memory,mood-congruent_memory
+mood-congruent memories,mood-congruent_memory
+mood congruence effect,mood_congruence_effect
+mood congruence effects,mood_congruence_effect
+mood congruency effect,mood_congruency_effect
+mood congruency effects,mood_congruency_effect
+non-computational model,non-computational_model
+non-computational models,non-computational_model
+conceptual model,conceptual_model
+conceptual models,conceptual_model
+graphical model,graphical_model
+graphical models,graphical_model
+verbal model,verbal_model
+verbal models,verbal_model
+modal model of memory,modal_model_of_memory
+modal models of memory,modal_model_of_memory
+Atkinson and Shiffrin's model,Atkinson_and_Shiffrin's_model
+Atkinson and Shiffrin's models,Atkinson_and_Shiffrin's_model
+concentric model,concentric_model
+concentric models,concentric_model
+dual-process models of recognition memory,dual-process_models_of_recognition_memory
+dual-process models of recognition memory,dual-process_models_of_recognition_memory
+Baddeley's model,Baddeley's_model
+Baddeley's models,Baddeley's_model
+multicomponent working memory model,multicomponent_working_memory_model
+multicomponent working memory models,multicomponent_working_memory_model
+self-memory system,self-memory_system
+self-memory systems,self-memory_system
+Conway's model,Conway's_model
+Conway's models,Conway's_model
+CARFAX model,CARFAX_model
+CARFAX models,CARFAX_model
+SPI model,SPI_model
+SPI models,SPI_model
+embedded-processes model,embedded-processes_model
+embedded-processes models,embedded-processes_model
+supervisory attentional system,supervisory_attentional_system
+supervisory attentional systems,supervisory_attentional_system
+MNESIS model,MNESIS_model
+MNESIS models,MNESIS_model
+Memory Neostructural and Inter-systemic model,Memory_Neostructural_and_Inter-systemic_model
+Memory Neostructural and Inter-systemic models,Memory_Neostructural_and_Inter-systemic_model
+HAROLD model,HAROLD_model
+HAROLD models,HAROLD_model
+HAROLD hypothesis,HAROLD_hypothesis
+HAROLD hypotheses,HAROLD_hypothesis
+Hemispheric Asymmetry Reduction in Older Adults,Hemispheric_Asymmetry_Reduction_in_Older_Adults
+Hemispheric Asymmetry Reduction in Older Adults,Hemispheric_Asymmetry_Reduction_in_Older_Adults
+Hemispheric Asymmetry Reduction in Older Adults hypothesis,Hemispheric_Asymmetry_Reduction_in_Older_Adults_hypothesis
+Hemispheric Asymmetry Reduction in Older Adults hypothesis,Hemispheric_Asymmetry_Reduction_in_Older_Adults_hypothesis
+sensory recruitment,sensory_recruitment
+sensory recruitments,sensory_recruitment
+sensorimotor recruitment,sensorimotor_recruitment
+sensorimotor recruitments,sensorimotor_recruitment
+PASA Model,PASA_Model
+PASA Model,PASA_Model
+Posterior-Anterior Shift in Aging,Posterior-Anterior_Shift_in_Aging
+Posterior-Anterior Shift in Aging,Posterior-Anterior_Shift_in_Aging
+script,script
+scripts,script
+life script,life_script
+life scripts,life_script
+cultural life script,cultural_life_script
+cultural life scripts,cultural_life_script
+inconsistency effect,inconsistency_effect
+inconsistency effects,inconsistency_effect
+rationalization,rationalization
+rationalizations,rationalization
+Subjective Memory Complaints Questionnaire,Subjective_Memory_Complaints_Questionnaire
+Subjective Memory Complaints Questionnaire,Subjective_Memory_Complaints_Questionnaire
+Squire Subjective Memory Questionnaire,Squire_Subjective_Memory_Questionnaire
+Squire Subjective Memory Questionnaire,Squire_Subjective_Memory_Questionnaire
+Autographical Memory Characteristics Questionnaire,Autographical_Memory_Characteristics_Questionnaire
+Autographical Memory Characteristics Questionnaire,Autographical_Memory_Characteristics_Questionnaire
+AMCQ,AMCQ
+AMCQ,AMCQ
+Survey of Autobiographical Memory,Survey_of_Autobiographical_Memory
+Surveys of Autobiographical Memory,Survey_of_Autobiographical_Memory
+Prospective Memory Questionnaire,Prospective_Memory_Questionnaire
+Prospective Memory Questionnaire,Prospective_Memory_Questionnaire
+PMQ,PMQ
+PMQS,PMQ
+Prospective Memory Concerns Questionnaire,Prospective_Memory_Concerns_Questionnaire
+Prospective Memory Concerns Questionnaire,Prospective_Memory_Concerns_Questionnaire
+PMCQ,PMCQ
+PMCQS,PMCQ
+Prospective and Retrospective Memory Questionnaire,Prospective_and_Retrospective_Memory_Questionnaire
+Prospective and Retrospective Memory Questionnaire,Prospective_and_Retrospective_Memory_Questionnaire
+PRMQ,PRMQ
+PRMQ,PRMQ
+Working Memory Questionnaire,Working_Memory_Questionnaire
+Working Memory Questionnaire,Working_Memory_Questionnaire
+Multifactorial Memory Questionnaire,Multifactorial_Memory_Questionnaire
+Multifactorial Memory Questionnaire,Multifactorial_Memory_Questionnaire
+Autobiographical Recollection Test,Autobiographical_Recollection_Test
+Autobiographical Recollection Test,Autobiographical_Recollection_Test
+Memory Experiences Questionaire,Memory_Experiences_Questionaire
+Memory Experiences Questionaire,Memory_Experiences_Questionaire
+Everyday Memory Questionnaire,Everyday_Memory_Questionnaire
+Everyday Memory Questionnaire,Everyday_Memory_Questionnaire
+memory complaint,memory_complaint
+memory complaints,memory_complaint
+subjective memory complaint,subjective_memory_complaint
+subjective memory complaints,subjective_memory_complaint
+subjective memory impairment,subjective_memory_impairment
+subjective memory impairments,subjective_memory_impairment
+subjective memory loss,subjective_memory_loss
+subjective memory losses,subjective_memory_loss
+declarative metamemory,declarative_metamemory
+declarative metamemories,declarative_metamemory
+metamemory knowledge,metamemory_knowledge
+metamemory knowledges,metamemory_knowledge
+memory distrust syndrome,memory_distrust_syndrome
+memory distrust syndromes,memory_distrust_syndrome
+procedural memory,procedural_memory
+procedural memories,procedural_memory
+production rule,production_rule
+production rules,production_rule
+statistical learning,statistical_learning
+statistical learnings,statistical_learning
+implicit probabilistic learning,implicit_probabilistic_learning
+implicit probabilistic learnings,implicit_probabilistic_learning
+sequence learning,sequence_learning
+sequence learning,sequence_learning
+skill acquisition,skill_acquisition
+skill acquisitions,skill_acquisition
+procedural learning,procedural_learning
+procedural learnings,procedural_learning
+skill learning,skill_learning
+skill learning,skill_learning
+selective attention,selective_attention
+selective attentions,selective_attention
+attentional process,attentional_process
+attentional processes,attentional_process
+attentional processing,attentional_processing
+attentional processing,attentional_processing
+Fröhlich effect,Fröhlich_effect
+Fröhlich effect,Fröhlich_effect
+exclusivity effect,exclusivity_effect
+exclusivity effects,exclusivity_effect
+onset repulsion effect,onset_repulsion_effect
+onset repulsion effects,onset_repulsion_effect
+anticipation error,anticipation_error
+anticipation errors,anticipation_error
+transposition error,transposition_error
+transposition errors,transposition_error
+retrospection bias,retrospection_bias
+retrospection biases,retrospection_bias
+locality constraint,locality_constraint
+locality constraints,locality_constraint
+positional clustering,positional_clustering
+positional clusterings,positional_clustering
+postponement error,postponement_error
+postponement errors,postponement_error
+transposition gradient,transposition_gradient
+transposition gradients,transposition_gradient
+serial recall task,serial_recall_task
+serial recall tasks,serial_recall_task
+ordered recall task,ordered_recall_task
+ordered recall tasks,ordered_recall_task
+serial recall,serial_recall
+serial recalls,serial_recall
+serial recall test,serial_recall_test
+serial recall tests,serial_recall_test
+ARC index,ARC_index
+ARC indexes,ARC_index
+Adjusted Ratio of Clustering,Adjusted_Ratio_of_Clustering
+Adjusted Ratios of Clustering,Adjusted_Ratio_of_Clustering
+measure,measure
+measures,measure
+measurement,measurement
+measurements,measurement
+free recall task,free_recall_task
+free recall tasks,free_recall_task
+free recall paradigm,free_recall_paradigm
+free recall paradigms,free_recall_paradigm
+free recall test,free_recall_test
+free recall tests,free_recall_test
+d' index,d'_index
+d' index,d'_index
+d prime,d_prime
+d prime,d_prime
+d' score,d'_score
+d' score,d'_score
+overt-repetition technique,overt-repetition_technique
+overt-repetition techniques,overt-repetition_technique
+multitrial free recall task,multitrial_free_recall_task
+multitrial free recall tasks,multitrial_free_recall_task
+conjoint recall paradigm,conjoint_recall_paradigm
+conjoint recall paradigms,conjoint_recall_paradigm
+continuous-distractor paradigm,continuous-distractor_paradigm
+continuous-distractor paradigms,continuous-distractor_paradigm
+continual-distractor free recall task,continual-distractor_free_recall_task
+continual-distractor free recall tasks,continual-distractor_free_recall_task
+continuous-distractor free recall task,continuous-distractor_free_recall_task
+continuous-distractor free recall tasks,continuous-distractor_free_recall_task
+through-list distractor procedure,through-list_distractor_procedure
+through-list distractor procedures,through-list_distractor_procedure
+directed free recall task,directed_free_recall_task
+directed free recall task,directed_free_recall_task
+modified free recall procedure,modified_free_recall_procedure
+modified free recall procedures,modified_free_recall_procedure
+IMA-12,IMA-12
+IMA-12,IMA-12
+percent correct recall,percent_correct_recall
+percent correct recalls,percent_correct_recall
+cognitive interview,cognitive_interview
+cognitive interviews,cognitive_interview
+cognitive interviewing,cognitive_interviewing
+cognitive interviewings,cognitive_interviewing
+functional serial position curve,functional_serial_position_curve
+functional serial position curves,functional_serial_position_curve
+clustering,clustering
+clustering,clustering
+interresponse time,interresponse_time
+interresponse times,interresponse_time
+NICHD protocol,NICHD_protocol
+NICHD protocols,NICHD_protocol
+NICHD interview protocol,NICHD_interview_protocol
+NICHD interview protocols,NICHD_interview_protocol
+National Institute of Child Health and Human Development protocol,National_Institute_of_Child_Health_and_Human_Development_protocol
+National Institute of Child Health and Human Development protocols,National_Institute_of_Child_Health_and_Human_Development_protocol
+protocol of the National Institute of Child Health and Human Development protocol,protocol_of_the_National_Institute_of_Child_Health_and_Human_Development_protocol
+protocols of the National Institute of Child Health and Human Development protocols,protocol_of_the_National_Institute_of_Child_Health_and_Human_Development_protocol
+interleaving effect,interleaving_effect
+interleaving effects,interleaving_effect
+interleaving benefit,interleaving_benefit
+interleaving benefits,interleaving_benefit
+butcher-in-the-bus phenomenon,butcher-in-the-bus_phenomenon
+butcher-in-the-bus phenomena,butcher-in-the-bus_phenomenon
+BOB experience,BOB_experience
+BOB experiences,BOB_experience
+butcher-on-the-bus phenomenon,butcher-on-the-bus_phenomenon
+butcher-on-the-bus phenomena,butcher-on-the-bus_phenomenon
+memory-guided attention,memory-guided_attention
+memory-guided attentions,memory-guided_attention
+complementarity effect,complementarity_effect
+complementarity effects,complementarity_effect
+age-prospective memory-paradox,age-prospective_memory-paradox
+age-prospective memory-paradoxes,age-prospective_memory-paradox
+age-PM-paradox,age-PM-paradox
+age-PM-paradoxes,age-PM-paradox
+Google effect,Google_effect
+Google effects,Google_effect
+conjunction illusion,conjunction_illusion
+conjunction illusions,conjunction_illusion
+insight memory advantage,insight_memory_advantage
+insight memory advantages,insight_memory_advantage
+mnemonic effect of insight,mnemonic_effect_of_insight
+mnemonic effects of insight,mnemonic_effect_of_insight
+attentional capture,attentional_capture
+attentional captures,attentional_capture
+déjà entendu,déjà_entendu
+déjà entendus,déjà_entendu
+déjà entendu experience,déjà_entendu_experience
+déjà entendu experiences,déjà_entendu_experience
+déjà entendu sensation,déjà_entendu_sensation
+déjà entendu sensations,déjà_entendu_sensation
+false fame effect,false_fame_effect
+false fame effects,false_fame_effect
+intention superiority effect,intention_superiority_effect
+intention superiority effects,intention_superiority_effect
+revelation effect,revelation_effect
+revelation effects,revelation_effect
+fabrication inflation,fabrication_inflation
+fabrication inflations,fabrication_inflation
+sleeper effect,sleeper_effect
+sleeper effects,sleeper_effect
+explanation inflation,explanation_inflation
+explanation inflations,explanation_inflation
+inversion effect,inversion_effect
+inversion effects,inversion_effect
+calendar effect,calendar_effect
+calendar effects,calendar_effect
+mediation deficiency,mediation_deficiency
+mediation deficiencies,mediation_deficiency
+fill-in effect,fill-in_effect
+fill-in effects,fill-in_effect
+fill-in error,fill-in_error
+fill-in errors,fill-in_error
+Geiselman effect,Geiselman_effect
+Geiselman effects,Geiselman_effect
+utilization deficiency,utilization_deficiency
+utilization deficiencies,utilization_deficiency
+misinformation effect,misinformation_effect
+misinformation effects,misinformation_effect
+post-event information effect,post-event_information_effect
+post-event information effects,post-event_information_effect
+prime-task effect,prime-task_effect
+prime-task effects,prime-task_effect
+state-dependent memory,state-dependent_memory
+state-dependent memories,state-dependent_memory
+state-dependent learning,state-dependent_learning
+state-dependent learnings,state-dependent_learning
+state-dependent retrieval,state-dependent_retrieval
+state-dependent retrievals,state-dependent_retrieval
+size congruency effect,size_congruency_effect
+size congruency effects,size_congruency_effect
+dud-alternative effect,dud-alternative_effect
+dud-alternative effects,dud-alternative_effect
+dud effect,dud_effect
+dud effect,dud_effect
+overgeneral memory bias,overgeneral_memory_bias
+overgeneral memory biases,overgeneral_memory_bias
+overgeneral memory effect,overgeneral_memory_effect
+overgeneral memory effects,overgeneral_memory_effect
+overgenerality,overgenerality
+overgeneralities,overgenerality
+source attribution error,source_attribution_error
+source attribution errors,source_attribution_error
+misattribution error,misattribution_error
+misattribution errors,misattribution_error
+misattribution of memory,misattribution_of_memory
+misattributions of memory,misattribution_of_memory
+source confusion,source_confusion
+source confusions,source_confusion
+source misattribution,source_misattribution
+source misattributions,source_misattribution
+repetition effect,repetition_effect
+repetition effects,repetition_effect
+grouping effect,grouping_effect
+grouping effects,grouping_effect
+memory conformity,memory_conformity
+memory conformities,memory_conformity
+co-witness suggestibility effect,co-witness_suggestibility_effect
+co-witness suggestibility effects,co-witness_suggestibility_effect
+social contagion of memory,social_contagion_of_memory
+social contagions of memory,social_contagion_of_memory
+list composition effect,list_composition_effect
+list composition effects,list_composition_effect
+list composition paradox,list_composition_paradox
+list composition paradoxes,list_composition_paradox
+mixed-list paradox,mixed-list_paradox
+mixed-list paradoxes,mixed-list_paradox
+source overdistribution,source_overdistribution
+source overdistributions,source_overdistribution
+living-in-history effect,living-in-history_effect
+living-in-history effects,living-in-history_effect
+unconscious transference,unconscious_transference
+unconscious transferences,unconscious_transference
+whole-part effect,whole-part_effect
+whole-part effects,whole-part_effect
+context-dependent memory effect,context-dependent_memory_effect
+context-dependent memory effects,context-dependent_memory_effect
+environmental context-dependent memory,environmental_context-dependent_memory
+environmental context-dependent memories,environmental_context-dependent_memory
+false-persistence effect,false-persistence_effect
+false-persistence effects,false-persistence_effect
+typicality effect,typicality_effect
+typicality effects,typicality_effect
+telescoping effect,telescoping_effect
+telescoping effects,telescoping_effect
+telescoping bias,telescoping_bias
+telescoping biases,telescoping_bias
+developmental reversal,developmental_reversal
+developmental reversals,developmental_reversal
+modality effect in false memories,modality_effect_in_false_memories
+modality effects in false memories,modality_effect_in_false_memories
+memory bias,memory_bias
+memory biases,memory_bias
+upheaval bump,upheaval_bump
+upheaval bumps,upheaval_bump
+pretesting effect,pretesting_effect
+pretesting effect,pretesting_effect
+release from proactive interference,release_from_proactive_interference
+release from proactive interference,release_from_proactive_interference
+release from proactive inhibition,release_from_proactive_inhibition
+release from proactive inhibition,release_from_proactive_inhibition
+pseudoword effect,pseudoword_effect
+pseudoword effects,pseudoword_effect
+lag-recency effect,lag-recency_effect
+lag-recency effects,lag-recency_effect
+encoding/retrieval flip,encoding/retrieval_flip
+encoding/retrieval flips,encoding/retrieval_flip
+serial position effect,serial_position_effect
+serial position effects,serial_position_effect
+memory amplification effect,memory_amplification_effect
+memory amplification effects,memory_amplification_effect
+cognitive triage effect,cognitive_triage_effect
+cognitive triage effects,cognitive_triage_effect
+cognitive triage,cognitive_triage
+cognitive triages,cognitive_triage
+spontaneous recovery (memory),spontaneous_recovery_(memory)
+spontaneous recoveries (memory),spontaneous_recovery_(memory)
+temporal gradient of retroactive interference,temporal_gradient_of_retroactive_interference
+temporal gradients of retroactive interference,temporal_gradient_of_retroactive_interference
+composite face effect,composite_face_effect
+composite face effects,composite_face_effect
+choice-supportive memory,choice-supportive_memory
+choice-supportive memories,choice-supportive_memory
+conjunction error,conjunction_error
+conjunction errors,conjunction_error
+production deficiency,production_deficiency
+production deficiencies,production_deficiency
+recognition without identification,recognition_without_identification
+recognitions without identification,recognition_without_identification
+mere exposure effect,mere_exposure_effect
+mere exposure effects,mere_exposure_effect
+movement span task,movement_span_task
+movement span tasks,movement_span_task
+movement span test,movement_span_test
+movement span test,movement_span_test
+language,language
+languages,language
+lag effect,lag_effect
+lag effect,lag_effect
+Melton effect,Melton_effect
+Melton effects,Melton_effect
+spacing effect,spacing_effect
+spacing effect,spacing_effect
+massed learning,massed_learning
+massed learnings,massed_learning
+blocked learning,blocked_learning
+blocked learning,blocked_learning
+distributed learning,distributed_learning
+distributed learning,distributed_learning
+spaced learning,spaced_learning
+spaced learning,spaced_learning
+spontaneous false memory,spontaneous_false_memory
+spontaneous false memories,spontaneous_false_memory
+incidental learning,incidental_learning
+incidental learnings,incidental_learning
+nonintentional learning,nonintentional_learning
+nonintentional learnings,nonintentional_learning
+instruction,instruction
+instructions,instruction
+intentional learning,intentional_learning
+intentional learnings,intentional_learning
+explicit learning,explicit_learning
+explicit learnings,explicit_learning
+learning,learning
+learning,learning
+kinematic false memory,kinematic_false_memory
+kinematic false memories,kinematic_false_memory
+cryptomnesia,cryptomnesia
+cryptomnesias,cryptomnesia
+cryptomnesic experience,cryptomnesic_experience
+cryptomnesic experiences,cryptomnesic_experience
+unconscious plagiarism,unconscious_plagiarism
+unconscious plagiarisms,unconscious_plagiarism
+false recognition,false_recognition
+false recognitions,false_recognition
+false recall,false_recall
+false recalls,false_recall
+implementation intention,implementation_intention
+implementation intentions,implementation_intention
+time-based prospective memory,time-based_prospective_memory
+time-based prospective memories,time-based_prospective_memory
+time-cued prospective memory,time-cued_prospective_memory
+time-cued prospective memories,time-cued_prospective_memory
+event-based prospective memory,event-based_prospective_memory
+event-based prospective memories,event-based_prospective_memory
+categorical frequency estimation,categorical_frequency_estimation
+categorical frequency estimations,categorical_frequency_estimation
+relational memory,relational_memory
+relational memories,relational_memory
+relational binding,relational_binding
+relational bindings,relational_binding
+verbal span task,verbal_span_task
+verbal span tasks,verbal_span_task
+digit span task,digit_span_task
+digit span tasks,digit_span_task
+digit span test,digit_span_test
+digit span tests,digit_span_test
+verbal span test,verbal_span_test
+verbal span tests,verbal_span_test
+word span task,word_span_task
+word span tasks,word_span_task
+word span test,word_span_test
+word span test,word_span_test
+data,data
+data,data
+backward associative strength,backward_associative_strength
+backward associative strengths,backward_associative_strength
+BAS,BAS
+BAS,BAS
+forward associative strength,forward_associative_strength
+forward associative strengths,forward_associative_strength
+force associative vers l’avant,force_associative_vers_l’avant
+forces associative vers l’avant,force_associative_vers_l’avant
+attentional refreshing,attentional_refreshing
+attentional refreshings,attentional_refreshing
+bottom-up processing,bottom-up_processing
+bottom-up processing,bottom-up_processing
+controlled processing,controlled_processing
+controlled processing,controlled_processing
+automatic processing,automatic_processing
+automatic processing,automatic_processing
+top-down processing,top-down_processing
+top-down processing,top-down_processing
+task switching,task_switching
+task switching,task_switching
+attention switching,attention_switching
+attention switching,attention_switching
+divided attention,divided_attention
+divided attentions,divided_attention
+one-shot learning,one-shot_learning
+one-shot learnings,one-shot_learning
+one-shot acquisition,one-shot_acquisition
+one-shot acquisitions,one-shot_acquisition
+implicit learning,implicit_learning
+implicit learnings,implicit_learning
+non-associative learning,non-associative_learning
+non-associative learnings,non-associative_learning
+latent learning,latent_learning
+latent learnings,latent_learning
+reinforcement,reinforcement
+reinforcements,reinforcement
+perceptual learning,perceptual_learning
+perceptual learnings,perceptual_learning
+social learning,social_learning
+social learnings,social_learning
+reinforcer,reinforcer
+reinforcers,reinforcer
+stimulus generalization,stimulus_generalization
+stimulus generalizations,stimulus_generalization
+latent inhibition,latent_inhibition
+latent inhibitions,latent_inhibition
+conditioned stimulus preexposure effect ​,conditioned_stimulus_preexposure_effect_​
+conditioned stimulus preexposure effect ​,conditioned_stimulus_preexposure_effect_​
+sensory preconditioning,sensory_preconditioning
+sensory preconditioning,sensory_preconditioning
+trace conditioning,trace_conditioning
+trace conditioning,trace_conditioning
+delay conditioning,delay_conditioning
+delay conditioning,delay_conditioning
+extinction,extinction
+extinctions,extinction
+avoidance conditioning,avoidance_conditioning
+avoidance conditioning,avoidance_conditioning
+apprentissage de l’évitement,apprentissage_de_l’évitement
+apprentissage de l’évitement,apprentissage_de_l’évitement
+avoidance,avoidance
+avoidances,avoidance
+avoidance learning,avoidance_learning
+avoidances learning,avoidance_learning
+avoidance training,avoidance_training
+avoidance trainings,avoidance_training
+évitement,évitement
+évitements,évitement
+évitement conditionné,évitement_conditionné
+évitement conditionné,évitement_conditionné
+escape conditioning,escape_conditioning
+escape conditioning,escape_conditioning
+escape,escape
+escape,escape
+escape behavior,escape_behavior
+escape behaviors,escape_behavior
+escape learning,escape_learning
+escape learnings,escape_learning
+escape training,escape_training
+escape trainings,escape_training
+mobile conjugate reinforcement technique,mobile_conjugate_reinforcement_technique
+mobile conjugate reinforcement techniques,mobile_conjugate_reinforcement_technique
+cue,cue
+cues,cue
+contextual reminder,contextual_reminder
+contextual reminders,contextual_reminder
+memory cue,memory_cue
+memory cues,memory_cue
+law of use,law_of_use
+laws of use,law_of_use
+law of frequency,law_of_frequency
+laws of frequency,law_of_frequency
+law of practice,law_of_practice
+laws of practice,law_of_practice
+law of repetition,law_of_repetition
+laws of repetition,law_of_repetition
+misleading information,misleading_information
+misleading information,misleading_information
+misinformation,misinformation
+misinformation,misinformation
+post-event information,post-event_information
+post-event informations,post-event_information
+post-event misinformation,post-event_misinformation
+post-event misinformation,post-event_misinformation
+system variable,system_variable
+system variables,system_variable
+word frequency,word_frequency
+word frequencies,word_frequency
+response bias,response_bias
+response biases,response_bias
+conservative criterion,conservative_criterion
+conservative criteria,conservative_criterion
+liberal criterion,liberal_criterion
+liberal criteria,liberal_criterion
+response criterion,response_criterion
+response criteria,response_criterion
+commission error,commission_error
+commission errors,commission_error
+error of commission,error_of_commission
+errors of commission,error_of_commission
+word imageability,word_imageability
+word imageabilities,word_imageability
+hit,hit
+hit,hit
+false alarm,false_alarm
+false alarms,false_alarm
+mediated priming effect,mediated_priming_effect
+mediated priming effects,mediated_priming_effect
+mediated priming,mediated_priming
+mediated primings,mediated_priming
+hyperpriming effect,hyperpriming_effect
+hyperpriming effect,hyperpriming_effect
+hyperpriming,hyperpriming
+hyperpriming,hyperpriming
+associative recognition task,associative_recognition_task
+associative recognition tasks,associative_recognition_task
+associative recognition paradigm,associative_recognition_paradigm
+associative recognition paradigms,associative_recognition_paradigm
+associative recognition test,associative_recognition_test
+associative recognition tests,associative_recognition_test
+sensory/functional theory,sensory/functional_theory
+sensory/functional theories,sensory/functional_theory
+delayed non-matching to sample task,delayed_non-matching_to_sample_task
+delayed non-matching to sample tasks,delayed_non-matching_to_sample_task
+DNMS,DNMS
+DNMS,DNMS
+delayed non-matching to sample paradigm,delayed_non-matching_to_sample_paradigm
+delayed non-matching to sample paradigm,delayed_non-matching_to_sample_paradigm
+delayed non-matching to sample procedure,delayed_non-matching_to_sample_procedure
+delayed non-matching to sample procedure,delayed_non-matching_to_sample_procedure
+delayed nonmatch to sample task,delayed_nonmatch_to_sample_task
+delayed nonmatches to sample task,delayed_nonmatch_to_sample_task
+non-match to sample paradigm,non-match_to_sample_paradigm
+non-smatch to sample paradigm,non-match_to_sample_paradigm
+non-match to sample procedure,non-match_to_sample_procedure
+non-smatch to sample procedure,non-match_to_sample_procedure
+non-match to sample task,non-match_to_sample_task
+non-match to sample tasks,non-match_to_sample_task
+forced choice recognition task,forced_choice_recognition_task
+forced choice recognition tasks,forced_choice_recognition_task
+DMS,DMS
+DMS,DMS
+delayed match-to-sample paradigm,delayed_match-to-sample_paradigm
+delayed match-to-sample paradigms,delayed_match-to-sample_paradigm
+delayed match-to-sample procedure,delayed_match-to-sample_procedure
+delayed match-to-sample procedures,delayed_match-to-sample_procedure
+delayed match-to-sample task,delayed_match-to-sample_task
+delayed match-to-sample tasks,delayed_match-to-sample_task
+delayed-to-matching paradigm,delayed-to-matching_paradigm
+delayed-to-matching paradigms,delayed-to-matching_paradigm
+delayed-to-matching procedure,delayed-to-matching_procedure
+delayed-to-matching procedures,delayed-to-matching_procedure
+delayed-to-matching task,delayed-to-matching_task
+delayed-to-matching tasks,delayed-to-matching_task
+forced choice,forced_choice
+forced choices,forced_choice
+forced choice method,forced_choice_method
+forced choice methods,forced_choice_method
+forced choice recognition paradigm,forced_choice_recognition_paradigm
+forced choice recognition paradigms,forced_choice_recognition_paradigm
+match-to-sample task,match-to-sample_task
+match-to-sample tasks,match-to-sample_task
+police lineup,police_lineup
+police lineups,police_lineup
+lineup,lineup
+lineups,lineup
+dual-probe recognition task ​,dual-probe_recognition_task_​
+dual-probe recognition tasks ​,dual-probe_recognition_task_​
+dual-probe recognition paradigm,dual-probe_recognition_paradigm
+dual-probe recognition paradigms,dual-probe_recognition_paradigm
+dual-probe recognition procedure,dual-probe_recognition_procedure
+dual-probe recognition procedures,dual-probe_recognition_procedure
+local recognition task,local_recognition_task
+local recognition tasks,local_recognition_task
+habituation/dishabituation paradigm,habituation/dishabituation_paradigm
+habituation/dishabituation paradigms,habituation/dishabituation_paradigm
+yes/no recognition task,yes/no_recognition_task
+yes/no recognition tasks,yes/no_recognition_task
+yes/no recognition paradigm,yes/no_recognition_paradigm
+yes/no recognition paradigms,yes/no_recognition_paradigm
+Sternberg task,Sternberg_task
+Sternberg tasks,Sternberg_task
+Sternberg item recognition task,Sternberg_item_recognition_task
+Sternberg item recognition tasks,Sternberg_item_recognition_task
+Sternberg paradigm,Sternberg_paradigm
+Sternberg paradigm,Sternberg_paradigm
+Sternberg's memory scanning paradigm,Sternberg's_memory_scanning_paradigm
+Sternberg's memories scanning paradigm,Sternberg's_memory_scanning_paradigm
+memory scanning experiment,memory_scanning_experiment
+memories scanning experiment,memory_scanning_experiment
+memory scanning paradigm,memory_scanning_paradigm
+memories scanning paradigm,memory_scanning_paradigm
+response signal procedure,response_signal_procedure
+response signal procedures,response_signal_procedure
+global recognition task,global_recognition_task
+global recognition tasks,global_recognition_task
+continuous recognition task,continuous_recognition_task
+continuous recognition tasks,continuous_recognition_task
+conjoint recognition paradigm,conjoint_recognition_paradigm
+conjoint recognition paradigms,conjoint_recognition_paradigm
+conjoint recognition task,conjoint_recognition_task
+conjoint recognition task,conjoint_recognition_task
+serial recognition task,serial_recognition_task
+serial recognition tasks,serial_recognition_task
+immediate serial recognition task,immediate_serial_recognition_task
+immediate serial recognition tasks,immediate_serial_recognition_task
+matching span task,matching_span_task
+matching span task,matching_span_task
+serial recognition paradigm,serial_recognition_paradigm
+serial recognition paradigms,serial_recognition_paradigm
+train task,train_task
+train tasks,train_task
+mnemonic discrimination of object-in-context task,mnemonic_discrimination_of_object-in-context_task
+mnemonic discriminations of object-in-context task,mnemonic_discrimination_of_object-in-context_task
+MDOC task,MDOC_task
+MDOC tasks,MDOC_task
+memory Stroop paradigm,memory_Stroop_paradigm
+memory Stroop paradigms,memory_Stroop_paradigm
+A' measure,A'_measure
+A' measures,A'_measure
+percent correct recognition,percent_correct_recognition
+percent correct recognitions,percent_correct_recognition
+distractor,distractor
+distractors,distractor
+foil,foil
+foils,foil
+lure,lure
+lures,lure
+ROC curve,ROC_curve
+ROC curves,ROC_curve
+MOC function,MOC_function
+MOC functions,MOC_function
+ROC function,ROC_function
+ROC functions,ROC_function
+conservative response,conservative_response
+conservative responses,conservative_response
+isomnemonic function,isomnemonic_function
+isomnemonic functions,isomnemonic_function
+liberal response,liberal_response
+liberal responses,liberal_response
+memory operating characteristics,memory_operating_characteristics
+memory operating characteristics,memory_operating_characteristics
+receiver operating characteristic curve,receiver_operating_characteristic_curve
+receiver operating characteristic curve,receiver_operating_characteristic_curve
+associative unlearning,associative_unlearning
+associative unlearning,associative_unlearning
+serial reproduction task,serial_reproduction_task
+serial reproduction tasks,serial_reproduction_task
+forced recall task,forced_recall_task
+forced recall tasks,forced_recall_task
+Rey-Osterrieth complex figure test,Rey-Osterrieth_complex_figure_test
+Rey-Osterrieth complex figure tests,Rey-Osterrieth_complex_figure_test
+ROCF,ROCF
+ROCF,ROCF
+Mini Mental State Examination,Mini_Mental_State_Examination
+Mini Mental State Examination,Mini_Mental_State_Examination
+Folstein test,Folstein_test
+Folstein tests,Folstein_test
+MMS,MMS
+MMS,MMS
+MMSE,MMSE
+MMSE,MMSE
+Mini-Mental State,Mini-Mental_State
+Mini-Mental State,Mini-Mental_State
+cumulative recall function,cumulative_recall_function
+cumulative recall functions,cumulative_recall_function
+attentional blink,attentional_blink
+attentional blinks,attentional_blink
+alternating serial reaction time task,alternating_serial_reaction_time_task
+alternating serial reaction time task,alternating_serial_reaction_time_task
+ASRT,ASRT
+ASRT,ASRT
+temps de réaction en série alterné,temps_de_réaction_en_série_alterné
+temps de réaction en série alternés,temps_de_réaction_en_série_alterné
+change blindness,change_blindness
+change blindnesses,change_blindness
+serial reaction time task,serial_reaction_time_task
+serial reaction time tasks,serial_reaction_time_task
+SRT,SRT
+SRTS,SRT
+SRTT,SRTT
+SRTT,SRTT
+retrieval-induced forgetting,retrieval-induced_forgetting
+retrieval-induced forgettings,retrieval-induced_forgetting
+RIF,RIF
+RIF,RIF
+WI-RIF,WI-RIF
+WI-RIF,WI-RIF
+interleaving learning,interleaving_learning
+interleaving learnings,interleaving_learning
+interleaving,interleaving
+interleaving,interleaving
+backpropagation,backpropagation
+backpropagations,backpropagation
+Hebb's rule,Hebb's_rule
+Hebb's rules,Hebb's_rule
+Hebbian learning,Hebbian_learning
+Hebbian learnings,Hebbian_learning
+learning curve,learning_curve
+learning curves,learning_curve
+acquisition curve,acquisition_curve
+acquisition curves,acquisition_curve
+ogive learning curve,ogive_learning_curve
+ogive learning curves,ogive_learning_curve
+S shape learning curve,S_shape_learning_curve
+S shape learning curves,S_shape_learning_curve
+sigmoid learning curve,sigmoid_learning_curve
+sigmoid learning curves,sigmoid_learning_curve
+negative acceleration learning curve,negative_acceleration_learning_curve
+negative acceleration learning curves,negative_acceleration_learning_curve
+negative acceleration,negative_acceleration
+negative accelerations,negative_acceleration
+negative learning curve,negative_learning_curve
+negative learning curves,negative_learning_curve
+positive acceleration learning curve,positive_acceleration_learning_curve
+positive acceleration learning curves,positive_acceleration_learning_curve
+positive acceleration,positive_acceleration
+positive accelerations,positive_acceleration
+positive acceleration curve,positive_acceleration_curve
+positive acceleration curves,positive_acceleration_curve
+principle of desirable difficulties,principle_of_desirable_difficulties
+principles of desirable difficulties,principle_of_desirable_difficulties
+intelligence,intelligence
+intelligence,intelligence
+intellectual ability,intellectual_ability
+intellectual abilities,intellectual_ability
+intellectual capability,intellectual_capability
+intellectual capabilities,intellectual_capability
+intellectual disposition,intellectual_disposition
+intellectual dispositions,intellectual_disposition
+auto-associative memory,auto-associative_memory
+auto-associative memories,auto-associative_memory
+SOB-CS model,SOB-CS_model
+SOB-CS models,SOB-CS_model
+Serial Order in a Box – Complex Span,Serial_Order_in_a_Box_–_Complex_Span
+Serial Orders in a Box – Complex Span,Serial_Order_in_a_Box_–_Complex_Span
+prefrontal cortex,prefrontal_cortex
+prefrontal cortexes,prefrontal_cortex
+cortex associatif préfrontal,cortex_associatif_préfrontal
+cortex associatif préfrontals,cortex_associatif_préfrontal
+prefrontal association cortex,prefrontal_association_cortex
+prefrontal association cortexes,prefrontal_association_cortex
+inattentional blindness,inattentional_blindness
+inattentional blindnesses,inattentional_blindness
+ownership effect,ownership_effect
+ownership effects,ownership_effect
+parietal memory network,parietal_memory_network
+parietal memory networks,parietal_memory_network
+autobiographical memory network,autobiographical_memory_network
+autobiographical memory networks,autobiographical_memory_network
+cingulate cortex,cingulate_cortex
+cingulate cortexes,cingulate_cortex
+episodic future thinking-induced forgetting,episodic_future_thinking-induced_forgetting
+episodic future thinking-induced forgettings,episodic_future_thinking-induced_forgetting
+EFT-induced forgetting,EFT-induced_forgetting
+EFT-induced forgettings,EFT-induced_forgetting
+thinking-induced forgetting,thinking-induced_forgetting
+thinking-induced forgettings,thinking-induced_forgetting
+inhibition-induced forgetting,inhibition-induced_forgetting
+inhibition-induced forgettings,inhibition-induced_forgetting
+protein kinase Mζ,protein_kinase_Mζ
+protein kinase Mζ,protein_kinase_Mζ
+PKMζ,PKMζ
+PKMζ,PKMζ
+protein kinase M zeta,protein_kinase_M_zeta
+protein kinase M zeta,protein_kinase_M_zeta
+conceptual structure account,conceptual_structure_account
+conceptual structure accounts,conceptual_structure_account
+OSCAR model,OSCAR_model
+OSCAR models,OSCAR_model
+OSCillator-based Associative Recall,OSCillator-based_Associative_Recall
+OSCillator-based Associative Recall,OSCillator-based_Associative_Recall
+feedforward neural network,feedforward_neural_network
+feedforward neural networks,feedforward_neural_network
+TraceLink model,TraceLink_model
+TraceLink models,TraceLink_model
+synaptic weight,synaptic_weight
+synaptic weights,synaptic_weight
+protein kinase,protein_kinase
+protein kinases,protein_kinase
+elaboration,elaboration
+elaborations,elaboration
+keyword method,keyword_method
+keyword methods,keyword_method
+keyword mnemonics,keyword_mnemonics
+keyword mnemonics,keyword_mnemonics
+keyword technique,keyword_technique
+keyword techniques,keyword_technique
+subjective organization,subjective_organization
+subjective organizations,subjective_organization
+organization,organization
+organizations,organization
+organizational strategy,organizational_strategy
+organizational strategies,organizational_strategy
+external strategy,external_strategy
+external strategies,external_strategy
+external aid,external_aid
+external aids,external_aid
+echoic memory,echoic_memory
+echoic memories,echoic_memory
+auditory persistence,auditory_persistence
+auditory persistence,auditory_persistence
+auditory sensory memory,auditory_sensory_memory
+auditory sensory memories,auditory_sensory_memory
+precategorical acoustic store,precategorical_acoustic_store
+precategorical acoustic stores,precategorical_acoustic_store
+reminiscing style,reminiscing_style
+reminiscing styles,reminiscing_style
+conversational style,conversational_style
+conversational styles,conversational_style
+parental reminiscing style,parental_reminiscing_style
+parental reminiscing styles,parental_reminiscing_style
+low elaborative reminiscing style,low_elaborative_reminiscing_style
+low elaborative reminiscing styles,low_elaborative_reminiscing_style
+highly elaborative reminiscing style,highly_elaborative_reminiscing_style
+highly elaborative reminiscing styles,highly_elaborative_reminiscing_style
+pupillometry,pupillometry
+pupillometries,pupillometry
+pupil diameter,pupil_diameter
+pupil diameters,pupil_diameter
+pupil dilatation,pupil_dilatation
+pupil dilatations,pupil_dilatation
+selective directed forgetting paradigm,selective_directed_forgetting_paradigm
+selective directed forgetting paradigms,selective_directed_forgetting_paradigm
+selective directed forgetting procedure,selective_directed_forgetting_procedure
+selective directed forgetting procedures,selective_directed_forgetting_procedure
+backward serial position curve,backward_serial_position_curve
+backward serial position curves,backward_serial_position_curve
+self-defining future projection,self-defining_future_projection
+self-defining future projections,self-defining_future_projection
+SDFP,SDFP
+SDFP,SDFP
+self-defining projection,self-defining_projection
+self-defining projections,self-defining_projection
+flashbulb memory,flashbulb_memory
+flashbulb memories,flashbulb_memory
+overgeneral memory,overgeneral_memory
+overgeneral memories,overgeneral_memory
+memory overgenerality,memory_overgenerality
+memory overgeneralities,memory_overgenerality
+overgeneral autobiographical memory,overgeneral_autobiographical_memory
+overgeneral autobiographical memories,overgeneral_autobiographical_memory
+historically defined autobiographical period,historically_defined_autobiographical_period
+historically defined autobiographical periods,historically_defined_autobiographical_period
+H-DAP,H-DAP
+H-DAP,H-DAP
+self-defining memory,self-defining_memory
+self-defining memories,self-defining_memory
+autobiographical knowledge base,autobiographical_knowledge_base
+autobiographical knowledge bases,autobiographical_knowledge_base
+highly superior autobiographical memory,highly_superior_autobiographical_memory
+highly superior autobiographical memories,highly_superior_autobiographical_memory
+HSAM,HSAM
+HSAMS,HSAM
+hyperthymesia,hyperthymesia
+hyperthymesias,hyperthymesia
+hyperthymestic syndrome,hyperthymestic_syndrome
+hyperthymestic syndromes,hyperthymestic_syndrome
+working self,working_self
+working selves,working_self
+Memory Flexibility intervention,Memory_Flexibility_intervention
+Memory Flexibility interventions,Memory_Flexibility_intervention
+Autobiographical Memory Flexibility intervention,Autobiographical_Memory_Flexibility_intervention
+Autobiographical Memory Flexibility interventions,Autobiographical_Memory_Flexibility_intervention
+MemFlex,MemFlex
+MemFlex,MemFlex
+Memory Specificity Training,Memory_Specificity_Training
+Memory Specificity Trainings,Memory_Specificity_Training
+MeST,MeST
+Mests,MeST
+implanted false memory,implanted_false_memory
+implanted false memory,implanted_false_memory
+rich false memory,rich_false_memory
+rich false memories,rich_false_memory
+principle of coherence,principle_of_coherence
+principles of coherence,principle_of_coherence
+principle of correspondence,principle_of_correspondence
+principles of correspondence,principle_of_correspondence
+forced confabulation ​paradigm,forced_confabulation_​paradigm
+forced confabulation ​paradigm,forced_confabulation_​paradigm
+false feedback paradigm,false_feedback_paradigm
+false feedback paradigms,false_feedback_paradigm
+false feedback method,false_feedback_method
+false feedback methods,false_feedback_method
+test-potentiated learning,test-potentiated_learning
+test-potentiated learnings,test-potentiated_learning
+c-fos,c-fos
+c-foses,c-fos
+sleep,sleep
+sleep,sleep
+retention interval,retention_interval
+retention intervals,retention_interval
+retention delay,retention_delay
+retention delays,retention_delay
+relative distinctiveness principle,relative_distinctiveness_principle
+relative distinctiveness principles,relative_distinctiveness_principle
+specificity principle,specificity_principle
+specificity principles,specificity_principle
+mnemonist,mnemonist
+mnemonists,mnemonist
+memory athlete,memory_athlete
+memory athletes,memory_athlete
+memory champion,memory_champion
+memory champions,memory_champion
+super memorizer,super_memorizer
+super memorizers,super_memorizer
+superior memorist,superior_memorist
+superior memorists,superior_memorist
+superior memorizer,superior_memorizer
+superior memorizers,superior_memorizer
+Adapted Autobiographical Interview,Adapted_Autobiographical_Interview
+Adapted Autobiographical Interview,Adapted_Autobiographical_Interview
+Autobiographical Interview,Autobiographical_Interview
+Autobiographical Interview,Autobiographical_Interview
+induced false memory,induced_false_memory
+induced false memory,induced_false_memory
+Autobiographical Memory Test,Autobiographical_Memory_Test
+Autobiographical Memory Test,Autobiographical_Memory_Test
+AMT,AMT
+AMT,AMT
+cue-word method,cue-word_method
+cue-word methods,cue-word_method
+Galton-Crovitz method,Galton-Crovitz_method
+Galton-Crovitz methods,Galton-Crovitz_method
+Galton-Crovitz word-cuing technique,Galton-Crovitz_word-cuing_technique
+Galton-Crovitz word-cuing techniques,Galton-Crovitz_word-cuing_technique
+cuing method,cuing_method
+cuing methods,cuing_method
+human organism,human_organism
+human organisms,human_organism
+organism,organism
+organisms,organism
+super-recognizer,super-recognizer
+super-recognizer,super-recognizer
+super-recognition,super-recognition
+super-srecognitions,super-recognition
+relocation bump,relocation_bump
+relocation bumps,relocation_bump
+memory self-efficacy,memory_self-efficacy
+memory self-efficacies,memory_self-efficacy
+MT+ area,MT+_area
+MT+ areas,MT+_area
+recollective confabulation,recollective_confabulation
+recollective confabulations,recollective_confabulation
+California Verbal Learning Test ​,California_Verbal_Learning_Test_​
+California Verbal Learning Test ​,California_Verbal_Learning_Test_​
+CVLT,CVLT
+CVLT,CVLT
+crashing memories paradigm,crashing_memories_paradigm
+crashing memories paradigm,crashing_memories_paradigm
+crashing memories task,crashing_memories_task
+crashing memories task,crashing_memories_task
+non-existent news-footage paradigm,non-existent_news-footage_paradigm
+non-existent news-footage paradigms,non-existent_news-footage_paradigm
+lost in the mall paradigm,lost_in_the_mall paradigm
+lost in the mall paradigms,lost_in_the_mall paradigm
+false memory implantation method,false_memory_implantation_method
+false memory implantation methods,false_memory_implantation_method
+false memory implantation paradigm,false_memory_implantation_paradigm
+false memory implantation paradigms,false_memory_implantation_paradigm
+false memory implantation technique,false_memory_implantation_technique
+false memory implantation techniques,false_memory_implantation_technique
+lost in the mall technique,lost_in_the_mall_technique
+lost in the mall technique,lost_in_the_mall_technique
+Memory for Intentions Screening Test,Memory_for_Intentions_Screening_Test
+Memories for Intentions Screening Test,Memory_for_Intentions_Screening_Test
+MIST,MIST
+MIST,MIST
+Royal Prince Alfred Prospective Memory Test,Royal_Prince_Alfred_Prospective_Memory_Test
+Royal Prince Alfred Prospective Memory Test,Royal_Prince_Alfred_Prospective_Memory_Test
+RPA-ProMem,RPA-ProMem
+RPA-ProMem,RPA-ProMem
+Ecological Test of Prospective Memory,Ecological_Test_of_Prospective_Memory
+Ecological Tests of Prospective Memory,Ecological_Test_of_Prospective_Memory
+TEMP,TEMP
+TEMPS,TEMP
+Benton Facial Recognition Test,Benton_Facial_Recognition_Test
+Benton Facial Recognition Test,Benton_Facial_Recognition_Test
+BRFT,BRFT
+BRFT,BRFT
+Benton Face Recognition Test,Benton_Face_Recognition_Test
+Benton Face Recognition Test,Benton_Face_Recognition_Test
+Mem-Pro-Clinic test,Mem-Pro-Clinic_test
+Mem-Pro-Clinic tests,Mem-Pro-Clinic_test
+envelope task,envelope_task
+envelope task,envelope_task
+Cambridge Prospective Memory Test,Cambridge_Prospective_Memory_Test
+Cambridge Prospective Memory Test,Cambridge_Prospective_Memory_Test
+CAMPROMPT,CAMPROMPT
+CAMPROMPTS,CAMPROMPT
+prompt card task,prompt_card_task
+prompt card tasks,prompt_card_task
+Test for Odor Memory,Test_for_Odor_Memory
+Test for Odor Memory,Test_for_Odor_Memory
+Sniffin’ TOM,Sniffin’_TOM
+Sniffin’ TOM,Sniffin’_TOM
+TOM,TOM
+TOM,TOM
+TOM-32,TOM-32
+TOM-32,TOM-32
+telephone test,telephone_test
+telephone tests,telephone_test
+Face-Name Associative Memory Exam,Face-Name_Associative_Memory_Exam
+Face-Name Associative Memory Exam,Face-Name_Associative_Memory_Exam
+FNAME,FNAME
+FNAMES,FNAME
+Face-Name Associative Memory Test,Face-Name_Associative_Memory_Test
+Face-Name Associative Memory Test,Face-Name_Associative_Memory_Test
+Cambridge Face Memory Test,Cambridge_Face_Memory_Test
+Cambridge Face Memory Test,Cambridge_Face_Memory_Test
+CFMT,CFMT
+CFMT,CFMT
+Wisconsin Card Sorting Test,Wisconsin_Card_Sorting_Test
+Wisconsin Card Sorting Test,Wisconsin_Card_Sorting_Test
+Trail Making Test,Trail_Making_Test
+Trail Making Test,Trail_Making_Test
+perceptual process,perceptual_process
+perceptual processes,perceptual_process
+perceptual processing,perceptual_processing
+perceptual processing,perceptual_processing
+phonemic verbal fluency test,phonemic_verbal_fluency_test
+phonemic verbal fluency tests,phonemic_verbal_fluency_test
+phonemic fluency,phonemic_fluency
+phonemic fluencies,phonemic_fluency
+phonemic fluency task,phonemic_fluency_task
+phonemic fluency tasks,phonemic_fluency_task
+phonemic fluency test,phonemic_fluency_test
+phonemic fluency tests,phonemic_fluency_test
+phonological verbal fluency task,phonological_verbal_fluency_task
+phonological verbal fluency tasks,phonological_verbal_fluency_task
+graph,graph
+graphs,graph
+figure,figure
+figures,figure
+power function,power_function
+power functions,power_function
+power law,power_law
+power laws,power_law
+forward serial position curve,forward_serial_position_curve
+forward serial position curves,forward_serial_position_curve
+Corsi task,Corsi_task
+Corsi tasks,Corsi_task
+Corsi block tapping test,Corsi_block_tapping_test
+Corsi block tapping tests,Corsi_block_tapping_test
+Corsi block task,Corsi_block_task
+Corsi block tasks,Corsi_block_task
+Corsi test,Corsi_test
+Corsi tests,Corsi_test
+retrieval dependency,retrieval_dependency
+retrieval dependencies,retrieval_dependency
+adjusted normalized resolution index,adjusted_normalized_resolution_index
+adjusted normalized resolution indexes,adjusted_normalized_resolution_index
+ANRI,ANRI
+ANRI,ANRI
+meta-d',meta-d'
+metas-d',meta-d'
+Goodman-Kruskal gamma correlation coefficient,Goodman-Kruskal_gamma_correlation_coefficient
+Goodman-Kruskal gamma correlation coefficient,Goodman-Kruskal_gamma_correlation_coefficient
+G coefficient,G_coefficient
+G coefficient,G_coefficient
+gamma correlation,gamma_correlation
+gamma correlations,gamma_correlation
+corrected hit probability,corrected_hit_probability
+corrected hit probability,corrected_hit_probability
+cHR,cHR
+cHR,cHR
+β index,β_index
+β indexes,β_index
+beta index,beta_index
+beta indexes,beta_index
+beta measure,beta_measure
+beta measures,beta_measure
+β measure,β_measure
+β measures,β_measure
+diagnosticity ratio,diagnosticity_ratio
+diagnosticity ratios,diagnosticity_ratio
+B" measure,B"_measure
+B" measures,B"_measure
+B prime prime,B_prime_prime
+B prime primes,B_prime_prime
+B" index,B"_index
+B" indexes,B"_index
+phi correlation coefficient,phi_correlation_coefficient
+phi correlation coefficient,phi_correlation_coefficient
+fourfold point correlation coefficient,fourfold_point_correlation_coefficient
+fourfold point correlation coefficient,fourfold_point_correlation_coefficient
+phi coefficient,phi_coefficient
+phis coefficient,phi_coefficient
+chronometry,chronometry
+chronometries,chronometry
+chronometric analysis,chronometric_analysis
+chronometric analyses,chronometric_analysis
+mental chronometry,mental_chronometry
+mental chronometries,mental_chronometry
+typicality gradient,typicality_gradient
+typicality gradients,typicality_gradient
+stimulus-onset asynchrony,stimulus-onset_asynchrony
+stimulus-onset asynchronies,stimulus-onset_asynchrony
+SOA,SOA
+SOA,SOA
+absolute accuracy,absolute_accuracy
+absolute accuracies,absolute_accuracy
+calibration,calibration
+calibrations,calibration
+perceptual span,perceptual_span
+perceptual spans,perceptual_span
+field of effective vision,field_of_effective_vision
+fields of effective vision,field_of_effective_vision
+visual span,visual_span
+visual spans,visual_span
+semantic distance,semantic_distance
+semantic distances,semantic_distance
+semantic relatedness,semantic_relatedness
+semantic relatednesses,semantic_relatedness
+semantic similarity,semantic_similarity
+semantic similarities,semantic_similarity
+Walking Corsi Test,Walking_Corsi_Test
+Walking Corsi Test,Walking_Corsi_Test
+WalCT,WalCT
+Walcts,WalCT
+thought substitution method,thought_substitution_method
+thought substitution methods,thought_substitution_method
+mathematical function,mathematical_function
+mathematical functions,mathematical_function
+collective false memory,collective_false_memory
+collective false memories,collective_false_memory
+false autobiographical belief,false_autobiographical_belief
+false autobiographical beliefs,false_autobiographical_belief
+induced false belief,induced_false_belief
+induced false belief,induced_false_belief
+intra-list cue,intra-list_cue
+intra-list cues,intra-list_cue
+probed recall task,probed_recall_task
+probed recall tasks,probed_recall_task
+graphemic cued recall task,graphemic_cued_recall_task
+graphemic cued recall tasks,graphemic_cued_recall_task
+graphemic cued recall test,graphemic_cued_recall_test
+graphemic cued recall tests,graphemic_cued_recall_test
+part-set cuing task,part-set_cuing_task
+part-set cuing tasks,part-set_cuing_task
+part-list cuing paradigm,part-list_cuing_paradigm
+part-list cuing paradigms,part-list_cuing_paradigm
+part-list cuing task,part-list_cuing_task
+part-list cuing tasks,part-list_cuing_task
+extra-list cue,extra-list_cue
+extra-list cues,extra-list_cue
+suffix effect,suffix_effect
+suffix effects,suffix_effect
+negative recency effect,negative_recency_effect
+negative recency effects,negative_recency_effect
+long-term recency effect,long-term_recency_effect
+long-term recency effects,long-term_recency_effect
+intrusion recency effect,intrusion_recency_effect
+intrusion recency effects,intrusion_recency_effect
+visible persistance,visible_persistance
+visible persistances,visible_persistance
+informational persistence,informational_persistence
+informational persistence,informational_persistence
+Autobiographical Memory Interview,Autobiographical_Memory_Interview
+Autobiographical Memory Interview,Autobiographical_Memory_Interview
+AMI,AMI
+AMI,AMI
+sensitization,sensitization
+sensitization,sensitization
+behavioral sensitization,behavioral_sensitization
+behavioral sensitization,behavioral_sensitization
+dishabituation,dishabituation
+dishabituations,dishabituation
+habituation,habituation
+habituations,habituation
+positive subsequent memory effect,positive_subsequent_memory_effect
+positive subsequent memory effects,positive_subsequent_memory_effect
+negative subsequent memory effect,negative_subsequent_memory_effect
+negative subsequent memory effects,negative_subsequent_memory_effect
+nSM,nSM
+nsms,nSM
+reversed subsequent memory effect,reversed_subsequent_memory_effect
+reversed subsequent memory effect,reversed_subsequent_memory_effect
+subsequent forgetting effect,subsequent_forgetting_effect
+subsequent forgetting effects,subsequent_forgetting_effect
+phosphatase,phosphatase
+phosphatases,phosphatase
+CREB factor,CREB_factor
+CREB factors,CREB_factor
+CREB binding protein,CREB_binding_protein
+CREB binding proteins,CREB_binding_protein
+CREB protein,CREB_protein
+CREB proteins,CREB_protein
+cAMP response element-binding factor,cAMP_response_element-binding_factor
+cAMP response element-binding factors,cAMP_response_element-binding_factor
+WITNESS model,WITNESS_model
+WITNESS models,WITNESS_model
+holistic processing,holistic_processing
+holistic processing,holistic_processing
+first-order relational processing,first-order_relational_processing
+first-order relational processing,first-order_relational_processing
+sensitivity to first-order relations,sensitivity_to_first-order_relations
+sensitivities to first-order relations,sensitivity_to_first-order_relations
+second-order relational processing,second-order_relational_processing
+second-order relational processing,second-order_relational_processing
+sensitivity of second-order relations,sensitivity_of_second-order_relations
+sensitivities of second-order relations,sensitivity_of_second-order_relations
+cognitive offloading,cognitive_offloading
+cognitive offloadings,cognitive_offloading
+over/under confidence index,over/under_confidence_index
+over/under confidence indexes,over/under_confidence_index
+O/U index,O/U_index
+O/U indexes,O/U_index
+O/U measure,O/U_measure
+O/U measures,O/U_measure
+over confidence/under confidence index,over_confidence/under_confidence_index
+over confidence/under confidence index,over_confidence/under_confidence_index
+C calibration index,C_calibration_index
+C calibration indexes,C_calibration_index
+C calibration measure,C_calibration_measure
+C calibration measures,C_calibration_measure
+C index,C_index
+C indexes,C_index
+C measure,C_measure
+C measures,C_measure
+prototype,prototype
+prototypes,prototype
+retrospective confidence,retrospective_confidence
+retrospective confidences,retrospective_confidence
+retrospective confidence judgment,retrospective_confidence_judgment
+retrospective confidence judgments,retrospective_confidence_judgment
+node,node
+nodes,node
+small-world network,small-world_network
+small-world networks,small-world_network
+changing distractor effect,changing_distractor_effect
+changing distractor effects,changing_distractor_effect
+zROC curve,zROC_curve
+zROC curves,zROC_curve
+z-ROC,z-ROC
+z-ROC,z-ROC
+zROC function,zROC_function
+zROC functions,zROC_function
+spontaneous recovery (conditioning),spontaneous_recovery_(conditioning)
+spontaneous recoveries (conditioning),spontaneous_recovery_(conditioning)
+recoding,recoding
+recoding,recoding
+item-specific processing,item-specific_processing
+item-specific processing,item-specific_processing
+relational processing,relational_processing
+relational processing,relational_processing
+modality tagging,modality_tagging
+modality taggings,modality_tagging
+note-taking,note-taking
+note-takings,note-taking
+cristallized intelligence,cristallized_intelligence
+cristallized intelligence,cristallized_intelligence
+Gc,Gc
+Gc,Gc
+reconsolidation,reconsolidation
+reconsolidations,reconsolidation
+synaptic consolidation,synaptic_consolidation
+synaptic consolidations,synaptic_consolidation
+cellular consolidation,cellular_consolidation
+cellular consolidations,cellular_consolidation
+postmemory,postmemory
+postmemories,postmemory
+transactive memory,transactive_memory
+transactive memories,transactive_memory
+transactive memory system,transactive_memory_system
+transactive memory systems,transactive_memory_system
+simple reaction time task,simple_reaction_time_task
+simple reaction time tasks,simple_reaction_time_task
+MINERVA 2,MINERVA_2
+MINERVA 2,MINERVA_2
+ATHENA model,ATHENA_model
+ATHENA models,ATHENA_model
+Matrix model,Matrix_model
+Matrix models,Matrix_model
+SAM model,SAM_model
+SAM models,SAM_model
+fluency heuristic,fluency_heuristic
+fluency heuristics,fluency_heuristic
+vanishing cues method,vanishing_cues_method
+vanishing cues methods,vanishing_cues_method
+spaced retrieval,spaced_retrieval
+spaced retrievals,spaced_retrieval
+spaced-retrieval intervention,spaced-retrieval_intervention
+spaced-retrieval interventions,spaced-retrieval_intervention
+cognitive training,cognitive_training
+cognitive trainings,cognitive_training
+cognitive intervention,cognitive_intervention
+cognitive interventions,cognitive_intervention
+transcription factor,transcription_factor
+transcription factors,transcription_factor
+single-process models of recognition memory,single-process_models_of_recognition_memory
+single-process models of recognition memory,single-process_models_of_recognition_memory
+strength-based mirror effect,strength-based_mirror_effect
+strength-based mirror effects,strength-based_mirror_effect
+stimulus,stimulus
+stimuli,stimulus
+unequal-variance signal detection theory,unequal-variance_signal_detection_theory
+unequal-variance signal detection theories,unequal-variance_signal_detection_theory
+UVSD,UVSD
+UVSD,UVSD
+UVSDT,UVSDT
+UVSDT,UVSDT
+equal-variance signal detection theory,equal-variance_signal_detection_theory
+equal-variance signal detection theories,equal-variance_signal_detection_theory
+EVSD,EVSD
+EVSD,EVSD
+EVSDT,EVSDT
+EVSDT,EVSDT
+equal-variance signal detection model,equal-variance_signal_detection_model
+equal-variance signal detection models,equal-variance_signal_detection_model
+MMFR procedure,MMFR_procedure
+MMFR procedures,MMFR_procedure
+Modified Modified Free Recall,Modified_Modified_Free_Recall
+Modified Modified Free Recall,Modified_Modified_Free_Recall
+dual process signal detection model,dual_process_signal_detection_model
+dual process signal detection models,dual_process_signal_detection_model
+DPSD,DPSD
+DPSD,DPSD
+DPSDT,DPSDT
+DPSDT,DPSDT
+dual process signal detection theory,dual_process_signal_detection_theory
+dual process signal detection theories,dual_process_signal_detection_theory
+neurotrophin,neurotrophin
+neurotrophins,neurotrophin
+gene,gene
+genes,gene
+enzyme,enzyme
+enzyme,enzyme
+Geneva Space Cruiser,Geneva_Space_Cruiser
+Geneva Space Cruiser,Geneva_Space_Cruiser
+word-fragment completion task,word-fragment_completion_task
+word-fragment completion tasks,word-fragment_completion_task
+word-stem completion task,word-stem_completion_task
+word-stem completion tasks,word-stem_completion_task
+perceptual identification task,perceptual_identification_task
+perceptual identification tasks,perceptual_identification_task
+von Restorff effect,von_Restorff_effect
+von Restorff effects,von_Restorff_effect
+isolation effect,isolation_effect
+isolation effects,isolation_effect
+object,object
+objects,object
+nonsense syllabes,nonsense_syllabes
+nonsense syllabes,nonsense_syllabes
+haptic memory,haptic_memory
+haptic memories,haptic_memory
+Actual Week task,Actual_Week_task
+Actual Week tasks,Actual_Week_task
+autiobiographical think/no-think task,autiobiographical_think/no-think_task
+autiobiographical think/no-think tasks,autiobiographical_think/no-think_task
+variable ratio schedule of reinforcement,variable_ratio_schedule_of_reinforcement
+variable ratio schedules of reinforcement,variable_ratio_schedule_of_reinforcement
+variable-ratio schedule,variable-ratio_schedule
+variable-ratio schedules,variable-ratio_schedule
+ratio schedule of reinforcement,ratio_schedule_of_reinforcement
+ratio schedules of reinforcement,ratio_schedule_of_reinforcement
+ratio reinforcement schedule,ratio_reinforcement_schedule
+ratio reinforcement schedules,ratio_reinforcement_schedule
+two-alternatives forced choice procedure,two-alternatives_forced_choice_procedure
+two-alternatives forced choice procedures,two-alternatives_forced_choice_procedure
+2AFC,2AFC
+2AFCS,2AFC
+2AFC paradigm,2AFC_paradigm
+2AFC paradigms,2AFC_paradigm
+two-alternatives forced choice paradigm,two-alternatives_forced_choice_paradigm
+two-alternatives forced choice paradigms,two-alternatives_forced_choice_paradigm
+two-alternatives forced choice task,two-alternatives_forced_choice_task
+two-alternatives forced choice tasks,two-alternatives_forced_choice_task
+recognition-induced forgetting,recognition-induced_forgetting
+recognition-induced forgettings,recognition-induced_forgetting
+socially shared retrieval-induced forgetting,socially_shared_retrieval-induced_forgetting
+socially shared retrieval-induced forgettings,socially_shared_retrieval-induced_forgetting
+SS-RIF,SS-RIF
+SS-RIF,SS-RIF
+reference-back paradigm,reference-back_paradigm
+reference-back paradigms,reference-back_paradigm
+far transfer,far_transfer
+far transfers,far_transfer
+negative transfer,negative_transfer
+negative transfers,negative_transfer
+positive transfer,positive_transfer
+positive transfers,positive_transfer
+near transfer,near_transfer
+near transfers,near_transfer
+changing-state effect,changing-state_effect
+changing-state effects,changing-state_effect
+transfer and retroaction surface,transfer_and_retroaction_surface
+transfers and retroaction surface,transfer_and_retroaction_surface
+continuous schedule of reinforcement,continuous_schedule_of_reinforcement
+continuous schedules of reinforcement,continuous_schedule_of_reinforcement
+continuous reinforcement schedule,continuous_reinforcement_schedule
+continuous reinforcement schedules,continuous_reinforcement_schedule
+intermittent schedule of reinforcement,intermittent_schedule_of_reinforcement
+intermittent schedules of reinforcement,intermittent_schedule_of_reinforcement
+intermittent reinforcement schedule,intermittent_reinforcement_schedule
+intermittent reinforcement schedules,intermittent_reinforcement_schedule
+partial reinforcement schedule,partial_reinforcement_schedule
+partial reinforcement schedules,partial_reinforcement_schedule
+partial schedule of reinforcement,partial_schedule_of_reinforcement
+partial schedules of reinforcement,partial_schedule_of_reinforcement
+interval schedule of reinforcement,interval_schedule_of_reinforcement
+interval schedules of reinforcement,interval_schedule_of_reinforcement
+interval reinforcement schedule,interval_reinforcement_schedule
+interval reinforcement schedules,interval_reinforcement_schedule
+variable interval schedule of reinforcement,variable_interval_schedule_of_reinforcement
+variable interval schedules of reinforcement,variable_interval_schedule_of_reinforcement
+variable interval reinforcement schedule,variable_interval_reinforcement_schedule
+variable interval reinforcement schedules,variable_interval_reinforcement_schedule
+variable interval schedule,variable_interval_schedule
+variable interval schedules,variable_interval_schedule
+fixed interval schedule of reinforcement,fixed_interval_schedule_of_reinforcement
+fixed interval schedules of reinforcement,fixed_interval_schedule_of_reinforcement
+fixed interval reinforcement schedule,fixed_interval_reinforcement_schedule
+fixed interval reinforcement schedules,fixed_interval_reinforcement_schedule
+fixed interval schedule,fixed_interval_schedule
+fixed interval schedules,fixed_interval_schedule
+fixed ratio schedule of reinforcement,fixed_ratio_schedule_of_reinforcement
+fixed ratio schedules of reinforcement,fixed_ratio_schedule_of_reinforcement
+fixed-ratio schedule,fixed-ratio_schedule
+fixed-ratio schedules,fixed-ratio_schedule
+repetitive transcranial magnetic stimulation,repetitive_transcranial_magnetic_stimulation
+repetitive transcranial magnetic stimulations,repetitive_transcranial_magnetic_stimulation
+rTMS,rTMS
+rTMS,rTMS

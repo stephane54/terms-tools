@@ -1,0 +1,3 @@
+{"label":"phase gazeuse ","pattern":[ {"lemma":"phase","pos":"NOUN"}, {"lemma":"gazeux","pos":"ADJ"} ],"id":"<http://www.termsciences.fr/vocabs/MX/137906>"}
+{"label":"Solvant","pattern":[ {"lemma":"solvant","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/158391>"}
+{"label":"groupe méthyle","pattern":[ {"lemma":"groupe","pos":"NOUN"}, {"lemma":"méthyle","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/150532>"}
