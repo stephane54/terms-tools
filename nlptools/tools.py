@@ -18,8 +18,8 @@ import re
 from spacy.tokens import Doc
 import numpy  as np
 from spacy.attrs import LOWER, POS, ENT_TYPE, IS_ALPHA, DEP, LEMMA, IS_PUNCT, IS_DIGIT, IS_SPACE, IS_STOP
-
 import sys
+
 tab = "\t"
 cr = "\n"
 space = " "
@@ -116,9 +116,13 @@ def readTxtBz2(bz2_loc, n):
 def norm_sent(line):
 
     # enleve les suite de chiffre+lettre ex: h1n1 12121 1.12 ω-carboxy-(1',45)-alkynyl
+    # line = re.sub(
+    #    r"[a-zA-Z,;\-\.\(\'\)\[\]\{\}]*\d+[a-zA-Z,;\-\(\'\)\[\]\.\{\}]*", "", line
+    #)
     line = re.sub(
-        r"[a-zA-Z,;\-\.\(\'\)\[\]\{\}]*\d+[a-zA-Z,;\-\(\'\)\[\]\.\{\}]*", "", line
+        r"[\-]*", " - ", line
     )
+        
 
     # suppression sup et sub, x space
     # line = re.sub(r'[\n\r\t]|\bsu[p|b]\b|\b\w{1,2}\b|\b\d+\b|[.;,-]',"", line, flags=re.I)
@@ -128,13 +132,13 @@ def norm_sent(line):
     # line = re.sub(r'[^\w\-\(\)]+', ' ', line)
 
     # traitement des parentheses uniquement ex : (PTR) => PTR
-    line = re.sub(r"\s(\()([a-zA-Z\s*]*)(\))\s", r" \2 ", line)
+    #line = re.sub(r"\s(\()([a-zA-Z\s*]*)(\))\s", r" \2 ", line)
 
     # Reduction a un seul espace
     line = re.sub(r"\s+", " ", line, flags=re.I)
 
     # Conversion en Lowercase
-    line = line.lower()
+    #line = line.lower()
 
     return line
 
@@ -170,7 +174,7 @@ def readJsonBz2(bz2_loc, tag, n=10000):
                 break
 
 
-# separe les mots d'un liste de mots cles composes par "separateur", return uen chaine
+# separe les mots d'un liste de mots cles composes par "separateur", return une chaine
 def mcTag(liste_mc, separateur=" "):
 
     liste = clean_w_list(liste_mc.split(";"))
@@ -211,7 +215,6 @@ def getDicoInflect(doc):
     norm_form = []
     norm_form = doc.text_with_ws.replace(" ","_")
     
-    
     for token in doc :
         #if  token.dep_== 'ROOT' and token.pos_=='VERB':
         # calcul de flexion
@@ -245,7 +248,7 @@ def dive_term (word, lang):
 
 
 def clean_terms(doc):
-    
+
     return(doc[LEFT["lenght"]:-abs((RIGHT["lenght"]))].as_doc())
     
 
@@ -265,7 +268,7 @@ def getDicoPos(doc):
         #   list_stem.append(token._.stem)
         if token.pos_:
             list_text.append(token.text)
-            list_pos.append(token.tag_)
+            list_pos.append(token.pos_)
             #list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
             list_lemma.append(token.lemma_)            
 
@@ -392,6 +395,7 @@ def to_list( s ):
 
 
 # supprime les informations des elements appartenant à une liste de tag
+# revoi l'objet doc modifé
 # kind = defini si filtre de facon   positive = white
 #                                    negative = black
 def doc_remove_pos (doc, list_pos, list_attr, kind):
@@ -399,10 +403,14 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
     index_to_del = []
     np_array = doc.to_array(list_attr) # Array representation du Doc
 
-    if kind == "white":
-        [index_to_del.append(word.i) for word in doc if word.pos_ in list_pos]    
-    else:
+    if kind == "black":
+        # toutes les POS du type de la list
+        [index_to_del.append(word.i) for word in doc if word.pos_ in list_pos]  
+    
+    elif kind == "white":
+        # on enleve toutes les POS du type de la list
         [index_to_del.append(word.i) for word in doc if word.pos_ not in list_pos]    
+        
 
     # Creation d1 mask: boolean array des indexes a supprimer
     mask_to_del = np.ones(len(np_array), np.bool)
@@ -428,6 +436,7 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
     doc2.user_data = new_user_data
     
     return (doc2)
+
 
 def replace_carspe(x):
     
@@ -473,3 +482,43 @@ def replace_carspe(x):
         x = lookup(x, REGEX).replace(key, val)
         
     return(x.replace("__", "_"))
+
+
+def clean_car(line):
+    
+    # on garde le hash sur le dico pour la rapidité mais on pourrait tout faire avec REGEX, A VOIR
+    dico_map = {
+            #"&": " and ",
+            #"%": " percent ",
+            #">": " greater-than ",
+            #"<": " less-than ",
+            #"=": " equals ",
+            # replace dash
+            '-':" ",
+            " : ": " ",
+            '\'':" ",
+            "#": " ",
+            "~": " ",
+            "/": " ",
+            "\\": " ",
+            "|": " ",
+            "$": " ",
+            # Remove double dashes
+            "--": " ",
+            # Remove possesive splits
+            #" 's ": " ",
+            # Remove quotes
+            '"': "",
+            '__':" ",
+            ',':" ",
+            "  ":" ",
+            #normalization
+            #'’':"",
+            #"'":"",
+        }
+
+
+    for key, value in dico_map.items():
+        line = line.replace(key, value)
+
+    return(line)

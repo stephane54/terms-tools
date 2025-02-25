@@ -1,6 +1,7 @@
 typer
 click
 spacy>=3.0.0,<3.0.5
+flashtext==2.7
 numpy==1.19.3
 thinc==8.0.17
 regex

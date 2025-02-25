@@ -89,14 +89,16 @@ class exec_spacy_pipe_en(object):
 
         self.modele = modele_init_en
 
-        ############   PARAMETRAGE des pipes de traitements
+        ############   PARAMETRAGE des pipes de traitement en
         self.pipe = pipe     
         
         try:
             #termMatcher_lemma = configINI.get("termMatcher", "termMatcher_lemma")
             termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
-            termMatcher_POS_whitelist = to_list(configINI.get("termMatcher", "termMatcher_POS_whitelist"))
-            whitelist_tag_lemme =  to_list(configINI.get("POStagger", "POS_whitelist"))
+            termMatcher_POS_list = to_list(configINI.get("termMatcher", "termMatcher_POS_list"))
+            list_tag_lemme =  to_list(configINI.get("POStagger", "POS_list"))
+            clean_mode_pos=configINI.get("POStagger", "clean_mode")
+            clean_mode_term=configINI.get("termMatcher", "clean_mode")
             blacklist_NPDP_tag_lemme = configINI.get("NPchunkerDP", "blacklist_NPDP")
 
         except Exception as err:
@@ -106,13 +108,18 @@ class exec_spacy_pipe_en(object):
       
         # POSTAGGING  
         if pipe == "POStagger":
-        
+            
             self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos, lemma', verbose = False,  logging_level = 'FATAL')
+            
+            self.nlp.add_pipe(
+                    "lower_case_lemmas",
+                    name="lower_case_lemmas",
+                )
             
             self.nlp.add_pipe(
                 "ViewPOStagger",
                 name="ViewPOStagger",
-                config={"whitelist_tag_lemme": whitelist_tag_lemme, "show": self.show,"format":self.format},
+                config={"list_tag_lemme": list_tag_lemme, "clean_mode": clean_mode_pos,"show": self.show,"format":self.format},
                 last=True,
             )
              
@@ -121,11 +128,17 @@ class exec_spacy_pipe_en(object):
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
             
                 self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
-                
+                           
+                self.nlp.add_pipe(
+                    "lower_case_lemmas",
+                    name="lower_case_lemmas",
+                )
+
                 self.nlp.add_pipe(
                     "ViewPOStagger",
                     name="ViewPOStagger",
-                    config={"whitelist_tag_lemme":termMatcher_POS_whitelist,
+                    config={"list_tag_lemme":termMatcher_POS_list,
+                            "clean_mode": clean_mode_term,
                             "show": "pipe",},
                     last=True,
                 )
@@ -140,6 +153,7 @@ class exec_spacy_pipe_en(object):
                 },
                 last=True,
                 )
+                
             else:
                 raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ stanza")
 
@@ -231,13 +245,14 @@ class exec_spacy_pipe_fr (object):
         # loading du modele
         self.modele = modele_init_fr
 
-        ############   PARAMETRAGE des pipes de traitements
+        ############   PARAMETRAGE des pipes de traitements fr
         self.pipe = pipe
   
         try:
-            self.whitelist_tag_lemme =  to_list(configINI.get("POStagger", "POS_whitelist"))
-            #blacklist_tag_lemme = in_list(configINI.get("POStagger", "POS_blacklist")) ! pas effectif
-            termMatcher_POS_whitelist = to_list(configINI.get("termMatcher", "termMatcher_POS_whitelist"))
+            self.list_tag_lemme =  to_list(configINI.get("POStagger", "POS_list"))
+            clean_mode_pos=configINI.get("POStagger", "clean_mode")
+            clean_mode_term=configINI.get("termMatcher", "clean_mode")
+            termMatcher_POS_list = to_list(configINI.get("termMatcher", "termMatcher_POS_list"))
             termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
             
         except Exception as err:
@@ -248,40 +263,39 @@ class exec_spacy_pipe_fr (object):
         if pipe == "POStagger":
             
                 self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
-                
+    
+                self.nlp.add_pipe(
+                    "lower_case_lemmas",
+                    name="lower_case_lemmas",
+                )
+    
                 self.nlp.add_pipe(
                     "ViewPOStagger",
                     name="ViewPOStagger",
-                    config={"whitelist_tag_lemme": self.whitelist_tag_lemme, "show": self.show,"format":self.format},
+                    config={"list_tag_lemme": self.list_tag_lemme,  "clean_mode":  clean_mode_pos, "show": self.show,"format":self.format},
                     last=True,
-                )
-
-        
+                ) 
+             
         # TERMMATCHER
         if pipe == "termMatcher":
-            '''
-            # Association et verification des fichiers de ressources
-            if  (configINI.get("termMatcher", "termMatcher_vocabulary_fr")
-                        == "MX_jsonl_lemme_test_fr"):
-                        from nlptools.resources import (
-                            MX_jsonl_lemme_test_fr as termMatcher_vocabulary_fr
-                    )
-            else:
-                raise ValueError("terminology is ommited !")   
-            '''           
             
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
             
                 self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
                 
                 self.nlp.add_pipe(
+                    "lower_case_lemmas",
+                    name="lower_case_lemmas",
+                )
+                
+                self.nlp.add_pipe(
                     "ViewPOStagger",
                     name="ViewPOStagger",
-                    config={"whitelist_tag_lemme":termMatcher_POS_whitelist,
+                    config={"list_tag_lemme":termMatcher_POS_list, "clean_mode":  clean_mode_term,
                             "show": "pipe",},
                     last=True,
                 )
-            
+                    
                 self.nlp.add_pipe(
                 "termMatcher",
                 name="termMatcher",
@@ -294,15 +308,9 @@ class exec_spacy_pipe_fr (object):
                 )
             else:
                 raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ stanza")
-
-            
+         
 
     def __call__(self, text):
-        # PATCH text=" ".join(text.strip().split())
-        # execution du pipe
-    
-        #if self.pipe == "POStaggerSpacy":
-            #return getLefff (self.nlp(text), self.show, self.whitelist_tag_lemme, self.format)
         
         if self.pipe in ["POStagger","termMatcher"]:
             return self.nlp(text)

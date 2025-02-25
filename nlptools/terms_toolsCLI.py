@@ -51,7 +51,6 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
     if (matcher_dico  and pipe !=  "termMatcher"  ):
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
-        
     # check dictionnary exist 
     if matcher_dico: 
         if not (os.path.isfile(matcher_dico)):
@@ -74,7 +73,11 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
             # TODO : ameliorer le controle du format   
             # csv, tsv
             for [label, value] in readCsvBz2(corpus, field):
-                text_nlp = pipe.pipe_analyse(dive_term(value, language))
+                if format == "terms":
+                    text_nlp = pipe.pipe_analyse(dive_term(value, language))
+                else:
+                    text_nlp = pipe.pipe_analyse(value)
+                
                 if output == "dico_annot":
                     text_nlp["id"]=label
                     print(json.dumps(text_nlp, ensure_ascii=False))
@@ -94,7 +97,11 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
                     exit(1)
 
                 # NB : sortie avec \" car dump json protege", evité si ' replace("""", "\'")
-                data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))  # "value" car flux ezs jsonld au format id=,value=
+                if format == "terms":
+                    data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))  # "value" car flux ezs jsonld au format id=,value=
+                else:
+                    data["value"] = pipe.pipe_analyse(data["value"])  # "value" car flux ezs jsonld au format id=,value=
+                
                 #print("ou".format(compteur))
                 sys.stdout.write(json.dumps(data))
                 sys.stdout.write('\n')  
@@ -102,8 +109,11 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
         else:
             # entrée type stdin csv, tsv
             for row in readCsv(sys.stdin.readline, field):
-                text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
-        
+                if format == "terms":
+                    text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
+                else:
+                    text_nlp = pipe.pipe_analyse(row[1])
+                    
                 if output in ["dico_annot"]:
                     text_nlp["id"]=row[0]
                     print(json.dumps(text_nlp, ensure_ascii=False))

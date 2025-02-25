@@ -119,7 +119,7 @@ class TermMatcher(object):
                     en["idx"]=str(start)+ tireth+ str(end)
                     en["text"]=oneMcMark(text, space)
                     en["lemma"]=oneMcMark(lemma, space)
-                    en["idt"]=idt
+                    en["id"]=idt
                     list_terms.append(en)
 
             return(json.dumps(list_terms))

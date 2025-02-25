@@ -12,3 +12,10 @@ MX_jsonl_lemme_test_en = os.path.join(_local_path, "MX2016-label_lemme_test_en.j
 MX_jsonl_lemme_test_fr = os.path.join(_local_path, "MX2016-label_lemme_test_fr.jsonl")
 NPchunker_rules_gen_en = os.path.join(_local_path, "NPchunker_rules_en.txt")
 term_lookup_dico = os.path.join(_local_path, "Memoire_v2.0-nlpre-syno.csv")
+
+
+ressource_dir = os.path.join(_local_path)
+
+# stop word list
+my_stopword_file = os.path.join(_local_path,"my_stopwords.tsv")
+stop_words_english = os.path.join(_local_path,"stop_words_english.tsv")

@@ -11,6 +11,8 @@ from .models import modele_init_en
 from .tools import *
 from .termMatcher import TermMatcher
 from .POStagger import ViewPOStagger
+from .POStagger import ViewPOStagger
+from .lemma_lower import LowerCaseLemmas
 from .NPchunker import NPchunker
 from .NPchunkerDP import NPchunkerDP
 #from .lefff import getLefff
@@ -21,6 +23,8 @@ __all__ = [
             "POStagger",
             "NPchunkerDP",
             "lefff",
+            "matcherFlash"
+            "LowerCaseLemmas"
 ]
 
 logger = logging.getLogger(__name__)

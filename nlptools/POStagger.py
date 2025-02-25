@@ -11,33 +11,35 @@ from spacy.tokens import Doc
 from json import dumps
 
 @Language.factory(
-    "ViewPOStagger", default_config={"whitelist_tag_lemme": "", "show": "doc", "format":""}
+    "ViewPOStagger", default_config={"list_tag_lemme": "", "clean_mode":"", "show": "doc", "format":""}
 )
 def create_POStagger_component(
-    nlp: Language, name: str, whitelist_tag_lemme: list, show: str, format:str
+    nlp: Language, name: str, list_tag_lemme: list, clean_mode: str, show: str, format:str
 ):
-    return ViewPOStagger(nlp, whitelist_tag_lemme, show, format)
+    return ViewPOStagger(nlp, list_tag_lemme, clean_mode, show, format)
 
 
 class ViewPOStagger(object):
 
-    def __init__(self, nlp, list_cat, show, format):
+    def __init__(self, nlp, list_cat,clean_mode, show, format):
 
         self.nlp = nlp
+        self.clean_mode = clean_mode
         self.list_cat = list_cat
         self.show = show
         self.format = format
         
     def __call__(self, doc):
 
-        if len(self.list_cat) != 0:
-            
-            doc = doc_remove_pos (doc, self.list_cat, list_attr_spacy, kind="black" )
-            
-            
         if self.format == "terms":    
             
             doc = clean_terms(doc)
+
+
+        if len(self.list_cat) != 0:
+            
+            #TRACE print(self.list_cat,self.clean_mode)
+            doc = doc_remove_pos (doc, self.list_cat, list_attr_spacy, kind=self.clean_mode )        
         
 
         if self.show == "doc":
@@ -65,13 +67,7 @@ class ViewPOStagger(object):
             
             # output list
             return getDicoAnnot(doc)
-       
-        """ MUTATE
-        if self.show == "dico_inflect":
-            
-            # output list
-            return getDicoInflect(doc)
-       """
+
         if self.show == "json":
             
             # output json
