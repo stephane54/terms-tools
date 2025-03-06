@@ -7,7 +7,6 @@ Created on Mon Apr 13 12:46:45 2020
 """ 
 import logging
 import spacy
-#import lemminflect
 import json
 import os
 import re
