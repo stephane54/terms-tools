@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fr-core-news-sm
+Version: 3.0.0
+Summary: French pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer.
+Home-page: https://explosion.ai
+Author: Explosion
+Author-email: contact@explosion.ai
+License: LGPL-LR
+Description: UNKNOWN
+Platform: UNKNOWN
