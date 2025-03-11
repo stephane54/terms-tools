@@ -122,7 +122,7 @@ class TermMatcher(object):
                     en["id"]=idt
                     list_terms.append(en)
 
-            return(json.dumps(list_terms))
+            return(list_terms)
 
         list_terms = []
 

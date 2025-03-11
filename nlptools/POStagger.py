@@ -71,7 +71,7 @@ class ViewPOStagger(object):
         if self.show == "json":
             
             # output json
-            return (dumps(Doc.to_json(doc)['tokens'], ensure_ascii=False))
+            return (Doc.to_json(doc)['tokens'])
   
 
         if self.show == "pipe":

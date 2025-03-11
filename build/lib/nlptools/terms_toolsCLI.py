@@ -91,7 +91,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
             for json_line in sys.stdin:
                 compteur += 1
                 try:
-                    data = json.loads(json_line )
+                    data = json.loads(json_line)
                 except json.decoder.JSONDecodeError:
                     logging.error("Input format problem line :{s1}{s2} : String could not be converted to JSON".format(s1 = compteur,s2 = json_line) )
                     exit(1)
@@ -100,10 +100,10 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
                 if format == "terms":
                     data["value"] = pipe.pipe_analyse(dive_term(data["value"], language))  # "value" car flux ezs jsonld au format id=,value=
                 else:
-                    data["value"] = pipe.pipe_analyse(data["value"])  # "value" car flux ezs jsonld au format id=,value=
+                    data["value"] = pipe.pipe_analyse(data["value"])  # "value" car flux ezs jsonld au format {id:,value:}
                 
                 #print("ou".format(compteur))
-                sys.stdout.write(json.dumps(data))
+                sys.stdout.write(json.dumps(data, ensure_ascii=False))
                 sys.stdout.write('\n')  
         
         else:
