@@ -9,7 +9,7 @@ import os
 from nlptools.exec_spacy_pipe import exec_spacy_pipe_en
 from nlptools.exec_spacy_pipe import exec_spacy_pipe_fr
 
-class full_run (object):
+class Pipe (object):
 
     def __init__(self, pipe, matcher_dico, language, ini_file, param, output, format):
 

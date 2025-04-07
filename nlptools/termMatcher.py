@@ -23,7 +23,7 @@ import json
     "termMatcher",
     default_config={
         "show": "doc",
-        "termMatcher_tag": "VOC",  # tag prefix qui marque le terme trouvé
+        "termMatcher_tag": "TERM",  # tag prefix qui marque le terme trouvé # param ; config.ini [termMatcher] termMatcher_tag=TAG
         "termMatcher_vocabulary": "", #vocabulaire utilisé
     },
 )
@@ -61,35 +61,19 @@ class TermMatcher(object):
             self.ruler = EntityRuler(
                 nlp, overwrite_ents=True, phrase_matcher_attr="LEMMA"
             )
+            # load le dictionnaire au format jsonl 
+            #TRACE  print('DEBUT LOAD DICO')
             self.ruler.from_disk(termMatcher_vocabulary)
+            #TRACE print('FIN LOAD DICO')
 
     def __call__(self, doc):
         # execution du matcher
-
         self.rules = self.ruler(doc)
         self.rules_len = len(self.rules)
         self.entities = doc.ents
 
         return self.getTermMatch(doc)
-
-    def getLenGaz(self):
-
-        return len(self.ruler)
-
-    def showGaz(self):
-
-        for a in enumerate(self.ruler.patterns):
-            print(a)
-
-    def add_patterns(self, patterns):
-
-        self.ruler.add_patterns(patterns)
-
-    def getLenMatches(self):
-
-        # ca correspond a quoi ???
-        return self.rules_len
-
+ 
     # attention renvoie tous les ents
     def scan_termMatch(self, doc):
 
@@ -100,12 +84,14 @@ class TermMatcher(object):
     # renvoi la liste ds termes trouves
     def getTermMatch(self, doc):
 
+        # format indoc : termes reconnus marques dans le texte
         list_terms = []
         if self.show == "doc":
             sep = tiretb
         else:
             sep = space
-
+        
+        # format standoff : liste de termes  reconnus
         if self.show == "json":
             for label, text, lemma, idt, start, end in self.scan_termMatch(
                 doc
@@ -126,13 +112,15 @@ class TermMatcher(object):
 
         list_terms = []
 
+        # list des termes tsv
         if self.show == "list":
             for label, text, lemma, idt, start, end in self.scan_termMatch(
                 doc
             ):  # trie marche pas !
-                # text = segment textuel du matche
-                # lemma = forme du texte qui a servi pour le matching
                 # label = ici, label du gaz
+                # start-end
+                # text = segment textuel du matche
+                # lemma = forme lemmatique de text qui a servi pour le matching
                 # id = identifiant dans le gaz
                 list_terms.append(
                     str(start)
@@ -154,11 +142,10 @@ class TermMatcher(object):
 
             return getEnts(doc, self.tag)
 
-
 # Affiche le resultat du matching
-def getMatcherRules(gaz):
+def getMatcherRules(matcher):
 
     print("matcher rules")
 
-    for item in gaz:
+    for item in matcher:
         print(item)

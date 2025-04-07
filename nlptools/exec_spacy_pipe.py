@@ -44,7 +44,11 @@ class exec_spacy_pipe_en(object):
         from nlptools.models import modele_init_en
         
         self.format = format
+        
+        # Select MODEL SPACY
+        self.modele = modele_init_en
 
+        ############   PARAMETRAGE des pipes de traitement en
         # initialisation des parsers selon un fichier de configuration config.ini
         configINI = ConfigParser()
 
@@ -59,8 +63,7 @@ class exec_spacy_pipe_en(object):
         else:
             raise ValueError("config file *.ini not found")
 
-        # parcourir les valeurs et surcharger les valeurs de configINI par des valeurs
-        #  passées dans ini_parm
+        # parcourir les valeurs et les surcharge par les valeurs passées dans ini_parm
         configPARAM = ConfigParser()
         if ini_param:
 
@@ -86,9 +89,6 @@ class exec_spacy_pipe_en(object):
         logger1 = logging.getLogger("spacy")
         logger1.setLevel(logging.ERROR)
 
-        self.modele = modele_init_en
-
-        ############   PARAMETRAGE des pipes de traitement en
         self.pipe = pipe     
         
         try:
@@ -125,9 +125,11 @@ class exec_spacy_pipe_en(object):
         # TERMMATCHER  
         if pipe == "termMatcher":
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
-            
+                
+                # LOAD MATCHER
+                #TRACE print("BEGIN LOAD MODEL")
                 self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
-                           
+                #TRACE print("FIN LOAD MODEL")
                 self.nlp.add_pipe(
                     "lower_case_lemmas",
                     name="lower_case_lemmas",
@@ -176,7 +178,7 @@ class exec_spacy_pipe_en(object):
                     last=True,
                 )
 
-        # vesion dependance parcing
+        # version dependance parcing
         if pipe == "NPchunkerDP":
             # ajout du chunker au pipe courant
             self.nlp.add_pipe(
@@ -221,7 +223,11 @@ class exec_spacy_pipe_fr (object):
         
         self.format = format
 
-        # configuration du componsant
+        # select le modele fr
+        self.modele = modele_init_fr
+        
+        ############   PARAMETRAGE des pipes de traitements FR
+        # LOAD configuration du composant par le .ini
         configINI = ConfigParser()
         if ini_file:
             f = ini_file
@@ -234,17 +240,12 @@ class exec_spacy_pipe_fr (object):
         else:
             raise ValueError("config_fr.ini not found")
 
-        # parcourir les valeurs et surcharger les valeurs de configINI par des valeurs
-        #  passées dans ini_parm
+        # parcourir les valeurs et les surcharger  par des valeurs passées dans ini_parm
         configPARAM = ConfigParser()
         if ini_param:
             configPARAM.read_dict(json.loads(ini_param))
             configINI.update(configPARAM)  
 
-        # loading du modele
-        self.modele = modele_init_fr
-
-        ############   PARAMETRAGE des pipes de traitements fr
         self.pipe = pipe
   
         try:

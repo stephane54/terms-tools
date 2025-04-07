@@ -13,7 +13,7 @@ import sys
 import os
 import json
 from pathlib import Path
-from nlptools.run import full_run
+from nlptools.run import Pipe
 from nlptools.tools import  dive_term
 @plac.annotations(
     pipe=(
@@ -57,7 +57,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
             raise ValueError(matcher_dico)
     
     # creation d1 instance de pipe
-    pipe = full_run(pipe, matcher_dico, language, ini_file, param, output, format)
+    pipe = Pipe(pipe, matcher_dico, language, ini_file, param, output, format)
     field = 2  # nombre de champs tsv des fichiers du corpus , format : label TAB text
 
     logging.basicConfig(filename=log, level=logging.DEBUG)
@@ -109,6 +109,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
         else:
             # entrée type stdin csv, tsv
             for row in readCsv(sys.stdin.readline, field):
+                #TRACE print("DEBUT ANALYSE 1")
                 if format == "terms":
                     text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
                 else:
@@ -119,6 +120,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
                     print(json.dumps(text_nlp, ensure_ascii=False))
                 else:
                     print(row[0],tab,(text_nlp))
+                #TRACE print("FIN ANALYSE 2")
                          
     t2 = time.time()
     logging.info("TRACE::Executing times %.3f " % (t2 - t1))

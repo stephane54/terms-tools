@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Dec 12 16:09:28 2019
+Created on Thu Dec 12 16:09:28 2024
 
 pretraitement sur les mots et pharses du corpus
 
@@ -122,8 +122,6 @@ def norm_sent(line):
     line = re.sub(
         r"[\-]*", " - ", line
     )
-        
-
     # suppression sup et sub, x space
     # line = re.sub(r'[\n\r\t]|\bsu[p|b]\b|\b\w{1,2}\b|\b\d+\b|[.;,-]',"", line, flags=re.I)
 
@@ -267,7 +265,7 @@ def getDicoPos(doc):
         # if token._.stem:
         #   list_stem.append(token._.stem)
         if token.pos_:
-            list_text.append(token.text)
+            list_text.append(token.text) #The exact verbatim text of a token.
             list_pos.append(token.pos_)
             #list_pos.append(token.tag_+"[POS:"+token.pos_+";FLECT:"+";HEAD:"+token.head.text+";DEP:"+token.dep_+";"+str(token.morph)+"]")
             list_lemma.append(token.lemma_)            
@@ -275,24 +273,24 @@ def getDicoPos(doc):
     return (space.join(list_text)+tab+space.join(list_pos)+tab+space.join(list_lemma))
    
 
-#{"label":"Analytical chemistry","pattern":[ {"lemma":"analytical","pos":"ADJ"}, {"lemma":"chemistry","pos":"NOUN"} ],"id":"<http://www.termsciences.fr/vocabs/MX/137906>"}    
+# Formate dictionary for annotation
+#{"label": "neurophysiological process", "pattern": [{"pos": "ADJ", "lemma": "neurophysiological"}, {"pos": "NOUN", "lemma": "process"}], "id": "http://data.loterre.fr/ark:/67375/P66-RZ2X1NZ0-K"}
 def getDicoAnnot(doc):
     
     tab = []
     ld = {}
-    for token in doc:
-        # if token._.stem:
-        #   list_stem.append(token._.stem)
+    for token in doc: 
         dic = {}
         if token.pos_:
             dic["pos"]=token.pos_
             dic["lemma"]=token.lemma_
         tab.append(dic)
-    ld["label"]=str(doc).strip()
+    ld["label"]=str(doc).strip() # The exact verbatim text of a token.
     ld["pattern"]=tab
     return(ld)
+    
            
-
+# Formate dictionary for Loterre
 def getDocPos(doc):
 
     list_ = []
@@ -364,7 +362,7 @@ def getEnts(doc, tag):
                 text.append(tiretb.join(ent))
                 text.append(
                     space
-                )  # attention parfois ajoute un space en de trop ex : on (MX_control ): M
+                )  # attention parfois ajoute un espace en trop ex : on (MX_control ): M
                 ent = []
             ent.append(tag)
             ent.append(token.text)
