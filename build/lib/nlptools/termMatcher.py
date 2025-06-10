@@ -132,7 +132,7 @@ class TermMatcher(object):
                     + oneMcMark(lemma, sep)
                     + tab
                     + oneMcMark(label, sep)
-                    + space
+                    + tab
                     + idt
                 )
             # liste dedoublonnée
