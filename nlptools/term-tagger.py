@@ -72,8 +72,6 @@ silent = False  # niveau de description dans les log
     add_stop=("add stop word list [default no]", "flag", "add_stp"),
     ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs")
 )
-
-
 def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language=""):
    
     # test parameter combinaison legalite   
@@ -194,6 +192,7 @@ def console_scripts_main():
 
 
 if __name__ == "__main__":
+    
     if False:
         import cProfile
         import pstats
@@ -202,4 +201,6 @@ if __name__ == "__main__":
         s = pstats.Stats("Profile.prof")
         s.strip_dirs().sort_stats("time").print_stats()
     else:
+        
         plac.call(main)
+        
