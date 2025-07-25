@@ -15,8 +15,8 @@ from configparser import ConfigParser
 from nlptools.tools import to_list
 from spacy.tokens import Doc
 import warnings
-from .POStagger import display_postag
-from .termMatcher import display_matches
+from nlptools.POStagger import display_postag
+from nlptools.termMatcher import display_matches
 
 # desactive les logs
 warnings.filterwarnings("ignore")
