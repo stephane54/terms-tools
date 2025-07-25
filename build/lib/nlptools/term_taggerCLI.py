@@ -9,7 +9,7 @@
 #
 #     Annotation d un corpus avec une ressource termino
 #     
-#     usage: term-tagger.py [-h] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]
+#     usage: term_taggerCLI.py [-h] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]
 #                      [-f {pref,id,ul,term}] [-lang '']
 #                      file_text
 #
@@ -20,11 +20,11 @@
 # http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6	lobes of the brain	lobe of the brain	brain lobe
 #
 #  Exemple : 
-# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output list -lang en -add_stp   -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv
+# python3 term_taggerCLI.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output list -lang en -add_stp   -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv
 #
-# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output doc -lang en -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv -p TERM_ -f pref
+# python3 term_taggerCLI.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output doc -lang en -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv -p TERM_ -f pref
 #
-# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_fr.tsv -output json -lang fr -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lemma-fr.tsv 
+# python3 term_taggerCLI.py $HOME/app/terms_tools/data/corpus_test_memoire_fr.tsv -output json -lang fr -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lemma-fr.tsv 
 # 
 #  TODO :
 #    Doc renvoi un texte lemmatisé ou lower, cad le texte pretraité qui a été passé à flash. Faire plutot un réalignement
