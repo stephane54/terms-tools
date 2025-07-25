@@ -22,7 +22,7 @@ setup(
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
     packages=find_packages(),
     entry_points={
-        "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main", "loterre_tag"=" nlptools.terms-tagger:console_scripts_main" ]
+        "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main", "loterre_tag = nlptools.terms-tagger:console_scripts_main" ]
     },
     install_requires = reqs,
     description="Bibliotheque de composants python de computationnal terminology sur des données de la base Loterre",

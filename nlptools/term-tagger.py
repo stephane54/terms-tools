@@ -187,6 +187,12 @@ def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language
         f"  Number of traited documents : {i} in times { (time() - start_time)/60} secondes \n"
     )
 
+
+def console_scripts_main():
+
+    plac.call(main)
+
+
 if __name__ == "__main__":
     if False:
         import cProfile
