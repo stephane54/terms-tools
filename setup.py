@@ -21,7 +21,7 @@ setup(
     maintainer_email="stephane.schneider@inist.fr",
     keywords="nlp scientific package Python for computationnal terminology on Loterre data",
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
-    packages=find_packages(excluded=['models.*']),
+    packages=find_packages(exclude=['models.*']),
     entry_points={
         "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main", "loterre_tag = nlptools.term_taggerCLI:console_scripts_main" ]
     },
