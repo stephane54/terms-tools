@@ -25,6 +25,7 @@ __all__ = [
             "lefff",
             "matcherFlash"
             "LowerCaseLemmas"
+            "matcherFlash",
 ]
 
 logger = logging.getLogger(__name__)
