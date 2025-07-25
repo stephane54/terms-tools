@@ -8,68 +8,51 @@
 """
 #
 #     Annotation d un corpus avec une ressource termino
-#
-#     NB : la termino est fixe par le param  keywords_dict de dictionary/__init__.py/
-#
-#     USAGE: 
-#       usage: usage: term-tagger.py [-h] [-file FILE_TEXT] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-format ul] [-norm lower] [-p]
-#
-#      python3 nlptools/term-tagger.py -file $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output doc -norm lower -add_stp -format pref -d memoire-lower-pref.tsv
-#
-#     INPUT :
-#        Sortie standard
-#        error :  term-tagger.log
-#
-#     PARAM :
-#        -file          file
-#        -output        {list, doc, json} mode d'affichage des annotations 
-#                            list = standoff , doc = insertion dans le texte, json = format flash des annotations
-#        -d MATCHER_DICO, --matcher-dico MATCHER_DICO
-#                        flash matcher dico in tsv format
-#        -format        {pref, id ,ul} nature des annotations : affiche la forme preferentiel, la forme initiale ou L ID du concept
-#        -norm          {lemma,lower, raw}  # forme des elements qui sont matchés, texte et termino. Egalement forme de la sortie textuelle
-#                       ATTENTION : flashtext param => "case_sensitive": True r false (fixe si algo sensitive a la case ou pas)
-#        -add_stp       flag : add stop word liste , dictionary/my_stopwords.tsv
-#        -p             str : prefixe qui marque les formes identifiées
-#        -num           flag : numerotation des id (cas id non unique tel que ARK concept)
+#     
+#     usage: term-tagger.py [-h] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]
+#                      [-f {pref,id,ul,term}] [-lang '']
+#                      file_text
 #
 #     DICTIONNARY FORM EX :
-# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6.0      brain lobe      		  brain lobe   			brain lobe      brain_lobe
-# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6.1      lobe of the brain       lobe of the brain     brain lobe      brain_lobe
-# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6.2      brain lobes     		  brain lobe     	    brain lobe      brain_lobe
-# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6.3      lobes of the brain      lobe of the brain     brain lobe      brain_lobe
+# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6	brain lobe	brain lobe	brain lobe
+# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6	lobe of the brain	lobe of the brain	brain lobe
+# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6	brain lobes	brain lobe	brain lobe
+# http://data.loterre.fr/ark:/67375/p66-j7p6ztdt-6	lobes of the brain	lobe of the brain	brain lobe
 #
-
-import spacy
-from nlptools.models import modele_init_en
-import spacy_stanza
+#  Exemple : 
+# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output list -lang en -add_stp   -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv
+#
+# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_en.tsv -output doc -lang en -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lower-en.tsv -p TERM_ -f pref
+#
+# python3 term-tagger.py $HOME/app/terms_tools/data/corpus_test_memoire_fr.tsv -output json -lang fr -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lemma-fr.tsv 
+# 
+#  TODO :
+#    Doc renvoi un texte lemmatisé ou lower, cad le texte pretraité qui a été passé à flash. Faire plutot un réalignement
+#
+import spacy        # spacy utilisé car plus rapide que stanza
 import sys
 from time import time
 import os.path
+from matcherFlash import MatcherFlash
 import fileinput
 from multiprocessing import set_start_method, Pool
 import logging
 import plac
-from nlptools.run_tagger import Run_tagger
-from nlptools.matcherFlash import MatcherFlash
-from resources import ressource_dir 
+from run_tagger import Run_tagger
+from nlptools.resources import resource_dir 
 import warnings
 
-# desactive les logs
 warnings.filterwarnings("ignore")
-
 __authors__ = "Stephane Schneider"
 __contact__ = "stephane.schneider@inist.fr"
 
 # --------------------
 log = "term-tagger.log"
-core = 4
-silent = True  # niveau de description dans les log
+core = 8
+silent = False  # niveau de description dans les log
 
-# BCP PLUS LENT AVEC STANZA !# est ce utile plutot que spacy?
-
-@plac.annotations(    
-    file_text=("Path to corpus file", "option", "file", str),
+@plac.annotations(
+    file_text=("Path to corpus file", "positional", None, str),
     matcher_dico=(
         "flash matcher dico in tsv format",
         "option",
@@ -83,30 +66,45 @@ silent = True  # niveau de description dans les log
         str,
         ["list", "doc", "json"],
     ),
-    prefix=("tag for mark the entry found", "option", "p", str),
-    norm=(
-        "execute lower or lemma pretraitment [default lower]",
-        "option",
-        "norm",
-        str,
-        ["lemma", "lower", "raw"],
-    ),
-    format=("tag text with [pref,id,ul], pref or id_pref or text ul", "option","format",str, ["pref","id","ul"]),
+    format=("form to display in the doc [id, ul, term,pref,], only for doc output, default term","option","f", str, ["pref","id","ul","term"]),
+    prefix=("tag for mark the entry found in , only for doc output, defaut none ", "option", "p", str),
+    language=("language", "option", "lang", str, ["fr", "en"]),
     add_stop=("add stop word list [default no]", "flag", "add_stp"),
+    ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs")
 )
-def main(file_text,matcher_dico, output, add_stop, format="ul", norm="lower", prefix=""):
 
+
+def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language=""):
+   
+    # test parameter combinaison legalite   
+    if (output in ["json","list"] and (format or prefix) ):
+        raise ValueError(u"ERROR : incompatible option !")  
+    
+    if (output == "doc"):
+        if  (not prefix):
+            prefix=""
+        if  (not format):
+            format="term"  
+   
+    if language == "fr":
+        norm = "lemma"
+    elif language == "en":
+        norm = "lower"
+    else:
+        norm ="raw"
+         
     # execution
     start_time = time()
-    if file_text:
+    
+    if ezs:
         iterator = fileinput.input(file_text)
     else:
-        iterator = sys.stdin
-        
-    #set_start_method("forkserver")
+        iterator = fileinput.input(file_text)
+    
+    set_start_method("forkserver")
 
     if add_stop:
-        from resources import my_stopword_file as stopword_file
+        from  nlptools.resources import my_stopword_file as stopword_file
     else:
         stopword_file = ""
 
@@ -118,8 +116,9 @@ def main(file_text,matcher_dico, output, add_stop, format="ul", norm="lower", pr
         logging.basicConfig(filename=log, level=logging.DEBUG)
         logging.debug("log mode bavard")
 
+    
     # check dictionnary exist 
-    keywords_dict = os.path.join(ressource_dir, matcher_dico)
+    keywords_dict = os.path.join(resource_dir, matcher_dico)
     if matcher_dico: 
         #check name file
         norm_list=[norm]         
@@ -129,25 +128,27 @@ def main(file_text,matcher_dico, output, add_stop, format="ul", norm="lower", pr
             msg = "Bad file name {} with this -norm ={} parameter ".format(keywords_dict, norm)
             logging.error(msg)
             raise IOError()
-    
-    # loading du modele
-    modele = modele_init_en
-    
+        
     # prepare config Spacy pipeline
     # config Spacy pipeline must be compatible with the resource format (lemma,lower,raw)
     if norm == "lemma":
 
-        nlp = spacy.load(modele, disable=["ner", "parser", "textcat"])
-        #nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
+        nlp = spacy.load("fr_dep_news_trf", disable=["ner", "parser", "textcat"])
         nlp.max_length = 2000000  # or higher
 
-    elif norm == "lower" or norm == "raw":
-
-        nlp = spacy.load(modele, disable=["ner", "lemmatizer", "parser", "textcat"])
-        #nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos', verbose = False,  logging_level = 'FATAL')
+    elif norm == "lower":
+        
+        nlp = spacy.blank(language)
+        nlp.max_length = 2000000  # or higher
+        
+    elif norm == "raw":
+        
+        from dictionary import memoire_raw as keywords_dict
+        nlp = spacy.blank(language)
         nlp.max_length = 2000000  # or higher
         
     else:
+        
         msg = "Can't Find parameter {}".format(norm)
         logging.error(msg)
         raise IOError()
@@ -158,40 +159,33 @@ def main(file_text,matcher_dico, output, add_stop, format="ul", norm="lower", pr
 
     # Configure the flash matcher
     # add Matcher_flash at the end of spacy pipe
-    nlp.add_pipe(
-        "Matcher_flash",
-        name="Matcher_flash",
-        config={
-            "output": output,
-            "prefix": prefix,
-            "keywords_dict": keywords_dict,
-            "case_sensitive": False,
-            "stopword_file": stopword_file,
-            "format": format,
-            "text_format": norm,
-        },
-        last=True,
+    Matcher =  MatcherFlash (
+        
+        prefix= prefix,
+        output= output,
+        keywords_dict= keywords_dict,
+        case_sensitive= False,
+        stopword_file= stopword_file,
+        format= format,
+        text_format= norm 
     )
-    one_run = Run_tagger(nlp)
-    logging.info(f" len(DICO) charged : {MatcherFlash.size_voc}")
+
+    one_run = Run_tagger(nlp, Matcher, ezs)    
+    #logging.info(f" len(DICO) charged : {Matcher_flash.size_voc}")
+
     i = 0
     logging.info(f"PROCESS CORPUS ...")
-
     with Pool(core) as pool:
-        #for text in pool.map(one_run.run_tagger, iterator):
 
-        for text in map(one_run.run_tagger, iterator):
+        for result in pool.map(one_run.run_tagger, iterator):
             # output
-            sys.stdout.write(text)
+            sys.stdout.write(result)
             sys.stdout.write("\n")
             i += 1
 
     logging.info(
         f"  Number of traited documents : {i} in times { (time() - start_time)/60} secondes \n"
-    )   
-        
-        #f.close()
-
+    )
 
 if __name__ == "__main__":
     if False:

@@ -186,7 +186,7 @@ def mcMark(liste_mc, separateur=" "):
 
 
 # entrée : string
-# return la chaine avec mots liés par separateur
+# return la chaine avec mots liés par un separateur
 def oneMcMark(mc, separateur=" "):
 
     # for word in liste_mc:if word not in listelist_w.append(word)
@@ -239,15 +239,17 @@ def getDicoInflect(doc):
     
     return(''.join(l_term)+tab+(norm_form[1:], doc.lang_))
                       
-                      
+# colle des contextes doite et gauche a un terme pour orienter le tagging
 def dive_term (word, lang):
     
     return(LEFT[lang]+space+word+space+RIGHT[lang])
+    #return(word) no dive !
 
-
+# supprime les contesxtes places par dive
 def clean_terms(doc):
-
+    
     return(doc[LEFT["lenght"]:-abs((RIGHT["lenght"]))].as_doc())
+    #return(doc) no dive !
     
 
 def add_himself (word):   
@@ -350,38 +352,45 @@ def getDoc(doc):
     return space.join(list_w)
 
 
-# renvoi des ents replacé dans le corpus
+# renvoi le texte avec les ents intégré
 def getEnts(doc, tag):
 
     text = []
-    ent = []
+    buffer_ent = []
 
     for token in doc:
+        #TRACE
+        #print([f"{token.text};{token.ent_iob};{token.text_with_ws}"])
+          
         if token.ent_iob == 3:
-            if len(ent) > 0:  # car term contingus
-                text.append(tiretb.join(ent))
-                text.append(
-                    space
-                )  # attention parfois ajoute un espace en trop ex : on (MX_control ): M
+            if len( buffer_ent ) > 0:  # car termes contingus
+                text.append(tiretb.join(buffer_ent))
+                text.append(space)  # attention parfois ajoute un espace en trop ex : on (MX_control ):
                 ent = []
-            ent.append(tag)
-            ent.append(token.text)
-
+            buffer_ent.append(tag)
+            buffer_ent.append(token.text)
+            
         else:
-
             if token.ent_iob == 1:
-                ent.append(token.text)
+                buffer_ent .append(token.text)
+                
             else:
-                if len(ent) > 0:
-                    text.append(tiretb.join(ent))  # scan term contingue
+                if len( buffer_ent ) > 0: # il y a une ent 
+                    term= tiretb.join(buffer_ent)  # reconstruit le terme et ajoute au flux text                    
+                    # PATH
+                    term = re.sub(r"(_)(-)(_)", r"\2", term)
+                    term = re.sub(r"\((_)(\w*)(_)\)", r"(\2)", term)
+                    text.append(term)
                     text.append(space)
-                    ent = []
+                    buffer_ent  = []
+                    
                 text.append(token.text_with_ws)
+                
 
     return vide.join(text)
 
 # revoie une liste a partir d une string de type ['A','B']
-def to_list( s ):
+def to_list(s):
 
     s1=re.sub(r'[ \'\"\[\]]','',s)
     if s1 == "":
@@ -393,7 +402,7 @@ def to_list( s ):
 
 
 # supprime les informations des elements appartenant à une liste de tag
-# revoi l'objet doc modifé
+# renvoi l'objet doc modifé
 # kind = defini si filtre de facon   positive = white
 #                                    negative = black
 def doc_remove_pos (doc, list_pos, list_attr, kind):
@@ -401,17 +410,18 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
     index_to_del = []
     np_array = doc.to_array(list_attr) # Array representation du Doc
 
-    if kind == "black":
+    if kind == "black" and list_pos:
         # toutes les POS du type de la list
         [index_to_del.append(word.i) for word in doc if word.pos_ in list_pos]  
-    
+            
     elif kind == "white":
         # on enleve toutes les POS du type de la list
         [index_to_del.append(word.i) for word in doc if word.pos_ not in list_pos]    
-        
-
+    else:
+        return(doc)
+    
     # Creation d1 mask: boolean array des indexes a supprimer
-    mask_to_del = np.ones(len(np_array), np.bool)
+    mask_to_del = np.ones(len(np_array), bool)
     mask_to_del[index_to_del] = 0
     
     np_array_2 = np_array[mask_to_del]
@@ -475,7 +485,6 @@ def replace_carspe(x):
             s = regex.sub(pattern, value, s) 
         return s
 
-    
     for key, val in dico_map.items():
         x = lookup(x, REGEX).replace(key, val)
         

@@ -1,14 +1,8 @@
-typer
-click
-torch==2.4.0
-spacy>=3.0.0,<3.0.5
-flashtext==2.7
-numpy==1.19.3
-thinc==8.0.17
+spacy==3.8.7
+spacy-curated-transformers==0.3.1
+plac==1.4.5
+pandas==2.3.1
 regex
-nltk
-jinja2
-stanza==1.6.1
-spacy_stanza==1.0.4
-plac==0.9.6
+flashtext==2.7
+lemminflect==0.2.3
 

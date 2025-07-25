@@ -11,11 +11,12 @@ import json
 import os
 import re
 import sys
-import stanza
-import spacy_stanza
 from configparser import ConfigParser
 from nlptools.tools import to_list
+from spacy.tokens import Doc
 import warnings
+from POStagger import display_postag
+from termMatcher import display_matches
 
 # desactive les logs
 warnings.filterwarnings("ignore")
@@ -108,7 +109,8 @@ class exec_spacy_pipe_en(object):
         # POSTAGGING  
         if pipe == "POStagger":
             
-            self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos, lemma', verbose = False,  logging_level = 'FATAL')
+            #self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,pos, lemma', verbose = False,  logging_level = 'FATAL',pos_batch_size=10000)
+            self.nlp = spacy.load(self.modele, disable=["ner"])
             
             self.nlp.add_pipe(
                     "lower_case_lemmas",
@@ -118,7 +120,7 @@ class exec_spacy_pipe_en(object):
             self.nlp.add_pipe(
                 "ViewPOStagger",
                 name="ViewPOStagger",
-                config={"list_tag_lemme": list_tag_lemme, "clean_mode": clean_mode_pos,"show": self.show,"format":self.format},
+                config={"list_tag_lemme": list_tag_lemme, "clean_mode": clean_mode_pos,"format":self.format},
                 last=True,
             )
              
@@ -128,7 +130,8 @@ class exec_spacy_pipe_en(object):
                 
                 # LOAD MATCHER
                 #TRACE print("BEGIN LOAD MODEL")
-                self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
+                #self.nlp = spacy_stanza.load_pipeline('en', processors='tokenize,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL', pos_batch_size=10000)
+                self.nlp = self.nlp = spacy.load(self.modele, disable=["parser", "ner"])
                 #TRACE print("FIN LOAD MODEL")
                 self.nlp.add_pipe(
                     "lower_case_lemmas",
@@ -139,8 +142,7 @@ class exec_spacy_pipe_en(object):
                     "ViewPOStagger",
                     name="ViewPOStagger",
                     config={"list_tag_lemme":termMatcher_POS_list,
-                            "clean_mode": clean_mode_term,
-                            "show": "pipe",},
+                            "clean_mode": clean_mode_term},
                     last=True,
                 )
             
@@ -193,9 +195,18 @@ class exec_spacy_pipe_en(object):
 
     def __call__(self, text):
 
-        # PATCH text=" ".join(text.strip().split())
-        # execution du pipe
-        return self.nlp(text)
+        # PATCH  text=" ".join(text.strip().split())
+        # Execution du pipe Stanza
+        doc = self.nlp(text)
+        
+        if self.pipe == "POStagger":
+            
+            return (display_postag (doc, self.show))
+        
+        if self.pipe == "termMatcher":
+            
+            return (display_matches(doc, self.show))
+        
     
 
 class exec_spacy_pipe_fr (object):
@@ -258,11 +269,12 @@ class exec_spacy_pipe_fr (object):
         except Exception as err:
             print("Error lors de la phase d'initialisation [lecture fichier .ini]")
             exit(err)
-
+            
+            
         # POSTAG
         if pipe == "POStagger":
             
-                self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma', verbose = False,  logging_level = 'FATAL')
+                self.nlp = spacy.load(self.modele, disable=["ner"])
     
                 self.nlp.add_pipe(
                     "lower_case_lemmas",
@@ -272,7 +284,7 @@ class exec_spacy_pipe_fr (object):
                 self.nlp.add_pipe(
                     "ViewPOStagger",
                     name="ViewPOStagger",
-                    config={"list_tag_lemme": self.list_tag_lemme,  "clean_mode":  clean_mode_pos, "show": self.show,"format":self.format},
+                    config={"list_tag_lemme": self.list_tag_lemme,  "clean_mode":  clean_mode_pos, "format":self.format},
                     last=True,
                 ) 
              
@@ -281,7 +293,8 @@ class exec_spacy_pipe_fr (object):
             
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
             
-                self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,mwt,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL')
+                #self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL', pos_batch_size=10000)
+                self.nlp = self.nlp = spacy.load(self.modele, disable=["parser", "ner"])
                 
                 self.nlp.add_pipe(
                     "lower_case_lemmas",
@@ -291,8 +304,7 @@ class exec_spacy_pipe_fr (object):
                 self.nlp.add_pipe(
                     "ViewPOStagger",
                     name="ViewPOStagger",
-                    config={"list_tag_lemme":termMatcher_POS_list, "clean_mode":  clean_mode_term,
-                            "show": "pipe",},
+                    config={"list_tag_lemme":termMatcher_POS_list, "clean_mode":  clean_mode_term},
                     last=True,
                 )
                     
@@ -307,11 +319,20 @@ class exec_spacy_pipe_fr (object):
                 last=True,
                 )
             else:
-                raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ stanza")
+                raise ValueError("Parameter termMatcher_lemma=stem are requiried for matcher_ +")
          
 
     def __call__(self, text):
         
-        if self.pipe in ["POStagger","termMatcher"]:
-            return self.nlp(text)
+        # Execution du pipe stanza
+            
+        doc = self.nlp(text)
+        
+        if self.pipe == "POStagger":
+            
+            return (display_postag (doc, self.show))
+        
+        if self.pipe == "termMatcher":
+            
+            return doc
         

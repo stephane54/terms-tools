@@ -10,43 +10,17 @@ from __future__ import unicode_literals
 import re
 from flashtext import KeywordProcessor
 import csv
+import sys
 import json 
 import os
 import logging
 import collections
-from spacy.language import Language
+
 __authors__ = "Stephane Schneider"
-__contact__ = "stephane.schneider@inis.fr"
+__contact__ = "stephane.schneider@inist.fr"
 
 allowed_postags=["NOUN", "ADJ", "VERB", "PROPN"]
-DET={"fr":"le ","en":"the "}
-
-# Composant Gazetteer de type PhraseMatcher, alimenté par une liste de termes
-@Language.factory(
-    "Matcher_flash",
-    default_config={
-        "output":"",
-        "prefix": "",
-        "keywords_dict": "",
-        "stopword_file": "",
-        "case_sensitive": False,
-        "format": "",
-        "text_format": "lower"
-    },
-)
-def create_Matcher_component(
-    nlp: Language,
-    name: str,
-    output: str,
-    prefix: str,
-    keywords_dict: str,
-    stopword_file: str,
-    case_sensitive: bool,
-    format: str,
-    text_format : str,
-):
-    return MatcherFlash(nlp, prefix, output, keywords_dict, case_sensitive, stopword_file, format, text_format )
-
+#DET={"fr":"le ","en":"the "}
 
 class MatcherFlash:
 
@@ -54,13 +28,12 @@ class MatcherFlash:
     logger = logging.getLogger(__name__)
     size_voc = 0
 
-    def __init__(self, nlp, prefix, output, keywords_dict, case_sensitive, stopword_file, format, text_format ):
+    def __init__(self, prefix, output, keywords_dict, case_sensitive, stopword_file, format, text_format):
 
         # Set up the KeywordProcessor
         self.keyword_processor = KeywordProcessor(case_sensitive=case_sensitive)
         self.prefix=prefix
         self.output=output
-        self.nlp = nlp
         self.text_format = text_format  #lemma | lower
         self.format = format
         self.load_Voc(stopword_file, keywords_dict)
@@ -70,24 +43,41 @@ class MatcherFlash:
         # print( f"{self.keyword_processor.get_all_keywords()}")
 
 
-    def __call__(self, doc):
+    def __call__(self, text):
         """Apply the pipeline component on a Doc
 
         """
         if self.output == "doc":
-            return self.keyword_processor.replace_keywords(self._prepare_text(doc))
+            return self._format_doc(self.keyword_processor.replace_keywords(text))
         elif self.output == "list":
-            return self._format_standoff(self.keyword_processor.extract_keywords(self._prepare_text(doc), span_info=True))            
+            return self._format_standoff(self.keyword_processor.extract_keywords(text, span_info=True))            
         elif  self.output == "json":
-            return (json.dumps(self.keyword_processor.get_all_keywords(), ensure_ascii=False)) 
-            
-        # TRACE text lemmatisé sans match
-        #return (self._lemmatize(doc))
-
+            return self._format_json(self.keyword_processor.extract_keywords(text, span_info=True))
+    
+    
+    def _format_doc(self, st):
+        return(st)
+    
         
     # Transformation des resultats en liste sous forme de texte
+    # format terms_matché + idx
+    def _format_json(self, tuples_list):
+        ks = ("id", "ul", "term", "pref")
+        info_terms=[]
+        for tup in tuples_list :
+            terms_info , idx0, idx1 = tup 
+            en={ }
+            en["idx"]=dict(zip(["start","end"],[str(idx0),str(idx1)]))
+            en["match"]=dict(zip(ks, terms_info))
+            info_terms.append(en) 
+                
+        return(json.dumps(info_terms, ensure_ascii=False))
+        
+        
     def _format_standoff (self, tuples_list):
-                 
+        
+        # TRACE
+        #print(tuples_list)            
         return ("".join("%s %s %s" % tup+"\n" for tup in tuples_list))
         
         
@@ -123,18 +113,29 @@ class MatcherFlash:
 
             # Create dico
             dico = self._create_dico(csvfile, self.format )            
-            '''
-            # TRACE
+            ''' 
+            # see dic
+            print(dico)
+           
+            (...., 'vviq-2': ['vviq-2', 'vviq 2'],....) 
+            
             for keys,values in dico.items():
                 print(keys)
                 print(values)
             
-            brain_lobe
-            ['brain lobe', 'lobe of the brain', 'brain lobes', 'lobes of the brain']
+            #brain_lobe
+            #['brain lobe', 'lobe of the brain', 'brain lobes', 'lobes of the brain']
+            '''
+            
+            # add dico to processor
+            self.keyword_processor.add_keywords_from_dict(dico)
+            '''
+            self.keyword_processor.add_keyword('Taj Mahal', ('Monument', 'Taj Mahal'))
+            self.keyword_processor.add_keyword('Delhi', ('Location', 'Delhi'))
+            print(self.keyword_processor.get_all_keywords())
+            exit()
             '''
         
-        # add dico to processor
-        self.keyword_processor.add_keywords_from_dict(dico)
         if not(stopword_file):
 
             self.logger.info("No stopword dictionary: %s" % stopword_file)
@@ -166,13 +167,23 @@ class MatcherFlash:
         
         dico = collections.defaultdict(list)
         for row in csvfile:
-            key = row[field].replace(" ", "_") 
-            dico[self.prefix+key].append(row["ul"])
-      
-            if re.search("-",row["ul"]): 
-                dico[self.prefix+key].append(re.sub(r"-"," ",row["ul"]) )
             
+            # calcule de la cles du dictionnaire dlash
+            if  self.output in ["list","json"]:
+                #key = (row[field],row['id']) #.replace(" ", "_")   resultat avec ou sans _
+                key = (row['id'],row['ul'],row['term'],row['pref']) 
+            if  self.output == "doc":
+                key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
+                
+            dico[key].append(row["ul"]) 
+            if re.search("-",row["ul"]): 
+                dico[ (key)].append(re.sub(r"-"," ",row["ul"]) )
+                
+            # print dico
+        #print(dico)
         return dico 
+    
+    
     def _create_dico_stpw(self, csvfile):
 
         dic = {}
@@ -192,20 +203,3 @@ class MatcherFlash:
         return ".".join(id.split(".")[:-1])
 
 
-    def _prepare_text(self, doc):
-
-        lst_word = [
-            
-            ( token.lemma_.lower()+token.whitespace_ if self.text_format == 'lemma' else (token.lower_+token.whitespace_) )
-            
-            for token in doc
-                #if not token.is_punct
-                #    and not token.is_digit
-                #    and not token.is_space
-                #    and not token.is_stop
-                #    and not token.like_num
-                #    and not token.is_currency
-                #    and token.pos_ in self.allowed_postags
-            ]
-        
-        return("".join(lst_word))

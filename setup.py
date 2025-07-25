@@ -18,17 +18,17 @@ setup(
     author_email="stephane.schneider@inist.fr",
     maintainer="stephane",
     maintainer_email="stephane.schneider@inist.fr",
-    keywords="nlp scientific package Python for computationnal terminology",
+    keywords="nlp scientific package Python for computationnal terminology on Loterre data",
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
     packages=find_packages(),
     entry_points={
-        "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main" ]
+        "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main", "loterre_tag"=" nlptools.terms-tagger:console_scripts_main" ]
     },
     install_requires = reqs,
-    description="Bibliotheque de composants python NLP",
+    description="Bibliotheque de composants python de computationnal terminology sur des données de la base Loterre",
     long_description=open(os.path.join(os.path.dirname(__file__), "README.md")).read(),
     license="GPL V3",
     url="https://github.com/stephane54/terms-tools.git",
     platforms="ALL",
-    python_requires=">=3.6",
+    python_requires=">=3.8",
 )
