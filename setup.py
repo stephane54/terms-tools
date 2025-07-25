@@ -14,14 +14,14 @@ setup(
     zip_safe=False,
     author="stephane schneider",
     include_package_data=False,
-    #package_data={"": ["*.jsonl", "*.tsv", "*.json", "*.txt", "*.ini"]}, # "nlptools"
+    package_data={"": ["*.jsonl", "*.tsv", "*.json", "*.txt", "*.ini"]}, # "nlptools"
     exclude={'nlptools.models.*'},
     author_email="stephane.schneider@inist.fr",
     maintainer="stephane",
     maintainer_email="stephane.schneider@inist.fr",
     keywords="nlp scientific package Python for computationnal terminology on Loterre data",
     classifiers=["Topic :: natural langage processsing", "Topic :: Documentation"],
-    packages=find_packages(exclude=['nlptools.models','nlptools.models.*']),
+    packages=find_packages(exclude=['nlptools.models.*']),
     entry_points={
         "console_scripts": ["terms_tools = nlptools.terms_toolsCLI:console_scripts_main", "loterre_tag = nlptools.term_taggerCLI:console_scripts_main" ]
     },
