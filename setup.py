@@ -15,7 +15,6 @@ setup(
     author="stephane schneider",
     include_package_data=True,
     package_data={"": ["*.jsonl", "*.tsv", "*.json", "*.txt", "*.ini", "nlptools"]}, # 
-    excluded={'models.*'},
     author_email="stephane.schneider@inist.fr",
     maintainer="stephane",
     maintainer_email="stephane.schneider@inist.fr",
