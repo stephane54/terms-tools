@@ -41,12 +41,11 @@ class exec_spacy_pipe_en(object):
             self.show = exec_spacy_pipe_en.show
         else:
             self.show = show
-
-        from nlptools.models import modele_init_en
         
         self.format = format
         
         # Select MODEL SPACY
+        from nlptools.models import modele_init_en
         self.modele = modele_init_en
 
         ############   PARAMETRAGE des pipes de traitement en
@@ -55,7 +54,7 @@ class exec_spacy_pipe_en(object):
 
         if ini_file:
             f = ini_file
-        else:
+        else: # config par defaut si non definie
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_en.ini")
 
@@ -230,11 +229,10 @@ class exec_spacy_pipe_fr (object):
         else:
             self.show = show
 
-        from nlptools.models import modele_init_fr
-        
         self.format = format
-
+        
         # select le modele fr
+        from nlptools.models import modele_init_fr
         self.modele = modele_init_fr
         
         ############   PARAMETRAGE des pipes de traitements FR

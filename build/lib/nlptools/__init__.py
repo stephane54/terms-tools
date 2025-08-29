@@ -8,6 +8,7 @@ import logging
 __version__ = "0.4.0"
 from configparser import ConfigParser
 from .models import modele_init_en
+from .models import modele_init_fr
 from .tools import *
 from .termMatcher import TermMatcher
 from .POStagger import ViewPOStagger

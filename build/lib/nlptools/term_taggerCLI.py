@@ -40,6 +40,8 @@ import logging
 import plac
 from nlptools.run_tagger import Run_tagger
 from nlptools.resources import resource_dir 
+from nlptools.models import modele_init_fr
+from nlptools.models import modele_init_en
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -129,24 +131,19 @@ def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language
         
     # prepare config Spacy pipeline
     # config Spacy pipeline must be compatible with the resource format (lemma,lower,raw)
-    if norm == "lemma":
-
-        nlp = spacy.load("fr_dep_news_trf", disable=["ner", "parser", "textcat"])
+    if norm == "lemma": # fr
+        nlp = spacy.load(modele_init_fr, disable=["ner", "parser", "textcat"])
         nlp.max_length = 2000000  # or higher
 
     elif norm == "lower":
-        
         nlp = spacy.blank(language)
-        nlp.max_length = 2000000  # or higher
+        nlp.max_length = 1000000  # or higher
         
     elif norm == "raw":
-        
-        from dictionary import memoire_raw as keywords_dict
         nlp = spacy.blank(language)
-        nlp.max_length = 2000000  # or higher
+        nlp.max_length = 1000000  # or higher
         
     else:
-        
         msg = "Can't Find parameter {}".format(norm)
         logging.error(msg)
         raise IOError()
