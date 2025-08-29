@@ -33,12 +33,12 @@ import spacy        # spacy utilisé car plus rapide que stanza
 import sys
 from time import time
 import os.path
-from .matcherFlash import MatcherFlash
+from nlptools.matcherFlash import MatcherFlash
 import fileinput
 from multiprocessing import set_start_method, Pool
 import logging
 import plac
-from .run_tagger import Run_tagger
+from nlptools.run_tagger import Run_tagger
 from nlptools.resources import resource_dir 
 import warnings
 
