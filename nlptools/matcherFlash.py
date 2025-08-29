@@ -172,15 +172,15 @@ class MatcherFlash:
             if  self.output in ["list","json"]:
                 #key = (row[field],row['id']) #.replace(" ", "_")   resultat avec ou sans _
                 key = (row['id'],row['ul'],row['term'],row['pref']) 
+                
             if  self.output == "doc":
                 key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
                 
-            dico[key].append(row["ul"]) 
-            if re.search("-",row["ul"]): 
-                dico[ (key)].append(re.sub(r"-"," ",row["ul"]) )
+            dico[key].append(row['ul']) 
+            if re.search("-",row['ul']): 
+                dico[ (key)].append(re.sub(r"-"," ",row['ul']) )
                 
-            # print dico
-        #print(dico)
+        # print dico        print(dico)
         return dico 
     
     

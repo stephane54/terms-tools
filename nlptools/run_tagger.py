@@ -15,7 +15,7 @@ class Run_tagger(object):
             try:
                 data = json.loads(text)
                 data["value"] = self._execute_(data["value"])
-                return (json.dumps(data, ensure_ascii=False))
+                return (json.dumps(data, ensure_ascii=False).replace('\\"', '"'))
             except json.decoder.JSONDecodeError:
                 logging.error("Input format problem line : String could not be converted to JSON" )
                 exit(1) 
