@@ -178,10 +178,11 @@ class MatcherFlash:
                 
             dico[key].append(row['ul']) 
             if re.search("-",row['ul']): 
-                dico[ (key)].append(re.sub(r"-"," ",row['ul']) )
+                dico[(key)].append(re.sub(r"-"," ",row['ul']) )
                 
-        # print dico        print(dico)
-        return dico 
+        # print dico          print(dico)
+        # SORTIE A REVOIR CAR JSON MAL FORME !! voir comment c fait dans le termMatcher
+        return (dico)
     
     
     def _create_dico_stpw(self, csvfile):

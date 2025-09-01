@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 
 class Run_tagger(object):
     
@@ -15,12 +16,23 @@ class Run_tagger(object):
             try:
                 data = json.loads(text)
                 data["value"] = self._execute_(data["value"])
-                return (json.dumps(data, ensure_ascii=False).replace('\\"', '"'))
+                
+                return(self._norm_json_(json.dumps(data, ensure_ascii=False) ))
+            
             except json.decoder.JSONDecodeError:
                 logging.error("Input format problem line : String could not be converted to JSON" )
-                exit(1) 
         else:
             return (self._execute_(text))
+    
+    # normalisation du flux json
+    def _norm_json_ (self, text):
+        
+        remplacements =  [('\\"','"'), (']"', ']'),('"[', '[')]
+        
+        for ancien, nouveau in remplacements:
+            text = text.replace(ancien, nouveau)
+
+        return (text)
           
     
     def _execute_(self,text): 
