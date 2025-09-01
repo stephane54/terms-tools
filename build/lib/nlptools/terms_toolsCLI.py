@@ -103,7 +103,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
                     data["value"] = pipe.pipe_analyse(data["value"])  # "value" car flux ezs jsonld au format {id:,value:}
                 
                 #print("ou".format(compteur))
-                sys.stdout.write(data)
+                sys.stdout.write(json.dumps(data))
                 sys.stdout.write('\n')  
         
         else:
