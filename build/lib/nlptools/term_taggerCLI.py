@@ -98,9 +98,12 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
     
     if corpus:
         iterator = fileinput.input(corpus)
+    elif  sys.stdin.isatty():
+        logging.error("corpus file not found !")
+        exit(0)
     else:
         iterator = sys.stdin
-    
+        
     set_start_method("forkserver")
 
     if add_stop:
