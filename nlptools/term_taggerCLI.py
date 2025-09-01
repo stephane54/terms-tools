@@ -9,7 +9,7 @@
 #
 #     Annotation d un corpus avec une ressource termino
 #     
-#     usage: term_taggerCLI.py [-h] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]
+#     usage: term_taggerCLI.py [-h] [-corpus CORPUS] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]
 #                      [-f {pref,id,ul,term}] [-lang '']
 #                      file_text
 #
@@ -54,7 +54,7 @@ core = 8
 silent = False  # niveau de description dans les log
 
 @plac.annotations(
-    file_text=("Path to corpus file", "positional", None, str),
+    corpus=("Path to corpus file", "option", "corpus", str),
     matcher_dico=(
         "flash matcher dico in tsv format",
         "option",
@@ -74,7 +74,7 @@ silent = False  # niveau de description dans les log
     add_stop=("add stop word list [default no]", "flag", "add_stp"),
     ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs")
 )
-def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language=""):
+def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""):
    
     # test parameter combinaison legalite   
     if (output in ["json","list"] and (format or prefix) ):
@@ -96,10 +96,10 @@ def main(file_text,matcher_dico, output, add_stop, prefix, format, ezs, language
     # execution
     start_time = time()
     
-    if ezs:
-        iterator = fileinput.input(file_text)
+    if corpus:
+        iterator = fileinput.input(corpus)
     else:
-        iterator = fileinput.input(file_text)
+        iterator = sys.stdin
     
     set_start_method("forkserver")
 
