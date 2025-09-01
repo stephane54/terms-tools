@@ -119,7 +119,6 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
         logging.basicConfig(filename=log, level=logging.DEBUG)
         logging.debug("log mode bavard")
 
-    
     # check dictionnary exist 
     keywords_dict = os.path.join(resource_dir, matcher_dico)
     if matcher_dico: 
@@ -127,10 +126,6 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
         norm_list=[norm]         
         if not (os.path.isfile(keywords_dict)):
             raise ValueError(keywords_dict)
-        if not(any(map(keywords_dict.__contains__, norm_list))):
-            msg = "Bad file name {} with this -norm ={} parameter ".format(keywords_dict, norm)
-            logging.error(msg)
-            raise IOError()
         
     # prepare config Spacy pipeline
     # config Spacy pipeline must be compatible with the resource format (lemma,lower,raw)
