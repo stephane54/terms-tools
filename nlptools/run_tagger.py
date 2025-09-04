@@ -4,41 +4,48 @@ import re
 
 class Run_tagger(object):
     
-    def __init__(self, nlp, Matcher, ezs):
-
+    def __init__(self, nlp, Matcher, input):
+        
         self.nlp = nlp
         self.matcher = Matcher
-        self.ezs = ezs
+        self.input = input
 
-    def run_tagger (self, text):
+    def run_tagger (self, stream):
         
-        if self.ezs:
-            try:
-                data = json.loads(text)
-                data["value"] = self._execute_(data["value"])
-                
-                return(self._norm_json_(json.dumps(data, ensure_ascii=False) ))
+        if self.input in ["jsonl", "json"]: #jsonl json
             
+            try:              
+                data = json.loads(stream)  
             except json.decoder.JSONDecodeError:
-                logging.error("Input format problem line : String could not be converted to JSON" )
+                logging.error(f"{stream}Input format problem line : LOAD: String could not be converted to JSON - not a valid JSON document." )
+                #TRACE   
+                
+            if self.input == 'jsonl':
+                data["value"] = self._execute_(data["value"])
+            elif self.input == 'json':
+                data[0]["value"] = self._execute_(data[0]['value'])
+    
+            return(self._norm_json_(json.dumps(data, ensure_ascii=False) ))
+           
         else:
-            return (self._execute_(text))
+            # stream
+            return (self._execute_(stream))
     
     # normalisation du flux json
-    def _norm_json_ (self, text):
+    def _norm_json_ (self, stream):
         
         remplacements =  [('\\"','"'), (']"', ']'),('"[', '[')]
         
         for ancien, nouveau in remplacements:
-            text = text.replace(ancien, nouveau)
+            stream = stream.replace(ancien, nouveau)
 
-        return (text)
+        return (stream)
           
     
-    def _execute_(self,text): 
+    def _execute_(self,stream): 
         
         # pretraitement
-        doc = self.nlp(text)
+        doc = self.nlp(stream)
         lst_word = []
         # on extrait le texte pretraité 
         for token in doc :

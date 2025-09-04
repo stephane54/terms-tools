@@ -26,6 +26,15 @@
 #
 # python3 term_taggerCLI.py $HOME/app/terms_tools/data/corpus_test_memoire_fr.tsv -output json -lang fr -add_stp  -d  $HOME/app/termino_tools/termino_tools/dictionary/out/memoire-lemma-fr.tsv 
 # 
+#
+    # fichiers en entrée
+    #   json sur une ligne, format 1d,text 
+    #   jsonl, format id,text, 1 texte par ligne 
+    #   text, 1 a n text par ligne
+    #
+    #  PAS DE LIGNE VIDE
+    #
+#
 #  TODO :
 #    Doc renvoi un texte lemmatisé ou lower, cad le texte pretraité qui a été passé à flash. Faire plutot un réalignement
 #
@@ -72,12 +81,12 @@ silent = False  # niveau de description dans les log
     prefix=("tag for mark the entry found in , only for doc output, defaut none ", "option", "p", str),
     language=("language", "option", "lang", str, ["fr", "en"]),
     add_stop=("add stop word list [default no]", "flag", "add_stp"),
-    ezs=("ezs way, output jsonld {id=,value=}", "flag", "ezs")
+    input=("input format ", "option", "i", str, ["jsonl", "json", "txt"]),
 )
-def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""):
+def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=""):
    
     # test parameter combinaison legalite   
-    if (output in ["json","list"] and (format or prefix) ):
+    if (output in ["json","jsonl","list"] and (format or prefix) ):
         raise ValueError(u"ERROR : incompatible option !")  
     
     if (output == "doc"):
@@ -96,6 +105,8 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
     # execution
     start_time = time()
     
+    iterator = fileinput.input(corpus)
+
     if corpus:
         iterator = fileinput.input(corpus)
     elif  sys.stdin.isatty():
@@ -103,6 +114,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
         exit(0)
     else:
         iterator = sys.stdin
+
         
     set_start_method("forkserver")
 
@@ -163,7 +175,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
         text_format= norm 
     )
 
-    one_run = Run_tagger(nlp, Matcher, ezs)    
+    one_run = Run_tagger(nlp, Matcher, input)    
     #logging.info(f" len(DICO) charged : {Matcher_flash.size_voc}")
 
     i = 0
@@ -172,8 +184,9 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, ezs, language=""
 
         for result in pool.map(one_run.run_tagger, iterator):
             # output
-            sys.stdout.write(result)
-            sys.stdout.write("\n")
+            if result:
+                sys.stdout.write(result)
+                sys.stdout.write("\n")
             i += 1
 
     logging.info(
