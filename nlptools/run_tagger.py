@@ -18,7 +18,6 @@ class Run_tagger(object):
                 data = json.loads(stream)  
             except json.decoder.JSONDecodeError:
                 logging.error(f"{stream}Input format problem line : LOAD: String could not be converted to JSON - not a valid JSON document." )
-                #TRACE   
                 
             if self.input == 'jsonl':
                 data["value"] = self._execute_(data["value"])
