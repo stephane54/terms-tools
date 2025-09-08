@@ -136,6 +136,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
 
     # check dictionnary exist 
     keywords_dict = os.path.join(dico_path , matcher_dico)
+    
     if matcher_dico: 
         #check name file
         norm_list=[norm]         

@@ -5,6 +5,7 @@
 """
 # exemple :
 import logging
+import os
 __version__ = "0.4.0"
 from configparser import ConfigParser
 from .models import modele_init_en
@@ -31,3 +32,5 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 logging.basicConfig()
+
+
