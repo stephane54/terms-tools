@@ -53,11 +53,11 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # check dictionnary exist 
-    matcher_dico = os.path.join(dico_path , matcher_dico)
-    
+
     if matcher_dico: 
-        if not (os.path.isfile(matcher_dico)):
-            raise ValueError(matcher_dico)
+        dico = os.path.join(dico_path , matcher_dico)
+        if not (os.path.isfile(dico)):
+            raise ValueError(dico)
     
     # creation d1 instance de pipe
     pipe = Pipe(pipe, matcher_dico, language, ini_file, param, output, format)

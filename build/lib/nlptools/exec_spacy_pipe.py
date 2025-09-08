@@ -240,10 +240,10 @@ class exec_spacy_pipe_fr (object):
         # LOAD configuration du composant par le .ini
         configINI = ConfigParser()
         
-        this_init_file = os.path.join(dico_path ,"config", ini_file)
         
-        if this_init_file:
-            f = this_init_file
+        
+        if ini_file:
+            f = os.path.join(dico_path ,"config", ini_file)    
         else:
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_fr.ini")
