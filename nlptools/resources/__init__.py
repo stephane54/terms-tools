@@ -5,7 +5,11 @@ import os
 _local_path = os.path.dirname(os.path.abspath(__file__))
 
 NPchunker_rules_gen_en = os.path.join(_local_path, "NPchunker_rules_en.txt")
+
 resource_dir = os.path.join(_local_path)
+
+dico_path = os.getenv('DICO_PATH', os.path.join(_local_path))
+print(dico_path)
 
 # stop word list
 my_stopword_file = os.path.join(_local_path,"my_stopwords.tsv")

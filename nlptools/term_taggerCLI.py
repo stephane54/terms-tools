@@ -51,6 +51,7 @@ import logging
 import plac
 from nlptools.run_tagger import Run_tagger
 from nlptools.resources import resource_dir 
+from nlptools.resources import dico_path 
 from nlptools.models import modele_init_fr
 from nlptools.models import modele_init_en
 import warnings
@@ -134,7 +135,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
         logging.debug("log mode bavard")
 
     # check dictionnary exist 
-    keywords_dict = os.path.join(resource_dir, matcher_dico)
+    keywords_dict = os.path.join(dico_path , matcher_dico)
     if matcher_dico: 
         #check name file
         norm_list=[norm]         
