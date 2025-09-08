@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 from nlptools.run import Pipe
 from nlptools.tools import  dive_term
+from nlptools.resources import dico_path
 @plac.annotations(
     pipe=(
         "Name of the NLPpipe ",
@@ -52,6 +53,8 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
         raise ValueError(u"ERROR : terms_tools.py : This NLP component doesn't work with this input !")       
     
     # check dictionnary exist 
+    matcher_dico = os.path.join(dico_path , matcher_dico)
+    
     if matcher_dico: 
         if not (os.path.isfile(matcher_dico)):
             raise ValueError(matcher_dico)

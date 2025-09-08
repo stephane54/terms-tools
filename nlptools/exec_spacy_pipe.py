@@ -17,6 +17,7 @@ from spacy.tokens import Doc
 import warnings
 from nlptools.POStagger import display_postag
 from nlptools.termMatcher import display_matches
+from nlptools.resources import dico_path
 
 # desactive les logs
 warnings.filterwarnings("ignore")
@@ -238,8 +239,11 @@ class exec_spacy_pipe_fr (object):
         ############   PARAMETRAGE des pipes de traitements FR
         # LOAD configuration du composant par le .ini
         configINI = ConfigParser()
-        if ini_file:
-            f = ini_file
+        
+        this_init_file = os.path.join(dico_path ,"config", ini_file)
+        
+        if this_init_file:
+            f = this_init_file
         else:
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_fr.ini")
