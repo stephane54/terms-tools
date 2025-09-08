@@ -33,6 +33,8 @@
     #   text, 1 a n text par ligne
     #
     #  PAS DE LIGNE VIDE
+    # POUR EZZ, prendre des fichiers json avec plusiers dico id,value
+    #    cf : P66_en_ezs.json
     #
 #
 #  TODO :
