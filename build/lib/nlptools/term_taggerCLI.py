@@ -62,7 +62,8 @@ __contact__ = "stephane.schneider@inist.fr"
 
 # --------------------
 log = "term-tagger.log"
-core = cpu_count()
+#core = cpu_count()
+core = 1
 silent = False  # niveau de description dans les log
 
 @plac.annotations(
