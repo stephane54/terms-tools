@@ -46,7 +46,7 @@ from time import time
 import os.path
 from nlptools.matcherFlash import MatcherFlash
 import fileinput
-from multiprocessing import set_start_method, Pool
+from multiprocessing import set_start_method, Pool, cpu_count
 import logging
 import plac
 from nlptools.run_tagger import Run_tagger
@@ -62,7 +62,7 @@ __contact__ = "stephane.schneider@inist.fr"
 
 # --------------------
 log = "term-tagger.log"
-core = 8
+core = cpu_count()
 silent = False  # niveau de description dans les log
 
 @plac.annotations(
