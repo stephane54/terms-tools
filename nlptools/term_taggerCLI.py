@@ -183,9 +183,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
 
     i = 0
     logging.info(f"PROCESS CORPUS ...")
-    with Pool(core) as pool:
-
-        for result in pool.map(one_run.run_tagger, iterator):
+    for result in map(one_run.run_tagger, iterator):
             # output
             if result:
                 sys.stdout.write(result)
