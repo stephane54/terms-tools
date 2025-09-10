@@ -62,9 +62,8 @@ __contact__ = "stephane.schneider@inist.fr"
 
 # --------------------
 log = "term-tagger.log"
-#core = cpu_count()
-core = 1
-silent = False  # niveau de description dans les log
+core = cpu_count()
+docjer silent = False  # niveau de description dans les log
 
 @plac.annotations(
     corpus=("Path to corpus file", "option", "corpus", str),
@@ -139,8 +138,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
     keywords_dict = os.path.join(dico_path , matcher_dico)
     
     if matcher_dico: 
-        #check name file
-        norm_list=[norm]         
+        #check name file       
         if not (os.path.isfile(keywords_dict)):
             raise ValueError(keywords_dict)
         
@@ -148,7 +146,7 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
     # config Spacy pipeline must be compatible with the resource format (lemma,lower,raw)
     if norm == "lemma": # fr
         nlp = spacy.load(modele_init_fr, disable=["ner", "parser", "textcat"])
-        nlp.max_length = 2000000  # or higher
+        nlp.max_length = 1000000 # or higher
 
     elif norm == "lower":
         nlp = spacy.blank(language)
