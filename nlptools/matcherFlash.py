@@ -116,9 +116,6 @@ class MatcherFlash:
             ''' 
             # see dic
             print(dico)
-           
-            (...., 'vviq-2': ['vviq-2', 'vviq 2'],....) 
-            
             for keys,values in dico.items():
                 print(keys)
                 print(values)
@@ -174,7 +171,9 @@ class MatcherFlash:
                 key = (row['id'],row['ul'],row['term'],row['pref']) 
                 
             if  self.output == "doc":
-                key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
+                #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
+                key = self.prefix+"||"+row[field]+"||"+row['id']
+                
                 
             dico[key].append(row['ul']) 
             if re.search("-",row['ul']): 

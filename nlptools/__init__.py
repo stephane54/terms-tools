@@ -13,7 +13,6 @@ from .models import modele_init_fr
 from .tools import *
 from .termMatcher import TermMatcher
 from .POStagger import ViewPOStagger
-from .POStagger import ViewPOStagger
 from .lemma_lower import LowerCaseLemmas
 from .NPchunker import NPchunker
 from .NPchunkerDP import NPchunkerDP

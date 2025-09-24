@@ -50,7 +50,7 @@ class TermMatcher(object):
         else:
             show = "doc"
 
-        self.tag = termMatcher_tag
+        tag = termMatcher_tag
 
         # definition du module de matching
         if len(termMatcher_vocabulary) == 0:
@@ -78,7 +78,7 @@ class TermMatcher(object):
  
 
     # renvoi la liste ds termes trouves
-def display_matches(doc, show):
+def display_matches(doc, show, tag):
     
     def scan_termMatch(doc):
 
@@ -123,7 +123,7 @@ def display_matches(doc, show):
 
     # liste des termes tsv avec idx
     if show == "list":
-        for label, text, lemma, idt, start, end in self.scan_termMatch(
+        for label, text, lemma, idt, start, end in scan_termMatch(
             doc
         ):  # trie marche pas !
             # label = ici, label du gaz
@@ -149,7 +149,7 @@ def display_matches(doc, show):
 
     else:
 
-        return getEnts(doc, self.tag)
+        return getEnts(doc, tag)
 
 # Affiche le resultat du matching
 def getMatcherRules(matcher):

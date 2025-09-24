@@ -52,13 +52,12 @@ class exec_spacy_pipe_en(object):
         ############   PARAMETRAGE des pipes de traitement en
         # initialisation des parsers selon un fichier de configuration config.ini
         configINI = ConfigParser()
-
         if ini_file:
-            f = ini_file
-        else: # config par defaut si non definie
+            f = os.path.join(dico_path ,"config", ini_file) 
+        else:
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_en.ini")
-
+    
         if os.path.isfile(f):
             configINI.read(f)
         else:
@@ -94,7 +93,7 @@ class exec_spacy_pipe_en(object):
         
         try:
             #termMatcher_lemma = configINI.get("termMatcher", "termMatcher_lemma")
-            termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
+            self.termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
             termMatcher_POS_list = to_list(configINI.get("termMatcher", "termMatcher_POS_list"))
             list_tag_lemme =  to_list(configINI.get("POStagger", "POS_list"))
             clean_mode_pos=configINI.get("POStagger", "clean_mode")
@@ -151,7 +150,7 @@ class exec_spacy_pipe_en(object):
                 name="termMatcher",
                 config={
                     "show": self.show,
-                    "termMatcher_tag": termMatcher_tag,
+                    "termMatcher_tag": self.termMatcher_tag,
                     "termMatcher_vocabulary": matcher_dico,
                 },
                 last=True,
@@ -205,7 +204,7 @@ class exec_spacy_pipe_en(object):
         
         if self.pipe == "termMatcher":
             
-            return (display_matches(doc, self.show))
+            return (display_matches(doc, self.show, self.termMatcher_tag))
         
     
 
@@ -239,11 +238,8 @@ class exec_spacy_pipe_fr (object):
         ############   PARAMETRAGE des pipes de traitements FR
         # LOAD configuration du composant par le .ini
         configINI = ConfigParser()
-        
-        
-        
         if ini_file:
-            f = os.path.join(dico_path ,"config", ini_file)    
+            f = os.path.join(dico_path ,"config", ini_file) 
         else:
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_fr.ini")
@@ -266,12 +262,11 @@ class exec_spacy_pipe_fr (object):
             clean_mode_pos=configINI.get("POStagger", "clean_mode")
             clean_mode_term=configINI.get("termMatcher", "clean_mode")
             termMatcher_POS_list = to_list(configINI.get("termMatcher", "termMatcher_POS_list"))
-            termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
+            self.termMatcher_tag = configINI.get("termMatcher", "termMatcher_tag")
             
         except Exception as err:
             print("Error lors de la phase d'initialisation [lecture fichier .ini]")
             exit(err)
-            
             
         # POSTAG
         if pipe == "POStagger":
@@ -315,7 +310,7 @@ class exec_spacy_pipe_fr (object):
                 name="termMatcher",
                 config={
                     "show": self.show,
-                    "termMatcher_tag": termMatcher_tag,
+                    "termMatcher_tag": self.termMatcher_tag,
                     "termMatcher_vocabulary": matcher_dico,
                 },
                 last=True,
@@ -326,8 +321,7 @@ class exec_spacy_pipe_fr (object):
 
     def __call__(self, text):
         
-        # Execution du pipe stanza
-            
+        # Execution du pipe
         doc = self.nlp(text)
         
         if self.pipe == "POStagger":
@@ -336,5 +330,6 @@ class exec_spacy_pipe_fr (object):
         
         if self.pipe == "termMatcher":
             
-            return doc
+            return (display_matches(doc, self.show, self.termMatcher_tag))
+        
         

@@ -409,7 +409,7 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
 
     index_to_del = []
     np_array = doc.to_array(list_attr) # Array representation du Doc
-
+    
     if kind == "black" and list_pos:
         # toutes les POS du type de la list
         [index_to_del.append(word.i) for word in doc if word.pos_ in list_pos]  
@@ -419,6 +419,7 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
         [index_to_del.append(word.i) for word in doc if word.pos_ not in list_pos]    
     else:
         return(doc)
+
     
     # Creation d1 mask: boolean array des indexes a supprimer
     mask_to_del = np.ones(len(np_array), bool)
@@ -430,12 +431,14 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
 
     arr = np.arange(len(doc))
     new_index_to_old = arr[mask_to_del]
-    doc_offset_2_token = {tok.idx : tok.i  for tok in doc}  # pour les extensions perso
-    doc2_token_2_offset = {tok.i : tok.idx  for tok in doc2}  # pour les extensions perso
+    doc_offset_2_token = {tok.idx : tok.i  for tok in doc}  
+    doc2_token_2_offset = {tok.i : tok.idx  for tok in doc2}
     new_user_data = {}
-
+    
     for ((prefix, ext_name, offset, x), val) in doc.user_data.items():
-        old_token_index = doc_offset_2_token[offset]
+        if offset == None:  # Cas index supprimé
+            continue
+        old_token_index = doc_offset_2_token[offset]   
         new_token_index = np.where(new_index_to_old == old_token_index)[0]
         if new_token_index.size == 0:  # Cas index supprimé
             continue

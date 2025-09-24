@@ -90,16 +90,17 @@ def main(corpus,matcher_dico, output, add_stop, prefix, format, input, language=
     if (output in ["json","jsonl","list"] and (format or prefix) ):
         raise ValueError(u"ERROR : incompatible option !")  
     
+    # reglage par defaut de la sortie doc
     if (output == "doc"):
-        if  (not prefix):
-            prefix=""
-        if  (not format):
+        if  not (prefix):
+            prefix="TERM"
+        if  not (format):
             format="term"  
    
     if language == "fr":
-        norm = "lemma"
+        norm = "lemma"   # le texte et termes sont  sous forme lemmatisé en Fre 
     elif language == "en":
-        norm = "lower"
+        norm = "lower"    # le texte et termes sont sous forme lower en Eng, car génération de formes flechies 
     else:
         norm ="raw"
          
