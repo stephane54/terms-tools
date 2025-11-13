@@ -172,7 +172,9 @@ class MatcherFlash:
                 
             if  self.output == "doc":
                 #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
-                key = self.prefix+"||"+row[field]+"||"+row['id']
+                #key = self.prefix+"||"+row[field]+"||"+row['id']
+                #prefix plus utilisé
+                key = "["+row[field]+"]("+row['id']+' "CONCEPT")'
                 
                 
             dico[key].append(row['ul']) 

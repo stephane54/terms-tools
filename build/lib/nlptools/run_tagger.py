@@ -34,7 +34,6 @@ class Run_tagger(object):
     def _norm_json_ (self, stream):
         
         remplacements =  [('\\"','"'), (']"', ']'),('"[', '[')]
-        
         for ancien, nouveau in remplacements:
             stream = stream.replace(ancien, nouveau)
 
@@ -64,7 +63,6 @@ class Run_tagger(object):
                 
         # TRACE texte pretraité  print(lst_word)
         # Execution du matcher
-        
         if self.matcher.text_format  == "lemma":
             return( self.matcher(" ".join(lst_word)) )
         else:
