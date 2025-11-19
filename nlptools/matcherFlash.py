@@ -165,16 +165,17 @@ class MatcherFlash:
         dico = collections.defaultdict(list)
         for row in csvfile:
             
-            # calcule de la cles du dictionnaire dlash
+            # calcule de la cles du dictionnaire flash
             if  self.output in ["list","json"]:
                 #key = (row[field],row['id']) #.replace(" ", "_")   resultat avec ou sans _
                 key = (row['id'],row['ul'],row['term'],row['pref']) 
                 
+            # construis la forme in-doc
             if  self.output == "doc":
                 #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
                 #key = self.prefix+"||"+row[field]+"||"+row['id']
                 #prefix plus utilisé
-                key = "["+row[field]+"]("+row['id']+" \""+row['pref'] +'\n'+row['id'] +"\")"
+                key = "["+row[field]+"]("+row['id']+" \\\""+row['pref'] +'\n'+row['id'] +"\\\")"
                 
                 
             dico[key].append(row['ul']) 
