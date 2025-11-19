@@ -175,7 +175,8 @@ class MatcherFlash:
                 #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
                 #key = self.prefix+"||"+row[field]+"||"+row['id']
                 #prefix plus utilisé
-                key = "["+row[field]+"]("+row['id']+" \\\""+row['pref'] +'\n'+row['id'] +"\\\")"
+                #key = "["+row[field]+"]("+row['id']+" \\\""+row['pref']+' '+row['id'] +"\\\")"
+                key = "["+row[field]+"]("+row['id']+")"
                 
                 
             dico[key].append(row['ul']) 
