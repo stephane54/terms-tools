@@ -173,10 +173,9 @@ class MatcherFlash:
             # construis la forme in-doc
             if  self.output == "doc":
                 #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
-                #key = self.prefix+"||"+row[field]+"||"+row['id']
                 #prefix plus utilisé
-                #key = "["+row[field]+"]("+row['id']+" \\\""+row['pref']+' '+row['id'] +"\\\")"
-                key = "["+row[field]+"]("+row['id']+")"
+                key = "["+row[field]+"]("+row['id']+" \\\""+row['pref']+' ['+row['id'] +"]\\\")"
+                # ok key = "["+row[field]+"]("+row['id']+")"
                 
                 
             dico[key].append(row['ul']) 
