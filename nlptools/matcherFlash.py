@@ -175,7 +175,7 @@ class MatcherFlash:
                 #key = self.prefix+row[field].replace(" ", "_") +"_"+row['id']
                 #prefix plus utilisé
                 #key = "["+row[field]+"]("+row['id']+" \\\""+row['pref']+' ['+row['id'] +"]\\\")"
-                # ok
+                # sortie indoc avec marquage markdow
                 key = "["+row[field]+"]("+row['id']+")"
                 
                 

@@ -352,41 +352,51 @@ def getDoc(doc):
     return space.join(list_w)
 
 
-# renvoi le texte avec les ents intégré
+# renvoi le texte avec les termes en contexte
 def getEnts(doc, tag):
 
     text = []
     buffer_ent = []
-
+    
+    # on recupere ARK  en ficntion de la position idx d un occurence
+    def scan_termMatch_idx(doc, idx):
+        for ent in  doc.ents :
+            if ent.start == idx:
+                return ( ent.ent_id_)   
+    ark=""
     for token in doc:
         #TRACE
         #print([f"{token.text};{token.ent_iob};{token.text_with_ws}"])
-          
+        
         if token.ent_iob == 3:
             if len( buffer_ent ) > 0:  # car termes contingus
-                text.append(tiretb.join(buffer_ent))
+                text.append("****".join(buffer_ent)) # ?????
                 text.append(space)  # attention parfois ajoute un espace en trop ex : on (MX_control ):
                 ent = []
-            buffer_ent.append(tag)
-            buffer_ent.append(token.text)
-            
+            buffer_ent.append("["+token.text)
+            ark =  "("+scan_termMatch_idx(doc, token.i)+")"
         else:
             if token.ent_iob == 1:
-                buffer_ent .append(token.text)
+                buffer_ent.append(token.text)
                 
             else:
                 if len( buffer_ent ) > 0: # il y a une ent 
-                    term= tiretb.join(buffer_ent)  # reconstruit le terme et ajoute au flux text                    
-                    # PATH
-                    term = re.sub(r"(_)(-)(_)", r"\2", term)
-                    term = re.sub(r"\((_)(\w*)(_)\)", r"(\2)", term)
+                   
+                    term= " ".join(buffer_ent)  # reconstruit le terme et ajoute au flux text                    
+                    term = re.sub(r" - ", r"-", term) 
                     text.append(term)
-                    text.append(space)
                     buffer_ent  = []
-                    
-                text.append(token.text_with_ws)
+                    if ark:
+                        text.append(']')
+                        text.append(ark)
                 
-
+                    else:
+                        ark=""
+                    text.append(space)
+                    
+                text.append(token.text_with_ws)                
+        
+    
     return vide.join(text)
 
 # revoie une liste a partir d une string de type ['A','B']

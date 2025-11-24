@@ -61,8 +61,7 @@ class TermMatcher(object):
             self.ruler = EntityRuler(
                 nlp, overwrite_ents=True, phrase_matcher_attr="LEMMA"
             )
-            self.ruler = EntityRuler(
-                nlp)
+            self.ruler = EntityRuler(nlp)
             # load le dictionnaire au format jsonl 
             #TRACE  print('DEBUT LOAD DICO')
             self.ruler.from_disk(termMatcher_vocabulary)
@@ -81,12 +80,8 @@ class TermMatcher(object):
 def display_matches(doc, show, tag):
     
     def scan_termMatch(doc):
-
         for ent in  doc.ents:
-
-            yield (ent.label_, ent.text, ent.lemma_, ent.ent_id_, ent.start, ent.end)
-        
-
+            yield (ent.label_, ent.text, ent.lemma_, ent.ent_id_, ent.start, ent.end)   
     list_terms = []
 
     # format indoc : termes reconnus marques dans le texte
@@ -116,8 +111,7 @@ def display_matches(doc, show, tag):
         #OneResult["terms"]=list_terms            
         #OneResult["doc"]=getEnts(doc, self.tag)
         #return([OneResult])
-        return(list_terms)
-                
+        return(list_terms)        
 
     list_terms = []
 
@@ -128,9 +122,9 @@ def display_matches(doc, show, tag):
         ):  # trie marche pas !
             # label = ici, label du gaz
             # start-end
-            # text = segment textuel du matche
+            # text = segment textuel du match
             # lemma = forme lemmatique de text qui a servi pour le matching
-            # id = identifiant dans le gaz
+            # idt = identifiant dans le gaz
             list_terms.append(
                 str(start)
                 + tireth
