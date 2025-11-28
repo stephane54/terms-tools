@@ -35,6 +35,7 @@ class exec_spacy_pipe_en(object):
             "POStagger"
         ]        
 
+
         if pipe not in pipe_list_en:
             print(f"ERROR : invalid pipe ({pipe}) name or language (en) setting ")
             sys.exit(f"exit")
@@ -54,6 +55,7 @@ class exec_spacy_pipe_en(object):
         configINI = ConfigParser()
         if ini_file:
             f = os.path.join(dico_path ,"config", ini_file) 
+            
         else:
             _local_path = os.path.dirname(os.path.abspath(__file__))
             f = os.path.join(_local_path, "config_en.ini")
@@ -126,6 +128,13 @@ class exec_spacy_pipe_en(object):
         # TERMMATCHER  
         if pipe == "termMatcher":
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
+                  
+                # test dico exist
+                dict = os.path.join(dico_path , matcher_dico)
+                if matcher_dico: 
+                    #check name file     
+                    if not (os.path.isfile(dict)):
+                        raise ValueError(dict)
                 
                 # LOAD MATCHER
                 #TRACE print("BEGIN LOAD MODEL")
@@ -151,7 +160,7 @@ class exec_spacy_pipe_en(object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": self.termMatcher_tag,
-                    "termMatcher_vocabulary": matcher_dico,
+                    "termMatcher_vocabulary": dict,
                 },
                 last=True,
                 )
@@ -288,6 +297,13 @@ class exec_spacy_pipe_fr (object):
         # TERMMATCHER
         if pipe == "termMatcher":
             
+            # test dico exist
+            dict = os.path.join(dico_path , matcher_dico)
+            if matcher_dico: 
+                #check name file     
+                if not (os.path.isfile(dict)):
+                    raise ValueError(dict)
+        
             if configINI.get("termMatcher", "termMatcher_lemma") == "lemme":
             
                 #self.nlp = spacy_stanza.load_pipeline('fr', processors='tokenize,pos,lemma,depparse', verbose = False,  logging_level = 'FATAL', pos_batch_size=10000)
@@ -311,7 +327,7 @@ class exec_spacy_pipe_fr (object):
                 config={
                     "show": self.show,
                     "termMatcher_tag": self.termMatcher_tag,
-                    "termMatcher_vocabulary": matcher_dico,
+                    "termMatcher_vocabulary": dict,
                 },
                 last=True,
                 )
