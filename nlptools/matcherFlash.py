@@ -62,7 +62,7 @@ class MatcherFlash:
     # Transformation des resultats en liste sous forme de texte
     # format terms_matché + idx
     def _format_json(self, tuples_list):
-        ks = ("id", "ul", "term", "pref")
+        ks = ("id", "text", "term", "pref")
         info_terms=[]
         for tup in tuples_list :
             terms_info , idx0, idx1 = tup 
