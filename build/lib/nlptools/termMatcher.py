@@ -74,14 +74,22 @@ class TermMatcher(object):
         return (doc)
  
     # attention renvoie tous les ents
- 
-
     # renvoi la liste ds termes trouves
 def display_matches(doc, show, tag):
     
     def scan_termMatch(doc):
+            # ex: quality | Qualities | quality | http://data.loterre.fr/ark:/67375/P66-B1TWZGXG-D | 16 17
+            # effet de l'oubli subséquent | effets de l'oubli subséquent | effet de leoubli subséquent | http://data.loterre.fr/ark:/67375/P66-RN0GL886-1 | 314 319
+            # label = champ "label" du dico  = KEY spacy = en general le term
+            # text = le texte exact du match
+            # lemma = forme lemmatisée du texte qui a servi pour le matching
+            # champ "id" du dico = identifiant dans le gaz
+            # offset : start-end
         for ent in  doc.ents:
-            yield (ent.label_, ent.text, ent.lemma_, ent.ent_id_, ent.start, ent.end)   
+            #TRACE
+            #print(ent.start, ent.end,"|",ent.text, "|",ent.label_,"|",  ent.lemma_,"|", ent.ent_id_,"|")
+            yield (ent.label_, ent.text, ent.lemma_, ent.ent_id_, ent.start, ent.end)  
+             
     list_terms = []
 
     # format indoc : termes reconnus marques dans le texte
@@ -95,14 +103,10 @@ def display_matches(doc, show, tag):
                     
         for label, text, lemma, idt, start, end in scan_termMatch(
             doc
-        ):  # trie marche pas !
-            # text = segment textuel du matche
-            # lemma = forme du texte qui a servi pour le matching
-            # label = ici, label du gaz
-            # id = identifiant dans le gaz
+        ):  
             en={}
             en["idx"]=dict(zip(["start","end"],[str(start),str(end)]))
-            en["match"]=dict(zip(["id", "ul", "term"],[idt, oneMcMark(text, space), oneMcMark(lemma, space)]))
+            en["match"]=dict(zip(["id", "text", "term"],[idt, oneMcMark(text, space), oneMcMark(label, space)]))
             list_terms.append(en)
             
         # ajout du texte annotaté
@@ -120,11 +124,7 @@ def display_matches(doc, show, tag):
         for label, text, lemma, idt, start, end in scan_termMatch(
             doc
         ):  # trie marche pas !
-            # label = ici, label du gaz
-            # start-end
-            # text = segment textuel du match
-            # lemma = forme lemmatique de text qui a servi pour le matching
-            # idt = identifiant dans le gaz
+   
             list_terms.append(
                 str(start)
                 + tireth
@@ -147,8 +147,8 @@ def display_matches(doc, show, tag):
 
 # Affiche le resultat du matching
 def getMatcherRules(matcher):
-
-    print("matcher rules")
+    # TRACE
+    #print("matcher rules")
 
     for item in matcher:
         print(item)

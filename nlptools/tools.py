@@ -352,26 +352,26 @@ def getDoc(doc):
     return space.join(list_w)
 
 
-# renvoi le texte avec les termes en contexte
+# renvoi le texte avec les termes en contexte - format MARKDOWN
 def getEnts(doc, tag):
 
     text = []
     buffer_ent = []
     
-    # on recupere ARK  en ficntion de la position idx d un occurence
+    # recuperation d 'un ARK qui correspond à la position de l idx initiale d une occurence
     def scan_termMatch_idx(doc, idx):
         for ent in  doc.ents :
             if ent.start == idx:
                 return ( ent.ent_id_)   
     ark=""
+    #Parcours du texte initial
     for token in doc:
         #TRACE
-        #print([f"{token.text};{token.ent_iob};{token.text_with_ws}"])
-        
+        #print([f"{token.text}|{token.ent_iob}|{token.text_with_ws}|{token.i}"])       
         if token.ent_iob == 3:
             if len( buffer_ent ) > 0:  # car termes contingus
                 text.append("****".join(buffer_ent)) # ?????
-                text.append(space)  # attention parfois ajoute un espace en trop ex : on (MX_control ):
+                text.append(space)  # attention parfois on ajoute un espace en trop ex : on (MX_control ):
                 ent = []
             buffer_ent.append("["+token.text)
             ark =  "("+scan_termMatch_idx(doc, token.i)+")"
@@ -395,11 +395,10 @@ def getEnts(doc, tag):
                     text.append(space)
                     
                 text.append(token.text_with_ws)                
-        
     
     return vide.join(text)
 
-# revoie une liste a partir d une string de type ['A','B']
+# renvoie une liste a partir d une string de type ['A','B']
 def to_list(s):
 
     s1=re.sub(r'[ \'\"\[\]]','',s)
@@ -409,7 +408,6 @@ def to_list(s):
         s2 = s1.split(',')
     #print(s2, type(s2),len(s2))
     return(s2)
-
 
 # supprime les informations des elements appartenant à une liste de tag
 # renvoi l'objet doc modifé
@@ -430,7 +428,6 @@ def doc_remove_pos (doc, list_pos, list_attr, kind):
     else:
         return(doc)
 
-    
     # Creation d1 mask: boolean array des indexes a supprimer
     mask_to_del = np.ones(len(np_array), bool)
     mask_to_del[index_to_del] = 0
