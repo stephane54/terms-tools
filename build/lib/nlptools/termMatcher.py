@@ -55,11 +55,11 @@ class TermMatcher(object):
         # definition du module de matching
         if len(termMatcher_vocabulary) == 0:
             self.ruler = EntityRuler(
-                nlp, overwrite_ents=True, phrase_matcher_attr="lemma"
+                nlp, overwrite_ents=True, phrase_matcher_attr="lemma",validate=True
             )
         else:
             self.ruler = EntityRuler(
-                nlp, overwrite_ents=True, phrase_matcher_attr="LEMMA"
+                nlp, overwrite_ents=True, phrase_matcher_attr="LEMMA",validate=True
             )
             self.ruler = EntityRuler(nlp)
             # load le dictionnaire au format jsonl 

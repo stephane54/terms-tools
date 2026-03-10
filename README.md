@@ -107,7 +107,7 @@ http://data.loterre.fr/ark:/67375/P66#xl_fr_b0c3cc69     effet du tout sur la pa
 http://data.loterre.fr/ark:/67375/P66#xl_fr_8bef8ccd     effet McCabe   NOUN PROPN      effet mccabe
 http://data.loterre.fr/ark:/67375/P66#xl_fr_2399392f     effet de dépendance au contexte        NOUN ADP NOUN ADP NOUN  effet de dépendance au contexte
 
-## Reconnaissance de termes dans des documents en francais et en anglais  
+## Reconnaissance de termes dans un texte en francais et en anglais  
 ```  
 loterre_tag | python3 term_taggerCLI.py
  [-h] [-corpus CORPUS] [-d MATCHER_DICO] [-output {list,doc,json}] [-add_stp] [-p PREFIX]

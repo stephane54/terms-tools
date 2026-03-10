@@ -275,7 +275,7 @@ def getDicoPos(doc):
     return (space.join(list_text)+tab+space.join(list_pos)+tab+space.join(list_lemma))
    
 
-# Formate dictionary for annotation
+# Formate le dictionary for annotation
 #{"label": "neurophysiological process", "pattern": [{"pos": "ADJ", "lemma": "neurophysiological"}, {"pos": "NOUN", "lemma": "process"}], "id": "http://data.loterre.fr/ark:/67375/P66-RZ2X1NZ0-K"}
 def getDicoAnnot(doc):
     
@@ -286,6 +286,7 @@ def getDicoAnnot(doc):
         if token.pos_:
             dic["pos"]=token.pos_
             dic["lemma"]=token.lemma_
+            dic['orth']=token.orth_
         tab.append(dic)
     ld["label"]=str(doc).strip() # The exact verbatim text of a token.
     ld["pattern"]=tab
