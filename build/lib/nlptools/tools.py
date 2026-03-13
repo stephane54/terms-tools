@@ -286,7 +286,6 @@ def getDicoAnnot(doc):
         if token.pos_:
             dic["pos"]=token.pos_
             dic["lemma"]=token.lemma_
-            dic['orth']=token.orth_
         tab.append(dic)
     ld["label"]=str(doc).strip() # The exact verbatim text of a token.
     ld["pattern"]=tab
@@ -354,7 +353,7 @@ def getDoc(doc):
 
 
 # renvoi le texte avec les termes en contexte - format MARKDOWN
-def getEnts(doc, tag):
+def getEntsInDoc(doc):
 
     text = []
     buffer_ent = []

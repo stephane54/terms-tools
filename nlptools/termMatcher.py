@@ -12,7 +12,7 @@ from nlptools.tools import (
     space,
     cr,
     cleanWList,
-    getEnts,
+    getEntsInDoc,
 )
 from spacy.language import Language
 from spacy.tokens import  Doc, DocBin
@@ -72,9 +72,10 @@ class TermMatcher(object):
         self.rules = self.ruler(doc)
         self.rules_len = len(self.rules)
         return (doc)
- 
-    # attention renvoie tous les ents
-    # renvoi la liste ds termes trouves
+    
+# renvoi la liste ds termes trouves
+# attention renvoie tous les ents
+
 def display_matches(doc, show, tag):
     
     def scan_termMatch(doc):
@@ -110,11 +111,8 @@ def display_matches(doc, show, tag):
             list_terms.append(en)
             
         # ajout du texte annotaté
-        #result=[]
-        #OneResult={} 
-        #OneResult["terms"]=list_terms            
-        #OneResult["doc"]=getEnts(doc, self.tag)
-        #return([OneResult])
+        list_terms.append(dict(zip(["doc"],[getEntsInDoc(doc)])))
+        
         return(list_terms)        
 
     list_terms = []
@@ -143,7 +141,7 @@ def display_matches(doc, show, tag):
 
     else:
 
-        return getEnts(doc, tag)
+        return getEntsInDoc(doc)
 
 # Affiche le resultat du matching
 def getMatcherRules(matcher):

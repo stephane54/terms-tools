@@ -61,7 +61,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
     
     # creation d1 instance de pipe
     pipe = Pipe(pipe, matcher_dico, language, ini_file, param, output, format)
-    field = 2  # nombre de champs tsv des fichiers du corpus , format : label TAB text
+    field = 3  # nombre de champs tsv des fichiers du corpus , format : label TAB text
 
     logging.basicConfig(filename=log, level=logging.DEBUG)
     t1 = time.time()
@@ -112,6 +112,7 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
         else:
             # entrée type stdin csv, tsv
             for row in readCsv(sys.stdin.readline, field):
+                #print(row)
                 #TRACE print("DEBUT ANALYSE 1")
                 if format == "terms":
                     text_nlp = pipe.pipe_analyse(dive_term(row[1], language))
@@ -119,7 +120,8 @@ def main (pipe, corpus, matcher_dico, language, format, ini_file, param, output,
                     text_nlp = pipe.pipe_analyse(row[1])
                     
                 if output in ["dico_annot"]:
-                    text_nlp["id"]=row[0]
+                    text_nlp["id"]=row[0] # ajout de l ARK
+                    text_nlp["pref"]=row[2] # ajout de l ARK
                     print(json.dumps(text_nlp, ensure_ascii=False))
                 else:
                     print(row[0],tab,(text_nlp))
