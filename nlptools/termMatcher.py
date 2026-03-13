@@ -111,9 +111,8 @@ def display_matches(doc, show, tag):
             list_terms.append(en)
             
         # ajout du texte annotaté
-        list_terms.append(dict(zip(["doc"],[getEntsInDoc(doc)])))
-        
-        return(list_terms)        
+        return([(dict(zip(["doc","matches"],[getEntsInDoc(doc),list_terms])))])
+           
 
     list_terms = []
 
