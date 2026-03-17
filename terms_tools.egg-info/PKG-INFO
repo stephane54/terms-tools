@@ -1,6 +1,6 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: terms-tools
-Version: 2.1
+Version: 2.2
 Summary: Bibliotheque de composants python de computationnal terminology sur des données de la base Loterre
 Home-page: https://github.com/stephane54/terms-tools.git
 Author: stephane schneider
@@ -13,26 +13,6 @@ Platform: ALL
 Classifier: Topic :: natural langage processsing
 Classifier: Topic :: Documentation
 Requires-Python: >=3.8
-Requires-Dist: spacy==3.8.7
-Requires-Dist: spacy-curated-transformers==0.3.1
-Requires-Dist: plac==1.4.5
-Requires-Dist: pandas==2.3.1
-Requires-Dist: regex
-Requires-Dist: flashtext==2.7
-Requires-Dist: lemminflect==0.2.3
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: home-page
-Dynamic: keywords
-Dynamic: license
-Dynamic: maintainer
-Dynamic: maintainer-email
-Dynamic: platform
-Dynamic: requires-dist
-Dynamic: requires-python
-Dynamic: summary
 
 # terms_tools
 ===============
