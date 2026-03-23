@@ -353,51 +353,52 @@ def getDoc(doc):
 
 
 # renvoi le texte avec les termes en contexte - format MARKDOWN
+import re
+
+import re
+
 def getEntsInDoc(doc):
 
-    text = []
-    buffer_ent = []
-    
-    # recuperation d 'un ARK qui correspond à la position de l idx initiale d une occurence
-    def scan_termMatch_idx(doc, idx):
-        for ent in  doc.ents :
-            if ent.start == idx:
-                return ( ent.ent_id_)   
-    ark=""
-    #Parcours du texte initial
-    for token in doc:
-        #TRACE
-        #print([f"{token.text}|{token.ent_iob}|{token.text_with_ws}|{token.i}"])       
-        if token.ent_iob == 3:
-            if len( buffer_ent ) > 0:  # car termes contingus
-                text.append("****".join(buffer_ent)) # ?????
-                text.append(space)  # attention parfois on ajoute un espace en trop ex : on (MX_control ):
-                ent = []
-            buffer_ent.append("["+token.text)
-            ark =  "("+scan_termMatch_idx(doc, token.i)+")"
-        else:
-            if token.ent_iob == 1:
-                buffer_ent.append(token.text)
-                
-            else:
-                if len( buffer_ent ) > 0: # il y a une ent 
-                   
-                    term= " ".join(buffer_ent)  # reconstruit le terme et ajoute au flux text                    
-                    term = re.sub(r" - ", r"-", term) 
-                    text.append(term)
-                    buffer_ent  = []
-                    if ark:
-                        text.append(']')
-                        text.append(ark)
-                
-                    else:
-                        ark=""
-                    text.append(space)
-                    
-                text.append(token.text_with_ws)                
-    
-    return vide.join(text)
+    def scan_termMatch_idx(ent):
+        return ent.ent_id_ if ent.ent_id_ else ""
 
+    #  1. Trier les entités par position + longueur (longues d'abord)
+    ents = sorted(doc.ents, key=lambda e: (e.start_char, -(e.end_char - e.start_char)))
+
+    #  2. Filtrer les overlaps
+    filtered_ents = []
+    last_end = -1
+
+    for ent in ents:
+        if ent.start_char >= last_end:
+            filtered_ents.append(ent)
+            last_end = ent.end_char
+        # sinon → on ignore (évite imbrication)
+
+    #  3. Reconstruction du texte
+    text = []
+    current_pos = 0
+
+    for ent in filtered_ents:
+        # texte avant entité
+        text.append(doc.text[current_pos:ent.start_char])
+
+        # nettoyage
+        term = re.sub(r" - ", r"-", ent.text)
+
+        ark = scan_termMatch_idx(ent)
+
+        if ark:
+            text.append(f"[{term}]({ark})")
+        else:
+            text.append(f"[{term}]")
+
+        current_pos = ent.end_char
+
+    # reste du texte
+    text.append(doc.text[current_pos:])
+
+    return "".join(text)
 # renvoie une liste a partir d une string de type ['A','B']
 def to_list(s):
 
